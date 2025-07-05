@@ -26,7 +26,7 @@ const TokenizeImpactSection = () => {
 
   return (
     <div className="md:h-screen ">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8 ">
+      <div className="mx-auto">
         {/* Hero Section */}
         <div className="w-full flex flex-col items-center justify-center font-black text-black uppercase leading-relaxed drop-shadow-lg mb-6">
           <div className="inline-block bg-[#FAFF00] text-2xl px-2 md:text-7xl  font-medium">

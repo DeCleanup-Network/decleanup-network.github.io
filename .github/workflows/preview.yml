@@ -28,7 +28,7 @@ jobs:
         run: |
           export BASE_PATH="/pr-preview/pr-${{ github.event.pull_request.number }}"
           echo "BASE_PATH=$BASE_PATH" >> $GITHUB_ENV
-          npm run build && npm run export
+          npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -42,6 +42,8 @@ jobs:
           publish_dir: ./out
           destination_dir: pr-preview/pr-${{ github.event.pull_request.number }}
           publish_branch: gh-pages
+          pages: write
+          id-token: write
 
       - name: Comment PR with Preview URL
         uses: marocchino/sticky-pull-request-comment@v2
