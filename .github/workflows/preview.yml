@@ -9,7 +9,7 @@ jobs:
   build-and-deploy-preview:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: read
       pages: write
       id-token: write
       pull-requests: write
@@ -35,14 +35,28 @@ jobs:
       - name: Create .nojekyll file
         run: touch out/.nojekyll
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Debug build output
+        run: |
+          echo "BASE_PATH is: $BASE_PATH"
+          ls -la out/
+          echo "Checking if index.html exists:"
+          find out/ -name "index.html" -type f
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out
-          destination_dir: pr-preview/pr-${{ github.event.pull_request.number }}
-          publish_branch: gh-pages
-          force_orphan: false
+          path: ./out
+
+  deploy-preview:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build-and-deploy-preview
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
 
       - name: Comment PR with Preview URL
         uses: marocchino/sticky-pull-request-comment@v2
@@ -50,4 +64,4 @@ jobs:
           header: preview-url
           github_token: ${{ secrets.GITHUB_TOKEN }}
           message: |
-            🚀 Preview deployed: https://decleanup-network.github.io/pr-preview/pr-${{ github.event.pull_request.number }}
+            🚀 Preview deployed: ${{ steps.deployment.outputs.page_url }}/pr-preview/pr-${{ github.event.pull_request.number }}
