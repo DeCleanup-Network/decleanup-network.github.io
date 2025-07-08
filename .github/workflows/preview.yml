@@ -9,8 +9,10 @@ jobs:
   build-and-deploy-preview:
     runs-on: ubuntu-latest
     permissions:
+      contents: read
       pages: write
       id-token: write
+      pull-requests: write
 
     steps:
       - name: Checkout repo
@@ -28,24 +30,38 @@ jobs:
         run: |
           export BASE_PATH="/pr-preview/pr-${{ github.event.pull_request.number }}"
           echo "BASE_PATH=$BASE_PATH" >> $GITHUB_ENV
-          npm run build && npm run export
+          npm run build
+
+      - name: Create .nojekyll file
+        run: touch out/.nojekyll
+
+      - name: Debug build output
+        run: |
+          echo "BASE_PATH is: $BASE_PATH"
+          ls -la out/
+          echo "Checking if index.html exists:"
+          find out/ -name "index.html" -type f
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
 
+  deploy-preview:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build-and-deploy-preview
+    steps:
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out
-          destination_dir: pr-preview/pr-${{ github.event.pull_request.number }}
-          publish_branch: gh-pages
+        id: deployment
+        uses: actions/deploy-pages@v4
 
       - name: Comment PR with Preview URL
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           header: preview-url
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           message: |
-            🚀 Preview deployed: https://<your-username>.github.io/pr-preview/pr-${{ github.event.pull_request.number }}
+            🚀 Preview deployed: ${{ steps.deployment.outputs.page_url }}/pr-preview/pr-${{ github.event.pull_request.number }}
