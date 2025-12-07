@@ -1,52 +1,237 @@
-import React from "react";
+"use client";
+import React, { useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+
+const RoadmapCarousel = ({ roadmap }: { roadmap: Array<{ phase: string; bullets: string[] }> }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
+
+  const goToPrevious = () => {
+    setCurrentIndex((prev) => (prev === 0 ? roadmap.length - 1 : prev - 1));
+  };
+
+  const goToNext = () => {
+    setCurrentIndex((prev) => (prev === roadmap.length - 1 ? 0 : prev + 1));
+  };
+
+  // Touch handlers for mobile swipe
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return;
+    
+    const distance = touchStartX.current - touchEndX.current;
+    const minSwipeDistance = 50;
+
+    if (distance > minSwipeDistance) {
+      // Swipe left - go to next
+      goToNext();
+    } else if (distance < -minSwipeDistance) {
+      // Swipe right - go to previous
+      goToPrevious();
+    }
+
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
+
+  return (
+    <div className="relative w-full">
+      {/* Container with padding to prevent border cutoff */}
+      <div className="px-4 py-4">
+        {/* Cards Container - Centered with stacked effect */}
+        <div 
+          className="relative flex justify-center items-center min-h-[500px] lg:min-h-[600px]"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
+          {roadmap.map((item, index) => {
+            const isActive = index === currentIndex;
+            const offset = index - currentIndex;
+            const absOffset = Math.abs(offset);
+            
+            // Calculate position and scale for stacked cards
+            let transform = "";
+            let zIndex = roadmap.length - absOffset;
+            let opacity = 1;
+            
+            if (isActive) {
+              transform = "translateX(0) translateY(0)";
+              zIndex = roadmap.length + 1;
+            } else if (offset < 0) {
+              // Cards to the left
+              transform = `translateX(${-100 * absOffset - 50}px) translateY(${20 * absOffset}px) scale(${1 - absOffset * 0.1})`;
+              opacity = Math.max(0.3, 1 - absOffset * 0.2);
+            } else {
+              // Cards to the right
+              transform = `translateX(${100 * absOffset + 50}px) translateY(${20 * absOffset}px) scale(${1 - absOffset * 0.1})`;
+              opacity = Math.max(0.3, 1 - absOffset * 0.2);
+            }
+
+            return (
+              <div
+                key={index}
+                className="absolute w-full max-w-[95%] sm:max-w-xl lg:max-w-2xl"
+                style={{
+                  transform,
+                  zIndex,
+                  opacity,
+                  transition: "all 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
+                }}
+              >
+                <div
+                  className={`bg-gray-900 border-2 rounded-lg p-8 sm:p-10 lg:p-12 text-left transition-all duration-300 ${
+                    isActive 
+                      ? "border-[#58B12F] shadow-[0_0_25px_rgba(88,177,47,0.15)]" 
+                      : "border-gray-800 cursor-pointer"
+                  } hover:border-[#58B12F] hover:shadow-[0_0_25px_rgba(88,177,47,0.15)] hover:-translate-y-2`}
+                  onClick={() => !isActive && setCurrentIndex(index)}
+                  style={{
+                    transform: isActive ? "scale(1)" : "scale(0.9)",
+                  }}
+                >
+                  <h3 className="text-white text-3xl sm:text-3xl lg:text-4xl xl:text-5xl uppercase mb-6 leading-tight font-normal">
+                    {item.phase}
+                  </h3>
+                  <ul className="text-gray-400 text-lg sm:text-lg lg:text-xl leading-relaxed space-y-3">
+                    {item.bullets.map((bullet, idx) => {
+                      // Check if bullet contains a link
+                      const linkMatch = bullet.match(/\(https?:\/\/[^)]+\)/);
+                      if (linkMatch) {
+                        const url = linkMatch[0].slice(1, -1);
+                        const textBefore = bullet.substring(0, bullet.indexOf("("));
+                        return (
+                          <li key={idx} className="flex items-start">
+                            <span className="mr-2 text-[#58B12F] font-bold">•</span>
+                            <span>
+                              {textBefore}
+                              <Link 
+                                href={url} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="text-[#58B12F] hover:text-[#FAFF00] underline transition-colors"
+                                onClick={(e) => e.stopPropagation()}
+                              >
+                                {url}
+                              </Link>
+                            </span>
+                          </li>
+                        );
+                      }
+                      return (
+                        <li key={idx} className="flex items-start">
+                          <span className="mr-2 text-[#58B12F] font-bold">•</span>
+                          <span>{bullet}</span>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Navigation Arrows - Hidden on mobile, visible on desktop */}
+      <div className="hidden lg:flex justify-center items-center gap-4 mt-8">
+        <button
+          onClick={goToPrevious}
+          className="w-12 h-12 rounded-full bg-gray-900 border-2 border-gray-700 hover:border-[#58B12F] flex items-center justify-center transition-all duration-300 opacity-100 cursor-pointer hover:shadow-[0_0_20px_rgba(88,177,47,0.3)]"
+          aria-label="Previous card"
+        >
+          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        
+        {/* Dots indicator */}
+        <div className="flex gap-2">
+          {roadmap.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                index === currentIndex 
+                  ? "bg-[#58B12F] w-8" 
+                  : "bg-gray-700 hover:bg-gray-600"
+              }`}
+              aria-label={`Go to card ${index + 1}`}
+            />
+          ))}
+        </div>
+
+        <button
+          onClick={goToNext}
+          className="w-12 h-12 rounded-full bg-gray-900 border-2 border-gray-700 hover:border-[#58B12F] flex items-center justify-center transition-all duration-300 opacity-100 cursor-pointer hover:shadow-[0_0_20px_rgba(88,177,47,0.3)]"
+          aria-label="Next card"
+        >
+          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+
+      {/* Dots indicator for mobile - visible on mobile, hidden on desktop */}
+      <div className="flex lg:hidden justify-center items-center gap-2 mt-8">
+        {roadmap.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentIndex(index)}
+            className={`h-2 rounded-full transition-all duration-300 ${
+              index === currentIndex 
+                ? "bg-[#58B12F] w-8" 
+                : "bg-gray-700 w-2"
+            }`}
+            aria-label={`Go to card ${index + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const NetworkRoadmapSection = () => {
   const roadmap = [
     {
-      phase: "FOUNDATION PHASE",
-      description: "initial community partnerships activated",
-      version: "DAPP V1",
-      features: [
-        "BASIC POI SUBMISSION",
-        "IMPACT PRODUCTS",
-        "POINTS AND IMPACT VALUE",
+      phase: "Phase 1 — Base Mini App (live)",
+      bullets: [
+        "Farcaster mini app for quick cleanups",
+        "$bDCU rewards on Base",
+        "Simple logging + basic stats",
       ],
     },
     {
-      phase: "SYSTEM GROWTH",
-      description: "collaboration with regen coordination",
-      version: "DAPP V2.1",
-      features: [
-        "IMPROVED POI SUBMISSION",
-        "PERSONAL DASHBOARD",
-        "REFERRAL SYSTEM",
-        "LEADERBOARD",
+      phase: "Phase 2 — Celo Full dApp (building)",
+      bullets: [
+        "Full dashboard, leaderboard, streaks",
+        "Impact Products, claim & stake",
+        "Hypercert minted after every 10 verified cleanups",
       ],
     },
     {
-      phase: "ACTIVATION",
-      description: "launching global ambassador program",
-      version: "DAPP V2.2",
-      features: [
-        "$DCU TOKEN LAUNCH",
-        "STAKING AND LOCKING",
-        "COMMUNITY VERIFICATION",
-        "IMPACT CIRCLES",
-        "INTEGRATION WITH REGEN BAZAAR",
-        "MULTICHAIN ROLLOUT",
+      phase: "Phase 3 — Reputation & Governance",
+      bullets: [
+        "$cDCU as reputation + governance token on Celo",
+        "Voting on Gardens.fund",
+        "Cleaner profiles and long-term contribution history",
       ],
     },
     {
-      phase: "REGIONAL SCALING",
-      description: "multi-region coordination and governance",
-      version: "DAPP V3",
-      features: [
-        "NEW IMPACT PRODUCT LEVELS",
-        "GOVERNANCE TOOLS",
-        "IMPACT METRICS",
-        "MULTICHAIN POAPS",
-        "INTEGRATIONS WITH PARTNERS",
+      phase: "Phase 4 — Multichain Ecosystem",
+      bullets: [
+        "Base + Celo live side-by-side",
+        "Integrations with Regen Bazaar and partners",
+        "New Impact Product levels and impact metrics",
       ],
     },
   ];
@@ -78,351 +263,30 @@ const NetworkRoadmapSection = () => {
   return (
     <div className="min-h-screen ">
       {/* Roadmap Section with responsive margins */}
-      <div className="">
-        <div className="relative w-full bg-[#111111] py-8 sm:py-12 lg:py-16 2xl:py-20 3xl:py-24 px-4 sm:px-6 lg:px-8 2xl:px-12 3xl:px-16">
+      <div>
+        <div className="relative w-full py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           {/* Header */}
-          <div className="text-left mb-8 sm:mb-12 lg:mb-20 2xl:mb-24 3xl:mb-32 lg:bottom-10">
-            <h2 className="text-3xl sm:text-4xl sm:ml-4 md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl 3xl:text-9xl font-black uppercase text-[#4FA02A] mb-0 leading-tight">
-              NETWORK ROADMAP
+          <div className="text-center mb-6 lg:mb-8">
+            <h2 
+              className="text-3xl md:text-4xl lg:text-5xl font-normal uppercase text-white mb-0 leading-tight"
+            >
+              Network Roadmap
             </h2>
           </div>
 
-          {/* Desktop Roadmap - Original Style */}
-          <div className="hidden lg:grid lg:grid-cols-4 gap-6 2xl:gap-8 3xl:gap-12 relative">
-            {/* Connecting lines - visible on larger screens */}
-            <div className="absolute top-45 left-0 w-full">
-              <div className="flex justify-between items-center h-0">
-                <div className="w-1/4 h-0.5 bg-[#4FA02A]"></div>
-                <div className="w-1/4 h-0.5 bg-[#4FA02A]"></div>
-                <div className="w-1/4 h-0.5 bg-[#4FA02A]"></div>
-                <div className="w-1/4 h-0.5 bg-[#4FA02A]"></div>
-              </div>
-            </div>
-
-            {roadmap.map((item, index) => (
-              <div key={index} className="relative">
-                {/* Connection dot */}
-                <div
-                  className={`absolute top-44 left-2 transform -translate-x-1/2 w-3 h-3 rounded-0 border-2 border-[#FAFF00] z-10 bg-[#FAFF00]`}
-                />
-
-                <div className="text-left">
-                  <h3
-                    className="text-[#FAFF00] text-4xl sm:text-5xl lg:text-5xl xl:text-5xl 2xl:text-6xl 3xl:text-7xl uppercase mb-2 leading-tight"
-                    style={{
-                      fontFamily: "Bebas Neue",
-                      letterSpacing: "-0.02em",
-                      lineHeight: "100%",
-                    }}
-                  >
-                    {item.phase}
-                  </h3>
-                  <p
-                    className="text-[#58B12F] text-lg md:text-3xl lg:text-xl 2xl:text-4xl  font-normal mb-10  leading-tight lowercase md:mb-16"
-                    style={{ letterSpacing: "-0.03em" }}
-                  >
-                    {item.description}
-                  </p>
-
-                  <div
-                    className={` h-full rounded-xl p-6 2xl:p-4 3xl:p-6 shadow-lg`}
-                  >
-                    <h4
-                      className="text-[#FAFF00] text-4xl sm:text-5xl lg:text-5xl xl:text-5xl 2xl:text-6xl 3xl:text-7xl uppercase mb-2 leading-tight"
-                      style={{
-                        fontFamily: "Bebas Neue",
-                        letterSpacing: "-0.02em",
-                        lineHeight: "100%",
-                      }}
-                    >
-                      {item.version}
-                    </h4>
-                    <ul
-                      className="text-[#58B12F] text-lg lg:text-3xl 2xl:text-4xl 3xl:text-5xl font-normal mb-5 leading-tight lowercase font-family-bebas"
-                      style={{
-                        fontFamily: "Bebas Neue",
-                        letterSpacing: "-0.02em",
-                        lineHeight: "102%",
-                      }}
-                    >
-                      {item.features.map((feature, idx) => (
-                        <li key={idx} className="uppercase">
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Mobile/Tablet Roadmap */}
-          <div className="block lg:hidden">
-            {/* Vertical connecting line */}
-            <div className="absolute left-7 top-35 w-2 h-360 bg-[#4FA02A] z-0"></div>
-
-            <div className="space-y-6 pb-12">
-              {/* Point 1 - Foundation Phase */}
-              <div className="relative">
-                <div className="absolute left-4 top-6 w-3 h-5 bg-[#FAFF00] border-2 border-[#FAFF00] z-20 transform -translate-x-1/2" />
-                <div className="ml-8">
-                  <div className="p-4 shadow-lg">
-                    <h4
-                      className="text-[#FAFF00] text-left text-4xl sm:text-5xl lg:text-5xl xl:text-5xl uppercase mb-2 leading-tight"
-                      style={{
-                        fontFamily: "Bebas Neue",
-                        letterSpacing: "-0.02em",
-                        lineHeight: "100%",
-                      }}
-                    >
-                      FOUNDATION PHASE
-                    </h4>
-                    <p
-                      className="text-[#58B12F] text-left text-lg lg:text-3xl font-normal mb-4 leading-tight lowercase"
-                      style={{
-                        fontFamily: "Bebas Neue",
-                        letterSpacing: "-0.02em",
-                        lineHeight: "102%",
-                      }}
-                    >
-                      initial community partnerships activated
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Point 2 - System Growth */}
-              <div className="relative">
-                <div className="absolute left-4 top-6 w-3 h-5 bg-[#FAFF00] border-2 border-[#FAFF00] z-20 transform -translate-x-1/2" />
-                <div className="ml-8">
-                  <div className="p-4 shadow-lg">
-                    <h4
-                      className="text-[#FAFF00] text-left text-4xl sm:text-5xl lg:text-5xl xl:text-5xl uppercase mb-2 leading-tight"
-                      style={{
-                        fontFamily: "Bebas Neue",
-                        letterSpacing: "-0.02em",
-                        lineHeight: "100%",
-                      }}
-                    >
-                      SYSTEM GROWTH
-                    </h4>
-                    <p
-                      className="text-[#58B12F] text-left text-lg lg:text-3xl font-normal mb-4 leading-tight lowercase"
-                      style={{
-                        fontFamily: "Bebas Neue",
-                        letterSpacing: "-0.02em",
-                        lineHeight: "102%",
-                      }}
-                    >
-                      collaboration with regen coordination
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Point 3 - Activation */}
-              <div className="relative">
-                <div className="absolute left-4 top-6 w-3 h-5 bg-[#FAFF00] border-2 border-[#FAFF00] z-20 transform -translate-x-1/2" />
-                <div className="ml-8">
-                  <div className="p-4 shadow-lg">
-                    <h4
-                      className="text-[#FAFF00] text-left text-4xl sm:text-5xl lg:text-5xl xl:text-5xl uppercase mb-2 leading-tight"
-                      style={{
-                        fontFamily: "Bebas Neue",
-                        letterSpacing: "-0.02em",
-                        lineHeight: "100%",
-                      }}
-                    >
-                      ACTIVATION
-                    </h4>
-                    <p
-                      className="text-[#58B12F] text-left text-lg lg:text-3xl font-normal mb-4 leading-tight lowercase"
-                      style={{
-                        fontFamily: "Bebas Neue",
-                        letterSpacing: "-0.02em",
-                        lineHeight: "102%",
-                      }}
-                    >
-                      launching global ambassador program
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Point 4 - Regional Scaling */}
-              <div className="relative">
-                <div className="absolute left-4 top-6 w-3 h-5 bg-[#FAFF00] border-2 border-[#FAFF00] z-20 transform -translate-x-1/2" />
-                <div className="ml-8">
-                  <div className="p-4 shadow-lg">
-                    <h4
-                      className="text-[#FAFF00] text-left text-4xl sm:text-5xl lg:text-5xl xl:text-5xl uppercase mb-2 leading-tight"
-                      style={{
-                        fontFamily: "Bebas Neue",
-                        letterSpacing: "-0.02em",
-                        lineHeight: "100%",
-                      }}
-                    >
-                      REGIONAL SCALING
-                    </h4>
-                    <p
-                      className="text-[#58B12F] text-left text-lg lg:text-3xl font-normal mb-4 leading-tight lowercase"
-                      style={{
-                        fontFamily: "Bebas Neue",
-                        letterSpacing: "-0.02em",
-                        lineHeight: "102%",
-                      }}
-                    >
-                      multi-region coordination and governance
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Point 5 - DAPP V1 */}
-              <div className="relative">
-                <div className="absolute left-4 top-6 w-3 h-5 bg-[#FAFF00] border-2 border-[#FAFF00] z-20 transform -translate-x-1/2" />
-                <div className="ml-8">
-                  <div className="rounded-lg p-4 shadow-lg">
-                    <h4
-                      className="text-[#FAFF00] text-left text-4xl sm:text-5xl lg:text-5xl xl:text-5xl uppercase mb-2 leading-tight"
-                      style={{
-                        fontFamily: "Bebas Neue",
-                        letterSpacing: "-0.02em",
-                        lineHeight: "100%",
-                      }}
-                    >
-                      DAPP V1
-                    </h4>
-                    <ul
-                      className="text-[#58B12F] text-left text-lg lg:text-3xl font-normal mb-4 leading-tight lowercase"
-                      style={{
-                        fontFamily: "Bebas Neue",
-                        letterSpacing: "-0.02em",
-                        lineHeight: "102%",
-                      }}
-                    >
-                      <li className="uppercase">BASIC POI SUBMISSION</li>
-                      <li className="uppercase">IMPACT PRODUCTS</li>
-                      <li className="uppercase">POINTS AND IMPACT VALUE</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              {/* Point 6 - DAPP V2.1 */}
-              <div className="relative">
-                <div className="absolute left-4 top-6 w-3 h-5 bg-[#FAFF00] border-2 border-[#FAFF00] z-20 transform -translate-x-1/2" />
-                <div className="ml-8">
-                  <div className="rounded-lg p-4 shadow-lg">
-                    <h4
-                      className="text-[#FAFF00] text-4xl text-left sm:text-5xl lg:text-5xl xl:text-5xl uppercase mb-2 leading-tight"
-                      style={{
-                        fontFamily: "Bebas Neue",
-                        letterSpacing: "-0.02em",
-                        lineHeight: "100%",
-                      }}
-                    >
-                      DAPP V2.1
-                    </h4>
-                    <ul
-                      className="text-[#58B12F] text-lg text-left lg:text-3xl font-normal mb-4 leading-tight lowercase"
-                      style={{
-                        fontFamily: "Bebas Neue",
-                        letterSpacing: "-0.02em",
-                        lineHeight: "102%",
-                      }}
-                    >
-                      <li className="uppercase">IMPROVED POI SUBMISSION</li>
-                      <li className="uppercase">PERSONAL DASHBOARD</li>
-                      <li className="uppercase">REFERRAL SYSTEM</li>
-                      <li className="uppercase">LEADERBOARD</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              {/* Point 7 - DAPP V2.2 */}
-              <div className="relative">
-                <div className="absolute left-4 top-6 w-3 h-5 bg-[#FAFF00] border-2 border-[#FAFF00] z-20 transform -translate-x-1/2" />
-                <div className="ml-8">
-                  <div className="rounded-lg p-4 shadow-lg">
-                    <h4
-                      className="text-[#FAFF00] text-4xl sm:text-5xl lg:text-5xl xl:text-5xl uppercase mb-2 text-left leading-tight"
-                      style={{
-                        fontFamily: "Bebas Neue",
-                        letterSpacing: "-0.02em",
-                        lineHeight: "100%",
-                      }}
-                    >
-                      DAPP V2.2
-                    </h4>
-                    <ul
-                      className="text-[#58B12F] text-lg lg:text-3xl font-normal mb-4 leading-tight text-left"
-                      style={{
-                        fontFamily: "Bebas Neue",
-                        letterSpacing: "-0.02em",
-                        lineHeight: "102%",
-                      }}
-                    >
-                      <li className="uppercase">$DCU TOKEN LAUNCH</li>
-                      <li className="uppercase">STAKING AND LOCKING</li>
-                      <li className="uppercase">COMMUNITY VERIFICATION</li>
-                      <li className="uppercase">IMPACT CIRCLES</li>
-                      <li className="uppercase">
-                        INTEGRATION WITH REGEN BAZAAR
-                      </li>
-                      <li className="uppercase">MULTICHAIN ROLLOUT</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              {/* Point 8 - DAPP V3 */}
-              <div className="relative">
-                <div className="absolute left-4 top-6 w-3 h-5 bg-[#FAFF00] border-2 border-[#FAFF00] z-20 transform -translate-x-1/2" />
-                <div className="ml-8">
-                  <div className="rounded-lg p-4 shadow-lg">
-                    <h4
-                      className="text-[#FAFF00] text-4xl sm:text-5xl lg:text-5xl xl:text-5xl uppercase mb-2 leading-tight text-left"
-                      style={{
-                        fontFamily: "Bebas Neue",
-                        letterSpacing: "-0.02em",
-                        lineHeight: "100%",
-                      }}
-                    >
-                      DAPP V3
-                    </h4>
-                    <ul
-                      className="text-[#58B12F] text-lg lg:text-3xl font-normal mb-4 leading-tight lowercase text-left"
-                      style={{
-                        fontFamily: "Bebas Neue",
-                        letterSpacing: "-0.02em",
-                        lineHeight: "102%",
-                      }}
-                    >
-                      <li className="uppercase">NEW IMPACT PRODUCT LEVELS</li>
-                      <li className="uppercase">GOVERNANCE TOOLS</li>
-                      <li className="uppercase">IMPACT METRICS</li>
-                      <li className="uppercase">MULTICHAIN POAPS</li>
-                      <li className="uppercase">INTEGRATIONS WITH PARTNERS</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          {/* Roadmap Carousel */}
+          <RoadmapCarousel roadmap={roadmap} />
         </div>
       </div>
 
-      {/* Yellow Background Section */}
+      {/* Community Impact Section */}
       <div
-        className="relative w-full px-4 sm:px-6 lg:px-9 2xl:px-16 3xl:px-32"
+        className="relative w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-12 sm:py-16 lg:py-20"
         style={{ position: "relative" }}
       >
         {/* Gallery with responsive margins */}
-        <div className="pt-5 mb-4 sm:mb-4 2xl:mb-4 3xl:mb-4">
-          <div className="grid grid-cols-3 gap-2 2xl:gap-4 3xl:gap-6">
+        <div className="mb-10">
+          <div className="grid grid-cols-3 gap-3 lg:gap-4">
             {/* Large image on left - full height */}
             <div className="col-span-1 rounded-lg overflow-hidden">
               <Image
@@ -470,111 +334,64 @@ const NetworkRoadmapSection = () => {
           </div>
         </div>
 
-        {/* Community Impact Section with responsive margins and typography */}
-        <div className="mb-11 mt-10 lg:mt-10 lg:mb-10 2xl:mb-10 3xl:mb-10 3xl:mt-10">
-          {/* Horizontal Line Separator */}
-          <div className="w-full h-0.5 bg-black mb-2 lg:mb-7 lg:mt-11 2xl:mb-10 3xl:mb-12 3xl:mt-50"></div>
-          {/* Header Section - Title and Description side by side */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 2xl:gap-12 3xl:gap-16 mb-8 2xl:mb-12 3xl:mb-16 3xl:mt-50">
-            <div>
-              <h3 className="text-4xl sm:text-3xl inline md:block lg:text-7xl xl:text-6xl  2xl:text-7xl 3xl:text-8xl bg-[#FAFF00] md:bg-transparent  md:text-left font-light uppercase text-black md:mb-15 mt-2 md:mt-0 leading-tight">
-                COMMUNITY IMPACT
-              </h3>
-            </div>
-            <div>
-              <p
-                className="text-black text-center md:text-left  sm:text-lg lg:text-3xl 2xl:text-4xl 3xl:text-5xl font-normal mb-4 md:mt-2 leading-tight uppercase"
-                style={{
-                  fontFamily: "Bebas Neue",
-                  letterSpacing: "-0.02em",
-                  lineHeight: "102%",
-                }}
-              >
-                participants worldwide use DeCleanup dApp to turn real world
-                impact into onchain products with additional utilities within
-                the ecosystem in the future.
+        {/* Community Impact Section with centered heading and description */}
+        <div className="mt-12 mb-12">
+          {/* Centered Heading + Description */}
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal uppercase text-white mb-4">
+              Community Impact
+            </h2>
+            <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
+              Participants worldwide use DeCleanup dApp to turn real-world impact into onchain products with additional utilities in the ecosystem.
               </p>
-            </div>
           </div>
 
           {/* Cards Section - Two cards side by side with responsive spacing */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 2xl:gap-8 3xl:gap-12 lg:items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
             {/* HEM Japan - shorter card */}
-            <div className="bg-black text-[#4FA02A] p-4 lg:p-6 2xl:p-8 3xl:p-10 rounded-none">
-              <h4 className="text-[#FAFF00] text-2xl sm:text-2xl lg:text-3xl xl:text-5xl 2xl:text-6xl 3xl:text-7xl mb-2 font-extrabold text-left leading-tight uppercase">
-                HEM JAPAN
+            <div className="bg-gray-900 border-2 border-[#58B12F] p-6 lg:p-8 rounded-lg">
+              <h4 
+                className="text-2xl sm:text-3xl lg:text-4xl mb-3 font-normal text-white leading-tight uppercase"
+              >
+                HEM Japan
               </h4>
-              <p className="text-[#4FA02A] text-sm lg:text-base 2xl:text-4xl 3xl:text-xl font-extrabold leading-relaxed text-left uppercase">
-                Early partner organizing cleanups across Japan using
-                DeCleanup&apos;s verification system. 2024: 12 active users, 9
-                cleanup events
+              <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
+                Early partner organizing cleanups across Japan using DeCleanup&apos;s verification system. 2024: 12 active users, 9 cleanup events
               </p>
             </div>
 
             {/* Pestathon - taller card */}
-            <div className="bg-black text-[#4FA02A] p-4 lg:p-6 2xl:p-8 3xl:p-10 rounded-none">
-              <h4 className="text-[#FAFF00] text-3xl sm:text-2xl lg:text-3xl xl:text-5xl 2xl:text-6xl 3xl:text-7xl mb-2 font-black uppercase text-left">
-                PESATHON
+            <div className="bg-gray-900 border-2 border-[#58B12F] p-6 lg:p-8 rounded-lg">
+              <h4 
+                className="text-2xl sm:text-3xl lg:text-4xl mb-3 font-normal text-white leading-tight uppercase"
+              >
+                Pestathon
               </h4>
-              <p className="text-[#4FA02A] text-sm lg:text-base 2xl:text-4xl 3xl:text-xl font-extrabold leading-tight text-left uppercase">
-                UNNPloggas university campaign combining education + action.
-                Students learned environmental care while cleaning campus.
-                DeCleanup added 120 USDGLO to Atlantis Impact Miner
-                rewards.2024: 9 active users, 4 cleanup events
+              <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
+                UNNPloggas university campaign combining education + action. Students learned environmental care while cleaning campus. DeCleanup added 120 USDGLO to Atlantis Impact Miner rewards. 2024: 9 active users, 4 cleanup events
               </p>
             </div>
           </div>
         </div>
-        {/* Horizontal Line Separator */}
-        <div className="w-full h-0.5 bg-black mb-4 lg:mb-9 2xl:mb-12 3xl:mb-16"></div>
 
         {/* Quote Section with responsive typography */}
-        <div className=" py-6 lg:p-8 2xl:p-10 3xl:p-12 rounded-xl mb-0 relative">
-          {/* Opening Quote Mark */}
-          <div className="absolute top-4 left lg:top-6 lg:left-6">
-            <span className="text-6xl lg:text-8xl font-black text-black leading-none opacity-60">
-              &quot;
-            </span>
-          </div>
-
+        <div className="bg-gray-900 p-8 lg:p-12 rounded-lg mb-0 relative border-l-4 border-[#FAFF00]">
           {/* Main Quote Text */}
-          <div className="relative text-black leading-relaxed pt-8 lg:pt-12">
-            <p
-              className="text-black text-left text-lg sm:text-xl lg:text-5xl xl:text-3xl 2xl:text-4xl font-normal mb-6 leading-tight uppercase tracking-tight"
-              style={{
-                fontFamily: "Bebas Neue, Arial Black, sans-serif",
-                letterSpacing: "-0.02em",
-                lineHeight: "1.1",
-              }}
-            >
-              DeCleanup employs the most simplified system I&apos;ve encountered
-              in dApps, making it easier for people to participate in
-              environmental protection activities. Even picking up a single
-              plastic bottle can transform into rewards!
+          <div className="relative text-gray-200 leading-relaxed">
+            <p className="text-lg sm:text-xl lg:text-2xl font-medium mb-6 italic">
+              &quot;DeCleanup employs the most simplified system I&apos;ve encountered in dApps, making it easier for people to participate in environmental protection activities. Even picking up a single plastic bottle can transform into rewards!&quot;
             </p>
 
             {/* Attribution */}
-            <div className="flex justify-end items-center mt-2">
+            <div className="flex justify-end items-center">
               <div className="text-right">
-                <p
-                  className="text-black font-normal text-[10px] lg:text-xl  uppercase tracking-wide"
-                  style={{ fontFamily: "Bebas Neue, Arial Black, sans-serif" }}
-                >
-                  YUICHI HOSOMO — NEW JAPAN
+                <p className="text-base sm:text-lg font-bold text-gray-300">
+                  — Yuichi Hosomo, New Japan
                 </p>
               </div>
             </div>
           </div>
-
-          {/* Closing Quote Mark */}
-          <div className="absolute bottom- right-4 lg:bottom-6 lg:right-6">
-            <span className="text-6xl lg:text-8xl font-black text-black leading-none opacity-60">
-              &quot;
-            </span>
-          </div>
         </div>
-
-        <div className="w-full h-0.5 bg-black mb-4 lg:mb-9 2xl:mb-12 3xl:mb-16"></div>
       </div>
     </div>
   );

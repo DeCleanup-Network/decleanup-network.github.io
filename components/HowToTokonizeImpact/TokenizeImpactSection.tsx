@@ -7,60 +7,63 @@ const TokenizeImpactSection = () => {
     {
       number: "1.",
       title: "Start or Join a Cleanup",
-      description:
-        "Find or start a cleanup in your area or join an existing one nearby. Organize environmental action together with outdoor enthusiasts.",
     },
     {
       number: "2.",
       title: "Capture the Impact",
-      description:
-        "Take selfies and get photos with friends, upload them to our platform and get verified.",
     },
     {
       number: "3.",
       title: "Earn Rewards",
-      description:
-        "Get impact tokens for cleanup the earth/ocean. Earning such along the way for referring to friends and consistently repeating your impactful activity.",
     },
   ];
 
   return (
-    <div className="md:h-screen ">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8 ">
-        {/* Hero Section */}
-        <div className="w-full flex flex-col items-center justify-center font-black text-black uppercase leading-relaxed drop-shadow-lg mb-6">
-          <div className="inline-block bg-[#FAFF00] text-2xl px-2 md:text-7xl  font-medium">
+    <div className="w-full py-12 sm:py-16 lg:py-20">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        {/* Section Header */}
+        <div className="text-center mb-8 lg:mb-12">
+          <h2
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal uppercase text-white mb-4"
+          >
             How to Tokenize Impact?
-          </div>
+          </h2>
         </div>
-        <div className="text-center flex flex-col md:flex-row lg:text-left">
-          {/* Left Content with Background Image */}
-          <div className="relative md:w-[50%] min-h-[300px] md:min-h-[400px]">
+
+        {/* Content Section - Image and Steps */}
+        <div className="flex flex-col md:flex-row gap-6 lg:gap-8 mb-12 lg:mb-16 items-center">
+          {/* Left Content with Background Image and Yellow Frame */}
+          <div className="w-full md:w-1/2 flex items-center">
+            <div className="relative p-4 bg-[#FAFF00] rounded-lg transform hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-[#FAFF00]/20 w-full">
+              <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden">
             <div
-              className="absolute inset-0 w-full h-full bg-no-repeat bg-center bg-cover"
+                  className="absolute inset-0 w-full h-full bg-no-repeat bg-center bg-cover transform hover:scale-110 transition-transform duration-500"
               style={{
                 backgroundImage: "url('/image1.png')",
               }}
             ></div>
+              </div>
+            </div>
           </div>
 
           {/* Right Content - Steps */}
-          <div className="space-y-4 lg:space-y-6 md:w-[50%] md:pl-4 lg:pl-8 mt-5 md:mt-0">
+          <div className="w-full md:w-1/2 space-y-6 flex flex-col justify-center">
             {steps.map((step, index) => (
               <div
                 key={index}
-                className="bg-[#111111] backdrop-blur-sm border border-white/10 rounded-xl p-4 lg:p-6  font-bebes duration-300"
+                className="bg-gray-900 border-2 border-gray-800 rounded-lg p-8 hover:border-[#58B12F] transition-all duration-300 hover:shadow-[0_0_20px_rgba(88,177,47,0.15)] hover:-translate-y-1 card-hover"
               >
-                <div className="flex flex-row text-4xl">
-                  <div className="text-[#FAFF00] text-3xl  lg:text-4xl font-bold mb-2 ">
+                <div className="flex flex-row items-center">
+                  <div 
+                    className="text-[#FAFF00] text-3xl lg:text-4xl font-bold mr-3"
+                  >
                     {step.number}
                   </div>
-                  <div className="text-[#FAFF00] text-3xl lg:text-4xl  uppercase mb-2 lg:mb-3 ">
+                  <h3 
+                    className="text-lg sm:text-xl lg:text-2xl font-normal uppercase text-white flex-1"
+                  >
                     {step.title}
-                  </div>
-                </div>
-                <div className="text-[#58B12F] text-xl text-left lg:text-3xl md:leading-relaxed">
-                  {step.description}
+                  </h3>
                 </div>
               </div>
             ))}
@@ -68,38 +71,69 @@ const TokenizeImpactSection = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center md:space-y-8   mt-12 lg:mt-16">
-          {/* Get Started Button */}
-          <div className="w-full border-y border-black py-3">
-            <button className=" bg-black w-full hover:bg-black/80  text-[#FAFF00] font-black text-xl lg:text-5xl uppercase px-8 lg:px-12 py-4 lg:py-5  hover:shadow-2xl shadow-lg transform">
-              Get Started
-            </button>
+        <div className="text-center space-y-12 lg:space-y-16">
+          {/* Get Started Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link
+              href="https://farcaster.xyz/miniapps/njiQzfqas3yN/decleanup-rewards"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-4 bg-[#FAFF00] text-black font-bold text-lg sm:text-xl tracking-wider hover:bg-[#FAFF00]/90 transition-colors duration-200 border-2 border-[#FAFF00] normal-case hover:scale-105 hover:shadow-[0_0_20px_rgba(250,255,0,0.4)] transition-all duration-300"
+              style={{ textTransform: 'none' }}
+            >
+              Get started on Farcaster
+            </Link>
+            <Link
+              href="https://miniapp.decleanup.net"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-4 bg-black text-[#FAFF00] font-bold text-lg sm:text-xl tracking-wider hover:bg-gray-900 transition-colors duration-200 border-2 border-[#FAFF00] normal-case hover:scale-105 hover:shadow-[0_0_20px_rgba(250,255,0,0.4)] transition-all duration-300"
+              style={{ textTransform: 'none' }}
+            >
+              Get started in web app
+            </Link>
           </div>
-          {/* Join Movement Section */}
-          <div className="space-y-6 lg:space-y-8">
-            <div className="text-5xl mt-2 sm:text-5xl lg:text-[190px]  text-black uppercase ">
-              Join the Movement
-            </div>
 
-            <p className="text-black  lg:text-5xl">
-              Connect with our growing community on social media, and explore
-              everything you need to start contributing to a cleaner environment
-              today.
+          {/* Join Movement Section */}
+          <div className="space-y-8 lg:space-y-12">
+            <h3
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal uppercase text-white"
+            >
+              Join the Movement
+            </h3>
+
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
+              Connect with our growing community on social media, and explore everything you need to start contributing to a cleaner environment today.
             </p>
 
             {/* Social Buttons */}
-            <div className="flex border-t border-black flex-col sm:flex-row gap-4 lg:gap-6 py-4 items-center">
+            <div className="flex flex-col sm:flex-row gap-4 lg:gap-6 justify-center items-center">
               <Link
                 href={"https://t.me/EcoSynthesisX/443"}
-                className="bg-black text-[#FAFF00] font-bold text-lg lg:text-5xl uppercase px-8 lg:px-10 py-3 lg:py-4 w-full transition-all duration-300 hover:scale-100 hover:shadow-xl shadow-md transform hover:-translate-y-1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative px-8 py-4 bg-gradient-to-r from-gray-900 to-gray-800 text-[#FAFF00] font-semibold text-base sm:text-lg border-2 border-[#FAFF00] hover:border-[#58B12F] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(250,255,0,0.3)] text-center overflow-hidden"
               >
-                Telegram
+                <span className="relative z-10">Telegram</span>
+                <div className="absolute inset-0 bg-[#FAFF00] opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
               </Link>
               <Link
                 href={"https://x.com/DeCleanupNet/status/1917591927563624903"}
-                className="bg-black text-[#FAFF00]  font-bold text-lg lg:text-5xl uppercase px-8 lg:px-10 py-3 lg:py-4 w-full transition-all duration-300 hover:scale-100 hover:shadow-xl shadow-md transform hover:-translate-y-1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative px-8 py-4 bg-gradient-to-r from-gray-900 to-gray-800 text-[#FAFF00] font-semibold text-base sm:text-lg border-2 border-[#FAFF00] hover:border-[#58B12F] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(250,255,0,0.3)] text-center overflow-hidden"
               >
-                Twitter
+                <span className="relative z-10">Twitter</span>
+                <div className="absolute inset-0 bg-[#FAFF00] opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+              </Link>
+              <Link
+                href={"https://farcaster.xyz/decleanupnet"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative px-8 py-4 bg-gradient-to-r from-gray-900 to-gray-800 text-[#FAFF00] font-semibold text-base sm:text-lg border-2 border-[#FAFF00] hover:border-[#58B12F] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(250,255,0,0.3)] text-center overflow-hidden"
+              >
+                <span className="relative z-10">Farcaster</span>
+                <div className="absolute inset-0 bg-[#FAFF00] opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
               </Link>
             </div>
           </div>
