@@ -7,7 +7,7 @@ const NavLink = () => {
     { name: "LITEPAPER", href: "https://github.com/DeCleanup-Network" },
     { name: "DOCS", href: "https://github.com/DeCleanup-Network/docs" },
     { name: "LATEST ARTICLES", href: "https://paragraph.xyz/decleanupnet" },
-    { name: "KARMA-GAP", href: "https://gap.karmahq.xyz/project/decentralized-cleanup-network-decleanup-network"},
+    { name: "KARMA GAP", href: "https://gap.karmahq.xyz/project/decentralized-cleanup-network-decleanup-network"},
     { name: "GITHUB", href: "https://github.com/DeCleanup-Network" },
     { name: "USER GUIDE", href: "https://giveth.io/project/decentralized-cleanup-network"},
     { name: "BUG REPORT", href: "https://tally.so/r/mRBlbl" },
@@ -17,65 +17,54 @@ const NavLink = () => {
     <nav className="relative  overflow-hidden ">
       <Divider className="" />
       
-      {/* Mobile Layout - Grid (2x3 + 1) */}
+      {/* Mobile Layout - Grid */}
       <div className="block md:hidden">
         <div className="grid grid-cols-2 gap-3 mb-3">
-          {navLinks.slice(0, 6).map((link, index) => (
+          {navLinks.map((link, index) => (
             <a
               key={index}
               href={link.href}
-              className="bg-black text-[#FAFF00] text-sm font-bold rounded px-4 py-3 text-center tracking-wide uppercase transition-all duration-300 border-2 border-transparent whitespace-nowrap hover:bg-gray-800 hover:border-yellow-400 hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:border-white focus:ring-2 focus:ring-white/50 active:translate-y-0"
-              style={{ fontFamily: "Bebas Neue, Arial Black, sans-serif" }}
-              aria-label={`View ${link.name}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative bg-gray-900 text-[#FAFF00] text-xs font-semibold rounded-lg px-4 py-3 text-center border border-gray-800 hover:border-[#FAFF00] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_rgba(250,255,0,0.2)] overflow-hidden"
             >
-              {link.name}
+              <span className="relative z-10">{link.name}</span>
+              <div className="absolute inset-0 bg-[#FAFF00] opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
             </a>
           ))}
         </div>
-        {/* Last item centered */}
-        <div className="flex justify-center">
-          <a
-            href={navLinks[6].href}
-            className="bg-black text-[#FAFF00] text-sm font-bold rounded px-4 py-3 text-center tracking-wide uppercase transition-all duration-300 border-2 border-transparent whitespace-nowrap hover:bg-gray-800 hover:border-yellow-400 hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:border-white focus:ring-2 focus:ring-white/50 active:translate-y-0"
-            style={{ fontFamily: "Bebas Neue, Arial Black, sans-serif" }}
-            aria-label={`View ${navLinks[6].name}`}
-          >
-            {navLinks[6].name}
-          </a>
-        </div>
       </div>
 
-      {/* Desktop Layout - Horizontal Row */}
-      <div className="hidden md:flex justify-between  gap-2 lg:gap-3 p-2 flex-wrap">
+      {/* Desktop Layout - Horizontal Row with better styling */}
+      <div className="hidden md:flex flex-wrap justify-center gap-3 lg:gap-4">
         {navLinks.map((link, index) => (
           <a
             key={index}
             href={link.href}
-            className="bg-black  text-[#FAFF00] text-sm lg:text-base font-bold rounded px-3 lg:px-4 py-2 lg:py-3 text-center tracking-wide uppercase transition-all duration-300 border-2 border-transparent whitespace-nowrap hover:bg-gray-800 hover:border-yellow-400 hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:border-white focus:ring-2 focus:ring-white/50 active:translate-y-0"
-            style={{ fontFamily: "Bebas Neue, Arial Black, sans-serif" }}
-            aria-label={`View ${link.name}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative bg-gray-900 text-[#FAFF00] text-sm lg:text-base font-semibold rounded-lg px-4 lg:px-5 py-2 lg:py-3 text-center border border-gray-800 hover:border-[#FAFF00] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_rgba(250,255,0,0.2)] overflow-hidden whitespace-nowrap"
           >
-            {link.name}
+            <span className="relative z-10">{link.name}</span>
+            <div className="absolute inset-0 bg-[#FAFF00] opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
           </a>
         ))}
       </div>
       
-      <Divider className="mt-2 bg-black" />
+      <Divider className="mt-6 bg-gray-800" />
 
       {/* Footer */}
-      <div className="flex flex-col md:flex-row justify-between items-center mt-4 text-xs text-black font-semibold">
+      <div className="flex flex-col md:flex-row justify-between items-center mt-6 pt-6 border-t border-gray-800">
         <span 
-          className="text-black text-lg lg:text-xl font-bold"
-          style={{ fontFamily: "Bebas Neue, Arial Black, sans-serif" }}
+          className="text-white text-base lg:text-lg font-medium mb-4 md:mb-0"
         >
           DECLEANUP NETWORK 2025©
         </span>
-        <span 
-          className="tracking-wide text-lg lg:text-xl font-bold mt-2 md:mt-0"
-          style={{ fontFamily: "Bebas Neue, Arial Black, sans-serif" }}
-        >
-          STELLAR
-        </span>
+        <div className="flex items-center gap-4 text-sm text-gray-400">
+          <span>base</span>
+          <span className="text-gray-600">•</span>
+          <span>celo</span>
+        </div>
       </div>
     </nav>
   );

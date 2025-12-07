@@ -1,0 +1,241 @@
+import React from "react";
+import Link from "next/link";
+
+// Helper function to render bullet with links
+const renderBullet = (bullet: string) => {
+  const linkMatch = bullet.match(/https?:\/\/[^\s]+/);
+  if (linkMatch) {
+    const url = linkMatch[0];
+    const parts = bullet.split(url);
+    return (
+      <>
+        {parts[0]}
+        <Link 
+          href={url} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-[#58B12F] hover:text-[#FAFF00] underline transition-colors"
+        >
+          {url}
+        </Link>
+        {parts[1]}
+      </>
+    );
+  }
+  return bullet;
+};
+
+const UseDeCleanupToday = () => {
+  const apps = [
+    {
+      title: "Base mini app on Farcaster",
+      subtitle: "Fast actions, onchain rewards.",
+      bullets: [
+        "Log cleanups from Farcaster",
+        "Earn and use $bDCU on Base",
+      ],
+      buttonLabel: "Open mini app",
+      buttonHref: "https://farcaster.xyz/miniapps/njiQzfqas3yN/decleanup-rewards",
+      buttonDisabled: false,
+      note: null,
+    },
+    {
+      title: "$bDCU token on Base (Clanker)",
+      subtitle: "Cleanup reward + trading token.",
+      bullets: [
+        "Live on Base via Clanker",
+        "Used for quick rewards and trading",
+      ],
+      buttonLabel: "Link – coming soon",
+      buttonHref: "#",
+      buttonDisabled: true,
+      note: "Link will be updated by Tuesday end of day (UTC).",
+    },
+    {
+      title: "Full dApp on Celo (coming soon)",
+      subtitle: "All DeCleanup Rewards features, plus governance.",
+      bullets: [
+        "Full dashboard, leaderboard, streaks",
+        "Recycables rewards promo, supported by DeTrash Global and Recy.App",
+        "Impact Products, claim & stake flows",
+        "Governance with $cDCU on Gardens.fund",
+        "Hypercerts: 1 cleanup hypercert after every 10 verified cleanups",
+      ],
+      buttonLabel: "DeCleanup on Celo – coming soon",
+      buttonHref: "#",
+      buttonDisabled: true,
+      note: "$cDCU starts as a reputation + governance token for early cleaners.",
+    },
+  ];
+
+  return (
+    <section id="apps" className="w-full px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+      <div className="mx-auto max-w-7xl">
+        {/* Section Header */}
+        <div className="text-center mb-8 lg:mb-12">
+          <h2
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal uppercase text-white mb-4 sm:mb-6"
+          >
+            Earn DeCleanup Rewards today
+          </h2>
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto">
+            Choose how you want to log cleanups, earn, and govern our impact network.
+          </p>
+        </div>
+
+        {/* Cards Layout: Two Base cards side by side, then Celo full width */}
+        <div className="space-y-6 lg:space-y-8">
+          {/* Base Cards - Side by Side */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            {apps.slice(0, 2).map((app, index) => (
+              <div
+                key={index}
+                className="bg-gray-900 border-2 border-gray-800 rounded-lg p-6 lg:p-8 flex flex-col hover:border-[#58B12F] transition-all duration-300 hover:shadow-[0_0_30px_rgba(88,177,47,0.2)] hover:-translate-y-2 card-hover"
+              >
+                {/* Chain Label */}
+                <div className="mb-4">
+                  <span className="text-sm font-medium text-gray-400 tracking-wider">base</span>
+                </div>
+              
+                {/* Title */}
+                <h3
+                  className="text-xl sm:text-2xl lg:text-3xl font-normal uppercase mb-3 text-white"
+                >
+                  {app.title}
+                </h3>
+
+                {/* Subtitle */}
+                <p className="text-base sm:text-lg text-gray-300 mb-6 font-medium">
+                  {app.subtitle}
+                </p>
+
+                {/* Bullet Points */}
+                <ul className="text-gray-400 text-sm sm:text-base mb-6 space-y-2 flex-grow">
+                  {app.bullets.map((bullet, idx) => (
+                    <li key={idx} className="flex items-start">
+                      <span className="mr-2 text-[#58B12F] font-bold">•</span>
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Note (if present) */}
+                {app.note && (
+                  <p className="text-sm text-gray-500 mb-6 italic">
+                    {app.note}
+                  </p>
+                )}
+
+                {/* Button */}
+                {app.buttonDisabled ? (
+                  <button
+                    disabled
+                    className="w-full bg-gray-800 text-gray-500 cursor-not-allowed px-6 py-3 text-sm sm:text-base font-semibold tracking-wider opacity-50 pointer-events-none"
+                  >
+                    {app.buttonLabel}
+                  </button>
+                ) : (
+                  <Link
+                    href={app.buttonHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full bg-[#FAFF00] text-black font-bold text-sm sm:text-base tracking-wider hover:bg-[#FAFF00]/90 transition-colors duration-200 border-2 border-[#FAFF00] normal-case hover:scale-105 hover:shadow-[0_0_20px_rgba(250,255,0,0.4)] transition-all duration-300 text-center block px-6 py-3"
+                    style={{ textTransform: 'none' }}
+                  >
+                    {app.buttonLabel}
+                  </Link>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Celo Card - Full Width */}
+          {apps[2] && (
+            <div className="bg-gray-900 border-2 border-gray-800 rounded-lg p-6 lg:p-8 flex flex-col hover:border-[#58B12F] transition-all duration-300 hover:shadow-[0_0_30px_rgba(88,177,47,0.2)] hover:-translate-y-2 card-hover">
+                {/* Chain Label */}
+                <div className="mb-4">
+                  <span className="text-sm font-medium text-gray-400 tracking-wider">celo</span>
+                </div>
+            
+              {/* Title */}
+              <h3
+                className="text-xl sm:text-2xl lg:text-3xl font-normal uppercase mb-3 text-white"
+              >
+                {apps[2].title}
+              </h3>
+
+              {/* Subtitle */}
+              <p className="text-base sm:text-lg lg:text-xl text-gray-300 mb-6 font-medium">
+                {apps[2].subtitle}
+              </p>
+
+              {/* Bullet Points */}
+              <ul className="text-gray-400 text-sm sm:text-base lg:text-lg mb-6 space-y-2 flex-grow">
+                {apps[2].bullets.map((bullet, idx) => {
+                  // Special handling for bullet with DeTrash Global link (second bullet, index 1)
+                  if (idx === 1) {
+                    const linkUrl = "https://detrashtoken.com/en";
+                    const parts = bullet.split("DeTrash Global");
+                    return (
+                      <li key={idx} className="flex items-start">
+                        <span className="mr-2 text-[#58B12F] font-bold">•</span>
+                        <span>
+                          {parts[0]}
+                          <Link 
+                            href={linkUrl} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-[#58B12F] hover:text-[#FAFF00] underline transition-colors"
+                          >
+                            DeTrash Global
+                          </Link>
+                          {parts[1]}
+                        </span>
+                      </li>
+                    );
+                  }
+                  return (
+                    <li key={idx} className="flex items-start">
+                      <span className="mr-2 text-[#58B12F] font-bold">•</span>
+                      <span>{bullet}</span>
+                    </li>
+                  );
+                })}
+              </ul>
+
+              {/* Note (if present) */}
+              {apps[2].note && (
+                <p className="text-sm lg:text-base text-gray-500 mb-6 italic">
+                  {apps[2].note}
+                </p>
+              )}
+
+              {/* Button */}
+              {apps[2].buttonDisabled ? (
+                <button
+                  disabled
+                  className="w-full bg-gray-800 text-gray-500 cursor-not-allowed px-6 py-3 text-sm sm:text-base font-semibold tracking-wider opacity-50 pointer-events-none"
+                >
+                  {apps[2].buttonLabel}
+                </button>
+              ) : (
+                <Link
+                  href={apps[2].buttonHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-[#FAFF00] text-black font-bold text-sm sm:text-base tracking-wider hover:bg-[#FAFF00]/90 transition-colors duration-200 border-2 border-[#FAFF00] normal-case hover:scale-105 hover:shadow-[0_0_20px_rgba(250,255,0,0.4)] transition-all duration-300 text-center block px-6 py-3"
+                  style={{ textTransform: 'none' }}
+                >
+                  {apps[2].buttonLabel}
+                </Link>
+              )}
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default UseDeCleanupToday;
+

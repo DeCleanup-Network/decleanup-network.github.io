@@ -1,39 +1,52 @@
-import Button from "../ui/Button";
-import Divider from "../ui/Divider";
 
 const Hero = () => {
   return (
     <div
-      className="min-h-screen flex flex-col justify-between items-center px-4 py-6"
+      className="min-h-screen flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 relative overflow-hidden"
       style={{ minHeight: "100dvh" }}
     >
-      <div className="w-full flex justify-end">
-        <span className="text-lg sm:text-2xl md:text-3xl">
-          CLEAN UP, SNAP, EARN
-        </span>
-      </div>
-      <Divider />
-      <h1 className="text-[calc(100vw/3.67)] leading-[0.8] lg:text-[calc(100vw/7.67)] md:text-[calc(100vw/7.67)] lg:leading-none font-normal font-family-bebas my-3">
-        DECLEANUP NETWORK
-      </h1>
-      <Divider />
-      <div className="sm:px-5 px-2 w-full">
-        <div className="w-full mb-6 flex flex-col items-center sm:gap-y-2 gap-y-1">
-          <p className="xl:bg-[#FAFF00] text-2xl text-center mt-8 mx-auto px-2 w-fit leading-[1]">
-            <span className="bg-[#FAFF00] xl:w-fit text-3xl w-full px-1 text-center xl:bg-transparent md:text-7xl">
-            Turn environmental action into digital assets
+      {/* Animated background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#58B12F]/5 via-transparent to-[#FAFF00]/5 animate-pulse"></div>
+      
+      <div className="max-w-5xl mx-auto text-center relative z-10">
+        {/* Header with tagline on left and logo space on right */}
+        <div className="w-full flex justify-between items-center mb-6 sm:mb-8 animate-fade-in px-4">
+          <div className="text-left">
+            <span className="inline-block px-4 py-2 bg-[#FAFF00] text-black text-sm sm:text-base font-bold tracking-wider transform hover:scale-105 transition-transform duration-300 shadow-lg shadow-[#FAFF00]/20 normal-case" style={{ textTransform: 'none' }}>
+              clean up, snap, earn
             </span>
-          </p>
-          <p className="text-center w-fit text-[24px] max-w-[98ch] mt-5 font-normal md:font-medium font-family-bebas md:text-5xl md:leading-14">
-          Join the global network of individuals and communities tokenizing environmental impact of cleanups on  DeCleanup Network
-          </p>
+          </div>
+          <div className="w-24 h-12 bg-transparent">
+            {/* Logo space - coming soon */}
+          </div>
         </div>
+
+        {/* Main Heading */}
+        <h1 
+          className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-normal mb-6 sm:mb-8 leading-tight text-white animate-fade-in-up"
+        >
+          DECLEANUP NETWORK
+        </h1>
+
+        {/* Subheading */}
+        <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-300 mb-4 sm:mb-6 font-light max-w-3xl mx-auto animate-fade-in-up animation-delay-200">
+          Turn environmental action into digital assets
+        </p>
+
+          {/* Description */}
+          <p className="text-base sm:text-lg md:text-xl text-gray-400 mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed animate-fade-in-up animation-delay-400">
+            Join the global network of individuals and communities tokenizing environmental impact of cleanups utilizing DeCleanup Network tools
+          </p>
+
+          {/* Stylish Breaker */}
+          <div className="flex items-center justify-center gap-4 my-8 sm:my-12 lg:my-16 animate-fade-in-up animation-delay-600">
+            <div className="h-px w-16 sm:w-24 bg-gradient-to-r from-transparent via-[#58B12F] to-transparent"></div>
+            <div className="w-2 h-2 rounded-full bg-[#FAFF00] animate-pulse"></div>
+            <div className="h-px w-16 sm:w-24 bg-gradient-to-r from-transparent via-[#FAFF00] to-transparent"></div>
+            <div className="w-2 h-2 rounded-full bg-[#58B12F] animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+            <div className="h-px w-16 sm:w-24 bg-gradient-to-r from-transparent via-[#58B12F] to-transparent"></div>
+          </div>
       </div>
-      <Divider className="mt-6 md:mt-12" />
-      <div className="sm:px-5 px-2 mb-4 mt-3  w-full">
-        <Button className="hover:bg-black/80">Start my first cleanup</Button>
-      </div>
-      <Divider />
     </div>
   );
 };

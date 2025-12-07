@@ -7,6 +7,9 @@ const nextConfig = {
   },
   basePath: process.env.BASE_PATH || "",
   assetPrefix: process.env.BASE_PATH || "",
+  turbopack: {
+    root: process.cwd(),
+  },
 };
 
 module.exports = nextConfig;

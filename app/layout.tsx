@@ -1,20 +1,17 @@
 import type { Metadata } from "next";
-import { Nunito, Bebas_Neue } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
+import { Bebas_Neue } from "next/font/google";
 import "./globals.css";
 
-// Configure Nunito (Google Font)
-const nunito = Nunito({
-  subsets: ['latin'], // Adjust subsets as needed (e.g., 'latin-ext' for extended Latin)
-  display: 'swap', // Prevents layout shift
-  variable: '--font-nunito', // CSS variable for Tailwind
-});
+// Configure Geist Sans (Secondary/Body font)
+// GeistSans is already configured with variable: '--font-geist-sans'
 
-// Configure Bebas Neue (Google Font)
+// Configure Bebas Neue (Heading font)
 const bebas = Bebas_Neue({
   subsets: ['latin'],
   weight: '400', // Bebas Neue has only one weight
   display: 'swap',
-  variable: '--font-bebas',
+  variable: '--font-bebas-neue',
 });
 
 export const metadata: Metadata = {
@@ -30,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${nunito.variable} ${bebas.variable} antialiased`}
+        className={`${GeistSans.variable} ${bebas.variable} antialiased`}
       >
         {children}
       </body>

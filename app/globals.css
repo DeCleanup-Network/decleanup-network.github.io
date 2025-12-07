@@ -1,36 +1,90 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 @import "tailwindcss";
 
-
 :root {
-  --background: #58B12F;
-  --foreground: #111111;
+  --background: #000000;
+  --foreground: #ffffff;
   --yellow: #FAFF00;
+  --green: #58B12F;
+  --green-dark: #4FA02A;
+  --gray-light: #1a1a1a;
+  --gray-medium: #2a2a2a;
+  --gray-dark: #111111;
+  
+  /* Font variables */
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-bebas-neue);
+  
+  /* Brand colors */
+  --color-brand-green: #58B12F;
+  --color-brand-yellow: #FAFF00;
 }
 
+/* @theme is a valid Tailwind v4 directive */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-family-bebas: var(--font-bebas), sans-serif;
-  --font-family-nunito: var(--font-nunito), sans-serif;
+  --font-family-bebas: var(--font-bebas-neue), sans-serif;
+  --font-family-heading: var(--font-bebas-neue), sans-serif;
+  --font-family-geist: var(--font-geist-sans), sans-serif;
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
-
-*{
+* {
   box-sizing: border-box;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-bebas), sans-serif;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  /* Bebas Neue for all headings - ALL CAPS */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-bebas-neue), sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Better mobile touch targets */
+  button, a {
+    touch-action: manipulation;
+  }
+
+  /* Brand colors */
+  .bg-brand-green {
+    background-color: var(--color-brand-green);
+  }
+
+  .bg-brand-yellow {
+    background-color: var(--color-brand-yellow);
+  }
+
+  .text-brand-green {
+    color: var(--color-brand-green);
+  }
+
+  .text-brand-yellow {
+    color: var(--color-brand-yellow);
+  }
+
+  .border-brand-green {
+    border-color: var(--color-brand-green);
+  }
+
+  .border-brand-yellow {
+    border-color: var(--color-brand-yellow);
+  }
 }
 
 /* h1 {
@@ -39,13 +93,85 @@ body {
   line-height: 1;
 } */
 
-h2 {
-  font-weight: 400;
-  font-size: 80px;
-  line-height: 1;
+
+
+
+/* Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out;
+}
+
+.animation-delay-200 {
+  animation-delay: 0.2s;
+  animation-fill-mode: both;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+  animation-fill-mode: both;
 }
 
 
+/* Card hover effects */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gray-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray-medium);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--green);
+}
+
+/* Hide scrollbar for carousel */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
 
 @media (max-width: 640px) {
  
