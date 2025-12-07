@@ -38,11 +38,11 @@
   html {
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
-  }
+}
 
-  body {
-    background: var(--background);
-    color: var(--foreground);
+body {
+  background: var(--background);
+  color: var(--foreground);
     font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
     overflow-x: hidden;
     overflow-y: auto;

@@ -14,8 +14,8 @@ const Hero = () => {
           <div className="text-left">
             <span className="inline-block px-4 py-2 bg-[#FAFF00] text-black text-sm sm:text-base font-bold tracking-wider transform hover:scale-105 transition-transform duration-300 shadow-lg shadow-[#FAFF00]/20 normal-case" style={{ textTransform: 'none' }}>
               clean up, snap, earn
-            </span>
-          </div>
+        </span>
+      </div>
           <div className="w-24 h-12 bg-transparent">
             {/* Logo space - coming soon */}
           </div>
@@ -25,12 +25,12 @@ const Hero = () => {
         <h1 
           className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-normal mb-6 sm:mb-8 leading-tight text-white animate-fade-in-up"
         >
-          DECLEANUP NETWORK
-        </h1>
+        DECLEANUP NETWORK
+      </h1>
 
         {/* Subheading */}
         <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-300 mb-4 sm:mb-6 font-light max-w-3xl mx-auto animate-fade-in-up animation-delay-200">
-          Turn environmental action into digital assets
+            Turn environmental action into digital assets
         </p>
 
           {/* Description */}
@@ -45,7 +45,7 @@ const Hero = () => {
             <div className="h-px w-16 sm:w-24 bg-gradient-to-r from-transparent via-[#FAFF00] to-transparent"></div>
             <div className="w-2 h-2 rounded-full bg-[#58B12F] animate-pulse" style={{ animationDelay: '0.5s' }}></div>
             <div className="h-px w-16 sm:w-24 bg-gradient-to-r from-transparent via-[#58B12F] to-transparent"></div>
-          </div>
+        </div>
       </div>
     </div>
   );

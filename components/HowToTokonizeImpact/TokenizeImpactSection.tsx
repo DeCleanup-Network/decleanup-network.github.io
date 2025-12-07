@@ -36,12 +36,12 @@ const TokenizeImpactSection = () => {
           <div className="w-full md:w-1/2 flex items-center">
             <div className="relative p-4 bg-[#FAFF00] rounded-lg transform hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-[#FAFF00]/20 w-full">
               <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden">
-                <div
+            <div
                   className="absolute inset-0 w-full h-full bg-no-repeat bg-center bg-cover transform hover:scale-110 transition-transform duration-500"
-                  style={{
-                    backgroundImage: "url('/image1.png')",
-                  }}
-                ></div>
+              style={{
+                backgroundImage: "url('/image1.png')",
+              }}
+            ></div>
               </div>
             </div>
           </div>

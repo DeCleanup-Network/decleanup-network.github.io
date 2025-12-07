@@ -49,12 +49,12 @@ export default function WhatIsDeCleanupNetwork() {
           <div className="w-full md:w-1/2">
             <div className="relative p-4 bg-[#FAFF00] rounded-lg transform hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-[#FAFF00]/20">
               <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden">
-                <div
+            <div
                   className="absolute inset-0 w-full h-full bg-no-repeat bg-center bg-cover transform hover:scale-110 transition-transform duration-500"
-                  style={{
-                    backgroundImage: "url('/image2.png')",
-                  }}
-                ></div>
+              style={{
+                backgroundImage: "url('/image2.png')",
+              }}
+            ></div>
               </div>
             </div>
           </div>
@@ -74,7 +74,7 @@ export default function WhatIsDeCleanupNetwork() {
         </div>
 
         {/* Problem-Solution Section */}
-        <div className="mb-8 lg:mb-12">
+          <div className="mb-8 lg:mb-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             {/* Problem Section */}
             <div className="flex flex-col h-full">
@@ -113,7 +113,7 @@ export default function WhatIsDeCleanupNetwork() {
                     <h3 className="text-lg sm:text-xl md:text-2xl font-medium text-white leading-relaxed text-left">
                       {solution}
                     </h3>
-                  </div>
+            </div>
                 ))}
               </div>
             </div>

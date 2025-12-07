@@ -344,7 +344,7 @@ const NetworkRoadmapSection = () => {
             </h2>
             <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
               Participants worldwide use DeCleanup dApp to turn real-world impact into onchain products with additional utilities in the ecosystem.
-            </p>
+              </p>
           </div>
 
           {/* Cards Section - Two cards side by side with responsive spacing */}
