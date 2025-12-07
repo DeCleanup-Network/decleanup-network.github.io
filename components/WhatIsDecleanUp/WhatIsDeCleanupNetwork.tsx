@@ -1,23 +1,5 @@
 import React from "react";
 
-interface ProblemSectionProps {
-  hideHeader?: boolean;
-}
-
-function ProblemSection({ hideHeader = false }: ProblemSectionProps) {
-  // This component is kept for backwards compatibility but cards are now rendered inline
-  return null;
-}
-
-interface SolutionSectionProps {
-  hideHeader?: boolean;
-}
-
-function SolutionSection({ hideHeader = false }: SolutionSectionProps) {
-  // This component is kept for backwards compatibility but cards are now rendered inline
-  return null;
-}
-
 export default function WhatIsDeCleanupNetwork() {
   const problems = [
     "Lack of incentives for cleanup actions",

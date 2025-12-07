@@ -1,30 +1,6 @@
 import React from "react";
 import Link from "next/link";
 
-// Helper function to render bullet with links
-const renderBullet = (bullet: string) => {
-  const linkMatch = bullet.match(/https?:\/\/[^\s]+/);
-  if (linkMatch) {
-    const url = linkMatch[0];
-    const parts = bullet.split(url);
-    return (
-      <>
-        {parts[0]}
-        <Link 
-          href={url} 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="text-[#58B12F] hover:text-[#FAFF00] underline transition-colors"
-        >
-          {url}
-        </Link>
-        {parts[1]}
-      </>
-    );
-  }
-  return bullet;
-};
-
 const UseDeCleanupToday = () => {
   const apps = [
     {

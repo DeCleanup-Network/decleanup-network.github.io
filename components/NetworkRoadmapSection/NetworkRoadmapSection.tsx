@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -63,7 +63,6 @@ const RoadmapCarousel = ({ roadmap }: { roadmap: Array<{ phase: string; bullets:
             let transform = "";
             let zIndex = roadmap.length - absOffset;
             let opacity = 1;
-            let scale = 1;
             
             if (isActive) {
               transform = "translateX(0) translateY(0)";
