@@ -36,6 +36,7 @@ jobs:
           path: ./out
 
       - name: Deploy to GitHub Pages
+        if: github.event.pull_request.head.repo.full_name == github.repository
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -44,8 +45,15 @@ jobs:
           publish_branch: gh-pages
 
       - name: Comment PR with Preview URL
+        if: github.event.pull_request.head.repo.full_name == github.repository
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           header: preview-url
           message: |
             🚀 Preview deployed: https://<your-username>.github.io/pr-preview/pr-${{ github.event.pull_request.number }}
+
+      - name: Skip deployment notice (fork)
+        if: github.event.pull_request.head.repo.full_name != github.repository
+        run: |
+          echo "⚠️ Deployment skipped: This workflow is running from a fork."
+          echo "The preview will be deployed after the PR is merged to the main repository."
