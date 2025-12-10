@@ -2,8 +2,21 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+interface AppConfig {
+  title: string;
+  subtitle: string;
+  bullets: string[];
+  buttonLabel: string;
+  buttonHref: string;
+  buttonDisabled: boolean;
+  secondButtonLabel?: string;
+  secondButtonHref?: string;
+  note: string | null;
+  imageUrl?: string;
+}
+
 const UseDeCleanupToday = () => {
-  const apps = [
+  const apps: AppConfig[] = [
     {
       title: "Base mini app",
       subtitle: "Fast actions, onchain rewards.",
