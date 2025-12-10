@@ -39,7 +39,7 @@ export default function TokenomicsPage() {
             Tokenomics
           </h1>
           <p className="text-lg md:text-xl text-gray-300">
-            The dual-token model powering DeCleanup's global impact ecosystem.
+            The dual-token model powering DeCleanup&apos;s global impact ecosystem.
           </p>
         </div>
 
@@ -491,7 +491,7 @@ export default function TokenomicsPage() {
           <div className="bg-gray-900 border-l-4 border-[#58B12F] p-6 md:p-8 rounded-lg shadow-lg">
             <div className="space-y-4 text-base md:text-lg text-gray-300 leading-relaxed">
               <p>
-                $cDCU powers the full DeCleanup platform: governance, verifiers, dashboards, analytics, streaks, and Hypercert generation. It represents a user's cumulative reputation in the ecosystem.
+                $cDCU powers the full DeCleanup platform: governance, verifiers, dashboards, analytics, streaks, and Hypercert generation. It represents a user&apos;s cumulative reputation in the ecosystem.
               </p>
             </div>
           </div>
