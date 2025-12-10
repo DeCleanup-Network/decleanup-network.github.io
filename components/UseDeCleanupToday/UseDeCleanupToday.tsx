@@ -1,18 +1,21 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const UseDeCleanupToday = () => {
   const apps = [
     {
-      title: "Base mini app on Farcaster",
+      title: "Base mini app",
       subtitle: "Fast actions, onchain rewards.",
       bullets: [
         "Log cleanups from Farcaster",
         "Earn and use $bDCU on Base",
       ],
-      buttonLabel: "Open mini app",
-      buttonHref: "https://farcaster.xyz/miniapps/njiQzfqas3yN/decleanup-rewards",
+      buttonLabel: "Open mini app on Farcaster",
+      buttonHref: "https://farcaster.xyz/miniapps/SfsGBDcHpuSA/decleanup-rewards",
       buttonDisabled: false,
+      secondButtonLabel: "Open web app",
+      secondButtonHref: "https://miniapp.decleanup.net",
       note: null,
     },
     {
@@ -73,9 +76,24 @@ const UseDeCleanupToday = () => {
                   <span className="text-sm font-medium text-gray-400 tracking-wider">base</span>
                 </div>
               
-                {/* Title */}
+                {/* Image (if present) */}
+                {app.imageUrl && (
+                  <div className="mb-4 flex justify-center">
+                    <Image
+                      src={app.imageUrl}
+                      alt={index === 0 ? "DCU Icon" : "DCU Token Logo"}
+                      width={120}
+                      height={120}
+                      className="w-auto h-24 object-contain"
+                      unoptimized
+                    />
+                  </div>
+                )}
+
+                {/* Title - Secondary font, normal case */}
                 <h3
-                  className="text-xl sm:text-2xl lg:text-3xl font-normal uppercase mb-3 text-white"
+                  className="text-xl sm:text-2xl lg:text-3xl font-medium mb-3 text-white normal-case"
+                  style={{ fontFamily: 'var(--font-geist-sans), system-ui, -apple-system, sans-serif' }}
                 >
                   {app.title}
                 </h3>
@@ -102,25 +120,40 @@ const UseDeCleanupToday = () => {
                   </p>
                 )}
 
-                {/* Button */}
-                {app.buttonDisabled ? (
-                  <button
-                    disabled
-                    className="w-full bg-gray-800 text-gray-500 cursor-not-allowed px-6 py-3 text-sm sm:text-base font-semibold tracking-wider opacity-50 pointer-events-none"
-                  >
-                    {app.buttonLabel}
-                  </button>
-                ) : (
-                  <Link
-                    href={app.buttonHref}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full bg-[#FAFF00] text-black font-bold text-sm sm:text-base tracking-wider hover:bg-[#FAFF00]/90 transition-colors duration-200 border-2 border-[#FAFF00] normal-case hover:scale-105 hover:shadow-[0_0_20px_rgba(250,255,0,0.4)] transition-all duration-300 text-center block px-6 py-3"
-                    style={{ textTransform: 'none' }}
-                  >
-                    {app.buttonLabel}
-                  </Link>
-                )}
+                {/* Buttons */}
+                <div className="space-y-3">
+                  {app.buttonDisabled ? (
+                    <button
+                      disabled
+                      className="w-full bg-gray-800 text-gray-500 cursor-not-allowed px-6 py-3 text-sm sm:text-base font-semibold tracking-wider opacity-50 pointer-events-none"
+                    >
+                      {app.buttonLabel}
+                    </button>
+                  ) : (
+                    <Link
+                      href={app.buttonHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full bg-[#FAFF00] text-black font-bold text-sm sm:text-base tracking-wider hover:bg-[#FAFF00]/90 transition-colors duration-200 border-2 border-[#FAFF00] normal-case hover:scale-105 hover:shadow-[0_0_20px_rgba(250,255,0,0.4)] transition-all duration-300 text-center block px-6 py-3"
+                      style={{ textTransform: 'none' }}
+                    >
+                      {app.buttonLabel}
+                    </Link>
+                  )}
+                  
+                  {/* Second button (if present) */}
+                  {app.secondButtonLabel && app.secondButtonHref && (
+                    <Link
+                      href={app.secondButtonHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full bg-black text-[#FAFF00] font-bold text-sm sm:text-base tracking-wider hover:bg-gray-900 transition-colors duration-200 border-2 border-[#FAFF00] normal-case hover:scale-105 hover:shadow-[0_0_20px_rgba(250,255,0,0.4)] transition-all duration-300 text-center block px-6 py-3"
+                      style={{ textTransform: 'none' }}
+                    >
+                      {app.secondButtonLabel}
+                    </Link>
+                  )}
+                </div>
               </div>
             ))}
           </div>
@@ -133,9 +166,10 @@ const UseDeCleanupToday = () => {
                   <span className="text-sm font-medium text-gray-400 tracking-wider">celo</span>
                 </div>
             
-              {/* Title */}
+              {/* Title - Secondary font, normal case */}
               <h3
-                className="text-xl sm:text-2xl lg:text-3xl font-normal uppercase mb-3 text-white"
+                className="text-xl sm:text-2xl lg:text-3xl font-medium mb-3 text-white normal-case"
+                style={{ fontFamily: 'var(--font-geist-sans), system-ui, -apple-system, sans-serif' }}
               >
                 {apps[2].title}
               </h3>

@@ -9,6 +9,7 @@ const NavLink = () => {
     { name: "LITEPAPER", href: "/litepaper" },
     { name: "TOKENOMICS", href: "/tokenomics" },
     { name: "DOCS", href: "/docs" },
+    { name: "USER GUIDE", href: "/user-guide" },
   ];
 
   // External links
@@ -16,8 +17,7 @@ const NavLink = () => {
     { name: "LATEST ARTICLES", href: "https://paragraph.xyz/decleanupnet" },
     { name: "KARMA GAP", href: "https://gap.karmahq.xyz/project/decentralized-cleanup-network-decleanup-network"},
     { name: "GITHUB", href: "https://github.com/DeCleanup-Network" },
-    { name: "USER GUIDE", href: "https://giveth.io/project/decentralized-cleanup-network"},
-    { name: "BUG REPORT", href: "https://tally.so/r/mRBlbl" },
+    { name: "BUG REPORT", href: "https://docs.google.com/forms/d/e/1FAIpQLSfWCK4WmO9T-WJOOZwuDiG3yEJVX23RX_AkIa6tZHZ0J9Tf3w/viewform?usp=header" },
   ];
 
   return (
@@ -28,7 +28,7 @@ const NavLink = () => {
       <div className="mb-6">
         {/* Mobile Layout - Internal Links */}
         <div className="block md:hidden mb-4">
-          <div className="grid grid-cols-3 gap-3">
+          <div className="grid grid-cols-2 gap-3">
             {internalLinks.map((link, index) => (
               <Link
                 key={index}

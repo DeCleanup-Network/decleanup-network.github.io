@@ -123,7 +123,7 @@ const TokenizeImpactSection = () => {
                 rel="noopener noreferrer"
                 className="group relative px-8 py-4 bg-gradient-to-r from-gray-900 to-gray-800 text-[#FAFF00] font-semibold text-base sm:text-lg border-2 border-[#FAFF00] hover:border-[#58B12F] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(250,255,0,0.3)] text-center overflow-hidden"
               >
-                <span className="relative z-10">Twitter</span>
+                <span className="relative z-10">X</span>
                 <div className="absolute inset-0 bg-[#FAFF00] opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
               </Link>
               <Link
