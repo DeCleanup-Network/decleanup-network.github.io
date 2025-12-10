@@ -1,3 +1,4 @@
+import Image from "next/image";
 
 const Hero = () => {
   return (
@@ -9,15 +10,22 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-[#58B12F]/5 via-transparent to-[#FAFF00]/5 animate-pulse"></div>
       
       <div className="max-w-5xl mx-auto text-center relative z-10">
-        {/* Header with tagline on left and logo space on right */}
+        {/* Header with logo on left and tagline on right */}
         <div className="w-full flex justify-between items-center mb-6 sm:mb-8 animate-fade-in px-4">
-          <div className="text-left">
+          <div className="flex items-center">
+            <Image
+              src="https://ipfs.io/ipfs/bafkreidva4g2hrnmegqkkig4t743hprwk6g3or76foe25hyrvs4zngprja"
+              alt="DeCleanup Network Logo"
+              width={120}
+              height={48}
+              className="w-auto h-8 sm:h-10 lg:h-12 object-contain"
+              unoptimized
+            />
+          </div>
+          <div className="text-right">
             <span className="inline-block px-4 py-2 bg-[#FAFF00] text-black text-sm sm:text-base font-bold tracking-wider transform hover:scale-105 transition-transform duration-300 shadow-lg shadow-[#FAFF00]/20 normal-case" style={{ textTransform: 'none' }}>
               clean up, snap, earn
-        </span>
-      </div>
-          <div className="w-24 h-12 bg-transparent">
-            {/* Logo space - coming soon */}
+            </span>
           </div>
         </div>
 
