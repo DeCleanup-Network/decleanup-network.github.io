@@ -9,8 +9,10 @@ const NavLink = () => {
     { name: "LITEPAPER", href: "/litepaper" },
     { name: "TOKENOMICS", href: "/tokenomics" },
     { name: "DOCS", href: "/docs" },
-    { name: "USER GUIDE", href: "/user-guide" },
   ];
+
+  // User Guide (internal link)
+  const userGuideLink = { name: "USER GUIDE", href: "/userguide" };
 
   // External links
   const externalLinks = [
@@ -39,6 +41,13 @@ const NavLink = () => {
                 <div className="absolute inset-0 bg-[#58B12F] opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
               </Link>
             ))}
+            <Link
+              href={userGuideLink.href}
+              className="group relative bg-gray-900 text-[#58B12F] text-xs font-semibold rounded-lg px-3 py-3 text-center border-2 border-[#58B12F] hover:border-[#58B12F] hover:bg-[#58B12F]/10 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_rgba(88,177,47,0.3)] overflow-hidden"
+            >
+              <span className="relative z-10">{userGuideLink.name}</span>
+              <div className="absolute inset-0 bg-[#58B12F] opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+            </Link>
           </div>
         </div>
 
@@ -54,6 +63,13 @@ const NavLink = () => {
               <div className="absolute inset-0 bg-[#58B12F] opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
             </Link>
           ))}
+          <Link
+            href={userGuideLink.href}
+            className="group relative bg-gray-900 text-[#58B12F] text-base lg:text-lg font-semibold rounded-lg px-5 lg:px-6 py-3 lg:py-4 text-center border-2 border-[#58B12F] hover:border-[#58B12F] hover:bg-[#58B12F]/10 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(88,177,47,0.4)] overflow-hidden whitespace-nowrap"
+          >
+            <span className="relative z-10">{userGuideLink.name}</span>
+            <div className="absolute inset-0 bg-[#58B12F] opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+          </Link>
         </div>
       </div>
 

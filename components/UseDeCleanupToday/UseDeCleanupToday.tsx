@@ -21,7 +21,7 @@ const UseDeCleanupToday = () => {
       title: "Base mini app",
       subtitle: "Fast actions, onchain rewards.",
       bullets: [
-        "Log cleanups from Farcaster",
+        "Log in and share cleanup impact",
         "Earn and use $bDCU on Base",
       ],
       buttonLabel: "Open mini app on Farcaster",
@@ -41,7 +41,7 @@ const UseDeCleanupToday = () => {
       buttonLabel: "Link – coming soon",
       buttonHref: "#",
       buttonDisabled: true,
-      note: "Link will be updated by Tuesday end of day (UTC).",
+      note: "Link will be updated as soon as token is launched.",
     },
     {
       title: "Full dApp on Celo (coming soon)",
@@ -49,7 +49,7 @@ const UseDeCleanupToday = () => {
       bullets: [
         "Full dashboard, leaderboard, streaks",
         "Recycables rewards promo, supported by DeTrash Global and Recy.App",
-        "Impact Products, claim & stake flows",
+        "Impact Products and $cDCU rewards, staking",
         "Governance with $cDCU on Gardens.fund",
         "Hypercerts: 1 cleanup hypercert after every 10 verified cleanups",
       ],

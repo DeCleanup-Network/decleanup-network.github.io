@@ -23,8 +23,8 @@ const Hero = () => {
             />
           </div>
           <div className="text-right">
-            <span className="inline-block px-4 py-2 bg-[#FAFF00] text-black text-sm sm:text-base font-bold tracking-wider transform hover:scale-105 transition-transform duration-300 shadow-lg shadow-[#FAFF00]/20 normal-case" style={{ textTransform: 'none' }}>
-              clean up, snap, earn
+            <span className="inline-block px-4 py-2 bg-[#FAFF00] text-black text-sm sm:text-base font-normal tracking-wider transform hover:scale-105 transition-transform duration-300 shadow-lg shadow-[#FAFF00]/20 uppercase">
+              CLEAN UP, SNAP, EARN
             </span>
           </div>
         </div>
