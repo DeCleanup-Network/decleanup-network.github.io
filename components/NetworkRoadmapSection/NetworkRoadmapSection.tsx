@@ -386,7 +386,7 @@ const NetworkRoadmapSection = () => {
             <div className="flex justify-end items-center">
               <div className="text-right">
                 <p className="text-base sm:text-lg font-bold text-gray-300">
-                  — Yuichi Hosomo, New Japan
+                  — Yuichi Hosomo, Hem Japan
                 </p>
               </div>
             </div>

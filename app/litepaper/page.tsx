@@ -96,7 +96,7 @@ export default function LitepaperPage() {
             Our Solution
           </h2>
           <ul className="space-y-3 md:text-lg leading-relaxed text-gray-300 list-disc list-inside ml-4">
-            <li><strong className="text-white">Impact Products</strong> — dynamic soulbound NFTs representing real-world cleanup impact</li>
+            <li><strong className="text-white">Impact Products</strong> — dynamic NFTs representing real-world cleanup impact</li>
             <li><strong className="text-white">Multichain Architecture</strong> — Base mini app for fast actions, Celo full dApp for governance & analytics</li>
             <li><strong className="text-white">Verifiable Reputation</strong> — user identity grows with real contributions</li>
             <li><strong className="text-white">Hypercerts Integration</strong> — automatically minted every 10 cleanups</li>
@@ -149,14 +149,13 @@ export default function LitepaperPage() {
             Impact Products
           </h2>
           <p className="md:text-lg leading-relaxed text-gray-300 mb-6">
-            Dynamic soulbound NFTs representing verified environmental work.
+            Dynamic NFTs representing verified environmental work.
           </p>
           
           <h3 className="text-xl md:text-2xl font-normal uppercase text-white mb-4">
             Key Characteristics:
           </h3>
           <ul className="space-y-2 md:text-lg leading-relaxed text-gray-300 list-disc list-inside ml-4 mb-6">
-            <li>Soulbound</li>
             <li>Dynamic metadata</li>
             <li>Verifiable history</li>
             <li>Level progression</li>
@@ -166,8 +165,11 @@ export default function LitepaperPage() {
           <h3 className="text-xl md:text-2xl font-normal uppercase text-white mb-4">
             Level Progression:
           </h3>
-          <p className="md:text-lg leading-relaxed text-gray-300">
+          <p className="md:text-lg leading-relaxed text-gray-300 mb-2">
             Newbie → Pro → Hero → Guardian
+          </p>
+          <p className="md:text-lg leading-relaxed text-gray-300">
+            1, 2, 3 - Newbie; 4, 5, 6 - Pro; 7, 8, 9 - Hero; 10 - Guardian
           </p>
         </section>
 
@@ -207,9 +209,9 @@ export default function LitepaperPage() {
           <ul className="space-y-2 md:text-lg leading-relaxed text-gray-300 list-disc list-inside ml-4">
             <li>cleanup rewards</li>
             <li>streaks</li>
-            <li>referrals, verifier staking</li>
+            <li>referrals</li>
+            <li>verifier staking</li>
             <li>simple incentives</li>
-            <li>future staking for $REBAZ</li>
           </ul>
         </section>
 
@@ -253,10 +255,7 @@ export default function LitepaperPage() {
           </h2>
           <ul className="space-y-2 md:text-lg leading-relaxed text-gray-300 list-disc list-inside ml-4">
             <li>Staked verifiers - 100 $bDCU or $cDCU required to stake</li>
-            <li>Weighted approvals</li>
-            <li>Anti-fraud slashing</li>
-            <li>Accuracy score</li>
-            <li>Appeals system</li>
+            <li>Verifier rewards - 1 $bDCU or 1 $cDCU per valid submission</li>
           </ul>
         </section>
 
