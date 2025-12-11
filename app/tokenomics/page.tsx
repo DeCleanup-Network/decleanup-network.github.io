@@ -48,36 +48,35 @@ export default function TokenomicsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Card 1 — $bDCU — Base */}
             <div className="bg-gray-900 border-l-4 border-[#58B12F] p-6 rounded-lg flex flex-col h-full">
-              <h2 className="text-2xl md:text-3xl font-normal uppercase text-white mb-2">
-                $bDCU — Base
+              <h2 
+                className="text-2xl md:text-3xl font-medium text-white mb-2 normal-case"
+                style={{ fontFamily: 'var(--font-geist-sans), system-ui, -apple-system, sans-serif' }}
+              >
+                BASE TOKEN: $bDCU
               </h2>
               <p className="text-base md:text-lg text-gray-300 mb-6">
-                Fast rewards, staking & trading
+                The &quot;action token.&quot; Used on Base for:
               </p>
               <ul className="space-y-3 text-base md:text-lg text-gray-300 mb-6 flex-grow">
                 <li className="flex items-start">
                   <span className="text-[#58B12F] mr-2">•</span>
-                  <span>Earned in the Farcaster Mini App</span>
+                  <span>cleanup rewards</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-[#58B12F] mr-2">•</span>
-                  <span>Liquid ERC-20 token deployed via Clanker</span>
+                  <span>streaks</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-[#58B12F] mr-2">•</span>
-                  <span>Auto-created Uniswap v3 liquidity and locked pool</span>
+                  <span>referrals</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-[#58B12F] mr-2">•</span>
-                  <span>Used for fast cleanup incentives</span>
+                  <span>verifier staking</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-[#58B12F] mr-2">•</span>
-                  <span>Can be staked to become a Verifier</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#58B12F] mr-2">•</span>
-                  <span>Powers the Base social & participation layer</span>
+                  <span>simple incentives</span>
                 </li>
               </ul>
               <a
@@ -92,8 +91,11 @@ export default function TokenomicsPage() {
 
             {/* Card 2 — $cDCU — Celo */}
             <div className="bg-gray-900 border-l-4 border-[#FAFF00] p-6 rounded-lg flex flex-col h-full">
-              <h2 className="text-2xl md:text-3xl font-normal uppercase text-white mb-2">
-                $cDCU — Celo
+              <h2 
+                className="text-2xl md:text-3xl font-medium text-white mb-2 normal-case"
+                style={{ fontFamily: 'var(--font-geist-sans), system-ui, -apple-system, sans-serif' }}
+              >
+                CELO TOKEN: $cDCU
               </h2>
               <p className="text-base md:text-lg text-gray-300 mb-6">
                 Reputation, governance & advanced utilities
@@ -121,10 +123,6 @@ export default function TokenomicsPage() {
                 </li>
                 <li className="flex items-start">
                   <span className="text-[#FAFF00] mr-2">•</span>
-                  <span>Hypercert minted every 10 cleanups</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#FAFF00] mr-2">•</span>
                   <span>Powers the Celo ReFi + governance layer</span>
                 </li>
               </ul>
@@ -148,10 +146,16 @@ export default function TokenomicsPage() {
               <thead>
                 <tr className="border-b-2 border-[#58B12F]">
                   <th className="text-left py-4 px-4 text-xl font-normal uppercase text-white"></th>
-                  <th className="text-center py-4 px-4 text-xl font-normal uppercase text-[#58B12F]">
+                  <th 
+                    className="text-center py-4 px-4 text-xl font-medium text-[#58B12F] normal-case"
+                    style={{ fontFamily: 'var(--font-geist-sans), system-ui, -apple-system, sans-serif' }}
+                  >
                     $bDCU (Base)
                   </th>
-                  <th className="text-center py-4 px-4 text-xl font-normal uppercase text-[#FAFF00]">
+                  <th 
+                    className="text-center py-4 px-4 text-xl font-medium text-[#FAFF00] normal-case"
+                    style={{ fontFamily: 'var(--font-geist-sans), system-ui, -apple-system, sans-serif' }}
+                  >
                     $cDCU (Celo)
                   </th>
                 </tr>
@@ -226,7 +230,7 @@ export default function TokenomicsPage() {
               <ul className="space-y-3 text-base md:text-lg text-gray-300">
                 <li className="flex items-start">
                   <span className="text-[#58B12F] mr-2">•</span>
-                  <span>Dynamic soulbound NFTs</span>
+                  <span>Dynamic NFTs</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-[#58B12F] mr-2">•</span>
@@ -296,7 +300,10 @@ export default function TokenomicsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
             {/* $bDCU Lifecycle */}
             <div>
-              <h3 className="text-2xl md:text-3xl font-normal uppercase text-[#58B12F] mb-6">
+              <h3 
+                className="text-2xl md:text-3xl font-medium text-[#58B12F] mb-6 normal-case"
+                style={{ fontFamily: 'var(--font-geist-sans), system-ui, -apple-system, sans-serif' }}
+              >
                 $bDCU Lifecycle
               </h3>
               <div className="relative pl-8">
@@ -337,7 +344,10 @@ export default function TokenomicsPage() {
 
             {/* $cDCU Lifecycle */}
             <div>
-              <h3 className="text-2xl md:text-3xl font-normal uppercase text-[#FAFF00] mb-6">
+              <h3 
+                className="text-2xl md:text-3xl font-medium text-[#FAFF00] mb-6 normal-case"
+                style={{ fontFamily: 'var(--font-geist-sans), system-ui, -apple-system, sans-serif' }}
+              >
                 $cDCU Lifecycle
               </h3>
               <div className="relative pl-8">
@@ -369,14 +379,7 @@ export default function TokenomicsPage() {
                   <div className="relative">
                     <div className="absolute left-[-2rem] top-2 w-6 h-6 rounded-full bg-[#FAFF00] border-2 border-black"></div>
                     <div className="pl-4">
-                      <div className="text-lg font-semibold text-white mb-1">4 — Receive a Hypercert every 10 cleanups</div>
-                    </div>
-                  </div>
-                  
-                  <div className="relative">
-                    <div className="absolute left-[-2rem] top-2 w-6 h-6 rounded-full bg-[#FAFF00] border-2 border-black"></div>
-                    <div className="pl-4">
-                      <div className="text-lg font-semibold text-white mb-1">5 — Vote on proposals through Gardens.fund</div>
+                      <div className="text-lg font-semibold text-white mb-1">4 — Vote on proposals through Gardens.fund</div>
                     </div>
                   </div>
                 </div>
@@ -385,15 +388,42 @@ export default function TokenomicsPage() {
           </div>
         </section>
 
-        {/* SECTION 5 — $cDCU SUPPLY & ALLOCATION */}
+        {/* SECTION 5 — $bDCU SUPPLY & ALLOCATION */}
         <section className="mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-normal uppercase text-white mb-4 text-center">
-            $cDCU Supply & Allocation
+            supply and allocation.
           </h2>
           <p className="text-xl md:text-2xl font-semibold text-center text-gray-300 mb-8">
-            Total Supply: 10,000,000 $cDCU
+            $bDCU: total supply TBA
           </p>
           
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-gray-900 border-l-4 border-[#58B12F] p-6 rounded-lg">
+              <h3 className="text-xl font-semibold text-white mb-2">
+                Circulating Supply — 85%
+              </h3>
+              <p className="text-base text-gray-300">
+                85% of the total supply circulates immediately
+              </p>
+            </div>
+            
+            <div className="bg-gray-900 border-l-4 border-[#58B12F] p-6 rounded-lg">
+              <h3 className="text-xl font-semibold text-white mb-2">
+                Clanker Vault — 15%
+              </h3>
+              <p className="text-base text-gray-300">
+                15% of supply is held in the Clanker Vault for burns, ecosystem rewards, and liquidity stabilization
+              </p>
+            </div>
+          </div>
+          
+          <p className="text-xl md:text-2xl font-semibold text-center text-gray-300 mb-8 mt-8">
+            $cDCU: total supply 10,000,000
+          </p>
+        </section>
+
+        {/* SECTION 6 — $cDCU SUPPLY & ALLOCATION */}
+        <section className="mb-12 md:mb-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="bg-gray-900 border-l-4 border-[#58B12F] p-6 rounded-lg">
               <h3 className="text-xl font-semibold text-white mb-2">
@@ -460,48 +490,11 @@ export default function TokenomicsPage() {
           </div>
         </section>
 
-        {/* SECTION 6 — CLANKER HIGHLIGHT BOX */}
-        <section className="mb-12 md:mb-16">
-          <div className="bg-gray-900 border-l-4 border-[#FAFF00] p-6 md:p-8 rounded-lg shadow-lg">
-            <h2 className="text-2xl md:text-3xl font-normal uppercase text-white mb-6">
-              How Clanker Works
-            </h2>
-            <div className="space-y-4 text-base md:text-lg text-gray-300 leading-relaxed">
-              <p>
-                Clanker automatically deploys the $bDCU token, creates a Uniswap v3 liquidity pool, and locks initial liquidity for transparent and secure trading.
-              </p>
-              <p>
-                For $bDCU specifically:
-              </p>
-              <ul className="space-y-2 ml-6 list-disc">
-                <li>85% of the total supply circulates immediately</li>
-                <li>15% of supply is held in the Clanker Vault</li>
-                <li>The Clanker Vault is used for burns, ecosystem rewards, and liquidity stabilization</li>
-                <li>Full total supply remains TBA (to be announced after final audits)</li>
-              </ul>
-              <p>
-                This structure creates a partially deflationary model and provides long-term sustainability for Base-side participation.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* SECTION 7 — CELO UTILITY HIGHLIGHT BOX */}
-        <section className="mb-12 md:mb-16">
-          <div className="bg-gray-900 border-l-4 border-[#58B12F] p-6 md:p-8 rounded-lg shadow-lg">
-            <div className="space-y-4 text-base md:text-lg text-gray-300 leading-relaxed">
-              <p>
-                $cDCU powers the full DeCleanup platform: governance, verifiers, dashboards, analytics, streaks, and Hypercert generation. It represents a user&apos;s cumulative reputation in the ecosystem.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* SECTION 8 — CLOSING STATEMENT */}
+        {/* SECTION 7 — CLOSING STATEMENT */}
         <section className="mb-12 md:mb-16">
           <div className="text-center">
             <p className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
-              Built for a transparent global impact economy — where every cleanup becomes verified onchain action.
+              Built for a transparent global impact economy - where every cleanup becomes verified onchain action.
             </p>
           </div>
         </section>
