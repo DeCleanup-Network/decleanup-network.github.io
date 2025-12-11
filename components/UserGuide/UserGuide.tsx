@@ -12,7 +12,7 @@ const UserGuide = () => {
             USER GUIDE
           </h1>
           <p className="text-lg md:text-xl text-gray-300">
-            A simple flow to start using DeCleanup today.
+            DeCleanup Mini app - a simple flow to start using DeCleanup rewards today.
           </p>
         </div>
 
@@ -238,6 +238,19 @@ const UserGuide = () => {
               </p>
               <p className="text-[#FAFF00] text-2xl md:text-3xl font-bold">
                 5 $bDCU
+              </p>
+            </div>
+
+            {/* Verifier Reward */}
+            <div className="bg-gray-900 border-l-4 border-[#58B12F] rounded-xl p-6 lg:p-8 flex flex-col hover:shadow-[0_0_30px_rgba(88,177,47,0.2)] transition-all duration-300">
+              <h3 className="text-xl md:text-2xl font-semibold text-white mb-2">
+                Verifier Reward
+              </h3>
+              <p className="text-gray-400 text-sm mb-3">
+                Verifier reward for valid submission verification
+              </p>
+              <p className="text-[#58B12F] text-2xl md:text-3xl font-bold">
+                1 $bDCU
               </p>
             </div>
           </div>
