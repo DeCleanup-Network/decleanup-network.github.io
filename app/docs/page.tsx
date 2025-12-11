@@ -184,7 +184,9 @@ export default function DocsPage() {
             {/* Quick Start */}
             <section
               id="quick-start"
-              ref={(el) => (sectionRefs.current["quick-start"] = el)}
+              ref={(el) => {
+                sectionRefs.current["quick-start"] = el;
+              }}
               className="mb-16 scroll-mt-24"
             >
               <h2 className="text-3xl md:text-4xl font-normal uppercase text-white mb-6 border-b border-[#58B12F] pb-3">
@@ -234,7 +236,9 @@ npm run dev`}</code>
             {/* Tech Stack */}
             <section
               id="tech-stack"
-              ref={(el) => (sectionRefs.current["tech-stack"] = el)}
+              ref={(el) => {
+                sectionRefs.current["tech-stack"] = el;
+              }}
               className="mb-16 scroll-mt-24"
             >
               <h2 className="text-3xl md:text-4xl font-normal uppercase text-white mb-6 border-b border-[#58B12F] pb-3">
@@ -301,7 +305,9 @@ npm run dev`}</code>
             {/* Architecture Overview */}
             <section
               id="architecture"
-              ref={(el) => (sectionRefs.current["architecture"] = el)}
+              ref={(el) => {
+                sectionRefs.current["architecture"] = el;
+              }}
               className="mb-16 scroll-mt-24"
             >
               <h2 className="text-3xl md:text-4xl font-normal uppercase text-white mb-6 border-b border-[#58B12F] pb-3">
@@ -354,7 +360,9 @@ npm run dev`}</code>
             {/* Environment Setup */}
             <section
               id="environment"
-              ref={(el) => (sectionRefs.current["environment"] = el)}
+              ref={(el) => {
+                sectionRefs.current["environment"] = el;
+              }}
               className="mb-16 scroll-mt-24"
             >
               <h2 className="text-3xl md:text-4xl font-normal uppercase text-white mb-6 border-b border-[#58B12F] pb-3">
@@ -436,7 +444,9 @@ npm run dev`}</code>
             {/* Development Commands */}
             <section
               id="commands"
-              ref={(el) => (sectionRefs.current["commands"] = el)}
+              ref={(el) => {
+                sectionRefs.current["commands"] = el;
+              }}
               className="mb-16 scroll-mt-24"
             >
               <h2 className="text-3xl md:text-4xl font-normal uppercase text-white mb-6 border-b border-[#58B12F] pb-3">
@@ -511,7 +521,9 @@ npm run dev`}</code>
             {/* Smart Contracts */}
             <section
               id="contracts"
-              ref={(el) => (sectionRefs.current["contracts"] = el)}
+              ref={(el) => {
+                sectionRefs.current["contracts"] = el;
+              }}
               className="mb-16 scroll-mt-24"
             >
               <h2 className="text-3xl md:text-4xl font-normal uppercase text-white mb-6 border-b border-[#58B12F] pb-3">
@@ -623,7 +635,9 @@ npm run dev`}</code>
             {/* Project Structure */}
             <section
               id="structure"
-              ref={(el) => (sectionRefs.current["structure"] = el)}
+              ref={(el) => {
+                sectionRefs.current["structure"] = el;
+              }}
               className="mb-16 scroll-mt-24"
             >
               <h2 className="text-3xl md:text-4xl font-normal uppercase text-white mb-6 border-b border-[#58B12F] pb-3">
@@ -653,7 +667,9 @@ npm run dev`}</code>
             {/* Testing */}
             <section
               id="testing"
-              ref={(el) => (sectionRefs.current["testing"] = el)}
+              ref={(el) => {
+                sectionRefs.current["testing"] = el;
+              }}
               className="mb-16 scroll-mt-24"
             >
               <h2 className="text-3xl md:text-4xl font-normal uppercase text-white mb-6 border-b border-[#58B12F] pb-3">
@@ -693,7 +709,9 @@ npm run dev`}</code>
             {/* Deployment */}
             <section
               id="deployment"
-              ref={(el) => (sectionRefs.current["deployment"] = el)}
+              ref={(el) => {
+                sectionRefs.current["deployment"] = el;
+              }}
               className="mb-16 scroll-mt-24"
             >
               <h2 className="text-3xl md:text-4xl font-normal uppercase text-white mb-6 border-b border-[#58B12F] pb-3">
@@ -728,7 +746,9 @@ npm run dev`}</code>
             {/* API Routes */}
             <section
               id="api-routes"
-              ref={(el) => (sectionRefs.current["api-routes"] = el)}
+              ref={(el) => {
+                sectionRefs.current["api-routes"] = el;
+              }}
               className="mb-16 scroll-mt-24"
             >
               <h2 className="text-3xl md:text-4xl font-normal uppercase text-white mb-6 border-b border-[#58B12F] pb-3">
@@ -776,7 +796,9 @@ npm run dev`}</code>
             {/* Security Notes */}
             <section
               id="security"
-              ref={(el) => (sectionRefs.current["security"] = el)}
+              ref={(el) => {
+                sectionRefs.current["security"] = el;
+              }}
               className="mb-16 scroll-mt-24"
             >
               <h2 className="text-3xl md:text-4xl font-normal uppercase text-white mb-6 border-b border-[#58B12F] pb-3">
@@ -801,7 +823,9 @@ npm run dev`}</code>
             {/* Troubleshooting */}
             <section
               id="troubleshooting"
-              ref={(el) => (sectionRefs.current["troubleshooting"] = el)}
+              ref={(el) => {
+                sectionRefs.current["troubleshooting"] = el;
+              }}
               className="mb-16 scroll-mt-24"
             >
               <h2 className="text-3xl md:text-4xl font-normal uppercase text-white mb-6 border-b border-[#58B12F] pb-3">
@@ -838,7 +862,9 @@ npm run dev`}</code>
             {/* Resources & Links */}
             <section
               id="resources"
-              ref={(el) => (sectionRefs.current["resources"] = el)}
+              ref={(el) => {
+                sectionRefs.current["resources"] = el;
+              }}
               className="mb-16 scroll-mt-24"
             >
               <h2 className="text-3xl md:text-4xl font-normal uppercase text-white mb-6 border-b border-[#58B12F] pb-3">
