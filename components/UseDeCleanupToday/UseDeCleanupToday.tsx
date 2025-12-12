@@ -25,7 +25,8 @@ const UseDeCleanupToday = () => {
         "Earn and use $bDCU on Base",
       ],
       buttonLabel: "Open mini app on Farcaster",
-      buttonHref: "https://farcaster.xyz/miniapps/SfsGBDcHpuSA/decleanup-rewards",
+      buttonHref:
+        "https://farcaster.xyz/miniapps/SfsGBDcHpuSA/decleanup-rewards",
       buttonDisabled: false,
       secondButtonLabel: "Open web app",
       secondButtonHref: "https://miniapp.decleanup.net",
@@ -42,6 +43,7 @@ const UseDeCleanupToday = () => {
       buttonHref: "#",
       buttonDisabled: true,
       note: "Link will be updated as soon as token is launched.",
+      imageUrl: "/token-icon.png",
     },
     {
       title: "Full dApp on Celo (coming soon)",
@@ -61,17 +63,19 @@ const UseDeCleanupToday = () => {
   ];
 
   return (
-    <section id="apps" className="w-full px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+    <section
+      id="apps"
+      className="w-full px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20"
+    >
       <div className="mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="text-center mb-8 lg:mb-12">
-          <h2
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal uppercase text-white mb-4 sm:mb-6"
-          >
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal uppercase text-white mb-4 sm:mb-6">
             Earn DeCleanup Rewards today
           </h2>
           <p className="text-lg sm:text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto">
-            Choose how you want to log cleanups, earn, and govern our impact network.
+            Choose how you want to log cleanups, earn, and govern our impact
+            network.
           </p>
         </div>
 
@@ -82,22 +86,28 @@ const UseDeCleanupToday = () => {
             {apps.slice(0, 2).map((app, index) => (
               <div
                 key={index}
-                className="bg-gray-900 border-2 border-gray-800 rounded-lg p-6 lg:p-8 flex flex-col hover:border-[#58B12F] transition-all duration-300 hover:shadow-[0_0_30px_rgba(88,177,47,0.2)] hover:-translate-y-2 card-hover"
+                className="bg-gray-900 border-2 border-gray-800 rounded-lg p-6 lg:p-8 flex flex-col  transition-all duration-300 hover:shadow-[0_0_30px_rgba(88,177,47,0.2)] hover:-translate-y-2 card-hover"
               >
                 {/* Chain Label */}
-                <div className="mb-4">
-                  <span className="text-sm font-medium text-gray-400 tracking-wider">base</span>
+                <div className="mb-4 flex justify-center items-center w-full">
+                  <Image
+                    src="/base-logo-white.svg"
+                    alt="Base"
+                    width={100}
+                    height={32}
+                    className="h-5 w-auto"
+                  />
                 </div>
-              
+
                 {/* Image (if present) */}
                 {app.imageUrl && (
                   <div className="mb-4 flex justify-center">
                     <Image
                       src={app.imageUrl}
                       alt={index === 0 ? "DCU Icon" : "DCU Token Logo"}
-                      width={120}
-                      height={120}
-                      className="w-auto h-24 object-contain"
+                      width={60}
+                      height={60}
+                      className="w-14 h-12 object-contain"
                       unoptimized
                     />
                   </div>
@@ -106,7 +116,10 @@ const UseDeCleanupToday = () => {
                 {/* Title - Secondary font, normal case */}
                 <h3
                   className="text-xl sm:text-2xl lg:text-3xl font-medium mb-3 text-white normal-case"
-                  style={{ fontFamily: 'var(--font-geist-sans), system-ui, -apple-system, sans-serif' }}
+                  style={{
+                    fontFamily:
+                      "var(--font-geist-sans), system-ui, -apple-system, sans-serif",
+                  }}
                 >
                   {app.title}
                 </h3>
@@ -148,12 +161,12 @@ const UseDeCleanupToday = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full bg-[#FAFF00] text-black font-bold text-sm sm:text-base tracking-wider hover:bg-[#FAFF00]/90 transition-colors duration-200 border-2 border-[#FAFF00] normal-case hover:scale-105 hover:shadow-[0_0_20px_rgba(250,255,0,0.4)] transition-all duration-300 text-center block px-6 py-3"
-                      style={{ textTransform: 'none' }}
+                      style={{ textTransform: "none" }}
                     >
                       {app.buttonLabel}
                     </Link>
                   )}
-                  
+
                   {/* Second button (if present) */}
                   {app.secondButtonLabel && app.secondButtonHref && (
                     <Link
@@ -161,7 +174,7 @@ const UseDeCleanupToday = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full bg-black text-[#FAFF00] font-bold text-sm sm:text-base tracking-wider hover:bg-gray-900 transition-colors duration-200 border-2 border-[#FAFF00] normal-case hover:scale-105 hover:shadow-[0_0_20px_rgba(250,255,0,0.4)] transition-all duration-300 text-center block px-6 py-3"
-                      style={{ textTransform: 'none' }}
+                      style={{ textTransform: "none" }}
                     >
                       {app.secondButtonLabel}
                     </Link>
@@ -174,15 +187,25 @@ const UseDeCleanupToday = () => {
           {/* Celo Card - Full Width */}
           {apps[2] && (
             <div className="bg-gray-900 border-2 border-gray-800 rounded-lg p-6 lg:p-8 flex flex-col hover:border-[#58B12F] transition-all duration-300 hover:shadow-[0_0_30px_rgba(88,177,47,0.2)] hover:-translate-y-2 card-hover">
-                {/* Chain Label */}
-                <div className="mb-4">
-                  <span className="text-sm font-medium text-gray-400 tracking-wider">celo</span>
-                </div>
-            
+              {/* Chain Label */}
+              <div className="mb-4 flex justify-center items-center w-full">
+                <Image
+                  src="/celo-celo-logo.svg"
+                  alt="Celo"
+                  width={100}
+                  height={100}
+                  className="h-5 w-auto"
+                />
+                <span className="text-sm font-medium text-gray-400 tracking-wider ml-2">celo</span>
+              </div>
+
               {/* Title - Secondary font, normal case */}
               <h3
                 className="text-xl sm:text-2xl lg:text-3xl font-medium mb-3 text-white normal-case"
-                style={{ fontFamily: 'var(--font-geist-sans), system-ui, -apple-system, sans-serif' }}
+                style={{
+                  fontFamily:
+                    "var(--font-geist-sans), system-ui, -apple-system, sans-serif",
+                }}
               >
                 {apps[2].title}
               </h3>
@@ -204,9 +227,9 @@ const UseDeCleanupToday = () => {
                         <span className="mr-2 text-[#58B12F] font-bold">•</span>
                         <span>
                           {parts[0]}
-                          <Link 
-                            href={linkUrl} 
-                            target="_blank" 
+                          <Link
+                            href={linkUrl}
+                            target="_blank"
                             rel="noopener noreferrer"
                             className="text-[#58B12F] hover:text-[#FAFF00] underline transition-colors"
                           >
@@ -247,7 +270,7 @@ const UseDeCleanupToday = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full bg-[#FAFF00] text-black font-bold text-sm sm:text-base tracking-wider hover:bg-[#FAFF00]/90 transition-colors duration-200 border-2 border-[#FAFF00] normal-case hover:scale-105 hover:shadow-[0_0_20px_rgba(250,255,0,0.4)] transition-all duration-300 text-center block px-6 py-3"
-                  style={{ textTransform: 'none' }}
+                  style={{ textTransform: "none" }}
                 >
                   {apps[2].buttonLabel}
                 </Link>
@@ -261,4 +284,3 @@ const UseDeCleanupToday = () => {
 };
 
 export default UseDeCleanupToday;
-

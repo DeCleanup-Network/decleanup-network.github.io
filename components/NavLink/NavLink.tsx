@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Divider from "../ui/Divider";
 // Simple Divider component since it's imported
 
@@ -17,15 +18,21 @@ const NavLink = () => {
   // External links
   const externalLinks = [
     { name: "LATEST ARTICLES", href: "https://paragraph.xyz/decleanupnet" },
-    { name: "KARMA GAP", href: "https://gap.karmahq.xyz/project/decentralized-cleanup-network-decleanup-network"},
+    {
+      name: "KARMA GAP",
+      href: "https://gap.karmahq.xyz/project/decentralized-cleanup-network-decleanup-network",
+    },
     { name: "GITHUB", href: "https://github.com/DeCleanup-Network" },
-    { name: "BUG REPORT", href: "https://docs.google.com/forms/d/e/1FAIpQLSfWCK4WmO9T-WJOOZwuDiG3yEJVX23RX_AkIa6tZHZ0J9Tf3w/viewform?usp=header" },
+    {
+      name: "BUG REPORT",
+      href: "https://docs.google.com/forms/d/e/1FAIpQLSfWCK4WmO9T-WJOOZwuDiG3yEJVX23RX_AkIa6tZHZ0J9Tf3w/viewform?usp=header",
+    },
   ];
 
   return (
     <nav className="relative overflow-hidden">
       <Divider className="" />
-      
+
       {/* Internal Links Section - More Prominent */}
       <div className="mb-6">
         {/* Mobile Layout - Internal Links */}
@@ -78,7 +85,7 @@ const NavLink = () => {
         <p className="text-xs md:text-sm text-gray-500 text-center mb-3 uppercase tracking-wide">
           External Links
         </p>
-        
+
         {/* Mobile Layout - External Links */}
         <div className="block md:hidden">
           <div className="grid grid-cols-2 gap-2">
@@ -113,19 +120,40 @@ const NavLink = () => {
           ))}
         </div>
       </div>
-      
+
       <Divider className="mt-6 bg-gray-800" />
 
       {/* Footer */}
-      <div className="flex flex-col md:flex-row justify-between items-center mt-6 pt-6 border-t border-gray-800">
-        <span 
-          className="text-white text-base lg:text-lg font-medium mb-4 md:mb-0"
-        >
-          DECLEANUP NETWORK 2025©
-        </span>
-        <div className="flex items-center gap-4 text-sm text-gray-400">
-          <span>base</span>
-          <span className="text-gray-600">•</span>
+      <div className="flex flex-col md:flex-row justify-center md:justify-between items-center mt-6 pt-6 border-t border-gray-800 gap-4 md:gap-0">
+        <div className="flex flex-col md:flex-row items-center gap-3 md:gap-4 order-2 md:order-1">
+          <Image
+            src="https://ipfs.io/ipfs/bafkreidva4g2hrnmegqkkig4t743hprwk6g3or76foe25hyrvs4zngprja"
+            alt="DeCleanup Network Logo"
+            width={120}
+            height={48}
+            className="h-10 md:h-12 w-auto"
+            unoptimized
+          />
+          <span className="text-white text-sm md:text-base lg:text-lg font-medium text-center md:text-left">
+            2025©
+          </span>
+        </div>
+        <div className="flex items-center justify-center gap-3 md:gap-4 order-1 md:order-2">
+          <Image
+            src="/base-logo-white.svg"
+            alt="Base"
+            width={100}
+            height={32}
+            className="h-5 md:h-6 w-auto"
+          />
+          <span className="text-gray-600 text-xs md:text-sm">•</span>
+          <Image
+            src="/celo-celo-logo.svg"
+            alt="Celo"
+            width={100}
+            height={100}
+            className="h-5 md:h-6 w-auto"
+          />
           <span>celo</span>
         </div>
       </div>
