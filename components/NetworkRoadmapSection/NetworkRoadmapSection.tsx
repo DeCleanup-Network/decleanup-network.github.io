@@ -94,6 +94,7 @@ const RoadmapCarousel = ({ roadmap }: { roadmap: Array<{ phase: string; bullets:
                       ? "border-[#58B12F] shadow-[0_0_25px_rgba(88,177,47,0.15)]" 
                       : "border-gray-800 cursor-pointer"
                   } hover:border-[#58B12F] hover:shadow-[0_0_25px_rgba(88,177,47,0.15)] hover:-translate-y-2`}
+                  onMouseEnter={() => !isActive && setCurrentIndex(index)}
                   onClick={() => !isActive && setCurrentIndex(index)}
                   style={{
                     transform: isActive ? "scale(1)" : "scale(0.9)",
