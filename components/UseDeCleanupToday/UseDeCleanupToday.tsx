@@ -33,10 +33,10 @@ const UseDeCleanupToday = () => {
       note: null,
     },
     {
-      title: "$bDCU token on Base (Clanker)",
+      title: "$bDCU token on Base",
       subtitle: "Cleanup reward + trading token.",
       bullets: [
-        "Live on Base via Clanker",
+        "Live on Base",
         "Used for quick rewards and trading",
       ],
       buttonLabel: "Link – coming soon",
@@ -142,7 +142,21 @@ const UseDeCleanupToday = () => {
                 {/* Note (if present) */}
                 {app.note && (
                   <p className="text-sm text-gray-500 mb-6 italic">
-                    {app.note}
+                    {app.note.startsWith("Contract:") ? (
+                      <>
+                        Contract:{" "}
+                        <Link
+                          href={`https://basescan.org/address/${app.note.split("Contract:")[1].trim()}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[#58B12F] hover:text-[#FAFF00] underline transition-colors"
+                        >
+                          {app.note.split("Contract:")[1].trim()}
+                        </Link>
+                      </>
+                    ) : (
+                      app.note
+                    )}
                   </p>
                 )}
 
@@ -252,7 +266,21 @@ const UseDeCleanupToday = () => {
               {/* Note (if present) */}
               {apps[2].note && (
                 <p className="text-sm lg:text-base text-gray-500 mb-6 italic">
-                  {apps[2].note}
+                  {apps[2].note.startsWith("Contract:") ? (
+                    <>
+                      Contract:{" "}
+                      <Link
+                        href={`https://basescan.org/address/${apps[2].note.split("Contract:")[1].trim()}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#58B12F] hover:text-[#FAFF00] underline transition-colors"
+                      >
+                        {apps[2].note.split("Contract:")[1].trim()}
+                      </Link>
+                    </>
+                  ) : (
+                    apps[2].note
+                  )}
                 </p>
               )}
 

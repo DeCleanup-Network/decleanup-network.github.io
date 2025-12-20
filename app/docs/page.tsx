@@ -210,8 +210,8 @@ export default function DocsPage() {
               </h3>
               <div className="bg-gray-900 rounded-lg p-4 border-l-4 border-[#58B12F] mb-6 overflow-x-auto">
                 <pre className="text-sm text-gray-300">
-                  <code>{`git clone https://github.com/DeCleanup-Network/decleanup-mini-app.git
-cd decleanup-mini-app
+                  <code>{`git clone https://github.com/DeCleanup-Network/Farcaster-Mini-App.git
+cd Farcaster-Mini-App
 npm install
 cp .env.example .env.local
 # Edit .env.local with your configuration
@@ -222,7 +222,7 @@ npm run dev`}</code>
               <p className="text-gray-400 mb-4">
                 For detailed local testing instructions, see the{" "}
                 <a
-                  href="https://github.com/DeCleanup-Network/decleanup-mini-app/blob/main/LOCAL_TESTING.md"
+                  href="https://github.com/DeCleanup-Network/Farcaster-Mini-App/blob/main/LOCAL_TESTING.md"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#58B12F] hover:underline"
@@ -346,7 +346,7 @@ npm run dev`}</code>
               <p className="text-gray-400">
                 For detailed system architecture, see the{" "}
                 <a
-                  href="https://github.com/DeCleanup-Network/decleanup-mini-app/blob/main/SYSTEM_ARCHITECTURE.md"
+                  href="https://github.com/DeCleanup-Network/Farcaster-Mini-App/blob/main/SYSTEM_ARCHITECTURE.md"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#58B12F] hover:underline"
@@ -430,7 +430,7 @@ npm run dev`}</code>
               <p className="text-gray-400">
                 See the{" "}
                 <a
-                  href="https://github.com/DeCleanup-Network/decleanup-mini-app/blob/main/.env.example"
+                  href="https://github.com/DeCleanup-Network/Farcaster-Mini-App/blob/main/.env.example"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#58B12F] hover:underline"
@@ -685,7 +685,7 @@ npm run dev`}</code>
               <p className="text-gray-400 mb-6">
                 For mobile testing instructions, see the{" "}
                 <a
-                  href="https://github.com/DeCleanup-Network/decleanup-mini-app/blob/main/LOCAL_TESTING.md"
+                  href="https://github.com/DeCleanup-Network/Farcaster-Mini-App/blob/main/LOCAL_TESTING.md"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#58B12F] hover:underline"
@@ -922,7 +922,7 @@ npm run dev`}</code>
               <ul className="list-disc list-inside space-y-2 text-gray-300 mb-8 md:text-lg">
                 <li>
                   <a
-                    href="https://github.com/DeCleanup-Network/decleanup-mini-app/blob/main/SYSTEM_ARCHITECTURE.md"
+                    href="https://github.com/DeCleanup-Network/Farcaster-Mini-App/blob/main/SYSTEM_ARCHITECTURE.md"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[#58B12F] hover:underline"
@@ -932,7 +932,7 @@ npm run dev`}</code>
                 </li>
                 <li>
                   <a
-                    href="https://github.com/DeCleanup-Network/decleanup-mini-app/blob/main/LOCAL_TESTING.md"
+                    href="https://github.com/DeCleanup-Network/Farcaster-Mini-App/blob/main/LOCAL_TESTING.md"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[#58B12F] hover:underline"
@@ -942,7 +942,7 @@ npm run dev`}</code>
                 </li>
                 <li>
                   <a
-                    href="https://github.com/DeCleanup-Network/decleanup-mini-app"
+                    href="https://github.com/DeCleanup-Network/Farcaster-Mini-App"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[#58B12F] hover:underline"
