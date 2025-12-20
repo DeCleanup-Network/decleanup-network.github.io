@@ -38,11 +38,12 @@ const UseDeCleanupToday = () => {
       bullets: [
         "Live on Base",
         "Used for quick rewards and trading",
+        "Swap: ETH/bDCU, USDT/bDCU",
       ],
-      buttonLabel: "Link – coming soon",
-      buttonHref: "#",
-      buttonDisabled: true,
-      note: "Link will be updated as soon as token is launched.",
+      buttonLabel: "View on Clanker",
+      buttonHref: "https://www.clanker.world/clanker/0x30171b7014c02229497CdE6745DD3aD821F12b07",
+      buttonDisabled: false,
+      note: "Contract: 0x30171b7014c02229497CdE6745DD3aD821F12b07",
       imageUrl: "/token-icon.png",
     },
     {
@@ -131,12 +132,44 @@ const UseDeCleanupToday = () => {
 
                 {/* Bullet Points */}
                 <ul className="text-gray-400 text-sm sm:text-base mb-6 space-y-2 flex-grow">
-                  {app.bullets.map((bullet, idx) => (
-                    <li key={idx} className="flex items-start">
-                      <span className="mr-2 text-[#58B12F] font-bold">•</span>
-                      <span>{bullet}</span>
-                    </li>
-                  ))}
+                  {app.bullets.map((bullet, idx) => {
+                    // Special handling for swap links bullet
+                    if (bullet.startsWith("Swap:")) {
+                      const ethSwapUrl = "https://app.uniswap.org/swap?chain=base&inputCurrency=ETH&outputCurrency=0x30171b7014c02229497CdE6745DD3aD821F12b07";
+                      const usdtSwapUrl = "https://app.uniswap.org/swap?chain=base&inputCurrency=0xfde4C96c8593536E31F229EA8f37b2ADa2699bb2&outputCurrency=0x30171b7014c02229497CdE6745DD3aD821F12b07";
+                      return (
+                        <li key={idx} className="flex items-start">
+                          <span className="mr-2 text-[#58B12F] font-bold">•</span>
+                          <span>
+                            Swap:{" "}
+                            <Link
+                              href={ethSwapUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-[#58B12F] hover:text-[#FAFF00] underline transition-colors"
+                            >
+                              ETH/bDCU
+                            </Link>
+                            {", "}
+                            <Link
+                              href={usdtSwapUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-[#58B12F] hover:text-[#FAFF00] underline transition-colors"
+                            >
+                              USDT/bDCU
+                            </Link>
+                          </span>
+                        </li>
+                      );
+                    }
+                    return (
+                      <li key={idx} className="flex items-start">
+                        <span className="mr-2 text-[#58B12F] font-bold">•</span>
+                        <span>{bullet}</span>
+                      </li>
+                    );
+                  })}
                 </ul>
 
                 {/* Note (if present) */}
