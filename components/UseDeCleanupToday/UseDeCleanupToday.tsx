@@ -48,18 +48,20 @@ const UseDeCleanupToday = () => {
       imageUrl: "/token-icon.png",
     },
     {
-      title: "Full dApp on Celo (coming soon)",
+      title: "Full dApp on Celo",
       subtitle: "All DeCleanup Rewards features, plus governance.",
       bullets: [
         "Full dashboard, leaderboard, streaks",
         "Recycables rewards promo, supported by DeTrash Global and Recy.App",
-        "Impact Products and $cDCU rewards, staking",
+        "Impact Products and $cDCU rewards",
+        "COMING_SOON_HEADING",
+        "Staking",
         "Governance with $cDCU on Gardens.fund",
         "Hypercerts: 1 cleanup hypercert after every 10 verified cleanups",
       ],
-      buttonLabel: "DeCleanup on Celo – coming soon",
-      buttonHref: "#",
-      buttonDisabled: true,
+      buttonLabel: "MVP on Celo Sepolia",
+      buttonHref: "https://dapp.decleanup.net",
+      buttonDisabled: false,
       note: "$cDCU starts as a reputation + governance token for early cleaners.",
     },
   ];
@@ -284,6 +286,16 @@ const UseDeCleanupToday = () => {
                             DeTrash Global
                           </Link>
                           {parts[1]}
+                        </span>
+                      </li>
+                    );
+                  }
+                  // Special handling for "Coming soon" heading
+                  if (bullet === "COMING_SOON_HEADING") {
+                    return (
+                      <li key={idx} className="mt-3 mb-2">
+                        <span className="text-xs sm:text-sm text-gray-500 italic font-medium">
+                          Coming soon:
                         </span>
                       </li>
                     );
