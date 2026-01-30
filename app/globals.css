@@ -135,6 +135,19 @@ body {
   animation-fill-mode: both;
 }
 
+/* Slow spin for DMRV concentric circles */
+@keyframes spin-60s {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-\[spin_60s_linear_infinite\] {
+  animation: spin-60s 60s linear infinite;
+}
 
 /* Card hover effects */
 .card-hover {
