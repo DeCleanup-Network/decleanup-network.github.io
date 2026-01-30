@@ -1,66 +1,74 @@
 import React from "react";
 import NavLink from "../NavLink/NavLink";
 import Link from "next/link";
+import Image from "next/image";
+
+const steps = [
+  { number: "1.", title: "Start a Cleanup" },
+  { number: "2.", title: "Capture the Impact" },
+  { number: "3.", title: "Earn Rewards" },
+];
+
+// Placeholder for real cleanup before/after photo
+const CLEANUP_IMAGE = "/image1.png";
 
 const TokenizeImpactSection = () => {
-  const steps = [
-    {
-      number: "1.",
-      title: "Start or Join a Cleanup",
-    },
-    {
-      number: "2.",
-      title: "Capture the Impact",
-    },
-    {
-      number: "3.",
-      title: "Earn Rewards",
-    },
-  ];
-
   return (
-    <div className="w-full py-12 sm:py-16 lg:py-20">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-        {/* Section Header */}
-        <div className="text-center mb-8 lg:mb-12">
+    <div className="w-full py-16 md:py-24 overflow-hidden bg-black">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Section Header - increased spacing */}
+        <div className="mb-12 text-center md:mb-16">
           <h2
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal uppercase text-white mb-4"
+            className="mb-4 text-3xl font-medium uppercase tracking-wide text-white md:text-4xl lg:text-5xl"
+            style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
           >
-            How to Tokenize Impact?
+            How to Tokenize Impact
           </h2>
+          <p className="mx-auto max-w-xl text-base leading-relaxed text-gray-400">
+            Three steps from cleanup to verified, tokenized impact.
+          </p>
         </div>
 
-        {/* Content Section - Image and Steps */}
-        <div className="flex flex-col md:flex-row gap-6 lg:gap-8 mb-12 lg:mb-16 items-center">
-          {/* Left Content with Background Image and Yellow Frame */}
-          <div className="w-full md:w-1/2 flex items-center">
-            <div className="relative p-4 bg-[#FAFF00] rounded-lg transform hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-[#FAFF00]/20 w-full">
-              <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden">
-            <div
-                  className="absolute inset-0 w-full h-full bg-no-repeat bg-center bg-cover transform hover:scale-110 transition-transform duration-500"
-              style={{
-                backgroundImage: "url('/image1.png')",
-              }}
-            ></div>
+        {/* Content: Visual card (left) + 3-step flow (right) */}
+        <div className="flex flex-col gap-10 md:flex-row md:gap-12 lg:gap-16 items-start">
+          {/* Left: Card with cleanup photo + floating verification badge */}
+          <div className="w-full md:w-1/2 shrink-0">
+            <div className="relative rounded-2xl border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:border-[#58B12F]/30 hover:shadow-[0_0_30px_rgba(88,177,47,0.1)]">
+              {/* Floating badge: Photo Verified */}
+              <div className="absolute bottom-4 right-4 z-10 flex items-center gap-2 rounded-full border border-white/10 bg-black/90 px-3 py-1.5 text-xs text-white shadow-lg animate-pulse" style={{ animationDuration: "2.5s" }}>
+                <span aria-hidden>✔</span>
+                <span>Photo Verified</span>
+              </div>
+              <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-black/40">
+                <Image
+                  src={CLEANUP_IMAGE}
+                  alt="Cleanup result – verified impact"
+                  width={600}
+                  height={450}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              {/* Optional second badge: Approved Impact */}
+              <div className="mt-3 flex items-center gap-2 text-xs text-[#58B12F]">
+                <span>✔ Approved Impact</span>
               </div>
             </div>
           </div>
 
-          {/* Right Content - Steps */}
-          <div className="w-full md:w-1/2 space-y-6 flex flex-col justify-center">
+          {/* Right: 3-step vertical flow */}
+          <div className="flex flex-1 flex-col gap-6">
             {steps.map((step, index) => (
               <div
                 key={index}
-                className="bg-gray-900 border-2 border-gray-800 rounded-lg p-8 hover:border-[#58B12F] transition-all duration-300 hover:shadow-[0_0_20px_rgba(88,177,47,0.15)] hover:-translate-y-1 card-hover"
+                className="rounded-2xl border border-gray-800 bg-gray-900/80 p-6 transition-all duration-300 hover:border-[#58B12F]/30 hover:shadow-[0_0_20px_rgba(88,177,47,0.08)]"
               >
-                <div className="flex flex-row items-center">
-                  <div 
-                    className="text-[#FAFF00] text-3xl lg:text-4xl font-bold mr-3"
-                  >
+                <div className="flex items-center gap-4">
+                  <div className="text-2xl font-semibold text-[#FAFF00] md:text-3xl" style={{ fontWeight: 500 }}>
                     {step.number}
                   </div>
-                  <h3 
-                    className="text-lg sm:text-xl lg:text-2xl font-normal uppercase text-white flex-1"
+                  <h3
+                    className="text-lg font-medium uppercase tracking-wide text-white md:text-xl"
+                    style={{ fontFamily: "var(--font-bebas-neue), sans-serif", fontWeight: 500 }}
                   >
                     {step.title}
                   </h3>
@@ -71,15 +79,14 @@ const TokenizeImpactSection = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center space-y-12 lg:space-y-16">
-          {/* Get Started Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className="mt-16 space-y-12 text-center lg:space-y-16">
+          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
-              href="https://farcaster.xyz/miniapps/njiQzfqas3yN/decleanup-rewards"
+              href="https://farcaster.xyz/miniapps/SfsGBDcHpuSA/decleanup-rewards"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-8 py-4 bg-[#FAFF00] text-black font-bold text-lg sm:text-xl tracking-wider hover:bg-[#FAFF00]/90 transition-colors duration-200 border-2 border-[#FAFF00] normal-case hover:scale-105 hover:shadow-[0_0_20px_rgba(250,255,0,0.4)] transition-all duration-300"
-              style={{ textTransform: 'none' }}
+              className="rounded-xl bg-[#FAFF00] px-6 py-3 font-medium text-black transition-all duration-300 hover:bg-[#FAFF00]/90 hover:shadow-[0_0_24px_rgba(250,255,0,0.2)]"
+              style={{ fontWeight: 500 }}
             >
               Get started on Farcaster
             </Link>
@@ -87,53 +94,61 @@ const TokenizeImpactSection = () => {
               href="https://miniapp.decleanup.net"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-8 py-4 bg-black text-[#FAFF00] font-bold text-lg sm:text-xl tracking-wider hover:bg-gray-900 transition-colors duration-200 border-2 border-[#FAFF00] normal-case hover:scale-105 hover:shadow-[0_0_20px_rgba(250,255,0,0.4)] transition-all duration-300"
-              style={{ textTransform: 'none' }}
+              className="rounded-xl border border-[#FAFF00]/50 px-6 py-3 font-medium text-white transition-all duration-300 hover:border-[#FAFF00] hover:bg-[#FAFF00]/5"
+              style={{ fontWeight: 500 }}
             >
               Get started in web app
             </Link>
           </div>
 
-          {/* Join Movement Section */}
-          <div className="space-y-8 lg:space-y-12">
+          <div>
+            <Link
+              href="/userguide"
+              className="text-sm font-medium text-[#58B12F] hover:text-[#58B12F]/90"
+            >
+              View User Guide →
+            </Link>
+          </div>
+
+          {/* Join Movement */}
+          <div className="space-y-6">
             <h3
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal uppercase text-white"
+              className="text-3xl font-medium uppercase tracking-wide text-white md:text-4xl"
+              style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
             >
               Join the Movement
             </h3>
-
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
-              Connect with our growing community on social media, and explore everything you need to start contributing to a cleaner environment today.
+            <p className="mx-auto max-w-2xl text-base leading-relaxed text-gray-400">
+              Connect with our community and explore everything you need to
+              contribute to a cleaner environment.
             </p>
-
-            {/* Social Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 lg:gap-6 justify-center items-center">
+            <div className="flex flex-wrap justify-center gap-4">
               <Link
-                href={"https://t.me/EcoSynthesisX/443"}
+                href="https://t.me/EcoSynthesisX/443"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative px-8 py-4 bg-gradient-to-r from-gray-900 to-gray-800 text-[#FAFF00] font-semibold text-base sm:text-lg border-2 border-[#FAFF00] hover:border-[#58B12F] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(250,255,0,0.3)] text-center overflow-hidden"
+                className="rounded-xl border border-[#FAFF00]/30 px-6 py-3 font-medium text-[#FAFF00] transition-all hover:border-[#FAFF00]/60 hover:bg-[#FAFF00]/5"
+                style={{ fontWeight: 500 }}
               >
-                <span className="relative z-10">Telegram</span>
-                <div className="absolute inset-0 bg-[#FAFF00] opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+                Telegram
               </Link>
               <Link
-                href={"https://x.com/DeCleanupNet/status/1917591927563624903"}
+                href="https://x.com/DeCleanupNet"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative px-8 py-4 bg-gradient-to-r from-gray-900 to-gray-800 text-[#FAFF00] font-semibold text-base sm:text-lg border-2 border-[#FAFF00] hover:border-[#58B12F] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(250,255,0,0.3)] text-center overflow-hidden"
+                className="rounded-xl border border-[#FAFF00]/30 px-6 py-3 font-medium text-[#FAFF00] transition-all hover:border-[#FAFF00]/60 hover:bg-[#FAFF00]/5"
+                style={{ fontWeight: 500 }}
               >
-                <span className="relative z-10">X</span>
-                <div className="absolute inset-0 bg-[#FAFF00] opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+                X
               </Link>
               <Link
-                href={"https://farcaster.xyz/decleanupnet"}
+                href="https://farcaster.xyz/decleanupnet"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative px-8 py-4 bg-gradient-to-r from-gray-900 to-gray-800 text-[#FAFF00] font-semibold text-base sm:text-lg border-2 border-[#FAFF00] hover:border-[#58B12F] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(250,255,0,0.3)] text-center overflow-hidden"
+                className="rounded-xl border border-[#FAFF00]/30 px-6 py-3 font-medium text-[#FAFF00] transition-all hover:border-[#FAFF00]/60 hover:bg-[#FAFF00]/5"
+                style={{ fontWeight: 500 }}
               >
-                <span className="relative z-10">Farcaster</span>
-                <div className="absolute inset-0 bg-[#FAFF00] opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+                Farcaster
               </Link>
             </div>
           </div>

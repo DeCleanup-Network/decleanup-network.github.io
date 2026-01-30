@@ -69,17 +69,17 @@ const UseDeCleanupToday = () => {
   return (
     <section
       id="apps"
-      className="w-full px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20"
+      className="w-full overflow-x-hidden px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20"
     >
       <div className="mx-auto max-w-7xl">
-        {/* Section Header */}
-        <div className="text-center mb-8 lg:mb-12">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal uppercase text-white mb-4 sm:mb-6">
-            Earn DeCleanup Rewards today
+        {/* Section Header — after hero: EARN DECLEANUP REWARDS TODAY */}
+        <div className="mb-16 text-center">
+          <h2 className="mb-4 text-4xl font-normal tracking-tight text-white md:text-5xl">
+            EARN DECLEANUP <span className="text-[#58B12F]">REWARDS</span> TODAY
           </h2>
-          <p className="text-lg sm:text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto">
-            Choose how you want to log cleanups, earn, and govern our impact
-            network.
+          <p className="mx-auto max-w-xl text-gray-400">
+            Choose your path to impact. Start with our Base Mini App for quick
+            rewards or dive into the full ecosystem on Celo.
           </p>
         </div>
 
@@ -87,10 +87,11 @@ const UseDeCleanupToday = () => {
         <div className="space-y-6 lg:space-y-8">
           {/* Base Cards - Side by Side */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            {/* Base / Celo CTA cards: Aura-style hover-reactive glow (subtle border + shadow) */}
             {apps.slice(0, 2).map((app, index) => (
               <div
                 key={index}
-                className="bg-gray-900 border-2 border-gray-800 rounded-lg p-6 lg:p-8 flex flex-col  transition-all duration-300 hover:shadow-[0_0_30px_rgba(88,177,47,0.2)] hover:-translate-y-2 card-hover"
+                className="group bg-gray-900 rounded-2xl border border-gray-800 p-6 lg:p-8 flex flex-col transition-all duration-300 hover:border-[#58B12F]/40 hover:shadow-[0_0_30px_rgba(88,177,47,0.12)] hover:-translate-y-1"
               >
                 {/* Chain Label */}
                 <div className="mb-4 flex justify-center items-center w-full">
@@ -210,7 +211,7 @@ const UseDeCleanupToday = () => {
                       href={app.buttonHref}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full bg-[#FAFF00] text-black font-bold text-sm sm:text-base tracking-wider hover:bg-[#FAFF00]/90 transition-colors duration-200 border-2 border-[#FAFF00] normal-case hover:scale-105 hover:shadow-[0_0_20px_rgba(250,255,0,0.4)] transition-all duration-300 text-center block px-6 py-3"
+                      className="w-full bg-[#FAFF00] text-black font-medium text-sm sm:text-base tracking-wider hover:bg-[#FAFF00]/90 transition-colors duration-200 border border-[#FAFF00] normal-case hover:shadow-[0_0_20px_rgba(250,255,0,0.25)] transition-all duration-300 text-center block px-6 py-3 rounded-xl"
                       style={{ textTransform: "none" }}
                     >
                       {app.buttonLabel}
@@ -223,7 +224,7 @@ const UseDeCleanupToday = () => {
                       href={app.secondButtonHref}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full bg-black text-[#FAFF00] font-bold text-sm sm:text-base tracking-wider hover:bg-gray-900 transition-colors duration-200 border-2 border-[#FAFF00] normal-case hover:scale-105 hover:shadow-[0_0_20px_rgba(250,255,0,0.4)] transition-all duration-300 text-center block px-6 py-3"
+                      className="w-full bg-black text-[#FAFF00] font-medium text-sm sm:text-base tracking-wider hover:bg-gray-900 transition-colors duration-200 border border-[#FAFF00] normal-case hover:shadow-[0_0_20px_rgba(250,255,0,0.2)] transition-all duration-300 text-center block px-6 py-3 rounded-xl"
                       style={{ textTransform: "none" }}
                     >
                       {app.secondButtonLabel}
@@ -234,9 +235,9 @@ const UseDeCleanupToday = () => {
             ))}
           </div>
 
-          {/* Celo Card - Full Width */}
+          {/* Celo Card - Full Width; same hover-reactive glow */}
           {apps[2] && (
-            <div className="bg-gray-900 border-2 border-gray-800 rounded-lg p-6 lg:p-8 flex flex-col hover:border-[#58B12F] transition-all duration-300 hover:shadow-[0_0_30px_rgba(88,177,47,0.2)] hover:-translate-y-2 card-hover">
+            <div className="group bg-gray-900 rounded-2xl border border-gray-800 p-6 lg:p-8 flex flex-col transition-all duration-300 hover:border-[#FAFF00]/30 hover:shadow-[0_0_30px_rgba(250,255,0,0.08)] hover:-translate-y-1">
               {/* Chain Label */}
               <div className="mb-4 flex justify-center items-center w-full">
                 <Image
@@ -343,7 +344,7 @@ const UseDeCleanupToday = () => {
                   href={apps[2].buttonHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full bg-[#FAFF00] text-black font-bold text-sm sm:text-base tracking-wider hover:bg-[#FAFF00]/90 transition-colors duration-200 border-2 border-[#FAFF00] normal-case hover:scale-105 hover:shadow-[0_0_20px_rgba(250,255,0,0.4)] transition-all duration-300 text-center block px-6 py-3"
+                  className="w-full bg-[#FAFF00] text-black font-medium text-sm sm:text-base tracking-wider hover:bg-[#FAFF00]/90 transition-colors duration-200 border border-[#FAFF00] normal-case hover:shadow-[0_0_20px_rgba(250,255,0,0.25)] transition-all duration-300 text-center block px-6 py-3 rounded-xl"
                   style={{ textTransform: "none" }}
                 >
                   {apps[2].buttonLabel}
