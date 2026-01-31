@@ -97,13 +97,13 @@ const NavLink = ({ variant = "full" }: { variant?: NavLinkVariant }) => {
             <div className="block md:hidden">
               <div className="grid grid-cols-2 gap-2">
                 {externalLinks.map((link, index) => (
-                  <a
-                    key={index}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group relative bg-gray-900 text-[#FAFF00] text-xs font-semibold rounded-lg px-3 py-2 text-center border border-gray-800 hover:border-[#FAFF00] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_10px_rgba(250,255,0,0.15)] overflow-hidden"
-                  >
+                <a
+                key={index}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                className="group relative bg-gray-900 text-[#FAFF00] text-xs font-semibold rounded-lg px-3 py-2 text-center border border-gray-800 hover:border-[#FAFF00] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_10px_rgba(250,255,0,0.15)] overflow-hidden"
+              >
                     <span className="relative z-10">{link.name}</span>
                     <div className="absolute inset-0 bg-[#FAFF00] opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
                   </a>
@@ -114,13 +114,13 @@ const NavLink = ({ variant = "full" }: { variant?: NavLinkVariant }) => {
             {/* Desktop Layout - External Links */}
             <div className="hidden md:flex flex-wrap justify-center gap-2 lg:gap-3">
               {externalLinks.map((link, index) => (
-                <a
-                  key={index}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative bg-gray-900 text-[#FAFF00] text-xs lg:text-sm font-semibold rounded-lg px-3 lg:px-4 py-2 lg:py-2.5 text-center border border-gray-800 hover:border-[#FAFF00] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_10px_rgba(250,255,0,0.15)] overflow-hidden whitespace-nowrap"
-                >
+            <a
+              key={index}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              className="group relative bg-gray-900 text-[#FAFF00] text-xs lg:text-sm font-semibold rounded-lg px-3 lg:px-4 py-2 lg:py-2.5 text-center border border-gray-800 hover:border-[#FAFF00] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_10px_rgba(250,255,0,0.15)] overflow-hidden whitespace-nowrap"
+            >
                   <span className="relative z-10">{link.name}</span>
                   <div className="absolute inset-0 bg-[#FAFF00] opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
                 </a>
@@ -160,7 +160,6 @@ const NavLink = ({ variant = "full" }: { variant?: NavLinkVariant }) => {
                 height={32}
                 className="h-5 md:h-6 w-auto"
               />
-              <span className="text-gray-600 text-xs md:text-sm">•</span>
               <div className="flex items-center">
                 <Image
                   src="/celo-celo-logo.svg"
@@ -169,7 +168,7 @@ const NavLink = ({ variant = "full" }: { variant?: NavLinkVariant }) => {
                   height={100}
                   className="h-5 md:h-6 w-auto"
                 />
-                <span className="text-sm font-medium text-gray-400 tracking-wider ml-2">celo</span>
+                <span className="text-sm font-semibold text-gray-400 tracking-wider ml-2">celo</span>
               </div>
             </div>
           </div>

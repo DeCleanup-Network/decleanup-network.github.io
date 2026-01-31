@@ -38,6 +38,7 @@ const Hero = () => {
             width={180}
             height={60}
             className="h-10 w-auto object-contain sm:h-12"
+            priority
             unoptimized
           />
 
@@ -50,7 +51,7 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Main title - DECLEANUP NETWORK (gradient on NETWORK + pulse) */}
+        {/* Main title */}
         <h1
           className="mb-6 text-5xl font-normal leading-tight text-white sm:text-6xl md:text-7xl lg:text-8xl"
           style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}

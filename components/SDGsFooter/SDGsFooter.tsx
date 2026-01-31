@@ -54,7 +54,7 @@ export default function SDGsFooter() {
               key={goal.num}
               href={goal.href}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener noreferrer nofollow"
               className="flex-shrink-0 rounded-lg border border-white/10 bg-white/5 p-1 transition hover:border-[#58B12F]/40 hover:bg-white/10"
               title={`SDG ${goal.num}`}
             >
@@ -73,7 +73,7 @@ export default function SDGsFooter() {
           <a
             href="https://www.un.org/sustainabledevelopment"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener noreferrer nofollow"
             className="text-[#58B12F] hover:text-[#FAFF00] underline"
           >
             United Nations Sustainable Development Goals

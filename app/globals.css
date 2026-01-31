@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+/* Bebas Neue loaded via next/font in layout.tsx for better performance */
 @import "tailwindcss";
 
 :root {

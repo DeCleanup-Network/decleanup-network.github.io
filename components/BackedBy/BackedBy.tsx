@@ -51,7 +51,7 @@ export default function BackedBy() {
               key={backer.name}
               href={backer.href}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener noreferrer nofollow"
               className="group flex flex-col items-center gap-4"
             >
               {/* Gradient Container */}

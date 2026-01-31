@@ -47,6 +47,7 @@ const TokenizeImpactSection = () => {
                   alt="Cleanup result – verified impact"
                   width={600}
                   height={450}
+                  loading="lazy"
                   className="h-full w-full object-cover filter contrast-110 saturate-[0.85] brightness-90"
                 />
               </div>
