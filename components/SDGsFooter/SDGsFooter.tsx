@@ -5,31 +5,56 @@ const UN_SDG_BASE =
   "https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08";
 
 // Major SDGs DeCleanup aligns with: cities & waste, consumption & waste, climate, life below water, life on land
-const MAJOR_SDG_NUMS = [11, 12, 13, 14, 15];
-
-const sdgIcons = MAJOR_SDG_NUMS.map((num) => ({
-  num,
-  src: `${UN_SDG_BASE}/E-Goal-${String(num).padStart(2, "0")}-1024x1024.png`,
-  alt: `SDG ${num}`,
-}));
+const sdgs = [
+  {
+    num: 11,
+    href: "https://www.un.org/sustainabledevelopment/cities/",
+    src: `${UN_SDG_BASE}/E-Goal-11-1024x1024.png`,
+    alt: "SDG 11: Sustainable Cities and Communities",
+  },
+  {
+    num: 12,
+    href: "https://www.un.org/sustainabledevelopment/sustainable-consumption-production/",
+    src: `${UN_SDG_BASE}/E-Goal-12-1024x1024.png`,
+    alt: "SDG 12: Responsible Consumption and Production",
+  },
+  {
+    num: 13,
+    href: "https://www.un.org/sustainabledevelopment/climate-change/",
+    src: `${UN_SDG_BASE}/E-Goal-13-1024x1024.png`,
+    alt: "SDG 13: Climate Action",
+  },
+  {
+    num: 14,
+    href: "https://www.un.org/sustainabledevelopment/oceans/",
+    src: `${UN_SDG_BASE}/E-Goal-14-1024x1024.png`,
+    alt: "SDG 14: Life Below Water",
+  },
+  {
+    num: 15,
+    href: "https://www.un.org/sustainabledevelopment/biodiversity/",
+    src: `${UN_SDG_BASE}/E-Goal-15-1024x1024.png`,
+    alt: "SDG 15: Life on Land",
+  },
+];
 
 export default function SDGsFooter() {
   return (
     <section className="w-full py-12 md:py-16 bg-black border-t border-gray-800">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <p
-          className="text-center text-sm uppercase tracking-wider text-gray-500 mb-6"
+        <h2
+          className="text-center text-3xl font-normal uppercase leading-tight text-white mb-6 md:text-4xl lg:text-5xl"
           style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
         >
           Aligned with the UN Sustainable Development Goals
-        </p>
+        </h2>
         <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
-          {sdgIcons.map((goal) => (
+          {sdgs.map((goal) => (
             <a
               key={goal.num}
-              href="https://www.un.org/sustainabledevelopment"
+              href={goal.href}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener noreferrer nofollow"
               className="flex-shrink-0 rounded-lg border border-white/10 bg-white/5 p-1 transition hover:border-[#58B12F]/40 hover:bg-white/10"
               title={`SDG ${goal.num}`}
             >
@@ -48,7 +73,7 @@ export default function SDGsFooter() {
           <a
             href="https://www.un.org/sustainabledevelopment"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener noreferrer nofollow"
             className="text-[#58B12F] hover:text-[#FAFF00] underline"
           >
             United Nations Sustainable Development Goals

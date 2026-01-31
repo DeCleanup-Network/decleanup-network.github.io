@@ -100,7 +100,13 @@ const RoadmapCarousel = ({ roadmap }: { roadmap: Array<{ phase: string; bullets:
                     transform: isActive ? "scale(1)" : "scale(0.9)",
                   }}
                 >
-                  <h3 className="text-white text-3xl sm:text-3xl lg:text-4xl xl:text-5xl uppercase mb-6 leading-tight font-normal">
+                  <h3
+                    className="text-white text-xl sm:text-2xl lg:text-3xl font-medium mb-6 leading-tight normal-case"
+                    style={{
+                      fontFamily:
+                        "var(--font-geist-sans), system-ui, -apple-system, sans-serif",
+                    }}
+                  >
                     {item.phase}
                   </h3>
                   <ul className="text-gray-400 text-lg sm:text-lg lg:text-xl leading-relaxed space-y-3">

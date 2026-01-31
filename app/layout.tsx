@@ -14,9 +14,28 @@ const bebas = Bebas_Neue({
   variable: '--font-bebas-neue',
 });
 
+const SITE_URL = "https://decleanup.net";
+
 export const metadata: Metadata = {
-  title: "DECLEANUP NETWORK",
-  description: "Empowering Cleanups. Tokenizing Impact",
+  metadataBase: new URL(SITE_URL),
+  title: "Real cleanups. Real proof. Real impact. | DeCleanup Network",
+  description:
+    "A global platform that verifies environmental cleanups and turns them into measurable, fundable impact.",
+  alternates: { canonical: SITE_URL },
+  openGraph: {
+    title: "Real cleanups. Real proof. Real impact. | DeCleanup Network",
+    description:
+      "A global platform that verifies environmental cleanups and turns them into measurable, fundable impact.",
+    url: SITE_URL,
+    siteName: "DeCleanup Network",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Real cleanups. Real proof. Real impact. | DeCleanup Network",
+    description:
+      "A global platform that verifies environmental cleanups and turns them into measurable, fundable impact.",
+  },
 };
 
 export default function RootLayout({
@@ -24,9 +43,29 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "DeCleanup Network",
+    url: SITE_URL,
+    logo: `${SITE_URL}/images/decleanup_logo_full.png`,
+    description:
+      "DeCleanup Network is a decentralized platform that tokenizes environmental cleanups into verifiable real-world impact.",
+    sameAs: [
+      "https://x.com/DeCleanupNet",
+      "https://github.com/DeCleanup-Network",
+      "https://t.me/EcoSynthesisX/443",
+      "https://farcaster.xyz/decleanupnet",
+    ],
+  };
+
   return (
     <html lang="en" className="overflow-x-hidden">
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
         {/* Google tag (gtag.js) */}
         <script
           async

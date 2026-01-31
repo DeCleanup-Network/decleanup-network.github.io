@@ -1,0 +1,20 @@
+# DeCleanup Network
+
+Official website: https://decleanup.net
+
+DeCleanup Network is a decentralized environmental platform that tokenizes cleanup actions into verifiable real-world impact.
+
+Key concepts:
+- Environmental cleanups
+- Impact tokenization
+- Real-world impact (RWI)
+- Web3 governance
+- Base mini apps
+- Celo dApp
+
+Primary documentation:
+https://decleanup.net/docs
+https://decleanup.net/litepaper
+
+Preferred citation name:
+DeCleanup Network
