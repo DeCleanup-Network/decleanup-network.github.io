@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "DeCleanup Network — Litepaper",
+  title: "DeCleanup Network - Litepaper",
   description: "What DeCleanup is, how to try it (Base & Farcaster), DMRV, AI verification, tokens, and how to get involved. February 2026.",
 };
 
@@ -45,7 +45,7 @@ export default function LitepaperPage() {
             </svg>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal uppercase text-white mb-4">
-            DeCleanup Network — Litepaper
+            DeCleanup Network - Litepaper
           </h1>
           <p className="text-lg md:text-xl text-gray-400">
             February 2026
@@ -58,22 +58,97 @@ export default function LitepaperPage() {
             1. What is DeCleanup?
           </h2>
           <p className="md:text-lg leading-relaxed text-gray-300 mb-4">
-            <strong className="text-white">DeCleanup is a platform that helps people and organizations prove real-world environmental cleanups — transparently and at scale.</strong>
+            <strong className="text-white">DeCleanup Network is an SDG-aligned regenerative impact application.</strong>
+          </p>
+          <p className="md:text-lg leading-relaxed text-gray-300 mb-4">
+            It provides open infrastructure to <strong className="text-white">measure, verify, and fund real-world environmental action</strong>, starting with waste cleanup and expanding into regenerative and biodiversity-aligned activities.
           </p>
           <p className="md:text-lg leading-relaxed text-gray-300 mb-4">
             People all over the world clean beaches, forests, rivers, and cities. The problem is simple: <strong className="text-white">there is no trusted, shared way to prove this work happened and measure its impact.</strong>
           </p>
           <p className="md:text-lg leading-relaxed text-gray-300 mb-4">
-            DeCleanup solves this by:
+            DeCleanup transforms on-the-ground environmental work into:
           </p>
           <ul className="list-disc list-inside space-y-2 md:text-lg leading-relaxed text-gray-300 ml-4 mb-4">
-            <li>verifying cleanup results using photos and AI</li>
-            <li>creating trusted impact records</li>
-            <li>enabling rewards, funding, and governance around real environmental action</li>
+            <li>verifiable impact data</li>
+            <li>auditable impact claims</li>
+            <li>governable funding flows</li>
           </ul>
-          <p className="md:text-lg leading-relaxed text-gray-300">
-            This is not just an app — it&apos;s <strong className="text-white">open infrastructure for environmental impact verification.</strong>
+          <p className="md:text-lg leading-relaxed text-gray-300 mb-4">
+            so that capital can reliably support outcomes aligned with the <strong className="text-white">UN Sustainable Development Goals (SDGs)</strong>.
           </p>
+          <p className="md:text-lg leading-relaxed text-gray-300">
+            DeCleanup is designed to interoperate with the broader <strong className="text-white">Regen ecosystem</strong>, enabling impact data to be reused across applications, funding programs, and reporting frameworks. This is not just an app - it&apos;s <strong className="text-white">open infrastructure for environmental impact verification.</strong>
+          </p>
+        </section>
+
+        <div className="h-px bg-[#58B12F] mb-12 md:mb-16"></div>
+
+        {/* 1b. SDG Mapping (Theory of Change) */}
+        <section className="mb-12 md:mb-16">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-normal uppercase text-white mb-6">
+            SDG Alignment
+          </h2>
+          <p className="md:text-lg leading-relaxed text-gray-300 mb-8">
+            DeCleanup directly contributes to the following UN Sustainable Development Goals:
+          </p>
+
+          <h3 className="text-xl font-semibold text-white mb-4">Primary SDGs</h3>
+          <div className="space-y-4 mb-8">
+            <div className="bg-gray-900 border-l-4 border-[#58B12F] p-4 rounded-lg">
+              <h4 className="font-semibold text-white mb-2">SDG 11 – Sustainable Cities &amp; Communities</h4>
+              <ul className="list-disc list-inside space-y-1 text-gray-300 text-sm md:text-base ml-2">
+                <li>Reduces unmanaged waste in public spaces</li>
+                <li>Supports community-led environmental stewardship</li>
+              </ul>
+            </div>
+            <div className="bg-gray-900 border-l-4 border-[#58B12F] p-4 rounded-lg">
+              <h4 className="font-semibold text-white mb-2">SDG 12 – Responsible Consumption &amp; Production</h4>
+              <ul className="list-disc list-inside space-y-1 text-gray-300 text-sm md:text-base ml-2">
+                <li>Enables waste tracking, categorization, and accountability</li>
+                <li>Supports circular economy insights through cleanup data</li>
+              </ul>
+            </div>
+            <div className="bg-gray-900 border-l-4 border-[#58B12F] p-4 rounded-lg">
+              <h4 className="font-semibold text-white mb-2">SDG 13 – Climate Action</h4>
+              <ul className="list-disc list-inside space-y-1 text-gray-300 text-sm md:text-base ml-2">
+                <li>Prevents emissions from unmanaged waste and open burning</li>
+                <li>Enables climate-aligned impact reporting</li>
+              </ul>
+            </div>
+            <div className="bg-gray-900 border-l-4 border-[#58B12F] p-4 rounded-lg">
+              <h4 className="font-semibold text-white mb-2">SDG 14 – Life Below Water</h4>
+              <ul className="list-disc list-inside space-y-1 text-gray-300 text-sm md:text-base ml-2">
+                <li>Removes plastic and waste before entering waterways</li>
+                <li>Produces verifiable marine pollution prevention data</li>
+              </ul>
+            </div>
+            <div className="bg-gray-900 border-l-4 border-[#58B12F] p-4 rounded-lg">
+              <h4 className="font-semibold text-white mb-2">SDG 15 – Life on Land</h4>
+              <ul className="list-disc list-inside space-y-1 text-gray-300 text-sm md:text-base ml-2">
+                <li>Restores degraded land areas</li>
+                <li>Enables land-based environmental monitoring</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3 className="text-xl font-semibold text-white mb-4">Secondary / Enabling SDGs</h3>
+          <div className="space-y-4">
+            <div className="bg-gray-900 border-l-4 border-[#FAFF00]/50 p-4 rounded-lg">
+              <h4 className="font-semibold text-white mb-2">SDG 16 – Peace, Justice &amp; Strong Institutions</h4>
+              <ul className="list-disc list-inside space-y-1 text-gray-300 text-sm md:text-base ml-2">
+                <li>Transparent governance of public goods funding</li>
+                <li>Auditable decision-making and capital allocation</li>
+              </ul>
+            </div>
+            <div className="bg-gray-900 border-l-4 border-[#FAFF00]/50 p-4 rounded-lg">
+              <h4 className="font-semibold text-white mb-2">SDG 17 – Partnerships for the Goals</h4>
+              <ul className="list-disc list-inside space-y-1 text-gray-300 text-sm md:text-base ml-2">
+                <li>Interoperability with Regen apps (e.g. Green Goods)</li>
+                <li>Open standards for shared impact reporting</li>
+              </ul>
+            </div>
+          </div>
         </section>
 
         <div className="h-px bg-[#58B12F] mb-12 md:mb-16"></div>
@@ -84,7 +159,7 @@ export default function LitepaperPage() {
             2. Try DeCleanup in minutes (no setup needed)
           </h2>
           <p className="md:text-lg leading-relaxed text-gray-300 mb-8">
-            If you already have an account on <strong className="text-white">Base</strong> or <strong className="text-white">Farcaster</strong>, you can use DeCleanup here — no extra sign-up. Pick where you&apos;re active:
+            If you already have an account on <strong className="text-white">Base</strong> or <strong className="text-white">Farcaster</strong>, you can use DeCleanup here - no extra sign-up. Pick where you&apos;re active:
           </p>
 
           <div className="space-y-8">
@@ -107,7 +182,7 @@ export default function LitepaperPage() {
             <div className="bg-gray-900 border-l-4 border-[#FAFF00] p-6 rounded-lg">
               <h3 className="text-xl font-semibold text-white mb-3">🟣 I have a Farcaster account</h3>
               <p className="text-gray-300 mb-4">
-                Use DeCleanup inside Farcaster as a Mini App. Open it from the Farcaster app — same rewards and verification, in your feed.
+                Use DeCleanup inside Farcaster as a Mini App. Open it from the Farcaster app - same rewards and verification, in your feed.
               </p>
               <ul className="list-disc list-inside space-y-1 text-gray-300 mb-4 ml-4">
                 <li>Open the DeCleanup Mini App from Farcaster</li>
@@ -162,7 +237,7 @@ export default function LitepaperPage() {
             </div>
             <div>
               <h4 className="text-lg font-medium text-white mb-2">🏛 Governance &amp; Funding (Gardens)</h4>
-              <p className="text-gray-300 mb-2">DeCleanup integrates governance and funding flows.</p>
+              <p className="text-gray-300 mb-2">DeCleanup integrates governance and funding flows with <strong className="text-white">outcome-based funding</strong> aligned with the SDGs.</p>
               <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4">
                 <li>Proposals for cleanup equipment reimbursement</li>
                 <li>Community voting on funding priorities</li>
@@ -178,7 +253,7 @@ export default function LitepaperPage() {
         {/* 4. DMRV */}
         <section className="mb-12 md:mb-16">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-normal uppercase text-white mb-6">
-            4. DMRV — Digital Monitoring, Reporting &amp; Verification
+            4. DMRV - Digital Monitoring, Reporting &amp; Verification
           </h2>
           <p className="md:text-lg leading-relaxed text-gray-300 mb-4">
             At the core of DeCleanup is <strong className="text-white">DMRV</strong>.
@@ -196,16 +271,16 @@ export default function LitepaperPage() {
             <li>on-chain records for transparency</li>
           </ul>
           <p className="md:text-lg leading-relaxed text-gray-300">
-            This makes DeCleanup useful not only for individuals, but also for: NGOs, corporates, large cleanup sponsors, and public funding programs.
+            This makes DeCleanup useful not only for individuals, but also for: NGOs, corporates, large cleanup sponsors, and public funding programs - with impact data aligned to <strong className="text-white">SDG reporting</strong> needs.
           </p>
         </section>
 
         <div className="h-px bg-[#58B12F] mb-12 md:mb-16"></div>
 
-        {/* 5. AI Verification — Coming Soon */}
+        {/* 5. AI Verification - Coming Soon */}
         <section className="mb-12 md:mb-16">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-normal uppercase text-white mb-6">
-            5. AI Verification (DMRV) — Coming Soon
+            5. AI Verification (DMRV) - Coming Soon
           </h2>
           <p className="md:text-lg leading-relaxed text-gray-300 mb-6">
             AI-assisted verification is being rolled out in phases.
@@ -213,9 +288,9 @@ export default function LitepaperPage() {
 
           <div className="bg-gray-900 border-l-4 border-[#58B12F] p-6 rounded-lg mb-6">
             <h3 className="text-lg font-semibold text-white mb-3">🤖 ML Verification (DMRV)</h3>
-            <p className="text-gray-300 mb-2"><strong className="text-white">Status:</strong> Phase 1 &amp; 2 complete — AI-assisted verification pipeline ready.</p>
+            <p className="text-gray-300 mb-2"><strong className="text-white">Status:</strong> Phase 1 &amp; 2 complete - AI-assisted verification pipeline ready.</p>
             <p className="text-gray-300 mb-4">
-              The system detects waste in before/after photos, scores cleanup impact, and can auto-verify or flag for human review. It uses object-detection models trained on real-world litter data (e.g. TACO: Trash Annotations in Context — 60+ waste categories).
+              The system detects waste in before/after photos, scores cleanup impact, and can auto-verify or flag for human review. It uses object-detection models trained on real-world litter data (e.g. TACO: Trash Annotations in Context - 60+ waste categories).
             </p>
             <p className="text-gray-300 text-sm">
               <strong className="text-white">Reference:</strong>{" "}
@@ -237,17 +312,19 @@ export default function LitepaperPage() {
             6. Tokens &amp; Network Economy
           </h2>
           <p className="md:text-lg leading-relaxed text-gray-300 mb-6">
-            DeCleanup uses tokens to coordinate incentives — <strong className="text-white">not to replace real impact.</strong>
+            DeCleanup uses tokens to coordinate incentives - <strong className="text-white">not to replace real impact.</strong>
+            Governance and funding use stable capital (e.g. cUSD) and <strong className="text-white">Gardens.fund</strong> for outcome-based funding pools aligned with the SDGs.
           </p>
           <p className="text-gray-300 mb-4"><strong className="text-white">Live tokens:</strong></p>
           <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4 mb-6">
-            <li><strong className="text-white">$bDCU</strong> — live on Base</li>
-            <li><strong className="text-white">$cDCU</strong> — coming soon (Celo)</li>
+            <li><strong className="text-white">$bDCU</strong> - live on Base</li>
+            <li><strong className="text-white">$cDCU</strong> - coming soon (Celo)</li>
           </ul>
           <div className="bg-gray-900 border-l-4 border-[#FAFF00] p-6 rounded-lg">
             <h3 className="text-lg font-semibold text-white mb-3">$cDCU Airdrop</h3>
             <p className="text-gray-300 mb-2">$cDCU will be airdropped to:</p>
             <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4">
+              <li>Holders of $bDCU (to get the full Base + Celo experience)</li>
               <li>Early DeCleanup V1 users</li>
               <li>Community donors &amp; supporters</li>
               <li>Contributors (2024–2025)</li>
@@ -264,13 +341,13 @@ export default function LitepaperPage() {
             7. What DeCleanup enables long-term
           </h2>
           <p className="md:text-lg leading-relaxed text-gray-300 mb-4">
-            DeCleanup is building infrastructure for:
+            DeCleanup is building <strong className="text-white">SDG-aligned</strong> infrastructure for:
           </p>
           <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4 mb-6">
             <li>verified environmental impact</li>
-            <li>transparent funding flows</li>
+            <li>transparent, outcome-based funding flows</li>
             <li>scalable cleanup programs</li>
-            <li>interoperable impact data</li>
+            <li>interoperable impact data across the Regen ecosystem</li>
           </ul>
           <p className="text-gray-300 mb-2">Possible future integrations:</p>
           <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4">
@@ -304,13 +381,13 @@ export default function LitepaperPage() {
         {/* Final note */}
         <section className="mb-12 md:mb-16 rounded-2xl border border-[#58B12F]/20 bg-[#58B12F]/5 p-6 md:p-8">
           <p className="md:text-lg leading-relaxed text-gray-300 italic">
-            DeCleanup is not hype — it&apos;s infrastructure. We welcome non-crypto readers, let people try the product in minutes, and layer in technical depth only when it helps. Real cleanups, real proof, real impact.
+            DeCleanup is not hype - it&apos;s <strong className="text-white">SDG-aligned impact infrastructure</strong>. We welcome non-crypto readers, let people try the product in minutes, and layer in technical depth only when it helps. Real cleanups, real proof, real impact.
           </p>
         </section>
 
         <div className="h-px bg-[#58B12F] mb-12 md:mb-16"></div>
 
-        {/* Roadmap Section — kept */}
+        {/* Roadmap Section - kept */}
         <section className="mb-12 md:mb-16">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-normal uppercase text-white mb-6">
             Roadmap (Updated)
@@ -324,7 +401,7 @@ export default function LitepaperPage() {
           <div className="space-y-6">
             <div className="bg-gray-900 border-l-4 border-[#58B12F] p-6 rounded-lg">
               <h3 className="text-xl md:text-2xl font-normal uppercase text-white mb-4">
-                Phase 1 — Base Mini App (Live)
+                Phase 1 - Base Mini App (Live)
               </h3>
               <ul className="space-y-2 md:text-lg leading-relaxed text-gray-300 list-disc list-inside ml-4">
                 <li>Farcaster app</li>
@@ -335,7 +412,7 @@ export default function LitepaperPage() {
 
             <div className="bg-gray-900 border-l-4 border-[#58B12F] p-6 rounded-lg">
               <h3 className="text-xl md:text-2xl font-normal uppercase text-white mb-4">
-                Phase 2 — Celo Full dApp (In Development)
+                Phase 2 - Celo Full dApp (In Development)
               </h3>
               <ul className="space-y-2 md:text-lg leading-relaxed text-gray-300 list-disc list-inside ml-4">
                 <li>dashboards + leaderboards</li>
@@ -350,7 +427,7 @@ export default function LitepaperPage() {
 
             <div className="bg-gray-900 border-l-4 border-[#FAFF00] p-6 rounded-lg">
               <h3 className="text-xl md:text-2xl font-normal uppercase text-white mb-4">
-                Phase 3 — Reputation + Marketplace Layer
+                Phase 3 - Reputation + Marketplace Layer
               </h3>
               <ul className="space-y-2 md:text-lg leading-relaxed text-gray-300 list-disc list-inside ml-4">
                 <li>RWI Rank</li>
@@ -362,7 +439,7 @@ export default function LitepaperPage() {
 
             <div className="bg-gray-900 border-l-4 border-[#FAFF00] p-6 rounded-lg">
               <h3 className="text-xl md:text-2xl font-normal uppercase text-white mb-4">
-                Phase 4 — Multichain Expansion
+                Phase 4 - Multichain Expansion
               </h3>
               <ul className="space-y-2 md:text-lg leading-relaxed text-gray-300 list-disc list-inside ml-4">
                 <li>unified identity</li>
@@ -374,7 +451,7 @@ export default function LitepaperPage() {
 
             <div className="bg-gray-900 border-l-4 border-[#FAFF00] p-6 rounded-lg">
               <h3 className="text-xl md:text-2xl font-normal uppercase text-white mb-4">
-                Phase 5 — DeCleanup V3
+                Phase 5 - DeCleanup V3
               </h3>
               <ul className="space-y-2 md:text-lg leading-relaxed text-gray-300 list-disc list-inside ml-4">
                 <li>ESG partnerships</li>
@@ -399,44 +476,6 @@ export default function LitepaperPage() {
           </p>
         </section>
 
-        <div className="h-px bg-[#58B12F] mb-12 md:mb-16"></div>
-
-        {/* Backed by — Giveth, Octant, Gitcoin, Ethereum for the World (logo placeholders) */}
-        <section className="mb-12 md:mb-16">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-normal uppercase text-white mb-6">
-            Backed by
-          </h2>
-          <p className="mb-8 md:text-lg leading-relaxed text-gray-300">
-            DeCleanup has been supported by Giveth, Octant, Gitcoin, and Ethereum for the World.
-          </p>
-          {/* Logo placeholders — replace with <Image> or <img> when logos are ready */}
-          <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
-            <div className="flex flex-col items-center gap-3 rounded-xl border border-white/10 bg-gray-900/50 p-6">
-              <div className="flex h-20 w-20 items-center justify-center rounded-lg border border-dashed border-white/20 bg-white/5 text-gray-500">
-                <span className="text-xs">Giveth logo</span>
-              </div>
-              <span className="text-sm font-medium text-white">Giveth</span>
-            </div>
-            <div className="flex flex-col items-center gap-3 rounded-xl border border-white/10 bg-gray-900/50 p-6">
-              <div className="flex h-20 w-20 items-center justify-center rounded-lg border border-dashed border-white/20 bg-white/5 text-gray-500">
-                <span className="text-xs">Octant logo</span>
-              </div>
-              <span className="text-sm font-medium text-white">Octant</span>
-            </div>
-            <div className="flex flex-col items-center gap-3 rounded-xl border border-white/10 bg-gray-900/50 p-6">
-              <div className="flex h-20 w-20 items-center justify-center rounded-lg border border-dashed border-white/20 bg-white/5 text-gray-500">
-                <span className="text-xs">Gitcoin logo</span>
-              </div>
-              <span className="text-sm font-medium text-white">Gitcoin</span>
-            </div>
-            <div className="flex flex-col items-center gap-3 rounded-xl border border-white/10 bg-gray-900/50 p-6">
-              <div className="flex h-20 w-20 items-center justify-center rounded-lg border border-dashed border-white/20 bg-white/5 text-gray-500">
-                <span className="text-xs">E4W logo</span>
-              </div>
-              <span className="text-sm font-medium text-white">Ethereum for the World</span>
-            </div>
-          </div>
-        </section>
       </div>
     </main>
   );

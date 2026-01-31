@@ -4,6 +4,13 @@ const nextConfig = {
   output: "export",
   images: {
     unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "www.un.org",
+        pathname: "/sustainabledevelopment/**",
+      },
+    ],
   },
   basePath: process.env.BASE_PATH || "",
   assetPrefix: process.env.BASE_PATH || "",

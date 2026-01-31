@@ -4,7 +4,9 @@ import Image from "next/image";
 import Divider from "../ui/Divider";
 // Simple Divider component since it's imported
 
-const NavLink = () => {
+type NavLinkVariant = "full" | "linksOnly" | "footerOnly";
+
+const NavLink = ({ variant = "full" }: { variant?: NavLinkVariant }) => {
   // Internal links (same domain)
   const internalLinks = [
     { name: "LITEPAPER", href: "/litepaper" },
@@ -29,10 +31,15 @@ const NavLink = () => {
     },
   ];
 
+  const showLinks = variant === "full" || variant === "linksOnly";
+  const showFooter = variant === "full" || variant === "footerOnly";
+
   return (
     <nav className="relative overflow-hidden">
-      <Divider className="" />
+      {showLinks && <Divider className="" />}
 
+      {showLinks && (
+      <>
       {/* Internal Links Section - More Prominent */}
       <div className="mb-6">
         {/* Mobile Layout - Internal Links */}
@@ -121,6 +128,11 @@ const NavLink = () => {
         </div>
       </div>
 
+      </>
+      )}
+
+      {showFooter && (
+      <>
       <Divider className="mt-6 bg-gray-800" />
 
       {/* Footer */}
@@ -134,9 +146,11 @@ const NavLink = () => {
             className="h-10 md:h-12 w-auto"
             unoptimized
           />
-          <span className="text-white text-sm md:text-base lg:text-lg font-medium text-center md:text-left">
-            2025©
-          </span>
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
+            <span className="text-white text-sm md:text-base lg:text-lg font-medium">
+              Base · Celo · DeCleanup 2026
+            </span>
+          </div>
         </div>
         <div className="flex items-center justify-center gap-3 md:gap-4 order-1 md:order-2">
           <Image
@@ -157,6 +171,8 @@ const NavLink = () => {
           <span>celo</span>
         </div>
       </div>
+      </>
+      )}
     </nav>
   );
 };

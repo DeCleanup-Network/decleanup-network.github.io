@@ -329,7 +329,7 @@ const UserGuide = () => {
           </div>
         </section>
 
-        {/* SECTION 2 — HOW IT WORKS (3-STEP FLOW) */}
+        {/* SECTION 2 - HOW IT WORKS (3-STEP FLOW) */}
         <section className="mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-normal uppercase text-white mb-8 text-center">
             How It Works
@@ -376,13 +376,13 @@ const UserGuide = () => {
           </div>
         </section>
 
-        {/* SECTION 3 — REWARDS OVERVIEW (2 FEATURE CARDS) */}
+        {/* SECTION 3 - REWARDS OVERVIEW (2 FEATURE CARDS) */}
         <section className="mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-normal uppercase text-white mb-8 text-center">
             Rewards Overview
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-            {/* Card A — Impact Product */}
+            {/* Card A - Impact Product */}
             <div className="bg-gray-900 border-l-4 border-[#58B12F] rounded-xl p-6 lg:p-8 flex flex-col h-full hover:shadow-[0_0_30px_rgba(88,177,47,0.2)] transition-all duration-300 hover:-translate-y-1">
               <div className="w-14 h-14 bg-gradient-to-br from-[#58B12F] to-[#FAFF00] rounded-lg flex items-center justify-center mb-4">
                 <TargetIcon className="w-7 h-7 text-white" />
@@ -395,7 +395,7 @@ const UserGuide = () => {
               </p>
             </div>
 
-            {/* Card B — $bDCU Rewards */}
+            {/* Card B - $bDCU Rewards */}
             <div className="bg-gray-900 border-l-4 border-[#FAFF00] rounded-xl p-6 lg:p-8 flex flex-col h-full hover:shadow-[0_0_30px_rgba(250,255,0,0.2)] transition-all duration-300 hover:-translate-y-1">
               <div className="w-14 h-14 bg-gradient-to-br from-[#FAFF00] to-[#58B12F] rounded-lg flex items-center justify-center mb-4">
                 <CoinIcon className="w-7 h-7 text-black" />
@@ -411,7 +411,7 @@ const UserGuide = () => {
           </div>
         </section>
 
-        {/* SECTION 4 — REWARDS BREAKDOWN */}
+        {/* SECTION 4 - REWARDS BREAKDOWN */}
         <section className="mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-normal uppercase text-white mb-8 text-center">
             Rewards Breakdown
@@ -514,13 +514,13 @@ const UserGuide = () => {
           </div>
         </section>
 
-        {/* SECTION 5 — VERIFICATION SYSTEM (SPLIT LAYOUT) */}
+        {/* SECTION 5 - VERIFICATION SYSTEM (SPLIT LAYOUT) */}
         <section className="mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-normal uppercase text-white mb-8 text-center">
             Verification System
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-            {/* LEFT SIDE — Text block */}
+            {/* LEFT SIDE - Text block */}
             <div className="flex flex-col justify-center">
               <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-4">
                 Your cleanup will be reviewed by community verifiers, who are
@@ -534,7 +534,7 @@ const UserGuide = () => {
               </p>
             </div>
 
-            {/* RIGHT SIDE — Illustration with icon */}
+            {/* RIGHT SIDE - Illustration with icon */}
             <div className="bg-[#0A0A0A] border-2 border-[#58B12F] rounded-xl p-8 flex items-center justify-center aspect-video hover:shadow-[0_0_30px_rgba(88,177,47,0.2)] transition-all duration-300">
               <div className="w-full h-full bg-gradient-to-br from-[#58B12F]/20 to-[#FAFF00]/20 rounded-lg flex items-center justify-center">
                 <div className="w-24 h-24 bg-gradient-to-br from-[#58B12F] to-[#FAFF00] rounded-full flex items-center justify-center">
@@ -545,7 +545,7 @@ const UserGuide = () => {
           </div>
         </section>
 
-        {/* SECTION 6 — CELO FULL APP COMING SOON (FINAL CARD) */}
+        {/* SECTION 6 - CELO FULL APP COMING SOON (FINAL CARD) */}
         <section className="mb-12 md:mb-16">
           <div className="max-w-3xl mx-auto">
             <div className="bg-[#0A0A0A] border-l-4 border-[#58B12F] rounded-xl p-6 lg:p-8 flex flex-col items-center text-center hover:shadow-[0_0_30px_rgba(88,177,47,0.2)] transition-all duration-300">
@@ -553,7 +553,7 @@ const UserGuide = () => {
                 <PlantIcon className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl md:text-3xl font-semibold text-white mb-4">
-                Full Celo dApp — Coming Soon
+                Full Celo dApp - Coming Soon
               </h3>
               <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-6 max-w-2xl">
                 The complete DeCleanup experience is launching soon on Celo with

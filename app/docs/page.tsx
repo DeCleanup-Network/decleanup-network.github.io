@@ -100,6 +100,75 @@ export default function DocsPage() {
           </p>
         </div>
 
+        {/* For those who build and coordinate impact - intro before technical docs */}
+        <div className="mb-16 rounded-2xl border border-[#58B12F]/30 bg-gray-900/90 p-6 md:p-8 max-w-3xl mx-auto text-left">
+          <h2 className="text-lg font-medium text-[#58B12F] mb-6">For those who build and coordinate impact</h2>
+
+          <h3 className="text-xl font-medium text-white mb-3">The problem</h3>
+          <p className="text-gray-400 text-sm mb-3">Impact coordinators struggle with:</p>
+          <ul className="list-none space-y-2 text-sm text-gray-300 mb-6 ml-0">
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Fragmented data</li>
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Manual reporting</li>
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Trust bottlenecks</li>
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>No shared infrastructure for verification</li>
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Hard-to-govern funding decisions</li>
+          </ul>
+
+          <h3 className="text-xl font-medium text-white mb-3">What DeCleanup provides</h3>
+          <p className="text-gray-400 text-sm mb-3">DeCleanup is open DMRV infrastructure, not a closed platform. You can:</p>
+          <ul className="list-none space-y-2 text-sm text-gray-300 mb-6 ml-0">
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Use standardized cleanup data</li>
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Participate in governance</li>
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Help define verification rules</li>
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Coordinate funding transparently</li>
+          </ul>
+
+          <h3 className="text-xl font-medium text-white mb-3">DMRV (Data-Measurement-Reporting-Verification) as infrastructure</h3>
+          <p className="text-gray-400 text-sm mb-3">We treat DMRV as a public good layer:</p>
+          <ul className="list-none space-y-2 text-sm text-gray-300 mb-4 ml-0">
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Cleanup records are immutable</li>
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Data structures are open and interoperable</li>
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>No dependency on proprietary standards</li>
+          </ul>
+          <p className="text-gray-400 text-sm mb-2">Compatible with:</p>
+          <ul className="list-none space-y-2 text-sm text-gray-300 mb-4 ml-0">
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>SDG reporting</li>
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Regen ecosystems</li>
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Future certification layers</li>
+          </ul>
+          <p className="text-gray-400 text-sm mb-2">This aligns with:</p>
+          <ul className="list-none space-y-2 text-sm text-gray-300 mb-6 ml-0">
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Regen community tooling</li>
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Open impact accounting systems</li>
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Governance &amp; coordination</li>
+          </ul>
+
+          <h3 className="text-xl font-medium text-white mb-3">Governance tools live on Celo</h3>
+          <ul className="list-none space-y-2 text-sm text-gray-300 mb-4 ml-0">
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>$cDCU is used for proposals and voting</li>
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Governance is coordinated via <a href="https://gardens.fund" target="_blank" rel="noopener noreferrer" className="text-[#58B12F] hover:text-[#FAFF00] underline">Gardens.fund</a></li>
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Community decides: verification rules, funding priorities, new pools and experiments</li>
+          </ul>
+
+          <h4 className="text-base font-medium text-white mb-2">Example funding pools</h4>
+          <ul className="list-none space-y-2 text-sm text-gray-300 mb-6 ml-0">
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Equipment Pool (first pool, sponsored by Ethereum for the World)</li>
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Local Organizer Support Pool</li>
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Logistics &amp; Transport Pool</li>
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Data &amp; Research Pool</li>
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Experimental / Pilot Pool</li>
+          </ul>
+
+          <h3 className="text-xl font-medium text-white mb-3">Outcome</h3>
+          <ul className="list-none space-y-2 text-sm text-gray-300 mb-6 ml-0">
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Coordinators spend less time proving impact</li>
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Communities self-govern funding</li>
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Impact data becomes reusable infrastructure</li>
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Cleanups scale without centralized control</li>
+          </ul>
+          <p className="text-sm text-gray-500 italic">Coordination layer first.</p>
+        </div>
+
         {/* Mobile Overlay */}
         {sidebarOpen && (
           <div
