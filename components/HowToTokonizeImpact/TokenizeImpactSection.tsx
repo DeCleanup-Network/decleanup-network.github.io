@@ -12,7 +12,7 @@ const steps = [
 ];
 
 // Placeholder for real cleanup before/after photo
-const CLEANUP_IMAGE = "/image1.png";
+const CLEANUP_IMAGE = "/images/impact_verification.png";
 
 const TokenizeImpactSection = () => {
   return (
@@ -21,7 +21,7 @@ const TokenizeImpactSection = () => {
         {/* Section Header - increased spacing */}
         <div className="mb-12 text-center md:mb-16">
           <h2
-            className="mb-4 text-3xl font-medium uppercase tracking-wide text-white md:text-4xl lg:text-5xl"
+            className="mb-4 text-3xl font-normal uppercase leading-tight text-white md:text-4xl lg:text-5xl"
             style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
           >
             How to Tokenize Impact
@@ -47,7 +47,7 @@ const TokenizeImpactSection = () => {
                   alt="Cleanup result – verified impact"
                   width={600}
                   height={450}
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover filter contrast-110 saturate-[0.85] brightness-90"
                 />
               </div>
               {/* Optional second badge: Approved Impact */}
@@ -115,7 +115,7 @@ const TokenizeImpactSection = () => {
           {/* Join Movement */}
           <div className="space-y-6">
             <h3
-              className="text-3xl font-medium uppercase tracking-wide text-white md:text-4xl"
+              className="text-3xl font-normal uppercase leading-tight text-white md:text-4xl lg:text-5xl"
               style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
             >
               Join the Movement

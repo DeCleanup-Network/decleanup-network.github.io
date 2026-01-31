@@ -8,7 +8,10 @@ export default function WhoIsThisFor() {
   return (
     <section className="relative overflow-x-hidden py-24 bg-black">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <h2 className="mb-14 text-center text-3xl font-semibold text-white md:text-4xl">
+        <h2
+          className="mb-14 text-center text-3xl font-normal uppercase leading-tight text-white md:text-4xl lg:text-5xl"
+          style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
+        >
           Who is this for?
         </h2>
 

@@ -5,12 +5,8 @@ export default function WhyDeCleanup() {
     <section className="relative overflow-x-hidden border-t border-white/10 bg-black py-16 md:py-24">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 text-center">
         <h2
-          className="mb-8 text-2xl font-semibold text-white sm:text-3xl md:text-4xl"
-          style={{
-            fontFamily: "var(--font-bebas-neue), sans-serif",
-            textTransform: "uppercase",
-            letterSpacing: "0.05em",
-          }}
+          className="mb-8 text-3xl font-normal uppercase leading-tight text-white md:text-4xl lg:text-5xl"
+          style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
         >
           Why DeCleanup Exists
         </h2>

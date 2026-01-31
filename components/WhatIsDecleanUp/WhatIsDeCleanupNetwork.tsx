@@ -21,50 +21,30 @@ export default function WhatIsDeCleanupNetwork() {
               </div>
             </div>
 
-            {/* Placeholder: Community impact (nodes / growth) - top-left area */}
-            <div className="absolute left-4 top-4 flex h-20 w-20 items-center justify-center rounded-xl border border-white/10 bg-black/40 backdrop-blur-sm sm:left-6 sm:top-6 sm:h-24 sm:w-24">
+            {/* Icon Left: Monitoring / Data */}
+            <div className="absolute left-4 top-4 flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-black/40 backdrop-blur-md transition-transform hover:scale-105 sm:left-6 sm:top-6 sm:h-20 sm:w-20 shadow-[0_0_20px_rgba(88,177,47,0.15)]">
               <svg
-                viewBox="0 0 48 48"
+                viewBox="0 0 24 24"
                 fill="none"
-                className="h-10 w-10 text-[#58B12F]/80 sm:h-12 sm:w-12"
-                aria-hidden
+                className="h-8 w-8 text-[#58B12F] sm:h-10 sm:w-10"
+                stroke="currentColor"
+                strokeWidth="1.5"
               >
-                <circle cx="24" cy="24" r="3" fill="currentColor" />
-                <circle cx="12" cy="16" r="2" fill="currentColor" opacity="0.7" />
-                <circle cx="36" cy="16" r="2" fill="currentColor" opacity="0.7" />
-                <circle cx="12" cy="32" r="2" fill="currentColor" opacity="0.7" />
-                <circle cx="36" cy="32" r="2" fill="currentColor" opacity="0.7" />
-                <path
-                  d="M24 21v6M24 27v-6M18 18l6 6M24 24l6-6M18 30l6-6M24 24l-6-6"
-                  stroke="currentColor"
-                  strokeWidth="0.8"
-                  opacity="0.5"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
               </svg>
-              <span className="sr-only">Community impact visualization</span>
             </div>
 
-            {/* Placeholder: Cleanup done (check + bag) - top-right area */}
-            <div className="absolute right-4 top-4 flex h-20 w-20 items-center justify-center rounded-xl border border-white/10 bg-black/40 backdrop-blur-sm sm:right-6 sm:top-6 sm:h-24 sm:w-24">
+            {/* Icon Right: Verification / Action */}
+            <div className="absolute right-4 top-4 flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-black/40 backdrop-blur-md transition-transform hover:scale-105 sm:right-6 sm:top-6 sm:h-20 sm:w-20 shadow-[0_0_20px_rgba(250,255,0,0.15)]">
               <svg
-                viewBox="0 0 48 48"
+                viewBox="0 0 24 24"
                 fill="none"
-                className="h-10 w-10 text-[#FAFF00]/80 sm:h-12 sm:w-12"
-                aria-hidden
+                className="h-8 w-8 text-[#FAFF00] sm:h-10 sm:w-10"
+                stroke="currentColor"
+                strokeWidth="1.5"
               >
-                <path
-                  d="M18 32l-6-6 2.8-2.8L18 26.4l12.4-12.4L33 16 18 32z"
-                  fill="currentColor"
-                />
-                <path
-                  d="M14 20h2v-4c0-2.2 1.8-4 4-4h12c2.2 0 4 1.8 4 4v4h2v-4c0-3.3-2.7-6-6-6H20c-3.3 0-6 2.7-6 6v4z"
-                  stroke="currentColor"
-                  strokeWidth="1.2"
-                  fill="none"
-                  opacity="0.8"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              <span className="sr-only">Cleanup done visualization</span>
             </div>
 
             {/* UI overlay: Total Impact - LIVE (lighter so label and border are visible) */}
@@ -80,7 +60,10 @@ export default function WhatIsDeCleanupNetwork() {
 
           {/* RIGHT - DMRV Explanation */}
           <div className="min-w-0">
-            <h2 className="mb-4 text-2xl font-semibold text-white sm:text-3xl md:text-4xl">
+            <h2
+              className="mb-4 text-3xl font-normal uppercase leading-tight text-white md:text-4xl lg:text-5xl"
+              style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
+            >
               DMRV: Digital Monitoring, Reporting & Verification
             </h2>
             <p className="mb-6 text-gray-400 sm:mb-8">

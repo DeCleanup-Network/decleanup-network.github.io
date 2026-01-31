@@ -75,7 +75,10 @@ const UseDeCleanupToday = () => {
       <div className="mx-auto max-w-7xl">
         {/* Section Header - after hero: EARN DECLEANUP REWARDS TODAY */}
         <div className="mb-16 text-center">
-          <h2 className="mb-4 text-4xl font-normal tracking-tight text-white md:text-5xl">
+          <h2
+            className="mb-4 text-3xl font-normal uppercase leading-tight text-white md:text-4xl lg:text-5xl"
+            style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
+          >
             EARN DECLEANUP <span className="text-[#58B12F]">REWARDS</span> TODAY
           </h2>
           <p className="mx-auto max-w-xl text-gray-400">
