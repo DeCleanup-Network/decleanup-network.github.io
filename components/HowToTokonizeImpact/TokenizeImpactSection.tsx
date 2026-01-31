@@ -26,16 +26,23 @@ const TokenizeImpactSection = () => {
           >
             How to Tokenize Impact
           </h2>
-          <p className="mx-auto max-w-xl text-base leading-relaxed text-gray-400">
-            Three steps from cleanup to verified, tokenized impact.
-          </p>
+          {/* Clean up, snap, earn - replaces old subtitle */}
+          <div className="flex justify-center">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-gray-300">
+              <span
+                className="h-2 w-2 rounded-full bg-[#58B12F] animate-pulse"
+                aria-hidden
+              />
+              CLEAN UP, SNAP, EARN
+            </div>
+          </div>
         </div>
 
-        {/* Content: Visual card (left) + 3-step flow (right) */}
-        <div className="flex flex-col gap-10 md:flex-row md:gap-12 lg:gap-16 items-start">
+        {/* Content: Visual card (left) + 3-step flow (right); mobile: full-width stacked, steps stretch */}
+        <div className="flex flex-col gap-10 md:flex-row md:gap-12 lg:gap-16 items-stretch">
           {/* Left: Card with cleanup photo + floating verification badge */}
-          <div className="w-full md:w-1/2 shrink-0">
-            <div className="relative rounded-2xl border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:border-[#58B12F]/30 hover:shadow-[0_0_30px_rgba(88,177,47,0.1)]">
+          <div className="w-full min-w-0 md:w-1/2 shrink-0">
+            <div className="relative rounded-2xl border border-white/10 bg-white/5 p-4 sm:p-6 transition-all duration-300 hover:border-[#58B12F]/30 hover:shadow-[0_0_30px_rgba(88,177,47,0.1)]">
               {/* Floating badge: Photo Verified */}
               <div className="absolute bottom-4 right-4 z-10 flex items-center gap-2 rounded-full border border-white/10 bg-black/90 px-3 py-1.5 text-xs text-white shadow-lg animate-pulse" style={{ animationDuration: "2.5s" }}>
                 <span aria-hidden>✔</span>
@@ -58,12 +65,12 @@ const TokenizeImpactSection = () => {
             </div>
           </div>
 
-          {/* Right: 3-step vertical flow */}
-          <div className="flex flex-1 flex-col gap-6">
+          {/* Right: 3-step vertical flow - full width on mobile, stretched */}
+          <div className="flex w-full min-w-0 flex-1 flex-col gap-4 sm:gap-6">
             {steps.map((step, index) => (
               <div
                 key={index}
-                className="rounded-2xl border border-gray-800 bg-gray-900/80 p-6 transition-all duration-300 hover:border-[#58B12F]/30 hover:shadow-[0_0_20px_rgba(88,177,47,0.08)]"
+                className="w-full min-w-0 rounded-2xl border border-gray-800 bg-gray-900/80 p-4 sm:p-6 transition-all duration-300 hover:border-[#58B12F]/30 hover:shadow-[0_0_20px_rgba(88,177,47,0.08)]"
               >
                 <div className="flex items-center gap-4">
                   <div className="text-2xl font-semibold text-[#FAFF00] md:text-3xl" style={{ fontWeight: 500 }}>
@@ -81,39 +88,8 @@ const TokenizeImpactSection = () => {
           </div>
         </div>
 
-        {/* CTA Section */}
+        {/* Join Movement */}
         <div className="mt-16 space-y-12 text-center lg:space-y-16">
-          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link
-              href="https://farcaster.xyz/miniapps/SfsGBDcHpuSA/decleanup-rewards"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-xl bg-[#FAFF00] px-6 py-3 font-medium text-black transition-all duration-300 hover:bg-[#FAFF00]/90 hover:shadow-[0_0_24px_rgba(250,255,0,0.2)]"
-              style={{ fontWeight: 500 }}
-            >
-              Get started on Farcaster
-            </Link>
-            <Link
-              href="https://miniapp.decleanup.net"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-xl border border-[#FAFF00]/50 px-6 py-3 font-medium text-white transition-all duration-300 hover:border-[#FAFF00] hover:bg-[#FAFF00]/5"
-              style={{ fontWeight: 500 }}
-            >
-              Get started in web app
-            </Link>
-          </div>
-
-          <div>
-            <Link
-              href="/userguide"
-              className="text-sm font-medium text-[#58B12F] hover:text-[#58B12F]/90"
-            >
-              View User Guide →
-            </Link>
-          </div>
-
-          {/* Join Movement */}
           <div className="space-y-6">
             <h3
               className="text-3xl font-normal uppercase leading-tight text-white md:text-4xl lg:text-5xl"

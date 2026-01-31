@@ -152,7 +152,7 @@ const NavLink = ({ variant = "full" }: { variant?: NavLinkVariant }) => {
                 </span>
               </div>
             </div>
-            <div className="flex items-center justify-center gap-3 md:gap-4 order-1 md:order-2">
+            <div className="flex items-center justify-center gap-4 md:gap-6 order-1 md:order-2">
               <Image
                 src="/base-logo-white.svg"
                 alt="Base"
@@ -160,15 +160,20 @@ const NavLink = ({ variant = "full" }: { variant?: NavLinkVariant }) => {
                 height={32}
                 className="h-5 md:h-6 w-auto"
               />
-              <div className="flex items-center">
+              <div className="flex items-center gap-2">
                 <Image
                   src="/celo-celo-logo.svg"
-                  alt="Celo"
+                  alt=""
                   width={100}
                   height={100}
                   className="h-5 md:h-6 w-auto"
                 />
-                <span className="text-sm font-semibold text-gray-400 tracking-wider ml-2">celo</span>
+                <span
+                  className="text-sm font-bold text-gray-400 tracking-wider"
+                  style={{ fontFamily: "var(--font-geist-sans), system-ui, sans-serif" }}
+                >
+                  celo
+                </span>
               </div>
             </div>
           </div>

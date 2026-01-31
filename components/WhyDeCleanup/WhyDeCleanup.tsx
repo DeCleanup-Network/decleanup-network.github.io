@@ -14,12 +14,6 @@ export default function WhyDeCleanup() {
           Environmental cleanups already happen.
           What&apos;s missing is credible, open, reusable proof that they happened - and tools to coordinate, incentivize, and fund them transparently.
         </p>
-        <h2
-          className="mb-6 text-2xl font-normal uppercase leading-tight text-white md:text-3xl lg:text-4xl"
-          style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
-        >
-          How DeCleanup Network Works
-        </h2>
         <p className="text-base leading-relaxed text-gray-400 md:text-lg mb-6">
           DeCleanup is an SDG-aligned application focused on:
         </p>

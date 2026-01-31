@@ -30,8 +30,8 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl px-4 sm:px-6 text-center">
-        {/* Logo + Badge Container */}
-        <div className="mb-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
+        {/* Logo - centred */}
+        <div className="mb-8 flex justify-center">
           <Image
             src="/images/decleanup_logo_full.png"
             alt="DeCleanup Network Logo"
@@ -41,14 +41,6 @@ const Hero = () => {
             priority
             unoptimized
           />
-
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-gray-300">
-            <span
-              className="h-2 w-2 rounded-full bg-[#58B12F] animate-pulse"
-              aria-hidden
-            />
-            CLEAN UP, SNAP, EARN
-          </div>
         </div>
 
         {/* Main title */}
