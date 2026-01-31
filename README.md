@@ -1,6 +1,8 @@
 # DeCleanup Network Landing Page
 
-Welcome to the open-source landing page project for [DeCleanup Network](https://decleanup.net) — a decentralized impact movement focused on tokenizing real-world environmental cleanups.
+**DeCleanup is an SDG-aligned regenerative impact application.**
+
+Welcome to the open-source landing page project for [DeCleanup Network](https://decleanup.net) - a decentralized impact movement focused on tokenizing real-world environmental cleanups.
 
 ## 🧩 Project Purpose
 

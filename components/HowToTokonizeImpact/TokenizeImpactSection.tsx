@@ -1,5 +1,7 @@
 import React from "react";
 import NavLink from "../NavLink/NavLink";
+import BackedBy from "../BackedBy/BackedBy";
+import SDGsFooter from "../SDGsFooter/SDGsFooter";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -152,7 +154,12 @@ const TokenizeImpactSection = () => {
               </Link>
             </div>
           </div>
-          <NavLink />
+          {/* Links: Litepaper, Tokenomics, Docs, User Guide, External Links */}
+          <NavLink variant="linksOnly" />
+          {/* Backed by + SDG logos just above footer */}
+          <BackedBy />
+          <SDGsFooter />
+          <NavLink variant="footerOnly" />
         </div>
       </div>
     </div>

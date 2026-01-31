@@ -5,7 +5,7 @@ export default function WhatIsDeCleanupNetwork() {
     <section className="relative overflow-x-hidden py-16 bg-black md:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-16">
-          {/* LEFT — Visual DMRV: gradient, concentric circles, placeholders, overlay */}
+          {/* LEFT - Visual DMRV: gradient, concentric circles, placeholders, overlay */}
           <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900 md:aspect-square lg:aspect-[4/3]">
             {/* Abstract gradient background */}
             <div
@@ -21,7 +21,7 @@ export default function WhatIsDeCleanupNetwork() {
               </div>
             </div>
 
-            {/* Placeholder: Community impact (nodes / growth) — top-left area */}
+            {/* Placeholder: Community impact (nodes / growth) - top-left area */}
             <div className="absolute left-4 top-4 flex h-20 w-20 items-center justify-center rounded-xl border border-white/10 bg-black/40 backdrop-blur-sm sm:left-6 sm:top-6 sm:h-24 sm:w-24">
               <svg
                 viewBox="0 0 48 48"
@@ -44,7 +44,7 @@ export default function WhatIsDeCleanupNetwork() {
               <span className="sr-only">Community impact visualization</span>
             </div>
 
-            {/* Placeholder: Cleanup done (check + bag) — top-right area */}
+            {/* Placeholder: Cleanup done (check + bag) - top-right area */}
             <div className="absolute right-4 top-4 flex h-20 w-20 items-center justify-center rounded-xl border border-white/10 bg-black/40 backdrop-blur-sm sm:right-6 sm:top-6 sm:h-24 sm:w-24">
               <svg
                 viewBox="0 0 48 48"
@@ -67,7 +67,7 @@ export default function WhatIsDeCleanupNetwork() {
               <span className="sr-only">Cleanup done visualization</span>
             </div>
 
-            {/* UI overlay: Total Impact — LIVE (lighter so label and border are visible) */}
+            {/* UI overlay: Total Impact - LIVE (lighter so label and border are visible) */}
             <div className="absolute bottom-4 left-4 right-4 rounded-xl border border-white/25 bg-neutral-800/95 p-3 shadow-lg backdrop-blur sm:bottom-6 sm:left-6 sm:right-6 sm:p-4">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-medium uppercase tracking-wider text-gray-200">
@@ -78,7 +78,7 @@ export default function WhatIsDeCleanupNetwork() {
             </div>
           </div>
 
-          {/* RIGHT — DMRV Explanation */}
+          {/* RIGHT - DMRV Explanation */}
           <div className="min-w-0">
             <h2 className="mb-4 text-2xl font-semibold text-white sm:text-3xl md:text-4xl">
               DMRV: Digital Monitoring, Reporting & Verification

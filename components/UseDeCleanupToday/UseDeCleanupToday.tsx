@@ -38,6 +38,7 @@ const UseDeCleanupToday = () => {
       bullets: [
         "Live on Base",
         "Used for quick rewards and trading",
+        "Holders will be airdropped $cDCU for the full experience",
       ],
       buttonLabel: "Swap ETH/bDCU",
       buttonHref: "https://app.uniswap.org/swap?chain=base&inputCurrency=ETH&outputCurrency=0x30171b7014c02229497CdE6745DD3aD821F12b07",
@@ -72,7 +73,7 @@ const UseDeCleanupToday = () => {
       className="w-full overflow-x-hidden px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20"
     >
       <div className="mx-auto max-w-7xl">
-        {/* Section Header — after hero: EARN DECLEANUP REWARDS TODAY */}
+        {/* Section Header - after hero: EARN DECLEANUP REWARDS TODAY */}
         <div className="mb-16 text-center">
           <h2 className="mb-4 text-4xl font-normal tracking-tight text-white md:text-5xl">
             EARN DECLEANUP <span className="text-[#58B12F]">REWARDS</span> TODAY

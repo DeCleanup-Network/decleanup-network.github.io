@@ -158,6 +158,22 @@ body {
   transform: translateY(-4px);
 }
 
+/* Who is this for - subtle border glow */
+@keyframes border-glow {
+  0%, 100% {
+    border-color: rgba(88, 177, 47, 0.35);
+    box-shadow: 0 0 0 1px rgba(88, 177, 47, 0.2);
+  }
+  50% {
+    border-color: rgba(88, 177, 47, 0.6);
+    box-shadow: 0 0 20px rgba(88, 177, 47, 0.15);
+  }
+}
+
+.card-border-glow {
+  animation: border-glow 3s ease-in-out infinite;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

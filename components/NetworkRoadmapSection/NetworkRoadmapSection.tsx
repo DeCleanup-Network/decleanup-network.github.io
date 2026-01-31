@@ -204,7 +204,7 @@ const RoadmapCarousel = ({ roadmap }: { roadmap: Array<{ phase: string; bullets:
 const NetworkRoadmapSection = () => {
   const roadmap = [
     {
-      phase: "Phase 1 — Base Mini App (live)",
+      phase: "Phase 1 - Base Mini App (live)",
       bullets: [
         "Farcaster mini app for quick cleanups",
         "$bDCU rewards on Base",
@@ -212,7 +212,7 @@ const NetworkRoadmapSection = () => {
       ],
     },
     {
-      phase: "Phase 2 — Celo Full dApp (building)",
+      phase: "Phase 2 - Celo Full dApp (building)",
       bullets: [
         "Full dashboard, leaderboard, streaks",
         "Impact Products, claim & stake",
@@ -220,7 +220,7 @@ const NetworkRoadmapSection = () => {
       ],
     },
     {
-      phase: "Phase 3 — Reputation & Governance",
+      phase: "Phase 3 - Reputation & Governance",
       bullets: [
         "$cDCU as reputation + governance token on Celo",
         "Voting on Gardens.fund",
@@ -228,7 +228,7 @@ const NetworkRoadmapSection = () => {
       ],
     },
     {
-      phase: "Phase 4 — Multichain Ecosystem",
+      phase: "Phase 4 - Multichain Ecosystem",
       bullets: [
         "Base + Celo live side-by-side",
         "Integrations with Regen Bazaar and partners",
@@ -387,7 +387,7 @@ const NetworkRoadmapSection = () => {
             <div className="flex justify-end items-center">
               <div className="text-right">
                 <p className="text-base sm:text-lg font-bold text-gray-300">
-                  — Yuichi Hosomo, Hem Japan
+                  - Yuichi Hosomo, Hem Japan
                 </p>
               </div>
             </div>

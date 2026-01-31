@@ -43,10 +43,89 @@ export default function TokenomicsPage() {
           </p>
         </div>
 
-        {/* SECTION 1 — TWO-TOKEN OVERVIEW */}
+        {/* For those who fund real-world impact - intro before token details */}
+        <div className="mb-16 rounded-2xl border border-[#58B12F]/30 bg-gray-900/90 p-6 md:p-8 max-w-3xl mx-auto text-left">
+          <h2 className="text-lg font-medium text-[#58B12F] mb-6">For those who fund real-world impact</h2>
+
+          <h3 className="text-xl font-medium text-white mb-3">The problem</h3>
+          <p className="text-gray-400 text-sm mb-3">Funders want:</p>
+          <ul className="list-none space-y-2 text-sm text-gray-300 mb-6 ml-0">
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Proof that money led to real action</li>
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Transparency without heavy overhead</li>
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Repeatable, scalable funding models</li>
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Less trust, more verification</li>
+          </ul>
+
+          <h3 className="text-xl font-medium text-white mb-3">What DeCleanup enables</h3>
+          <p className="text-gray-400 text-sm mb-3">We don&apos;t promise financial returns first. We offer verifiable impact infrastructure. Funders can:</p>
+          <ul className="list-none space-y-2 text-sm text-gray-300 mb-6 ml-0">
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Fund cleanup pools</li>
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>See immutable proof of execution</li>
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Support open verification infrastructure</li>
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Hold tokens connected to real-world activity</li>
+          </ul>
+
+          <h3 className="text-xl font-medium text-white mb-3">DMRV (Data, Measurement, Reporting, Verification) from a funder&apos;s perspective</h3>
+          <ul className="list-none space-y-2 text-sm text-gray-300 mb-4 ml-0">
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Funds flow → cleanups happen → proof is published</li>
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Records are tamper-resistant</li>
+          </ul>
+          <p className="text-gray-400 text-sm mb-2">Data can be:</p>
+          <ul className="list-none space-y-2 text-sm text-gray-300 mb-4 ml-0">
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Audited</li>
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Aggregated</li>
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Reused across reports and ecosystems</li>
+          </ul>
+          <p className="text-gray-400 text-sm mb-2">This reduces:</p>
+          <ul className="list-none space-y-2 text-sm text-gray-300 mb-6 ml-0">
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Greenwashing risk</li>
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Reporting costs</li>
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Dependence on trust-based claims</li>
+          </ul>
+
+          <h3 className="text-xl font-medium text-white mb-3">Tokens</h3>
+          <h4 className="text-base font-medium text-white mb-2">
+            <a href="https://basescan.org/address/0x30171b7014c02229497CdE6745DD3aD821F12b07" target="_blank" rel="noopener noreferrer" className="text-[#58B12F] hover:text-[#FAFF00] underline">
+              $bDCU (Base)
+            </a>
+          </h4>
+          <ul className="list-none space-y-2 text-sm text-gray-300 mb-4 ml-0">
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Incentive &amp; utility token</li>
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Rewards cleanup activity</li>
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Reflects ecosystem usage and demand</li>
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Holders will be airdropped $cDCU to get the full experience (Base + Celo)</li>
+          </ul>
+          <h4 className="text-base font-medium text-white mb-2">Governance on Celo ($cUSD)</h4>
+          <ul className="list-none space-y-2 text-sm text-gray-300 mb-4 ml-0">
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Stable, accessible voting</li>
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Proposals via <a href="https://gardens.fund" target="_blank" rel="noopener noreferrer" className="text-[#58B12F] hover:text-[#FAFF00] underline">Gardens.fund</a></li>
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Decisions tied to funding and rules</li>
+          </ul>
+          <p className="text-gray-400 text-sm mb-6">Value grows through usage, legitimacy, and adoption, not speculation.</p>
+
+          <h3 className="text-xl font-medium text-white mb-3">Outcome</h3>
+          <ul className="list-none space-y-2 text-sm text-gray-300 mb-6 ml-0">
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Funding tied to verifiable action</li>
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Better accountability</li>
+            <li className="flex items-start gap-2"><span className="text-[#58B12F] shrink-0">•</span>Open infrastructure worth supporting</li>
+          </ul>
+          <p className="text-sm text-gray-500 italic mb-2">A base layer for future impact finance</p>
+          <p className="text-sm font-medium text-[#58B12F]">Fund what you can verify.</p>
+        </div>
+
+        {/* Expandable: Dive into tokenomics */}
+        <details className="group mb-12 max-w-3xl mx-auto">
+          <summary className="list-none cursor-pointer rounded-xl border border-[#58B12F]/40 bg-[#58B12F]/10 px-6 py-4 text-center font-medium text-white hover:bg-[#58B12F]/20 hover:border-[#58B12F]/60 transition-colors flex items-center justify-center gap-2 [&::-webkit-details-marker]:hidden">
+            <span>Dive into tokenomics</span>
+            <svg className="w-5 h-5 text-[#58B12F] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </summary>
+          <div className="mt-6 pt-6 border-t border-white/10">
+        {/* SECTION 1 - TWO-TOKEN OVERVIEW */}
         <section className="mb-12 md:mb-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Card 1 — $bDCU — Base */}
+            {/* Card 1 - $bDCU - Base */}
             <div className="bg-gray-900 border-l-4 border-[#58B12F] p-6 rounded-lg flex flex-col h-full">
               <h2 
                 className="text-2xl md:text-3xl font-medium text-white mb-2 normal-case"
@@ -89,7 +168,7 @@ export default function TokenomicsPage() {
               </a>
             </div>
 
-            {/* Card 2 — $cDCU — Celo */}
+            {/* Card 2 - $cDCU - Celo */}
             <div className="bg-gray-900 border-l-4 border-[#FAFF00] p-6 rounded-lg flex flex-col h-full">
               <h2 
                 className="text-2xl md:text-3xl font-medium text-white mb-2 normal-case"
@@ -136,7 +215,7 @@ export default function TokenomicsPage() {
           </div>
         </section>
 
-        {/* SECTION 2 — TOKEN COMPARISON TABLE */}
+        {/* SECTION 2 - TOKEN COMPARISON TABLE */}
         <section className="mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-normal uppercase text-white mb-8 text-center">
             Token Comparison
@@ -216,13 +295,13 @@ export default function TokenomicsPage() {
           </div>
         </section>
 
-        {/* SECTION 3 — IMPACT SYSTEM CARDS */}
+        {/* SECTION 3 - IMPACT SYSTEM CARDS */}
         <section className="mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-normal uppercase text-white mb-8 text-center">
             Impact System
           </h2>
           <div className="flex md:grid md:grid-cols-3 gap-6 overflow-x-auto md:overflow-visible scrollbar-hide pb-4 md:pb-0 snap-x snap-mandatory md:snap-none">
-            {/* Card A — Impact Products */}
+            {/* Card A - Impact Products */}
             <div className="bg-gray-900 border-t-4 border-[#58B12F] p-6 rounded-lg min-w-[280px] md:min-w-0 snap-start flex-shrink-0 md:flex-shrink">
               <h3 className="text-xl md:text-2xl font-normal uppercase text-white mb-4">
                 Impact Products
@@ -243,7 +322,7 @@ export default function TokenomicsPage() {
               </ul>
             </div>
 
-            {/* Card B — Verifier System */}
+            {/* Card B - Verifier System */}
             <div className="bg-gray-900 border-t-4 border-[#FAFF00] p-6 rounded-lg min-w-[280px] md:min-w-0 snap-start flex-shrink-0 md:flex-shrink">
               <h3 className="text-xl md:text-2xl font-normal uppercase text-white mb-4">
                 Verifier System
@@ -268,7 +347,7 @@ export default function TokenomicsPage() {
               </ul>
             </div>
 
-            {/* Card C — Hypercerts */}
+            {/* Card C - Hypercerts */}
             <div className="bg-gray-900 border-t-4 border-[#58B12F] p-6 rounded-lg min-w-[280px] md:min-w-0 snap-start flex-shrink-0 md:flex-shrink">
               <h3 className="text-xl md:text-2xl font-normal uppercase text-white mb-4">
                 Hypercerts
@@ -291,7 +370,7 @@ export default function TokenomicsPage() {
           </div>
         </section>
 
-        {/* SECTION 4 — TOKEN LIFECYCLE */}
+        {/* SECTION 4 - TOKEN LIFECYCLE */}
         <section className="mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-normal uppercase text-white mb-8 text-center">
             Token Lifecycle
@@ -314,28 +393,28 @@ export default function TokenomicsPage() {
                   <div className="relative">
                     <div className="absolute left-[-2rem] top-2 w-6 h-6 rounded-full bg-[#58B12F] border-2 border-black"></div>
                     <div className="pl-4">
-                      <div className="text-lg font-semibold text-white mb-1">1 — Earn through the Base mini app</div>
+                      <div className="text-lg font-semibold text-white mb-1">1 - Earn through the Base mini app</div>
                     </div>
                   </div>
                   
                   <div className="relative">
                     <div className="absolute left-[-2rem] top-2 w-6 h-6 rounded-full bg-[#58B12F] border-2 border-black"></div>
                     <div className="pl-4">
-                      <div className="text-lg font-semibold text-white mb-1">2 — Stake to become a Verifier</div>
+                      <div className="text-lg font-semibold text-white mb-1">2 - Stake to become a Verifier</div>
                     </div>
                   </div>
                   
                   <div className="relative">
                     <div className="absolute left-[-2rem] top-2 w-6 h-6 rounded-full bg-[#58B12F] border-2 border-black"></div>
                     <div className="pl-4">
-                      <div className="text-lg font-semibold text-white mb-1">3 — Trade freely on Base DEXes</div>
+                      <div className="text-lg font-semibold text-white mb-1">3 - Trade freely on Base DEXes</div>
                     </div>
                   </div>
                   
                   <div className="relative">
                     <div className="absolute left-[-2rem] top-2 w-6 h-6 rounded-full bg-[#58B12F] border-2 border-black"></div>
                     <div className="pl-4">
-                      <div className="text-lg font-semibold text-white mb-1">4 — Participate in Base-side campaigns</div>
+                      <div className="text-lg font-semibold text-white mb-1">4 - Participate in Base-side campaigns</div>
                     </div>
                   </div>
                 </div>
@@ -358,28 +437,28 @@ export default function TokenomicsPage() {
                   <div className="relative">
                     <div className="absolute left-[-2rem] top-2 w-6 h-6 rounded-full bg-[#FAFF00] border-2 border-black"></div>
                     <div className="pl-4">
-                      <div className="text-lg font-semibold text-white mb-1">1 — Earn through verified cleanups</div>
+                      <div className="text-lg font-semibold text-white mb-1">1 - Earn through verified cleanups</div>
                     </div>
                   </div>
                   
                   <div className="relative">
                     <div className="absolute left-[-2rem] top-2 w-6 h-6 rounded-full bg-[#FAFF00] border-2 border-black"></div>
                     <div className="pl-4">
-                      <div className="text-lg font-semibold text-white mb-1">2 — Stake for governance and Verifier role</div>
+                      <div className="text-lg font-semibold text-white mb-1">2 - Stake for governance and Verifier role</div>
                     </div>
                   </div>
                   
                   <div className="relative">
                     <div className="absolute left-[-2rem] top-2 w-6 h-6 rounded-full bg-[#FAFF00] border-2 border-black"></div>
                     <div className="pl-4">
-                      <div className="text-lg font-semibold text-white mb-1">3 — Grow Impact Product reputation</div>
+                      <div className="text-lg font-semibold text-white mb-1">3 - Grow Impact Product reputation</div>
                     </div>
                   </div>
                   
                   <div className="relative">
                     <div className="absolute left-[-2rem] top-2 w-6 h-6 rounded-full bg-[#FAFF00] border-2 border-black"></div>
                     <div className="pl-4">
-                      <div className="text-lg font-semibold text-white mb-1">4 — Vote on proposals through Gardens.fund</div>
+                      <div className="text-lg font-semibold text-white mb-1">4 - Vote on proposals through Gardens.fund</div>
                     </div>
                   </div>
                 </div>
@@ -388,7 +467,7 @@ export default function TokenomicsPage() {
           </div>
         </section>
 
-        {/* SECTION 5 — $bDCU SUPPLY & ALLOCATION */}
+        {/* SECTION 5 - $bDCU SUPPLY & ALLOCATION */}
         <section className="mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-normal uppercase text-white mb-4 text-center">
             supply and allocation.
@@ -400,7 +479,7 @@ export default function TokenomicsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-gray-900 border-l-4 border-[#58B12F] p-6 rounded-lg">
               <h3 className="text-xl font-semibold text-white mb-2">
-                Circulating Supply — 85%
+                Circulating Supply - 85%
               </h3>
               <p className="text-base text-gray-300">
                 85% of the total supply circulates immediately
@@ -409,7 +488,7 @@ export default function TokenomicsPage() {
             
             <div className="bg-gray-900 border-l-4 border-[#58B12F] p-6 rounded-lg">
               <h3 className="text-xl font-semibold text-white mb-2">
-                Clanker Vault — 15%
+                Clanker Vault - 15%
               </h3>
               <p className="text-base text-gray-300">
                 15% of supply is held in the Clanker Vault for burns, ecosystem rewards, and liquidity stabilization
@@ -422,12 +501,12 @@ export default function TokenomicsPage() {
           </p>
         </section>
 
-        {/* SECTION 6 — $cDCU SUPPLY & ALLOCATION */}
+        {/* SECTION 6 - $cDCU SUPPLY & ALLOCATION */}
         <section className="mb-12 md:mb-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="bg-gray-900 border-l-4 border-[#58B12F] p-6 rounded-lg">
               <h3 className="text-xl font-semibold text-white mb-2">
-                Staking & Verifier Rewards — 35%
+                Staking & Verifier Rewards - 35%
               </h3>
               <p className="text-base text-gray-300">
                 Supports long-term staking and review system
@@ -436,7 +515,7 @@ export default function TokenomicsPage() {
             
             <div className="bg-gray-900 border-l-4 border-[#FAFF00] p-6 rounded-lg">
               <h3 className="text-xl font-semibold text-white mb-2">
-                Cleanup Campaign Incentives — 25%
+                Cleanup Campaign Incentives - 25%
               </h3>
               <p className="text-base text-gray-300">
                 Fuels Impact Circles, leaderboards and global events
@@ -445,7 +524,7 @@ export default function TokenomicsPage() {
             
             <div className="bg-gray-900 border-l-4 border-[#58B12F] p-6 rounded-lg">
               <h3 className="text-xl font-semibold text-white mb-2">
-                Public Distribution — 20%
+                Public Distribution - 20%
               </h3>
               <p className="text-base text-gray-300">
                 Onboarding users through controlled vesting
@@ -454,7 +533,7 @@ export default function TokenomicsPage() {
             
             <div className="bg-gray-900 border-l-4 border-[#FAFF00] p-6 rounded-lg">
               <h3 className="text-xl font-semibold text-white mb-2">
-                Team & Development — 10%
+                Team & Development - 10%
               </h3>
               <p className="text-base text-gray-300">
                 Multi-year vesting for stability and alignment
@@ -463,7 +542,7 @@ export default function TokenomicsPage() {
             
             <div className="bg-gray-900 border-l-4 border-[#58B12F] p-6 rounded-lg">
               <h3 className="text-xl font-semibold text-white mb-2">
-                Verification Treasury — 5%
+                Verification Treasury - 5%
               </h3>
               <p className="text-base text-gray-300">
                 Funds Proof-of-Impact validation rewards
@@ -472,7 +551,7 @@ export default function TokenomicsPage() {
             
             <div className="bg-gray-900 border-l-4 border-[#FAFF00] p-6 rounded-lg">
               <h3 className="text-xl font-semibold text-white mb-2">
-                Community Incentives — 4%
+                Community Incentives - 4%
               </h3>
               <p className="text-base text-gray-300">
                 Supports ambassadors, referrals, content, contributors
@@ -481,7 +560,7 @@ export default function TokenomicsPage() {
             
             <div className="bg-gray-900 border-l-4 border-[#58B12F] p-6 rounded-lg">
               <h3 className="text-xl font-semibold text-white mb-2">
-                Liquidity — 1%
+                Liquidity - 1%
               </h3>
               <p className="text-base text-gray-300">
                 Seeds Celo-side DEX access
@@ -490,7 +569,7 @@ export default function TokenomicsPage() {
           </div>
         </section>
 
-        {/* SECTION 7 — CLOSING STATEMENT */}
+        {/* SECTION 7 - CLOSING STATEMENT */}
         <section className="mb-12 md:mb-16">
           <div className="text-center">
             <p className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
@@ -498,6 +577,8 @@ export default function TokenomicsPage() {
             </p>
           </div>
         </section>
+          </div>
+        </details>
       </div>
     </main>
   );
