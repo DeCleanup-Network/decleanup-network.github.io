@@ -102,7 +102,7 @@ export default function GetStartedFlow() {
               For those who care about the planet
             </h2>
             <p className="text-gray-400 text-sm md:text-base max-w-2xl mx-auto">
-              Environmental action deserves recognition. Here's how DeCleanup makes it happen.
+              Environmental action deserves recognition. Here&apos;s how DeCleanup makes it happen.
             </p>
           </div>
 
