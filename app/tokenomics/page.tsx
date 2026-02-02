@@ -108,7 +108,7 @@ export default function TokenomicsPage() {
             </div>
 
             <p className="text-gray-300 text-sm mb-6">
-              We don't promise <span className="line-through text-gray-500">financial returns first</span>. We offer <span className="text-[#58B12F] font-semibold">verifiable impact infrastructure</span>. Funders can:
+              We don&apos;t promise <span className="line-through text-gray-500">financial returns first</span>. We offer <span className="text-[#58B12F] font-semibold">verifiable impact infrastructure</span>. Funders can:
             </p>
 
             <div className="grid sm:grid-cols-2 gap-3">
@@ -152,7 +152,7 @@ export default function TokenomicsPage() {
                   <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-white">DMRV from a Funder's Perspective</h3>
+              <h3 className="text-xl font-semibold text-white">DMRV from a Funder&apos;s Perspective</h3>
             </div>
 
             {/* Flow Diagram */}
