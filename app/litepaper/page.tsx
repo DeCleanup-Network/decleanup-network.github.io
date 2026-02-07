@@ -13,7 +13,7 @@ export default function LitepaperPage() {
         {/* Back Button */}
         <div className="mb-8">
           <Link
-            href="/"
+            href="/#tokenize"
             className="inline-flex items-center gap-2 text-[#58B12F] hover:text-[#58B12F]/80 font-semibold text-sm md:text-base transition-colors duration-200 group"
           >
             <svg
