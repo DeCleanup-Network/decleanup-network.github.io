@@ -6,7 +6,7 @@ const cardBase =
 
 export default function WhoIsThisFor() {
   return (
-    <section className="relative overflow-x-hidden py-24 bg-black">
+    <section id="who-is-this-for" className="relative overflow-x-hidden py-24 bg-black">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <h2
           className="mb-14 text-center text-3xl font-normal uppercase leading-tight text-white md:text-4xl lg:text-5xl"
@@ -76,7 +76,7 @@ export default function WhoIsThisFor() {
               </li>
             </ul>
             <Link
-              href="/docs"
+              href="/coordinate"
               className="inline-flex items-center gap-2 text-[#FAFF00] hover:text-[#FAFF00]/90"
             >
               Dive deeper to the network →
@@ -110,7 +110,7 @@ export default function WhoIsThisFor() {
               </li>
             </ul>
             <Link
-              href="/tokenomics"
+              href="/funders"
               className="inline-flex items-center gap-2 text-[#FAFF00] hover:text-[#FAFF00]/90"
             >
               See how funding works →

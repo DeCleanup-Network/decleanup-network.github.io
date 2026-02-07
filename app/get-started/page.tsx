@@ -14,7 +14,7 @@ export default function GetStartedPage() {
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="mb-10">
           <Link
-            href="/"
+            href="/#who-is-this-for"
             className="inline-flex items-center gap-2 text-[#58B12F] hover:text-[#FAFF00] font-medium text-sm md:text-base transition-colors group"
           >
             <svg
@@ -36,18 +36,19 @@ export default function GetStartedPage() {
 
         <div className="mb-12 text-center">
           <h1
-            className="text-3xl md:text-4xl font-medium text-white mb-3"
+            className="text-4xl md:text-5xl lg:text-6xl font-medium text-white mb-6 uppercase leading-tight"
             style={{
-              fontFamily:
-                "var(--font-bebas-neue), sans-serif",
-              textTransform: "uppercase",
+              fontFamily: "var(--font-bebas-neue), sans-serif",
               letterSpacing: "0.05em",
             }}
           >
             Get started with DeCleanup Rewards
           </h1>
-          <p className="text-gray-400 max-w-xl mx-auto">
-            Choose how you want to use the app: you can have an experience within other platforms and with minimum features or full experience separately in browser. We’ll show you what you need and where to go.
+          <p className="text-xl md:text-2xl text-[#58B12F] mb-4 font-medium uppercase">
+            FOR THOSE WHO CARE ABOUT THE PLANET
+          </p>
+          <p className="text-lg text-gray-400 max-w-xl mx-auto">
+            Environmental action deserves recognition. Choose how you want to use the app: you can have an experience within other platforms and with minimum features or full experience separately in browser. We’ll show you what you need and where to go.
           </p>
         </div>
 
