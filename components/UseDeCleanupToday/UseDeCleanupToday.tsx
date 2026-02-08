@@ -40,13 +40,13 @@ const UseDeCleanupToday = () => {
         "Used for quick rewards and trading",
         "Holders will be airdropped $cDCU for the full experience",
       ],
-      buttonLabel: "Swap ETH/bDCU",
+      buttonLabel: "Swap ETH / $bDCU",
       buttonHref: "https://app.uniswap.org/swap?chain=base&inputCurrency=ETH&outputCurrency=0x30171b7014c02229497CdE6745DD3aD821F12b07",
       buttonDisabled: false,
-      secondButtonLabel: "Swap USDT/bDCU",
+      secondButtonLabel: "Swap USDT / $bDCU",
       secondButtonHref: "https://app.uniswap.org/swap?chain=base&inputCurrency=0xfde4C96c8593536E31F229EA8f37b2ADa2699bb2&outputCurrency=0x30171b7014c02229497CdE6745DD3aD821F12b07",
       note: "Contract: 0x30171b7014c02229497CdE6745DD3aD821F12b07",
-      imageUrl: "/token-icon.png",
+      imageUrl: "/images/dcu-token-logo.png",
     },
     {
       title: "Full dApp on Celo",
@@ -113,7 +113,7 @@ const UseDeCleanupToday = () => {
                   <div className="mb-4 flex justify-center">
                     <Image
                       src={app.imageUrl}
-                      alt={index === 0 ? "DCU Icon" : "DCU Token Logo"}
+                      alt="$bDCU token logo"
                       width={60}
                       height={60}
                       className="w-14 h-12 object-contain"
@@ -156,7 +156,7 @@ const UseDeCleanupToday = () => {
                               rel="noopener noreferrer"
                               className="text-[#58B12F] hover:text-[#FAFF00] underline transition-colors"
                             >
-                              ETH/bDCU
+                              ETH / $bDCU
                             </Link>
                             {", "}
                             <Link
@@ -165,7 +165,7 @@ const UseDeCleanupToday = () => {
                               rel="noopener noreferrer"
                               className="text-[#58B12F] hover:text-[#FAFF00] underline transition-colors"
                             >
-                              USDT/bDCU
+                              USDT / $bDCU
                             </Link>
                           </span>
                         </li>
