@@ -81,7 +81,7 @@ const UseDeCleanupToday = () => {
           >
             EARN DECLEANUP <span className="text-[#58B12F]">REWARDS</span> TODAY
           </h2>
-          <p className="mx-auto max-w-xl text-gray-400">
+          <p className="mx-auto max-w-xl text-gray-200">
             Choose your path to impact. Start with our Base Mini App for quick
             rewards or dive into the full ecosystem on Celo.
           </p>
@@ -139,7 +139,7 @@ const UseDeCleanupToday = () => {
                 </p>
 
                 {/* Bullet Points */}
-                <ul className="text-gray-400 text-sm sm:text-base mb-6 space-y-2 flex-grow">
+                <ul className="text-gray-200 text-sm sm:text-base mb-6 space-y-2 flex-grow">
                   {app.bullets.map((bullet, idx) => {
                     // Special handling for swap links bullet
                     if (bullet.startsWith("Swap:")) {
@@ -182,7 +182,7 @@ const UseDeCleanupToday = () => {
 
                 {/* Note (if present) */}
                 {app.note && (
-                  <p className="text-sm text-gray-500 mb-6 italic">
+                  <p className="text-sm text-gray-300 mb-6 italic">
                     {app.note.startsWith("Contract:") ? (
                       <>
                         Contract:{" "}
@@ -206,7 +206,7 @@ const UseDeCleanupToday = () => {
                   {app.buttonDisabled ? (
                     <button
                       disabled
-                      className="w-full bg-gray-800 text-gray-500 cursor-not-allowed px-6 py-3 text-sm sm:text-base font-semibold tracking-wider opacity-50 pointer-events-none"
+                      className="w-full bg-gray-800 text-gray-300 cursor-not-allowed px-6 py-3 text-sm sm:text-base font-semibold tracking-wider opacity-50 pointer-events-none"
                     >
                       {app.buttonLabel}
                     </button>
@@ -251,7 +251,7 @@ const UseDeCleanupToday = () => {
                   height={100}
                   className="h-5 w-auto"
                 />
-                <span className="text-sm font-medium text-gray-400 tracking-wider ml-2">celo</span>
+                <span className="text-sm font-medium text-gray-200 tracking-wider ml-2">celo</span>
               </div>
 
               {/* Title - Secondary font, normal case */}
@@ -271,7 +271,7 @@ const UseDeCleanupToday = () => {
               </p>
 
               {/* Bullet Points */}
-              <ul className="text-gray-400 text-sm sm:text-base lg:text-lg mb-6 space-y-2 flex-grow">
+              <ul className="text-gray-200 text-sm sm:text-base lg:text-lg mb-6 space-y-2 flex-grow">
                 {apps[2].bullets.map((bullet, idx) => {
                   // Special handling for bullet with DeTrash Global link (second bullet, index 1)
                   if (idx === 1) {
@@ -299,7 +299,7 @@ const UseDeCleanupToday = () => {
                   if (bullet === "COMING_SOON_HEADING") {
                     return (
                       <li key={idx} className="mt-3 mb-2">
-                        <span className="text-xs sm:text-sm text-gray-500 italic font-medium">
+                        <span className="text-xs sm:text-sm text-gray-300 italic font-medium">
                           Coming soon:
                         </span>
                       </li>
@@ -316,7 +316,7 @@ const UseDeCleanupToday = () => {
 
               {/* Note (if present) */}
               {apps[2].note && (
-                <p className="text-sm lg:text-base text-gray-500 mb-6 italic">
+                <p className="text-sm lg:text-base text-gray-300 mb-6 italic">
                   {apps[2].note.startsWith("Contract:") ? (
                     <>
                       Contract:{" "}
@@ -339,7 +339,7 @@ const UseDeCleanupToday = () => {
               {apps[2].buttonDisabled ? (
                 <button
                   disabled
-                  className="w-full bg-gray-800 text-gray-500 cursor-not-allowed px-6 py-3 text-sm sm:text-base font-semibold tracking-wider opacity-50 pointer-events-none"
+                  className="w-full bg-gray-800 text-gray-300 cursor-not-allowed px-6 py-3 text-sm sm:text-base font-semibold tracking-wider opacity-50 pointer-events-none"
                 >
                   {apps[2].buttonLabel}
                 </button>

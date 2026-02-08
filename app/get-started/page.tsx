@@ -47,7 +47,7 @@ export default function GetStartedPage() {
           <p className="text-xl md:text-2xl text-[#58B12F] mb-4 font-medium uppercase">
             FOR THOSE WHO CARE ABOUT THE PLANET
           </p>
-          <p className="text-lg text-gray-400 max-w-xl mx-auto">
+          <p className="text-lg text-gray-200 max-w-xl mx-auto">
             Environmental action deserves recognition. Choose how you want to use the app: you can have an experience within other platforms and with minimum features or full experience separately in browser. We’ll show you what you need and where to go.
           </p>
         </div>

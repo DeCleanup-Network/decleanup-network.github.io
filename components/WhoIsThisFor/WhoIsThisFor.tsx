@@ -24,7 +24,7 @@ export default function WhoIsThisFor() {
             <h3 className="mb-3 text-xl font-medium text-white">
               For those who care about the planet
             </h3>
-            <p className="mb-5 text-gray-400">
+            <p className="mb-5 text-gray-200">
               Choose how you want to use the app: within other platforms with minimum features or full experience in browser. We’ll show you what you need and where to go.
             </p>
             <ul className="mb-6 list-none space-y-2 text-sm text-gray-300">
@@ -57,7 +57,7 @@ export default function WhoIsThisFor() {
             <h3 className="mb-3 text-xl font-medium text-white">
               For those who build and coordinate impact
             </h3>
-            <p className="mb-5 text-gray-400">
+            <p className="mb-5 text-gray-200">
               Use onchain tools to coordinate cleanups, rewards, and community
               governance.
             </p>
@@ -91,7 +91,7 @@ export default function WhoIsThisFor() {
             <h3 className="mb-3 text-xl font-medium text-white">
               For those who fund real-world impact
             </h3>
-            <p className="mb-5 text-gray-400">
+            <p className="mb-5 text-gray-200">
               Support verified environmental cleanups and help scale them
               globally.
             </p>

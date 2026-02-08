@@ -69,13 +69,13 @@ export default function WhyDeCleanup() {
             <div className="grid md:grid-cols-3 gap-4 items-center">
               {/* Problem */}
               <div className="group relative p-6 rounded-2xl bg-white/[0.04] border border-white/10 transition-all duration-300 hover:border-white/20">
-                <div className="text-gray-500 mb-3 flex justify-center">
+                <div className="text-gray-300 mb-3 flex justify-center">
                   <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                   </svg>
                 </div>
                 <h3 className="text-gray-300 font-semibold text-lg mb-2">The Problem</h3>
-                <p className="text-gray-500 text-sm">Cleanups happen, but there&apos;s no credible proof or transparent coordination</p>
+                <p className="text-gray-300 text-sm">Cleanups happen, but there&apos;s no credible proof or transparent coordination</p>
               </div>
 
               {/* Arrow */}
@@ -93,7 +93,7 @@ export default function WhyDeCleanup() {
                   </svg>
                 </div>
                 <h3 className="text-gray-200 font-semibold text-lg mb-2">The Solution</h3>
-                <p className="text-gray-500 text-sm">Verifiable, incentivized, and transparently funded environmental action</p>
+                <p className="text-gray-300 text-sm">Verifiable, incentivized, and transparently funded environmental action</p>
               </div>
             </div>
           </div>
@@ -119,7 +119,7 @@ export default function WhyDeCleanup() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-gray-200 font-bold text-xl mb-1 tracking-tight">
+                  <h3 className="text-gray-200 font-semibold text-xl mb-1 tracking-wide">
                     {feature.title}
                   </h3>
 
@@ -129,7 +129,7 @@ export default function WhyDeCleanup() {
                   </p>
 
                   {/* Description */}
-                  <p className="text-gray-500 text-sm leading-relaxed">
+                  <p className="text-gray-300 text-sm leading-relaxed">
                     {feature.description}
                   </p>
                 </div>
@@ -140,7 +140,7 @@ export default function WhyDeCleanup() {
 
         {/* Bottom tagline */}
         <div className="mt-12 text-center">
-          <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
             <span className="text-[#58B12F] font-semibold">SDG-aligned</span> technology for a cleaner, more transparent future
           </p>
         </div>

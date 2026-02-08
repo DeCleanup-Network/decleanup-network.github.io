@@ -60,7 +60,7 @@ const Hero = () => {
         </p>
 
         {/* Subheadline */}
-        <p className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-gray-400 md:text-xl">
+        <p className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-gray-200 md:text-xl">
           A global platform that verifies environmental cleanups and turns them
           into measurable, fundable impact.
         </p>

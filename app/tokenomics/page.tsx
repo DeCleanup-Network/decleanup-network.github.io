@@ -130,7 +130,7 @@ export default function TokenomicsPage() {
               </ul>
               <button
                 disabled
-                className="inline-block w-full text-center px-6 py-3 bg-gray-700 text-gray-400 font-semibold rounded-lg cursor-not-allowed opacity-50"
+                className="inline-block w-full text-center px-6 py-3 bg-gray-700 text-gray-200 font-semibold rounded-lg cursor-not-allowed opacity-50"
               >
                 View Celo dApp (inactive)
               </button>

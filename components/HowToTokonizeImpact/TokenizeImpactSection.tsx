@@ -97,7 +97,7 @@ const TokenizeImpactSection = () => {
             >
               Join the Movement
             </h3>
-            <p className="mx-auto max-w-2xl text-base leading-relaxed text-gray-400">
+            <p className="mx-auto max-w-2xl text-base leading-relaxed text-gray-200">
               Connect with our community and explore everything you need to
               contribute to a cleaner environment.
             </p>

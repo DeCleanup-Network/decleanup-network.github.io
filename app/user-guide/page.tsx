@@ -38,7 +38,7 @@ export default function UserGuidePage() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal uppercase text-white mb-4">
             User Guide
           </h1>
-          <p className="text-lg md:text-xl text-gray-400">
+          <p className="text-lg md:text-xl text-gray-200">
             Coming Soon
           </p>
         </div>
