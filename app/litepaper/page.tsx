@@ -132,7 +132,7 @@ export default function LitepaperPage() {
               </div>
               <h3 className="text-2xl text-white mb-2 font-bebas tracking-wide">Verifiable Data</h3>
               <p className="text-gray-200 text-sm leading-relaxed">
-                Transforming invisible cleanup efforts into standardized, onchain evidence. No more &quot;trust me&quot; — only &quot;verify me.&quot;
+                Transforming invisible cleanup efforts into standardized, onchain evidence. No more &quot;trust me&quot; - only &quot;verify me.&quot;
               </p>
             </div>
 
@@ -228,20 +228,20 @@ export default function LitepaperPage() {
                   <h3 className="text-3xl text-white font-bebas tracking-wide">Mini App</h3>
                 </div>
 
-                <p className="text-gray-200 mb-8 text-sm leading-relaxed">Lightweight entry for individuals. Fast actions, instant rewards via Farcaster or Web.</p>
+                <p className="text-gray-200 mb-8 text-sm leading-relaxed">Lightweight entry for individuals via Farcaster or Base app.</p>
 
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/5">
                     <Camera className="text-blue-400 w-5 h-5" />
-                    <span className="text-sm text-gray-200">Photo-based Logging</span>
+                    <span className="text-sm text-gray-200">Photo-based logging</span>
                   </div>
                   <div className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/5">
                     <Wand2 className="text-blue-400 w-5 h-5" />
-                    <span className="text-sm text-gray-200">AI-Assisted Verify</span>
+                    <span className="text-sm text-gray-200">Quick verification</span>
                   </div>
                   <div className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/5">
                     <Wallet className="text-blue-400 w-5 h-5" />
-                    <span className="text-sm text-gray-200">$bDCU Rewards</span>
+                    <span className="text-sm text-gray-200">$bDCU rewards</span>
                   </div>
                 </div>
               </div>
@@ -264,23 +264,23 @@ export default function LitepaperPage() {
 
                 <div className="flex items-center gap-3 mb-6">
                   <span className="bg-[#FAFF00] text-black text-[10px] font-bold px-2 py-1 rounded tracking-wider">CELO</span>
-                  <h3 className="text-3xl text-white font-bebas tracking-wide">Full dApp</h3>
+                  <h3 className="text-3xl text-white font-bebas tracking-wide">Full Platform</h3>
                 </div>
 
-                <p className="text-gray-200 mb-8 text-sm leading-relaxed">Infrastructure for NGOs & Organizers. Governance & Coordination.</p>
+                <p className="text-gray-200 mb-8 text-sm leading-relaxed">Full platform for NGOs and organizers. Governance and coordination.</p>
 
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/5">
                     <MapPin className="text-[#FAFF00] w-5 h-5" />
-                    <span className="text-sm text-gray-200">Geolocation & Maps</span>
+                    <span className="text-sm text-gray-200">Geolocation and maps</span>
                   </div>
                   <div className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/5">
                     <FileText className="text-[#FAFF00] w-5 h-5" />
-                    <span className="text-sm text-gray-200">Impact Reports (Hypercerts)</span>
+                    <span className="text-sm text-gray-200">Impact reports (Hypercerts)</span>
                   </div>
                   <div className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/5">
                     <MessageCircle className="text-[#FAFF00] w-5 h-5" />
-                    <span className="text-sm text-gray-200">Funding Governance</span>
+                    <span className="text-sm text-gray-200">Funding governance</span>
                   </div>
                 </div>
               </div>
@@ -302,7 +302,7 @@ export default function LitepaperPage() {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
               {/* Step 1 */}
               <div className="bg-[#0A0A0A] border border-neutral-700 p-8 rounded-xl flex flex-col items-center text-center hover:border-[#58B12F] transition-colors group">
-                <div className="w-10 h-10 rounded-full bg-[#58B12F] text-black font-bold flex items-center justify-center mb-6 text-sm">01</div>
+                <div className="w-10 h-10 rounded-full bg-neutral-800 text-gray-200 font-bold flex items-center justify-center mb-6 text-sm tabular-nums group-hover:bg-[#58B12F]/20 group-hover:text-[#58B12F] transition-colors">01</div>
                 <Camera className="text-white w-8 h-8 mb-4 group-hover:scale-110 transition-transform" />
                 <h4 className="text-white text-xl mb-2 font-bebas tracking-wide">Capture</h4>
                 <p className="text-xs text-gray-300">Before/After photos & GPS estimates</p>
@@ -310,7 +310,7 @@ export default function LitepaperPage() {
 
               {/* Step 2 */}
               <div className="bg-[#0A0A0A] border border-neutral-700 p-8 rounded-xl flex flex-col items-center text-center hover:border-[#58B12F] transition-colors group">
-                <div className="w-10 h-10 rounded-full bg-neutral-800 text-gray-200 font-bold flex items-center justify-center mb-6 text-sm group-hover:bg-[#58B12F]/20 group-hover:text-[#58B12F] transition-colors">02</div>
+                <div className="w-10 h-10 rounded-full bg-neutral-800 text-gray-200 font-bold flex items-center justify-center mb-6 text-sm tabular-nums group-hover:bg-[#58B12F]/20 group-hover:text-[#58B12F] transition-colors">02</div>
                 <Scan className="text-white w-8 h-8 mb-4 group-hover:scale-110 transition-transform" />
                 <h4 className="text-white text-xl mb-2 font-bebas tracking-wide">AI Scan</h4>
                 <p className="text-xs text-gray-300">Waste detection & auto-scoring</p>
@@ -318,7 +318,7 @@ export default function LitepaperPage() {
 
               {/* Step 3 */}
               <div className="bg-[#0A0A0A] border border-neutral-700 p-8 rounded-xl flex flex-col items-center text-center hover:border-[#58B12F] transition-colors group">
-                <div className="w-10 h-10 rounded-full bg-neutral-800 text-gray-200 font-bold flex items-center justify-center mb-6 text-sm group-hover:bg-[#58B12F]/20 group-hover:text-[#58B12F] transition-colors">03</div>
+                <div className="w-10 h-10 rounded-full bg-neutral-800 text-gray-200 font-bold flex items-center justify-center mb-6 text-sm tabular-nums group-hover:bg-[#58B12F]/20 group-hover:text-[#58B12F] transition-colors">03</div>
                 <UserCheck className="text-white w-8 h-8 mb-4 group-hover:scale-110 transition-transform" />
                 <h4 className="text-white text-xl mb-2 font-bebas tracking-wide">Verify</h4>
                 <p className="text-xs text-gray-300">Community review & edge-case handling</p>
@@ -326,7 +326,7 @@ export default function LitepaperPage() {
 
               {/* Step 4 */}
               <div className="bg-[#0A0A0A] border border-neutral-700 p-8 rounded-xl flex flex-col items-center text-center hover:border-[#58B12F] transition-colors shadow-[0_0_20px_rgba(88,177,47,0.1)] group">
-                <div className="w-10 h-10 rounded-full bg-neutral-800 text-gray-200 font-bold flex items-center justify-center mb-6 text-sm group-hover:bg-[#58B12F]/20 group-hover:text-[#58B12F] transition-colors">04</div>
+                <div className="w-10 h-10 rounded-full bg-neutral-800 text-gray-200 font-bold flex items-center justify-center mb-6 text-sm tabular-nums group-hover:bg-[#58B12F]/20 group-hover:text-[#58B12F] transition-colors">04</div>
                 <LinkIcon className="text-[#58B12F] w-8 h-8 mb-4 group-hover:scale-110 transition-transform" />
                 <h4 className="text-white text-xl mb-2 font-bebas tracking-wide">Onchain</h4>
                 <p className="text-xs text-gray-300">Minted as Impact Record (Hypercert)</p>
@@ -342,11 +342,11 @@ export default function LitepaperPage() {
           <h2 className="text-5xl text-center mb-16 font-bebas">NETWORK <span className="text-gray-200">TOKENS</span></h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* bDCU */}
+            {/* $bDCU */}
             <div className="bg-neutral-900 border border-neutral-800 rounded-2xl p-8 flex flex-col md:flex-row items-center gap-8 relative overflow-hidden group hover:border-blue-500/30 transition-colors">
               <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/10 rounded-full blur-2xl group-hover:bg-blue-600/20 transition-all"></div>
-              <div className="w-24 h-24 rounded-full border-2 border-blue-500 flex items-center justify-center bg-black z-10 shrink-0 shadow-[0_0_15px_rgba(59,130,246,0.5)]">
-                <span className="text-blue-500 font-bold text-2xl tracking-tighter">$bDCU</span>
+              <div className="w-24 h-24 rounded-full border-2 border-blue-500 flex items-center justify-center bg-black z-10 shrink-0 overflow-hidden shadow-[0_0_15px_rgba(59,130,246,0.5)]">
+                <Image src="/images/dcu-token-logo.png" alt="$bDCU" width={96} height={96} className="w-full h-full object-contain" unoptimized />
               </div>
               <div className="z-10 text-center md:text-left">
                 <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
@@ -361,11 +361,11 @@ export default function LitepaperPage() {
               </div>
             </div>
 
-            {/* cDCU */}
+            {/* $cDCU */}
             <div className="bg-neutral-900 border border-neutral-800 rounded-2xl p-8 flex flex-col md:flex-row items-center gap-8 relative overflow-hidden group hover:border-[#FAFF00]/30 transition-colors">
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#58B12F]/10 rounded-full blur-2xl group-hover:bg-[#58B12F]/20 transition-all"></div>
-              <div className="w-24 h-24 rounded-full border-2 border-[#58B12F] flex items-center justify-center bg-black z-10 shrink-0 shadow-[0_0_15px_rgba(88,177,47,0.5)]">
-                <span className="text-[#58B12F] font-bold text-2xl tracking-tighter">$cDCU</span>
+              <div className="w-24 h-24 rounded-full border-2 border-[#58B12F] flex items-center justify-center bg-black z-10 shrink-0 overflow-hidden shadow-[0_0_15px_rgba(88,177,47,0.5)]">
+                <Image src="/images/dcu-token-logo.png" alt="$cDCU" width={96} height={96} className="w-full h-full object-contain" unoptimized />
               </div>
               <div className="z-10 text-center md:text-left">
                 <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
@@ -443,11 +443,10 @@ export default function LitepaperPage() {
 
               <div className="flex-1 bg-neutral-900/10 border border-neutral-800 p-6 rounded-xl opacity-60 hover:opacity-100 transition-opacity">
                 <h3 className="text-xl text-white mb-2 md:hidden font-bebas tracking-wide text-gray-300">PHASE 3</h3>
-                <h4 className="text-white text-lg font-medium mb-3">Reputation & Marketplace</h4>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm text-gray-200">
+                <h4 className="text-white text-lg font-medium mb-3">AI verification</h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-gray-200">
                   <div>• RWI Rank</div>
                   <div>• Impact Staking</div>
-                  <div>• Advanced Analytics</div>
                 </div>
               </div>
             </div>
@@ -458,10 +457,6 @@ export default function LitepaperPage() {
       {/* Visual Theory of Change (Appendix Included) */}
       <section id="appendices" className="py-24 bg-neutral-900/20 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl mb-8 font-bebas flex items-center gap-2 text-gray-300">
-            VISUAL SUMMARY
-            <span className="text-sm font-sans font-normal text-gray-300 mt-2 px-2 py-1 border border-white/10 rounded uppercase tracking-widest">Theory of Change</span>
-          </h2>
           <div className="overflow-x-auto pb-4">
             <TheoryOfChange />
           </div>

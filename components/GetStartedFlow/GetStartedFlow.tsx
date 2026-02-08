@@ -455,6 +455,12 @@ export default function GetStartedFlow() {
               Yes - I’ll use mini app
             </button>
           </div>
+          <p className="text-xs text-gray-400 mt-4">
+            Full guide:{" "}
+            <Link href="/userguide#miniapp" className="text-[#58B12F] hover:text-[#FAFF00] underline">Mini app</Link>
+            {" · "}
+            <Link href="/userguide#fullapp" className="text-[#58B12F] hover:text-[#FAFF00] underline">Full app (Celo)</Link>
+          </p>
           <div className="mt-6 pt-4 border-t border-white/10">
             <button
               onClick={() => setStep("intro")}
@@ -492,6 +498,9 @@ export default function GetStartedFlow() {
                 <span className="text-sm text-gray-200">Use DeCleanup mini app inside Farcaster / Warpcast</span>
               </button>
             </div>
+            <p className="text-xs text-gray-400 mt-4">
+              <Link href="/userguide#miniapp" className="text-[#58B12F] hover:text-[#FAFF00] underline">Full user guide: Mini app →</Link>
+            </p>
             <div className="mt-6 pt-4 border-t border-white/10">
               <button
                 onClick={() => setStep("start")}
@@ -523,6 +532,9 @@ export default function GetStartedFlow() {
               Open DeCleanup dApp (currently on testnet) →
             </Link>
           </div>
+          <p className="text-xs text-gray-400 mb-4">
+            <Link href="/userguide#fullapp" className="text-[#58B12F] hover:text-[#FAFF00] underline">Full user guide: Full app (Celo) →</Link>
+          </p>
           <GuideLinks variant="celo" />
           <div className="mt-6 pt-4 border-t border-white/10">
             <button
@@ -562,6 +574,9 @@ export default function GetStartedFlow() {
               Open DeCleanup mini app on Farcaster →
             </Link>
           </div>
+          <p className="text-xs text-gray-400 mb-4">
+            <Link href="/userguide#miniapp" className="text-[#58B12F] hover:text-[#FAFF00] underline">Full user guide: Mini app →</Link>
+          </p>
           <div className="mb-6 rounded-xl bg-white/5 border border-white/10 p-4">
             <p className="text-sm text-gray-200 mb-2">
               To fund your wallet: open the Farcaster wallet, press <strong className="text-gray-300">Deposit</strong>, then copy your wallet address. Transfer ETH from an exchange or another wallet to that address, or buy directly via a linked Coinbase account.
@@ -630,6 +645,9 @@ export default function GetStartedFlow() {
               Open DeCleanup on Base app →
             </Link>
           </div>
+          <p className="text-xs text-gray-400 mb-4">
+            <Link href="/userguide#miniapp" className="text-[#58B12F] hover:text-[#FAFF00] underline">Full user guide: Mini app →</Link>
+          </p>
           <GuideLinks variant="base" />
           <div className="mt-6 pt-4 border-t border-white/10">
             <button
@@ -669,6 +687,9 @@ export default function GetStartedFlow() {
               Open DeCleanup on Base app →
             </Link>
           </div>
+          <p className="text-xs text-gray-400 mb-4">
+            <Link href="/userguide#miniapp" className="text-[#58B12F] hover:text-[#FAFF00] underline">Full user guide: Mini app →</Link>
+          </p>
           <GuideLinks variant="base" />
           <div className="mt-6 pt-4 border-t border-white/10">
             <button
