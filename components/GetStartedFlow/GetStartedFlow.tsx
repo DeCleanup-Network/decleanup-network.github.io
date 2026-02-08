@@ -69,7 +69,7 @@ function GuideLinks({ variant }: { variant: "base" | "celo" | "wallet" }) {
         ];
   return (
     <div className="mt-4 pt-4 border-t border-white/10">
-      <p className="text-xs text-gray-500 mb-2 uppercase tracking-wide">Guides</p>
+      <p className="text-xs text-gray-300 mb-2 uppercase tracking-wide">Guides</p>
       <ul className="space-y-1 text-sm">
         {links.map((l) => (
           <li key={l.href}>
@@ -101,7 +101,7 @@ export default function GetStartedFlow() {
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
               For those who care about the planet
             </h2>
-            <p className="text-gray-400 text-sm md:text-base max-w-2xl mx-auto">
+            <p className="text-gray-200 text-sm md:text-base max-w-2xl mx-auto">
               Environmental action deserves recognition. Here&apos;s how DeCleanup makes it happen.
             </p>
           </div>
@@ -117,14 +117,42 @@ export default function GetStartedFlow() {
               <h3 className="text-xl font-semibold text-white">The Problem</h3>
             </div>
 
-            <p className="text-gray-400 text-sm mb-4">People clean beaches, rivers, forests - but:</p>
+            <p className="text-gray-200 text-sm mb-4">People clean beaches, rivers, forests - but:</p>
 
             <div className="grid sm:grid-cols-2 gap-3">
               {[
-                { icon: "👻", text: "Their work is invisible beyond social media" },
-                { icon: "📄", text: "There's no durable proof they can reuse" },
-                { icon: "🎲", text: "Recognition and support are inconsistent" },
-                { icon: "📉", text: "Motivation drops without feedback or continuity" }
+                {
+                  icon: (
+                    <svg className="w-6 h-6 text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858-5.908a9.8 9.8 0 014.759-1.481c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21l-4.132-2.589M3 3l18 18" />
+                    </svg>
+                  ),
+                  text: "Their work is invisible beyond social media"
+                },
+                {
+                  icon: (
+                    <svg className="w-6 h-6 text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                  ),
+                  text: "There's no durable proof they can reuse"
+                },
+                {
+                  icon: (
+                    <svg className="w-6 h-6 text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  ),
+                  text: "Recognition and support are inconsistent"
+                },
+                {
+                  icon: (
+                    <svg className="w-6 h-6 text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" />
+                    </svg>
+                  ),
+                  text: "Motivation drops without feedback or continuity"
+                }
               ].map((problem, idx) => (
                 <div
                   key={idx}
@@ -132,7 +160,7 @@ export default function GetStartedFlow() {
                   style={{ animation: `fadeInUp 0.5s ease-out ${idx * 0.1}s both` }}
                 >
                   <div className="flex items-start gap-3">
-                    <span className="text-2xl shrink-0">{problem.icon}</span>
+                    <div className="shrink-0 pt-0.5">{problem.icon}</div>
                     <p className="text-sm text-gray-300 leading-relaxed">{problem.text}</p>
                   </div>
                 </div>
@@ -158,7 +186,7 @@ export default function GetStartedFlow() {
               <h3 className="text-xl font-semibold text-white">What DeCleanup Changes</h3>
             </div>
 
-            <p className="text-gray-400 text-sm mb-6">We give everyday people a simple flow:</p>
+            <p className="text-gray-200 text-sm mb-6">We give everyday people a simple flow:</p>
 
             {/* Visual Step Flow */}
             <div className="space-y-3">
@@ -330,7 +358,7 @@ export default function GetStartedFlow() {
 
             {/* Tagline */}
             <div className="text-center pt-4 border-t border-white/10">
-              <p className="text-sm text-gray-400 italic">
+              <p className="text-sm text-gray-200 italic">
                 <span className="text-[#FAFF00] font-semibold not-italic">Impact first.</span> Web3 only where it helps.
               </p>
             </div>
@@ -378,7 +406,7 @@ export default function GetStartedFlow() {
           <h2 className="text-xl md:text-2xl font-medium text-white mb-4">
             Do you have a Farcaster account or the Base app?
           </h2>
-          <p className="text-gray-400 text-sm md:text-base mb-6">
+          <p className="text-gray-200 text-sm md:text-base mb-6">
             DeCleanup Rewards runs as a mini app inside Farcaster client or the Base app. If you prefer not to use either, you can use the full platform on Celo chain.
           </p>
           <div className="space-y-4 mb-6">
@@ -393,7 +421,7 @@ export default function GetStartedFlow() {
                   Farcaster
                 </a>
               </p>
-              <p className="text-sm text-gray-400">
+              <p className="text-sm text-gray-200">
                 Farcaster is an open social protocol that lets people own their identity and social graph. Multiple apps can use the same feed, profiles, and followers, so your social presence isn’t locked into one platform.
               </p>
             </div>
@@ -408,7 +436,7 @@ export default function GetStartedFlow() {
                   Base App
                 </a>
               </p>
-              <p className="text-sm text-gray-400">
+              <p className="text-sm text-gray-200">
                 Base App is an onchain consumer app built on Base that uses the Farcaster feed. It combines social posts, mini apps, payments, trading, chat, and earning into one place - so content isn’t just read, it’s actionable.
               </p>
             </div>
@@ -430,7 +458,7 @@ export default function GetStartedFlow() {
           <div className="mt-6 pt-4 border-t border-white/10">
             <button
               onClick={() => setStep("intro")}
-              className="text-sm text-gray-400 hover:text-white"
+              className="text-sm text-gray-200 hover:text-white"
             >
               ← Back
             </button>
@@ -445,7 +473,7 @@ export default function GetStartedFlow() {
             <h2 className="text-xl md:text-2xl font-medium text-white mb-4">
               Choose one to get started
             </h2>
-            <p className="text-gray-400 text-sm mb-6">
+            <p className="text-gray-200 text-sm mb-6">
               You can add the other later. Pick the one you prefer to set up first.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -454,20 +482,20 @@ export default function GetStartedFlow() {
                 className="flex-1 p-5 rounded-xl border border-[#58B12F]/40 bg-[#58B12F]/10 text-white hover:bg-[#58B12F]/20 transition text-left"
               >
                 <span className="font-medium block mb-1">Register on Base app</span>
-                <span className="text-sm text-gray-400">Use DeCleanup inside the Base mobile app</span>
+                <span className="text-sm text-gray-200">Use DeCleanup inside the Base mobile app</span>
               </button>
               <button
                 onClick={() => setStep("farcaster")}
                 className="flex-1 p-5 rounded-xl border border-[#58B12F]/40 bg-[#58B12F]/10 text-white hover:bg-[#58B12F]/20 transition text-left"
               >
                 <span className="font-medium block mb-1">Register on Farcaster</span>
-                <span className="text-sm text-gray-400">Use DeCleanup mini app inside Farcaster / Warpcast</span>
+                <span className="text-sm text-gray-200">Use DeCleanup mini app inside Farcaster / Warpcast</span>
               </button>
             </div>
             <div className="mt-6 pt-4 border-t border-white/10">
               <button
                 onClick={() => setStep("start")}
-                className="text-sm text-gray-400 hover:text-white"
+                className="text-sm text-gray-200 hover:text-white"
               >
                 ← Back
               </button>
@@ -482,7 +510,7 @@ export default function GetStartedFlow() {
           <h2 className="text-xl md:text-2xl font-medium text-white mb-2">
             Try the full DeCleanup Rewards platform
           </h2>
-          <p className="text-gray-400 text-sm mb-4">
+          <p className="text-gray-200 text-sm mb-4">
             Explore full dashboard, leaderboard, and governance. Works with a wallet (e.g. MetaMask) on Celo chain.
           </p>
           <div className="mb-4">
@@ -499,7 +527,7 @@ export default function GetStartedFlow() {
           <div className="mt-6 pt-4 border-t border-white/10">
             <button
               onClick={() => setStep("start")}
-              className="text-sm text-gray-400 hover:text-white"
+              className="text-sm text-gray-200 hover:text-white"
             >
               ← Back to start
             </button>
@@ -513,7 +541,7 @@ export default function GetStartedFlow() {
           <h2 className="text-xl md:text-2xl font-medium text-white mb-2">
             DeCleanup on Farcaster
           </h2>
-          <p className="text-gray-400 text-sm mb-4">
+          <p className="text-gray-200 text-sm mb-4">
             Open the DeCleanup mini app inside Farcaster. Log in with your Farcaster account and start logging cleanups.
           </p>
           <div className="mb-4 space-y-3">
@@ -535,7 +563,7 @@ export default function GetStartedFlow() {
             </Link>
           </div>
           <div className="mb-6 rounded-xl bg-white/5 border border-white/10 p-4">
-            <p className="text-sm text-gray-400 mb-2">
+            <p className="text-sm text-gray-200 mb-2">
               To fund your wallet: open the Farcaster wallet, press <strong className="text-gray-300">Deposit</strong>, then copy your wallet address. Transfer ETH from an exchange or another wallet to that address, or buy directly via a linked Coinbase account.
             </p>
             <a
@@ -547,7 +575,7 @@ export default function GetStartedFlow() {
               Tips and tutorials →
             </a>
           </div>
-          <p className="text-sm text-gray-400 mb-4">
+          <p className="text-sm text-gray-200 mb-4">
             Do you also want to use DeCleanup on the Base app?
           </p>
           <div className="flex flex-wrap gap-3">
@@ -567,7 +595,7 @@ export default function GetStartedFlow() {
           <div className="mt-6 pt-4 border-t border-white/10">
             <button
               onClick={() => setStep("choose")}
-              className="text-sm text-gray-400 hover:text-white"
+              className="text-sm text-gray-200 hover:text-white"
             >
               ← Back
             </button>
@@ -581,7 +609,7 @@ export default function GetStartedFlow() {
           <h2 className="text-xl md:text-2xl font-medium text-white mb-2">
             DeCleanup on Base app
           </h2>
-          <p className="text-gray-400 text-sm mb-4">
+          <p className="text-gray-200 text-sm mb-4">
             Install the Base app, then open DeCleanup Rewards as a mini app inside it. Pin it to your apps to be able to always find it later.
           </p>
           <div className="space-y-3 mb-4">
@@ -606,7 +634,7 @@ export default function GetStartedFlow() {
           <div className="mt-6 pt-4 border-t border-white/10">
             <button
               onClick={() => setStep("choose")}
-              className="text-sm text-gray-400 hover:text-white"
+              className="text-sm text-gray-200 hover:text-white"
             >
               ← Back
             </button>
@@ -620,7 +648,7 @@ export default function GetStartedFlow() {
           <h2 className="text-xl md:text-2xl font-medium text-white mb-2">
             DeCleanup on Base app
           </h2>
-          <p className="text-gray-400 text-sm mb-4">
+          <p className="text-gray-200 text-sm mb-4">
             Install the Base app, then open DeCleanup Rewards as a mini app inside it. Pin it to your apps to be able to always find it later.
           </p>
           <div className="space-y-3 mb-4">
@@ -645,7 +673,7 @@ export default function GetStartedFlow() {
           <div className="mt-6 pt-4 border-t border-white/10">
             <button
               onClick={() => setStep("farcaster")}
-              className="text-sm text-gray-400 hover:text-white"
+              className="text-sm text-gray-200 hover:text-white"
             >
               ← Back to Farcaster step
             </button>
@@ -659,7 +687,7 @@ export default function GetStartedFlow() {
           <h2 className="text-xl md:text-2xl font-medium text-white mb-2">
             You’re all set
           </h2>
-          <p className="text-gray-400 text-sm mb-4">
+          <p className="text-gray-200 text-sm mb-4">
             Use DeCleanup on Farcaster to log cleanups and earn rewards. Need the full dApp or Base app later? Come back to this page or use the links on the main page.
           </p>
           <Link

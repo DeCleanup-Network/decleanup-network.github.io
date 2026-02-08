@@ -67,7 +67,7 @@ export default function BackedBy() {
                   />
                 </div>
               </div>
-              <span className="text-center text-sm font-medium text-gray-400 transition-colors duration-300 group-hover:text-[#FAFF00] group-hover:font-bold">
+              <span className="text-center text-sm font-medium text-gray-200 transition-colors duration-300 group-hover:text-[#FAFF00] group-hover:font-bold">
                 {backer.name}
               </span>
             </a>

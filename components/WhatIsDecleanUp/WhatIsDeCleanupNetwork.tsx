@@ -66,14 +66,14 @@ export default function WhatIsDeCleanupNetwork() {
             >
               DMRV: Digital Monitoring, Reporting & Verification
             </h2>
-            <p className="mb-6 text-gray-400 sm:mb-8">
+            <p className="mb-6 text-gray-200 sm:mb-8">
               DeCleanup provides an open-source DMRV system that turns real-world
               cleanup actions into trusted, auditable digital data.
             </p>
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-3 sm:gap-4">
               <div className="rounded-xl border border-white/10 bg-white/5 p-3 sm:p-4">
                 <h4 className="mb-1 text-sm font-medium text-white">NGOs</h4>
-                <p className="text-xs text-gray-400">
+                <p className="text-xs text-gray-200">
                   Transparent impact verification & reporting
                 </p>
               </div>
@@ -81,13 +81,13 @@ export default function WhatIsDeCleanupNetwork() {
                 <h4 className="mb-1 text-sm font-medium text-white">
                   Corporates
                 </h4>
-                <p className="text-xs text-gray-400">
+                <p className="text-xs text-gray-200">
                   ESG data & sponsored cleanups
                 </p>
               </div>
               <div className="rounded-xl border border-white/10 bg-white/5 p-3 sm:p-4">
                 <h4 className="mb-1 text-sm font-medium text-white">Sponsors</h4>
-                <p className="text-xs text-gray-400">
+                <p className="text-xs text-gray-200">
                   Fund & track large-scale actions
                 </p>
               </div>

@@ -89,7 +89,7 @@ const NavLink = ({ variant = "full" }: { variant?: NavLinkVariant }) => {
 
           {/* External Links Section - Less Prominent */}
           <div className="mb-4">
-            <p className="text-xs md:text-sm text-gray-500 text-center mb-3 uppercase tracking-wide">
+            <p className="text-xs md:text-sm text-gray-300 text-center mb-3 uppercase tracking-wide">
               External Links
             </p>
 
@@ -169,7 +169,7 @@ const NavLink = ({ variant = "full" }: { variant?: NavLinkVariant }) => {
                   className="h-5 md:h-6 w-auto"
                 />
                 <span
-                  className="text-sm font-bold text-gray-400 tracking-wider"
+                  className="text-sm font-bold text-gray-200 tracking-wider"
                   style={{ fontFamily: "var(--font-geist-sans), system-ui, sans-serif" }}
                 >
                   celo

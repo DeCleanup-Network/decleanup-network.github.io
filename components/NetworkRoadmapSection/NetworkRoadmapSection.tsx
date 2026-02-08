@@ -109,7 +109,7 @@ const RoadmapCarousel = ({ roadmap }: { roadmap: Array<{ phase: string; bullets:
                   >
                     {item.phase}
                   </h3>
-                  <ul className="text-gray-400 text-lg sm:text-lg lg:text-xl leading-relaxed space-y-3">
+                  <ul className="text-gray-200 text-lg sm:text-lg lg:text-xl leading-relaxed space-y-3">
                     {item.bullets.map((bullet, idx) => {
                       // Check if bullet contains a link
                       const linkMatch = bullet.match(/\(https?:\/\/[^)]+\)/);

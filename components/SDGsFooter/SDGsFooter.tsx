@@ -69,7 +69,7 @@ export default function SDGsFooter() {
             </a>
           ))}
         </div>
-        <p className="mt-6 text-center text-xs text-gray-500 max-w-2xl mx-auto">
+        <p className="mt-6 text-center text-xs text-gray-300 max-w-2xl mx-auto">
           <a
             href="https://www.un.org/sustainabledevelopment"
             target="_blank"

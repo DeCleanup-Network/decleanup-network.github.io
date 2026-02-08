@@ -263,14 +263,14 @@ const UserGuide = () => {
                 instant, easy wallet connect
               </p>
               <div className="mt-auto">
-                <p className="text-sm text-gray-400 mb-2">Wallets:</p>
+                <p className="text-sm text-gray-200 mb-2">Wallets:</p>
                 <ul className="space-y-1 mb-3">
                   <li className="text-gray-300 text-sm flex items-center">
                     <span className="text-[#FAFF00] mr-2">•</span>
                     Farcaster Wallet is preferable...
                   </li>
                 </ul>
-                <p className="text-xs text-gray-500 italic">
+                <p className="text-xs text-gray-300 italic">
                   Note: currently other wallet work unstable in farcaster app,
                   use native wallet for best experience
                 </p>
@@ -305,7 +305,7 @@ const UserGuide = () => {
                 connect any Base-compatible wallet.
               </p>
               <div className="mt-auto">
-                <p className="text-sm text-gray-400 mb-2">Wallets:</p>
+                <p className="text-sm text-gray-200 mb-2">Wallets:</p>
                 <ul className="space-y-1">
                   <li className="text-gray-300 text-sm flex items-center">
                     <span className="text-[#58B12F] mr-2">•</span>
@@ -427,7 +427,7 @@ const UserGuide = () => {
                   Cleanups
                 </h3>
               </div>
-              <p className="text-gray-400 text-sm mb-3">
+              <p className="text-gray-200 text-sm mb-3">
                 Claims of Impact Product
               </p>
               <p className="text-[#58B12F] text-2xl md:text-3xl font-bold">
@@ -445,7 +445,7 @@ const UserGuide = () => {
                   Referrals
                 </h3>
               </div>
-              <p className="text-gray-400 text-sm mb-3">
+              <p className="text-gray-200 text-sm mb-3">
                 Rewards for referring new users
               </p>
               <p className="text-[#FAFF00] text-2xl md:text-3xl font-bold">
@@ -463,7 +463,7 @@ const UserGuide = () => {
                   Streak
                 </h3>
               </div>
-              <p className="text-gray-400 text-sm mb-3">
+              <p className="text-gray-200 text-sm mb-3">
                 Weekly streak maintenance rewards
               </p>
               <p className="text-[#58B12F] text-2xl md:text-3xl font-bold">
@@ -481,7 +481,7 @@ const UserGuide = () => {
                   Impact Reports
                 </h3>
               </div>
-              <p className="text-gray-400 text-sm mb-3">
+              <p className="text-gray-200 text-sm mb-3">
                 Submission of impact reports
               </p>
               <p className="text-[#FAFF00] text-2xl md:text-3xl font-bold">
@@ -499,7 +499,7 @@ const UserGuide = () => {
                   Verifier Reward
                 </h3>
               </div>
-              <p className="text-gray-400 text-sm mb-3">
+              <p className="text-gray-200 text-sm mb-3">
                 Verifier reward for valid submission verification
               </p>
               <p className="text-[#58B12F] text-2xl md:text-3xl font-bold">
@@ -508,7 +508,7 @@ const UserGuide = () => {
             </div>
           </div>
           <div className="text-center">
-            <p className="text-sm text-gray-500 italic">
+            <p className="text-sm text-gray-300 italic">
               Note: Rewards are subject to change upon the actual token price.
             </p>
           </div>
@@ -562,7 +562,7 @@ const UserGuide = () => {
               </p>
               <button
                 disabled
-                className="bg-gray-800 text-gray-500 cursor-not-allowed px-8 py-3 text-base font-semibold tracking-wider opacity-50 pointer-events-none rounded-lg"
+                className="bg-gray-800 text-gray-300 cursor-not-allowed px-8 py-3 text-base font-semibold tracking-wider opacity-50 pointer-events-none rounded-lg"
               >
                 Coming Soon
               </button>

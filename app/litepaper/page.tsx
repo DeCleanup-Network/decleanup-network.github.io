@@ -1,483 +1,523 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
+import {
+  Leaf,
+  Info,
+  BadgeCheck,
+  TrendingUp,
+  Users,
+  Building2,
+  RefreshCw,
+  CloudSun,
+  Droplets,
+  Smartphone,
+  Camera,
+  Wand2,
+  Wallet,
+  ArrowLeftRight,
+  Layers,
+  MapPin,
+  FileText,
+  MessageCircle,
+  Scan,
+  UserCheck,
+  Link as LinkIcon,
+  Star,
+  ShieldCheck,
+  CheckCircle,
+  Clock,
+  ArrowUpRight,
+  Menu
+} from "lucide-react";
+import TheoryOfChange from "@/components/TheoryOfChange/TheoryOfChange";
+
 
 export const metadata: Metadata = {
   title: "DeCleanup Network - Litepaper",
-  description: "What DeCleanup is, how to try it (Base & Farcaster), DMRV, AI verification, tokens, and how to get involved. February 2026.",
+  description: "Infrastructure for verifiable, governable, and fundable environmental impact. February 2026 Edition.",
 };
 
 export default function LitepaperPage() {
   return (
-    <main className="min-h-screen bg-black text-white">
-      <div className="max-w-[900px] mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        {/* Back Button */}
-        <div className="mb-8">
-          <Link
-            href="/#tokenize"
-            className="inline-flex items-center gap-2 text-[#58B12F] hover:text-[#58B12F]/80 font-semibold text-sm md:text-base transition-colors duration-200 group"
-          >
-            <svg
-              className="w-5 h-5 transform group-hover:-translate-x-1 transition-transform duration-200"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
+    <div className="min-h-screen bg-[#0A0A0A] text-white font-sans selection:bg-[#58B12F] selection:text-white pb-0">
+
+      {/* Navigation (Litepaper specific) */}
+      <nav className="fixed top-0 w-full z-50 bg-[#0A0A0A]/80 backdrop-blur-md border-b border-white/5">
+        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+              <Image
+                src="/images/decleanup_logo_full.png"
+                alt="DeCleanup"
+                width={32}
+                height={32}
+                className="h-8 w-auto object-contain"
               />
-            </svg>
-            <span>Back to Home</span>
-          </Link>
-        </div>
-
-        {/* Page Header with visual */}
-        <div className="text-center mb-12 md:mb-16">
-          <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-2xl border border-[#58B12F]/30 bg-[#58B12F]/5">
-            <svg className="h-10 w-10 text-[#58B12F]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-              <polyline points="14 2 14 8 20 8" />
-              <line x1="16" y1="13" x2="8" y2="13" />
-              <line x1="16" y1="17" x2="8" y2="17" />
-              <polyline points="10 9 9 9 8 9" />
-            </svg>
-          </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal uppercase text-white mb-4">
-            DeCleanup Network - Litepaper
-          </h1>
-          <p className="text-lg md:text-xl text-gray-400">
-            February 2026
-          </p>
-        </div>
-
-        {/* 1. What is DeCleanup? */}
-        <section className="mb-12 md:mb-16">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-normal uppercase text-white mb-6">
-            1. What is DeCleanup?
-          </h2>
-          <p className="md:text-lg leading-relaxed text-gray-300 mb-4">
-            <strong className="text-white">DeCleanup Network is an SDG-aligned regenerative impact application.</strong>
-          </p>
-          <p className="md:text-lg leading-relaxed text-gray-300 mb-4">
-            It provides open infrastructure to <strong className="text-white">measure, verify, and fund real-world environmental action</strong>, starting with waste cleanup and expanding into regenerative and biodiversity-aligned activities.
-          </p>
-          <p className="md:text-lg leading-relaxed text-gray-300 mb-4">
-            People all over the world clean beaches, forests, rivers, and cities. The problem is simple: <strong className="text-white">there is no trusted, shared way to prove this work happened and measure its impact.</strong>
-          </p>
-          <p className="md:text-lg leading-relaxed text-gray-300 mb-4">
-            DeCleanup transforms on-the-ground environmental work into:
-          </p>
-          <ul className="list-disc list-inside space-y-2 md:text-lg leading-relaxed text-gray-300 ml-4 mb-4">
-            <li>verifiable impact data</li>
-            <li>auditable impact claims</li>
-            <li>governable funding flows</li>
-          </ul>
-          <p className="md:text-lg leading-relaxed text-gray-300 mb-4">
-            so that capital can reliably support outcomes aligned with the <strong className="text-white">UN Sustainable Development Goals (SDGs)</strong>.
-          </p>
-          <p className="md:text-lg leading-relaxed text-gray-300">
-            DeCleanup is designed to interoperate with the broader <strong className="text-white">Regen ecosystem</strong>, enabling impact data to be reused across applications, funding programs, and reporting frameworks. This is not just an app - it&apos;s <strong className="text-white">open infrastructure for environmental impact verification.</strong>
-          </p>
-        </section>
-
-        <div className="h-px bg-[#58B12F] mb-12 md:mb-16"></div>
-
-        {/* 1b. SDG Mapping (Theory of Change) */}
-        <section className="mb-12 md:mb-16">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-normal uppercase text-white mb-6">
-            SDG Alignment
-          </h2>
-          <p className="md:text-lg leading-relaxed text-gray-300 mb-8">
-            DeCleanup directly contributes to the following UN Sustainable Development Goals:
-          </p>
-
-          <h3 className="text-xl font-semibold text-white mb-4">Primary SDGs</h3>
-          <div className="space-y-4 mb-8">
-            <div className="bg-gray-900 border-l-4 border-[#58B12F] p-4 rounded-lg">
-              <h4 className="font-semibold text-white mb-2">SDG 11 – Sustainable Cities &amp; Communities</h4>
-              <ul className="list-disc list-inside space-y-1 text-gray-300 text-sm md:text-base ml-2">
-                <li>Reduces unmanaged waste in public spaces</li>
-                <li>Supports community-led environmental stewardship</li>
-              </ul>
-            </div>
-            <div className="bg-gray-900 border-l-4 border-[#58B12F] p-4 rounded-lg">
-              <h4 className="font-semibold text-white mb-2">SDG 12 – Responsible Consumption &amp; Production</h4>
-              <ul className="list-disc list-inside space-y-1 text-gray-300 text-sm md:text-base ml-2">
-                <li>Enables waste tracking, categorization, and accountability</li>
-                <li>Supports circular economy insights through cleanup data</li>
-              </ul>
-            </div>
-            <div className="bg-gray-900 border-l-4 border-[#58B12F] p-4 rounded-lg">
-              <h4 className="font-semibold text-white mb-2">SDG 13 – Climate Action</h4>
-              <ul className="list-disc list-inside space-y-1 text-gray-300 text-sm md:text-base ml-2">
-                <li>Prevents emissions from unmanaged waste and open burning</li>
-                <li>Enables climate-aligned impact reporting</li>
-              </ul>
-            </div>
-            <div className="bg-gray-900 border-l-4 border-[#58B12F] p-4 rounded-lg">
-              <h4 className="font-semibold text-white mb-2">SDG 14 – Life Below Water</h4>
-              <ul className="list-disc list-inside space-y-1 text-gray-300 text-sm md:text-base ml-2">
-                <li>Removes plastic and waste before entering waterways</li>
-                <li>Produces verifiable marine pollution prevention data</li>
-              </ul>
-            </div>
-            <div className="bg-gray-900 border-l-4 border-[#58B12F] p-4 rounded-lg">
-              <h4 className="font-semibold text-white mb-2">SDG 15 – Life on Land</h4>
-              <ul className="list-disc list-inside space-y-1 text-gray-300 text-sm md:text-base ml-2">
-                <li>Restores degraded land areas</li>
-                <li>Enables land-based environmental monitoring</li>
-              </ul>
-            </div>
-          </div>
-
-          <h3 className="text-xl font-semibold text-white mb-4">Secondary / Enabling SDGs</h3>
-          <div className="space-y-4">
-            <div className="bg-gray-900 border-l-4 border-[#FAFF00]/50 p-4 rounded-lg">
-              <h4 className="font-semibold text-white mb-2">SDG 16 – Peace, Justice &amp; Strong Institutions</h4>
-              <ul className="list-disc list-inside space-y-1 text-gray-300 text-sm md:text-base ml-2">
-                <li>Transparent governance of public goods funding</li>
-                <li>Auditable decision-making and capital allocation</li>
-              </ul>
-            </div>
-            <div className="bg-gray-900 border-l-4 border-[#FAFF00]/50 p-4 rounded-lg">
-              <h4 className="font-semibold text-white mb-2">SDG 17 – Partnerships for the Goals</h4>
-              <ul className="list-disc list-inside space-y-1 text-gray-300 text-sm md:text-base ml-2">
-                <li>Interoperability with Regen apps (e.g. Green Goods)</li>
-                <li>Open standards for shared impact reporting</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <div className="h-px bg-[#58B12F] mb-12 md:mb-16"></div>
-
-        {/* 2. Try DeCleanup in minutes */}
-        <section className="mb-12 md:mb-16">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-normal uppercase text-white mb-6">
-            2. Try DeCleanup in minutes (no setup needed)
-          </h2>
-          <p className="md:text-lg leading-relaxed text-gray-300 mb-8">
-            If you already have an account on <strong className="text-white">Base</strong> or <strong className="text-white">Farcaster</strong>, you can use DeCleanup here - no extra sign-up. Pick where you&apos;re active:
-          </p>
-
-          <div className="space-y-8">
-            <div className="bg-gray-900 border-l-4 border-[#58B12F] p-6 rounded-lg">
-              <h3 className="text-xl font-semibold text-white mb-3">🧭 I use Base / the web app</h3>
-              <p className="text-gray-300 mb-4">
-                Open the DeCleanup Mini App in your browser. You can log in with a wallet (e.g. Base) and use it without Farcaster.
-              </p>
-              <ul className="list-disc list-inside space-y-1 text-gray-300 mb-4 ml-4">
-                <li>Log cleanups and upload photos</li>
-                <li>See verified impact and rewards</li>
-                <li>Use $bDCU rewards on Base</li>
-              </ul>
-              <p className="text-sm text-gray-500 mb-3">Where:</p>
-              <Link href="https://miniapp.decleanup.net" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#58B12F] hover:text-[#58B12F]/80 font-medium">
-                miniapp.decleanup.net →
-              </Link>
-            </div>
-
-            <div className="bg-gray-900 border-l-4 border-[#FAFF00] p-6 rounded-lg">
-              <h3 className="text-xl font-semibold text-white mb-3">🟣 I have a Farcaster account</h3>
-              <p className="text-gray-300 mb-4">
-                Use DeCleanup inside Farcaster as a Mini App. Open it from the Farcaster app - same rewards and verification, in your feed.
-              </p>
-              <ul className="list-disc list-inside space-y-1 text-gray-300 mb-4 ml-4">
-                <li>Open the DeCleanup Mini App from Farcaster</li>
-                <li>Submit cleanups and share results with your channel</li>
-                <li>Earn $bDCU and build reputation</li>
-              </ul>
-              <p className="text-sm text-gray-500 mb-3">Where:</p>
-              <Link href="https://farcaster.xyz/miniapps/SfsGBDcHpuSA/decleanup-rewards" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#FAFF00] hover:text-[#FAFF00]/80 font-medium">
-                DeCleanup Mini App on Farcaster →
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        <div className="h-px bg-[#58B12F] mb-12 md:mb-16"></div>
-
-        {/* 3. Full DeCleanup application (Celo) */}
-        <section className="mb-12 md:mb-16">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-normal uppercase text-white mb-6">
-            3. The full DeCleanup application (Celo)
-          </h2>
-          <p className="md:text-lg leading-relaxed text-gray-300 mb-4">
-            For users who want the <strong className="text-white">complete feature set</strong>, DeCleanup runs as a full dApp on Celo.
-          </p>
-          <p className="mb-6">
-            <Link href="https://dapp.decleanup.net" target="_blank" rel="noopener noreferrer" className="text-[#58B12F] hover:text-[#58B12F]/80 font-medium underline">
-              Celo App (Testnet): dapp.decleanup.net
             </Link>
-            <span className="text-gray-500 text-sm ml-2">(Currently live on Celo Sepolia testnet)</span>
-          </p>
-          <p className="md:text-lg leading-relaxed text-gray-300 mb-6">
-            This version unlocks the full DeCleanup vision.
-          </p>
+            <span className="text-xs text-gray-300 border-l border-gray-700 pl-3 font-mono">LITEPAPER</span>
+          </div>
+          <div className="hidden md:flex items-center gap-6 text-sm text-gray-200 font-medium">
+            <Link href="#overview" className="hover:text-white transition-colors">Overview</Link>
+            <Link href="#ecosystem" className="hover:text-white transition-colors">Ecosystem</Link>
+            <Link href="#tokens" className="hover:text-white transition-colors">Tokens</Link>
+            <Link href="#roadmap" className="hover:text-white transition-colors">Roadmap</Link>
+            <Link href="#appendices" className="hover:text-white transition-colors">Appendices</Link>
+            <a href="https://dapp.decleanup.net" target="_blank" className="border border-[#FAFF00]/50 text-[#FAFF00] px-4 py-1.5 rounded-full text-xs font-bold hover:bg-[#FAFF00] hover:text-black transition-all">
+              LAUNCH APP
+            </a>
+          </div>
+          {/* Mobile Menu Icon (Placeholder) */}
+          <div className="md:hidden text-gray-200">
+            <Menu className="w-6 h-6" />
+          </div>
+        </div>
+      </nav>
 
-          <h3 className="text-xl font-semibold text-white mb-4">Core Features</h3>
-          <div className="space-y-6">
+      {/* Header / Title */}
+      <header className="relative pt-32 pb-20 px-6 border-b border-white/5 overflow-hidden">
+        <div className="absolute inset-0 opacity-30 pointer-events-none" style={{
+          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px)`,
+          backgroundSize: '50px 50px'
+        }}></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#58B12F] rounded-full blur-[120px] opacity-10 pointer-events-none"></div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
             <div>
-              <h4 className="text-lg font-medium text-white mb-2">✅ Cleanup Actions</h4>
-              <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4">
-                <li>Create or join cleanup events</li>
-                <li>Upload before &amp; after photos</li>
-                <li>Track cleanup locations and results</li>
-              </ul>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded border border-[#FAFF00]/20 bg-[#FAFF00]/5 text-[#FAFF00] text-xs font-mono mb-4">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#FAFF00] animate-pulse"></span>
+                FEBRUARY 2026 EDITION
+              </div>
+              <h1 className="text-6xl md:text-8xl lg:text-9xl text-white leading-[0.9] tracking-tighter mb-4 font-bebas">
+                DECLEANUP <br />
+                <span className="text-[#58B12F]">NETWORK</span>
+              </h1>
+              <p className="text-xl text-gray-200 max-w-xl font-light leading-relaxed font-sans">
+                Infrastructure for verifiable, governable, and fundable environmental impact.
+              </p>
             </div>
-            <div>
-              <h4 className="text-lg font-medium text-white mb-2">📊 Impact Reports &amp; Hypercerts</h4>
-              <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4">
-                <li>Verified cleanups generate <strong className="text-white">impact reports</strong></li>
-                <li>Impact can be minted as <strong className="text-white">Hypercerts</strong></li>
-                <li>Enables future funding, sponsorship, and reuse of impact data</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-lg font-medium text-white mb-2">🏛 Governance &amp; Funding (Gardens)</h4>
-              <p className="text-gray-300 mb-2">DeCleanup integrates governance and funding flows with <strong className="text-white">outcome-based funding</strong> aligned with the SDGs.</p>
-              <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4">
-                <li>Proposals for cleanup equipment reimbursement</li>
-                <li>Community voting on funding priorities</li>
-                <li>Transparent decision-making</li>
-              </ul>
-              <p className="text-gray-300 mt-2">This allows communities to <strong className="text-white">self-organize and allocate resources</strong> around environmental action.</p>
+
+            <div className="flex gap-8 border-l border-white/10 pl-6 md:border-l-0 md:pl-0">
+              <div className="text-left md:text-right">
+                <div className="text-xs text-gray-300 uppercase tracking-widest mb-1 font-mono">Status</div>
+                <div className="text-white font-mono text-sm font-bold">PHASE 1: LIVE</div>
+              </div>
+              <div className="w-px h-10 bg-white/10 hidden md:block"></div>
+              <div className="text-left md:text-right">
+                <div className="text-xs text-gray-300 uppercase tracking-widest mb-1 font-mono">Network</div>
+                <div className="flex gap-2 justify-start md:justify-end mt-1">
+                  <span className="w-2.5 h-2.5 rounded-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.5)]"></span>
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#FAFF00] shadow-[0_0_10px_rgba(250,255,0,0.5)]"></span>
+                </div>
+              </div>
             </div>
           </div>
-        </section>
+        </div>
+      </header>
 
-        <div className="h-px bg-[#58B12F] mb-12 md:mb-16"></div>
-
-        {/* 4. DMRV */}
-        <section className="mb-12 md:mb-16">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-normal uppercase text-white mb-6">
-            4. DMRV - Digital Monitoring, Reporting &amp; Verification
+      {/* 1. Overview Cards */}
+      <section id="overview" className="py-20 bg-[#0A0A0A]">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-4xl tracking-tight text-white mb-10 flex items-center gap-3 font-bebas">
+            <Info className="text-[#58B12F] w-8 h-8" />
+            The Mission
           </h2>
-          <p className="md:text-lg leading-relaxed text-gray-300 mb-4">
-            At the core of DeCleanup is <strong className="text-white">DMRV</strong>.
-          </p>
-          <p className="md:text-lg leading-relaxed text-gray-300 mb-4">
-            <strong className="text-white">DMRV turns cleanup actions into trusted, auditable data.</strong>
-          </p>
-          <p className="md:text-lg leading-relaxed text-gray-300 mb-4">
-            It combines:
-          </p>
-          <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4 mb-4">
-            <li>photos from the field</li>
-            <li>AI-assisted verification</li>
-            <li>human review when needed</li>
-            <li>on-chain records for transparency</li>
-          </ul>
-          <p className="md:text-lg leading-relaxed text-gray-300">
-            This makes DeCleanup useful not only for individuals, but also for: NGOs, corporates, large cleanup sponsors, and public funding programs - with impact data aligned to <strong className="text-white">SDG reporting</strong> needs.
-          </p>
-        </section>
 
-        <div className="h-px bg-[#58B12F] mb-12 md:mb-16"></div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Card 1 */}
+            <div className="bg-white/5 backdrop-blur-sm border border-white/5 p-8 rounded-2xl group hover:border-[#58B12F]/50 transition-all duration-300">
+              <div className="w-12 h-12 rounded-full bg-[#58B12F]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <BadgeCheck className="text-[#58B12F] w-6 h-6" />
+              </div>
+              <h3 className="text-2xl text-white mb-2 font-bebas tracking-wide">Verifiable Data</h3>
+              <p className="text-gray-200 text-sm leading-relaxed">
+                Transforming invisible cleanup efforts into standardized, onchain evidence. No more &quot;trust me&quot; — only &quot;verify me.&quot;
+              </p>
+            </div>
 
-        {/* 5. AI Verification - Coming Soon */}
-        <section className="mb-12 md:mb-16">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-normal uppercase text-white mb-6">
-            5. AI Verification (DMRV) - Coming Soon
+            {/* Card 2 */}
+            <div className="bg-white/5 backdrop-blur-sm border border-white/5 p-8 rounded-2xl group hover:border-[#FAFF00]/50 transition-all duration-300">
+              <div className="w-12 h-12 rounded-full bg-[#FAFF00]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <TrendingUp className="text-[#FAFF00] w-6 h-6" />
+              </div>
+              <h3 className="text-2xl text-white mb-2 font-bebas tracking-wide">Auditable Impact</h3>
+              <p className="text-gray-200 text-sm leading-relaxed">
+                Creating specific, traceable records compatible with Hypercerts. Funders can see exactly where capital goes.
+              </p>
+            </div>
+
+            {/* Card 3 */}
+            <div className="bg-white/5 backdrop-blur-sm border border-white/5 p-8 rounded-2xl group hover:border-blue-400/50 transition-all duration-300">
+              <div className="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <Users className="text-blue-400 w-6 h-6" />
+              </div>
+              <h3 className="text-2xl text-white mb-2 font-bebas tracking-wide">Governable Funding</h3>
+              <p className="text-gray-200 text-sm leading-relaxed">
+                DAO-based allocation of resources using stable assets. Outcome-based funding pools for long-term sustainability.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. SDG Alignment */}
+      <section className="py-20 border-t border-white/5 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[#58B12F]/5 -skew-y-3 transform origin-top-left scale-110 pointer-events-none"></div>
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="flex justify-between items-end mb-10">
+            <h2 className="text-5xl text-white font-bebas">SDG <span className="text-[#FAFF00]">ALIGNMENT</span></h2>
+            <span className="text-sm text-gray-300 font-mono hidden md:block tracking-widest">UN SUSTAINABLE DEVELOPMENT GOALS</span>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+            {/* SDG 11 */}
+            <div className="bg-amber-600/20 border border-amber-600/30 p-6 rounded-xl hover:bg-amber-600/30 transition-colors group">
+              <div className="text-amber-500 text-xs font-bold mb-2 font-mono">SDG 11</div>
+              <Building2 className="text-white w-8 h-8 mb-3 opacity-80 group-hover:opacity-100 transition-opacity" />
+              <div className="text-white text-lg font-bebas leading-none tracking-wide">Sustainable<br />Cities</div>
+            </div>
+
+            {/* SDG 12 */}
+            <div className="bg-orange-600/20 border border-orange-600/30 p-6 rounded-xl hover:bg-orange-600/30 transition-colors group">
+              <div className="text-orange-500 text-xs font-bold mb-2 font-mono">SDG 12</div>
+              <RefreshCw className="text-white w-8 h-8 mb-3 opacity-80 group-hover:opacity-100 transition-opacity" />
+              <div className="text-white text-lg font-bebas leading-none tracking-wide">Responsible<br />Consumption</div>
+            </div>
+
+            {/* SDG 13 */}
+            <div className="bg-emerald-800/20 border border-emerald-700/30 p-6 rounded-xl hover:bg-emerald-800/30 transition-colors group">
+              <div className="text-emerald-500 text-xs font-bold mb-2 font-mono">SDG 13</div>
+              <CloudSun className="text-white w-8 h-8 mb-3 opacity-80 group-hover:opacity-100 transition-opacity" />
+              <div className="text-white text-lg font-bebas leading-none tracking-wide">Climate<br />Action</div>
+            </div>
+
+            {/* SDG 14 */}
+            <div className="bg-blue-600/20 border border-blue-600/30 p-6 rounded-xl hover:bg-blue-600/30 transition-colors group">
+              <div className="text-blue-500 text-xs font-bold mb-2 font-mono">SDG 14</div>
+              <Droplets className="text-white w-8 h-8 mb-3 opacity-80 group-hover:opacity-100 transition-opacity" />
+              <div className="text-white text-lg font-bebas leading-none tracking-wide">Life Below<br />Water</div>
+            </div>
+
+            {/* SDG 15 */}
+            <div className="bg-green-600/20 border border-green-600/30 p-6 rounded-xl hover:bg-green-600/30 transition-colors group">
+              <div className="text-green-500 text-xs font-bold mb-2 font-mono">SDG 15</div>
+              <Leaf className="text-white w-8 h-8 mb-3 opacity-80 group-hover:opacity-100 transition-opacity fill-current" />
+              <div className="text-white text-lg font-bebas leading-none tracking-wide">Life On<br />Land</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. The Ecosystem (Twin Engine) */}
+      <section id="ecosystem" className="py-24 bg-[#0A0A0A]">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-5xl text-center mb-16 font-bebas">THE <span className="text-gray-200">ECOSYSTEM</span></h2>
+
+          <div className="flex flex-col lg:flex-row gap-8 items-stretch">
+            {/* Left: Base App */}
+            <div className="flex-1 relative group">
+              <div className="absolute inset-0 bg-blue-900/10 rounded-3xl blur-xl group-hover:bg-blue-900/20 transition-all duration-500"></div>
+              <div className="relative h-full bg-neutral-900 border border-neutral-800 rounded-3xl p-8 overflow-hidden hover:border-blue-500/50 transition-all duration-300">
+                <div className="absolute top-0 right-0 p-4 opacity-50 pointer-events-none">
+                  <Smartphone className="text-blue-500 w-32 h-32 -rotate-12 translate-x-4 translate-y-4 opacity-10" />
+                </div>
+
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded tracking-wider">BASE</span>
+                  <h3 className="text-3xl text-white font-bebas tracking-wide">Mini App</h3>
+                </div>
+
+                <p className="text-gray-200 mb-8 text-sm leading-relaxed">Lightweight entry for individuals. Fast actions, instant rewards via Farcaster or Web.</p>
+
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/5">
+                    <Camera className="text-blue-400 w-5 h-5" />
+                    <span className="text-sm text-gray-200">Photo-based Logging</span>
+                  </div>
+                  <div className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/5">
+                    <Wand2 className="text-blue-400 w-5 h-5" />
+                    <span className="text-sm text-gray-200">AI-Assisted Verify</span>
+                  </div>
+                  <div className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/5">
+                    <Wallet className="text-blue-400 w-5 h-5" />
+                    <span className="text-sm text-gray-200">$bDCU Rewards</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Center Connector */}
+            <div className="hidden lg:flex flex-col items-center justify-center gap-2 text-gray-200">
+              <div className="w-px h-full bg-gradient-to-b from-transparent via-[#58B12F] to-transparent"></div>
+              <ArrowLeftRight className="text-[#58B12F] w-6 h-6 animate-pulse" />
+              <div className="w-px h-full bg-gradient-to-b from-transparent via-[#58B12F] to-transparent"></div>
+            </div>
+
+            {/* Right: Celo dApp */}
+            <div className="flex-1 relative group">
+              <div className="absolute inset-0 bg-[#FAFF00]/5 rounded-3xl blur-xl group-hover:bg-[#FAFF00]/10 transition-all duration-500"></div>
+              <div className="relative h-full bg-neutral-900 border border-neutral-800 rounded-3xl p-8 overflow-hidden hover:border-[#FAFF00]/50 transition-all duration-300">
+                <div className="absolute top-0 right-0 p-4 opacity-50 pointer-events-none">
+                  <Layers className="text-[#FAFF00] w-32 h-32 rotate-12 translate-x-4 translate-y-4 opacity-10" />
+                </div>
+
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="bg-[#FAFF00] text-black text-[10px] font-bold px-2 py-1 rounded tracking-wider">CELO</span>
+                  <h3 className="text-3xl text-white font-bebas tracking-wide">Full dApp</h3>
+                </div>
+
+                <p className="text-gray-200 mb-8 text-sm leading-relaxed">Infrastructure for NGOs & Organizers. Governance & Coordination.</p>
+
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/5">
+                    <MapPin className="text-[#FAFF00] w-5 h-5" />
+                    <span className="text-sm text-gray-200">Geolocation & Maps</span>
+                  </div>
+                  <div className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/5">
+                    <FileText className="text-[#FAFF00] w-5 h-5" />
+                    <span className="text-sm text-gray-200">Impact Reports (Hypercerts)</span>
+                  </div>
+                  <div className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/5">
+                    <MessageCircle className="text-[#FAFF00] w-5 h-5" />
+                    <span className="text-sm text-gray-200">Funding Governance</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. DMRV Flow (Infrastructure) */}
+      <section className="py-24 border-y border-white/5 bg-neutral-900/30">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-4xl text-white mb-2 font-bebas">CORE INFRASTRUCTURE: <span className="text-[#58B12F]">DMRV</span></h2>
+          <p className="text-gray-200 text-sm mb-12 max-w-2xl">Digital Monitoring, Reporting, and Verification Process. Ensuring every cleanup is accounted for.</p>
+
+          <div className="relative">
+            {/* Connection Line */}
+            <div className="absolute top-1/2 left-0 w-full h-0.5 bg-neutral-800 -translate-y-1/2 hidden md:block z-0"></div>
+
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+              {/* Step 1 */}
+              <div className="bg-[#0A0A0A] border border-neutral-700 p-8 rounded-xl flex flex-col items-center text-center hover:border-[#58B12F] transition-colors group">
+                <div className="w-10 h-10 rounded-full bg-[#58B12F] text-black font-bold flex items-center justify-center mb-6 text-sm">01</div>
+                <Camera className="text-white w-8 h-8 mb-4 group-hover:scale-110 transition-transform" />
+                <h4 className="text-white text-xl mb-2 font-bebas tracking-wide">Capture</h4>
+                <p className="text-xs text-gray-300">Before/After photos & GPS estimates</p>
+              </div>
+
+              {/* Step 2 */}
+              <div className="bg-[#0A0A0A] border border-neutral-700 p-8 rounded-xl flex flex-col items-center text-center hover:border-[#58B12F] transition-colors group">
+                <div className="w-10 h-10 rounded-full bg-neutral-800 text-gray-200 font-bold flex items-center justify-center mb-6 text-sm group-hover:bg-[#58B12F]/20 group-hover:text-[#58B12F] transition-colors">02</div>
+                <Scan className="text-white w-8 h-8 mb-4 group-hover:scale-110 transition-transform" />
+                <h4 className="text-white text-xl mb-2 font-bebas tracking-wide">AI Scan</h4>
+                <p className="text-xs text-gray-300">Waste detection & auto-scoring</p>
+              </div>
+
+              {/* Step 3 */}
+              <div className="bg-[#0A0A0A] border border-neutral-700 p-8 rounded-xl flex flex-col items-center text-center hover:border-[#58B12F] transition-colors group">
+                <div className="w-10 h-10 rounded-full bg-neutral-800 text-gray-200 font-bold flex items-center justify-center mb-6 text-sm group-hover:bg-[#58B12F]/20 group-hover:text-[#58B12F] transition-colors">03</div>
+                <UserCheck className="text-white w-8 h-8 mb-4 group-hover:scale-110 transition-transform" />
+                <h4 className="text-white text-xl mb-2 font-bebas tracking-wide">Verify</h4>
+                <p className="text-xs text-gray-300">Community review & edge-case handling</p>
+              </div>
+
+              {/* Step 4 */}
+              <div className="bg-[#0A0A0A] border border-neutral-700 p-8 rounded-xl flex flex-col items-center text-center hover:border-[#58B12F] transition-colors shadow-[0_0_20px_rgba(88,177,47,0.1)] group">
+                <div className="w-10 h-10 rounded-full bg-neutral-800 text-gray-200 font-bold flex items-center justify-center mb-6 text-sm group-hover:bg-[#58B12F]/20 group-hover:text-[#58B12F] transition-colors">04</div>
+                <LinkIcon className="text-[#58B12F] w-8 h-8 mb-4 group-hover:scale-110 transition-transform" />
+                <h4 className="text-white text-xl mb-2 font-bebas tracking-wide">Onchain</h4>
+                <p className="text-xs text-gray-300">Minted as Impact Record (Hypercert)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Tokens */}
+      <section id="tokens" className="py-24 bg-[#0A0A0A]">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-5xl text-center mb-16 font-bebas">NETWORK <span className="text-gray-200">TOKENS</span></h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* bDCU */}
+            <div className="bg-neutral-900 border border-neutral-800 rounded-2xl p-8 flex flex-col md:flex-row items-center gap-8 relative overflow-hidden group hover:border-blue-500/30 transition-colors">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/10 rounded-full blur-2xl group-hover:bg-blue-600/20 transition-all"></div>
+              <div className="w-24 h-24 rounded-full border-2 border-blue-500 flex items-center justify-center bg-black z-10 shrink-0 shadow-[0_0_15px_rgba(59,130,246,0.5)]">
+                <span className="text-blue-500 font-bold text-2xl tracking-tighter">$bDCU</span>
+              </div>
+              <div className="z-10 text-center md:text-left">
+                <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
+                  <h3 className="text-3xl text-white font-bebas tracking-wide">Utility Token</h3>
+                  <span className="text-[10px] bg-neutral-800 text-gray-200 px-2 py-0.5 rounded border border-neutral-700 tracking-wider">BASE</span>
+                </div>
+                <ul className="space-y-3 mb-4">
+                  <li className="flex items-center gap-2 text-sm text-gray-200"><Star className="text-blue-500 w-4 h-4" /> Earned for verified cleanup</li>
+                  <li className="flex items-center gap-2 text-sm text-gray-200"><Star className="text-blue-500 w-4 h-4" /> Liquid & Tradable</li>
+                  <li className="flex items-center gap-2 text-sm text-gray-200"><Star className="text-blue-500 w-4 h-4" /> Incentivizes Action</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* cDCU */}
+            <div className="bg-neutral-900 border border-neutral-800 rounded-2xl p-8 flex flex-col md:flex-row items-center gap-8 relative overflow-hidden group hover:border-[#FAFF00]/30 transition-colors">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#58B12F]/10 rounded-full blur-2xl group-hover:bg-[#58B12F]/20 transition-all"></div>
+              <div className="w-24 h-24 rounded-full border-2 border-[#58B12F] flex items-center justify-center bg-black z-10 shrink-0 shadow-[0_0_15px_rgba(88,177,47,0.5)]">
+                <span className="text-[#58B12F] font-bold text-2xl tracking-tighter">$cDCU</span>
+              </div>
+              <div className="z-10 text-center md:text-left">
+                <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
+                  <h3 className="text-3xl text-white font-bebas tracking-wide">Governance</h3>
+                  <span className="text-[10px] bg-neutral-800 text-gray-200 px-2 py-0.5 rounded border border-neutral-700 tracking-wider">CELO</span>
+                </div>
+                <ul className="space-y-3 mb-4">
+                  <li className="flex items-center gap-2 text-sm text-gray-200"><ShieldCheck className="text-[#58B12F] w-4 h-4" /> Reputation Based</li>
+                  <li className="flex items-center gap-2 text-sm text-gray-200"><ShieldCheck className="text-[#58B12F] w-4 h-4" /> Non-speculative</li>
+                  <li className="flex items-center gap-2 text-sm text-gray-200"><ShieldCheck className="text-[#58B12F] w-4 h-4" /> Proposal Voting</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. Roadmap */}
+      <section id="roadmap" className="py-24 border-t border-white/5 relative">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-5xl mb-12 font-bebas">ROADMAP</h2>
+
+          <div className="space-y-8 relative pl-8 md:pl-0">
+            {/* Vertical Line for mobile */}
+            <div className="absolute left-[31px] top-0 bottom-0 w-px bg-neutral-800 md:hidden"></div>
+
+            {/* Phase 1 */}
+            <div className="flex flex-col md:flex-row gap-6 relative">
+              <div className="hidden md:flex w-32 flex-col items-end pt-2">
+                <span className="text-[#58B12F] font-bold text-lg font-bebas tracking-wide">PHASE 1</span>
+                <span className="text-xs text-gray-300 uppercase tracking-widest">Live</span>
+              </div>
+              {/* Node */}
+              <div className="absolute left-[-11px] md:static w-6 h-6 rounded-full bg-[#58B12F] border-4 border-black z-10 shrink-0"></div>
+
+              <div className="flex-1 bg-neutral-900/50 border border-[#58B12F]/30 p-6 rounded-xl hover:bg-neutral-900/80 transition-colors">
+                <h3 className="text-xl text-white mb-2 md:hidden font-bebas tracking-wide text-[#58B12F]">PHASE 1 - LIVE</h3>
+                <h4 className="text-white text-lg font-medium mb-3">Foundation</h4>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm text-gray-200">
+                  <div className="flex items-center gap-2"><CheckCircle className="text-[#58B12F] w-4 h-4" /> Base Mini App</div>
+                  <div className="flex items-center gap-2"><CheckCircle className="text-[#58B12F] w-4 h-4" /> $bDCU Rewards</div>
+                  <div className="flex items-center gap-2"><CheckCircle className="text-[#58B12F] w-4 h-4" /> Basic Verification</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Phase 2 */}
+            <div className="flex flex-col md:flex-row gap-6 relative">
+              <div className="hidden md:flex w-32 flex-col items-end pt-2">
+                <span className="text-[#FAFF00] font-bold text-lg font-bebas tracking-wide">PHASE 2</span>
+                <span className="text-xs text-gray-300 uppercase tracking-widest">In Dev</span>
+              </div>
+              {/* Node */}
+              <div className="absolute left-[-11px] md:static w-6 h-6 rounded-full bg-[#FAFF00] border-4 border-black z-10 shrink-0 animate-pulse"></div>
+
+              <div className="flex-1 bg-neutral-900/30 border border-dashed border-[#FAFF00]/30 p-6 rounded-xl hover:bg-neutral-900/50 transition-colors">
+                <h3 className="text-xl text-white mb-2 md:hidden font-bebas tracking-wide text-[#FAFF00]">PHASE 2 - IN DEV</h3>
+                <h4 className="text-white text-lg font-medium mb-3">Governance & Celo</h4>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm text-gray-200">
+                  <div className="flex items-center gap-2"><Clock className="text-[#FAFF00] w-4 h-4" /> Celo Full dApp</div>
+                  <div className="flex items-center gap-2"><Clock className="text-[#FAFF00] w-4 h-4" /> Impact Products v2</div>
+                  <div className="flex items-center gap-2"><Clock className="text-[#FAFF00] w-4 h-4" /> Hypercert Records</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Phase 3 */}
+            <div className="flex flex-col md:flex-row gap-6 relative">
+              <div className="hidden md:flex w-32 flex-col items-end pt-2">
+                <span className="text-gray-300 font-bold text-lg font-bebas tracking-wide">PHASE 3</span>
+                <span className="text-xs text-gray-200 uppercase tracking-widest">Future</span>
+              </div>
+              {/* Node */}
+              <div className="absolute left-[-11px] md:static w-6 h-6 rounded-full bg-gray-700 border-4 border-black z-10 shrink-0"></div>
+
+              <div className="flex-1 bg-neutral-900/10 border border-neutral-800 p-6 rounded-xl opacity-60 hover:opacity-100 transition-opacity">
+                <h3 className="text-xl text-white mb-2 md:hidden font-bebas tracking-wide text-gray-300">PHASE 3</h3>
+                <h4 className="text-white text-lg font-medium mb-3">Reputation & Marketplace</h4>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm text-gray-200">
+                  <div>• RWI Rank</div>
+                  <div>• Impact Staking</div>
+                  <div>• Advanced Analytics</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Visual Theory of Change (Appendix Included) */}
+      <section id="appendices" className="py-24 bg-neutral-900/20 border-t border-white/5">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-4xl mb-8 font-bebas flex items-center gap-2 text-gray-300">
+            VISUAL SUMMARY
+            <span className="text-sm font-sans font-normal text-gray-300 mt-2 px-2 py-1 border border-white/10 rounded uppercase tracking-widest">Theory of Change</span>
           </h2>
-          <p className="md:text-lg leading-relaxed text-gray-300 mb-6">
-            AI-assisted verification is being rolled out in phases.
-          </p>
+          <div className="overflow-x-auto pb-4">
+            <TheoryOfChange />
+          </div>
 
-          <div className="bg-gray-900 border-l-4 border-[#58B12F] p-6 rounded-lg mb-6">
-            <h3 className="text-lg font-semibold text-white mb-3">🤖 ML Verification (DMRV)</h3>
-            <p className="text-gray-300 mb-2"><strong className="text-white">Status:</strong> Phase 1 &amp; 2 complete - AI-assisted verification pipeline ready.</p>
-            <p className="text-gray-300 mb-4">
-              The system detects waste in before/after photos, scores cleanup impact, and can auto-verify or flag for human review. It uses object-detection models trained on real-world litter data (e.g. TACO: Trash Annotations in Context - 60+ waste categories).
+          <div className="mt-12">
+            <h3 className="text-xl text-[#58B12F] font-bebas tracking-wide mb-4 uppercase">Additional Details</h3>
+            <div className="grid md:grid-cols-2 gap-8 text-sm text-gray-200 leading-relaxed">
+              <div>
+                <h4 className="text-white font-bold mb-2">Governance Principles</h4>
+                <p>Impact first, speculation minimized. Stable capital remains primary for funding decisions to ensure outcomes are not correlated with market volatility.</p>
+              </div>
+              <div>
+                <h4 className="text-white font-bold mb-2">Interoperability</h4>
+                <p>DeCleanup is designed to align with existing SDG/ESG frameworks. Verified data is meant to travel, not stay siloed, ensuring composability across the Regen ecosystem.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer / CTA */}
+      <footer className="bg-black border-t border-neutral-900 pt-16 pb-8">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+
+          <div className="bg-gradient-to-b from-[#58B12F]/10 to-transparent p-12 rounded-3xl border border-[#58B12F]/20 mb-16 relative overflow-hidden">
+            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#58B12F] to-transparent opacity-50"></div>
+
+            <h2 className="text-4xl md:text-6xl text-white mb-6 font-bebas tracking-tight">NOT HYPE. <span className="text-[#58B12F]">INFRASTRUCTURE.</span></h2>
+            <p className="text-gray-200 max-w-2xl mx-auto mb-8 text-lg font-light">
+              DeCleanup Network is open, SDG-aligned infrastructure for turning real environmental work into verifiable, fundable outcomes.
             </p>
-            <p className="text-gray-300 text-sm">
-              <strong className="text-white">Reference:</strong>{" "}
-              <a href="https://github.com/jeremy-rico/litter-detection" target="_blank" rel="noopener noreferrer" className="text-[#58B12F] hover:underline">TACO fine-tuned litter detection (GitHub)</a>
-            </p>
-          </div>
-
-          <h3 className="text-xl font-semibold text-white mb-3">Why AI verification?</h3>
-          <p className="md:text-lg leading-relaxed text-gray-300">
-            Manual verification does not scale. AI helps: reduce fraud, speed up verification, make impact reporting more objective. Human review remains available for edge cases.
-          </p>
-        </section>
-
-        <div className="h-px bg-[#58B12F] mb-12 md:mb-16"></div>
-
-        {/* 6. Tokens & Network Economy */}
-        <section className="mb-12 md:mb-16">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-normal uppercase text-white mb-6">
-            6. Tokens &amp; Network Economy
-          </h2>
-          <p className="md:text-lg leading-relaxed text-gray-300 mb-6">
-            DeCleanup uses tokens to coordinate incentives - <strong className="text-white">not to replace real impact.</strong>
-            Governance and funding use stable capital (e.g. cUSD) and <strong className="text-white">Gardens.fund</strong> for outcome-based funding pools aligned with the SDGs.
-          </p>
-          <p className="text-gray-300 mb-4"><strong className="text-white">Live tokens:</strong></p>
-          <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4 mb-6">
-            <li><strong className="text-white">$bDCU</strong> - live on Base</li>
-            <li><strong className="text-white">$cDCU</strong> - coming soon (Celo)</li>
-          </ul>
-          <div className="bg-gray-900 border-l-4 border-[#FAFF00] p-6 rounded-lg">
-            <h3 className="text-lg font-semibold text-white mb-3">$cDCU Airdrop</h3>
-            <p className="text-gray-300 mb-2">$cDCU will be airdropped to:</p>
-            <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4">
-              <li>Holders of $bDCU (to get the full Base + Celo experience)</li>
-              <li>Early DeCleanup V1 users</li>
-              <li>Community donors &amp; supporters</li>
-              <li>Contributors (2024–2025)</li>
-            </ul>
-            <p className="text-gray-300 mt-3">This rewards people who supported the project <strong className="text-white">before scale and hype.</strong></p>
-          </div>
-        </section>
-
-        <div className="h-px bg-[#58B12F] mb-12 md:mb-16"></div>
-
-        {/* 7. What DeCleanup enables long-term */}
-        <section className="mb-12 md:mb-16">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-normal uppercase text-white mb-6">
-            7. What DeCleanup enables long-term
-          </h2>
-          <p className="md:text-lg leading-relaxed text-gray-300 mb-4">
-            DeCleanup is building <strong className="text-white">SDG-aligned</strong> infrastructure for:
-          </p>
-          <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4 mb-6">
-            <li>verified environmental impact</li>
-            <li>transparent, outcome-based funding flows</li>
-            <li>scalable cleanup programs</li>
-            <li>interoperable impact data across the Regen ecosystem</li>
-          </ul>
-          <p className="text-gray-300 mb-2">Possible future integrations:</p>
-          <ul className="list-disc list-inside space-y-1 text-gray-300 ml-4">
-            <li>NGO reporting</li>
-            <li>corporate ESG</li>
-            <li>public funding programs</li>
-            <li>cross-chain impact markets</li>
-          </ul>
-        </section>
-
-        <div className="h-px bg-[#58B12F] mb-12 md:mb-16"></div>
-
-        {/* 8. How to get involved */}
-        <section className="mb-12 md:mb-16">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-normal uppercase text-white mb-6">
-            8. How to get involved
-          </h2>
-          <ul className="space-y-2 md:text-lg leading-relaxed text-gray-300">
-            <li>🌱 Join or organize a cleanup</li>
-            <li>🧪 Test the Celo dApp</li>
-            <li>🧠 Contribute to governance</li>
-            <li>💚 Support the network</li>
-          </ul>
-          <p className="mt-6 md:text-lg leading-relaxed text-gray-300">
-            DeCleanup is open, evolving, and community-driven.
-          </p>
-        </section>
-
-        <div className="h-px bg-[#58B12F] mb-12 md:mb-16"></div>
-
-        {/* Final note */}
-        <section className="mb-12 md:mb-16 rounded-2xl border border-[#58B12F]/20 bg-[#58B12F]/5 p-6 md:p-8">
-          <p className="md:text-lg leading-relaxed text-gray-300 italic">
-            DeCleanup is not hype - it&apos;s <strong className="text-white">SDG-aligned impact infrastructure</strong>. We welcome non-crypto readers, let people try the product in minutes, and layer in technical depth only when it helps. Real cleanups, real proof, real impact.
-          </p>
-        </section>
-
-        <div className="h-px bg-[#58B12F] mb-12 md:mb-16"></div>
-
-        {/* Roadmap Section - kept */}
-        <section className="mb-12 md:mb-16">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-normal uppercase text-white mb-6">
-            Roadmap (Updated)
-          </h2>
-          <div className="mb-8 flex justify-center">
-            <div className="flex items-center gap-2 rounded-xl border border-[#58B12F]/20 bg-gray-900/50 px-4 py-2 text-sm text-gray-400">
-              <span className="h-2 w-2 rounded-full bg-[#58B12F] animate-pulse" />
-              Phase 1 Live · Phases 2–5 in development
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <a href="https://farcaster.xyz/miniapps/SfsGBDcHpuSA/decleanup-rewards" target="_blank" className="px-8 py-4 bg-white text-black font-bold rounded-xl hover:bg-gray-200 transition-colors flex items-center justify-center gap-2">
+                Start on Base <ArrowUpRight className="w-4 h-4" />
+              </a>
+              <a href="https://dapp.decleanup.net" target="_blank" className="px-8 py-4 bg-transparent border border-white/20 text-white font-bold rounded-xl hover:bg-white/5 transition-colors flex items-center justify-center gap-2">
+                Test on Celo <ArrowUpRight className="w-4 h-4" />
+              </a>
             </div>
           </div>
-          <div className="space-y-6">
-            <div className="bg-gray-900 border-l-4 border-[#58B12F] p-6 rounded-lg">
-              <h3 className="text-xl md:text-2xl font-normal uppercase text-white mb-4">
-                Phase 1 - Base Mini App (Live)
-              </h3>
-              <ul className="space-y-2 md:text-lg leading-relaxed text-gray-300 list-disc list-inside ml-4">
-                <li>Farcaster app</li>
-                <li>$bDCU rewards</li>
-                <li>basic logging</li>
-              </ul>
-            </div>
 
-            <div className="bg-gray-900 border-l-4 border-[#58B12F] p-6 rounded-lg">
-              <h3 className="text-xl md:text-2xl font-normal uppercase text-white mb-4">
-                Phase 2 - Celo Full dApp (In Development)
-              </h3>
-              <ul className="space-y-2 md:text-lg leading-relaxed text-gray-300 list-disc list-inside ml-4">
-                <li>dashboards + leaderboards</li>
-                <li>streaks</li>
-                <li>Impact Products v2</li>
-                <li>claim & stake</li>
-                <li>hypercerts</li>
-                <li>community verification</li>
-                <li>$cDCU governance</li>
-              </ul>
+          <div className="border-t border-neutral-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="flex items-center gap-2">
+              <Image
+                src="/images/decleanup_logo_full.png"
+                alt="DeCleanup Network"
+                width={32}
+                height={32}
+                className="h-8 w-auto object-contain"
+              />
             </div>
-
-            <div className="bg-gray-900 border-l-4 border-[#FAFF00] p-6 rounded-lg">
-              <h3 className="text-xl md:text-2xl font-normal uppercase text-white mb-4">
-                Phase 3 - Reputation + Marketplace Layer
-              </h3>
-              <ul className="space-y-2 md:text-lg leading-relaxed text-gray-300 list-disc list-inside ml-4">
-                <li>RWI Rank</li>
-                <li>Regen Bazaar staking (Impact Products → $REBAZ)</li>
-                <li>advanced analytics</li>
-                <li>partner integrations</li>
-              </ul>
-            </div>
-
-            <div className="bg-gray-900 border-l-4 border-[#FAFF00] p-6 rounded-lg">
-              <h3 className="text-xl md:text-2xl font-normal uppercase text-white mb-4">
-                Phase 4 - Multichain Expansion
-              </h3>
-              <ul className="space-y-2 md:text-lg leading-relaxed text-gray-300 list-disc list-inside ml-4">
-                <li>unified identity</li>
-                <li>multichain Hypercerts</li>
-                <li>Base ↔ Celo syncing</li>
-                <li>additional EVM chains</li>
-              </ul>
-            </div>
-
-            <div className="bg-gray-900 border-l-4 border-[#FAFF00] p-6 rounded-lg">
-              <h3 className="text-xl md:text-2xl font-normal uppercase text-white mb-4">
-                Phase 5 - DeCleanup V3
-              </h3>
-              <ul className="space-y-2 md:text-lg leading-relaxed text-gray-300 list-disc list-inside ml-4">
-                <li>ESG partnerships</li>
-                <li>machine-learning verification</li>
-                <li>IoT integrations</li>
-                <li>enterprise impact reporting</li>
-                <li>mobile app with offline mode</li>
-              </ul>
-            </div>
+            <p className="text-xs text-gray-200">2026 © DeCleanup Network. Open Infrastructure.</p>
           </div>
-        </section>
+        </div>
+      </footer>
 
-        <div className="h-px bg-[#58B12F] mb-12 md:mb-16"></div>
-
-        {/* Partners Section */}
-        <section className="mb-12 md:mb-16">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-normal uppercase text-white mb-6">
-            Partners
-          </h2>
-          <p className="md:text-lg leading-relaxed text-gray-300">
-            Regen Bazaar, EcoSynthesisX, Atlantis, Hypercerts Foundation, Gardens.fund, NGOs, university partners, ReFi communities, USDGLO, DeTrash, and more.
-          </p>
-        </section>
-
-      </div>
-    </main>
+    </div>
   );
 }
-

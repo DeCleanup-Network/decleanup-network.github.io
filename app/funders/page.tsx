@@ -44,7 +44,7 @@ export default function FundersPage() {
                     <p className="text-xl md:text-2xl text-[#58B12F] mb-4 font-medium uppercase">
                         Verifiable impact infrastructure, not speculation
                     </p>
-                    <p className="text-lg text-gray-400">
+                    <p className="text-lg text-gray-200">
                         Fund what you can verify.
                     </p>
                 </div>
@@ -63,22 +63,51 @@ export default function FundersPage() {
                             <h3 className="text-xl font-semibold text-white">The Problem</h3>
                         </div>
 
-                        <p className="text-gray-400 text-sm mb-4">Funders want:</p>
+                        <p className="text-gray-200 text-sm mb-4">Funders want:</p>
 
                         <div className="grid sm:grid-cols-2 gap-3">
                             {[
-                                { icon: "✅", text: "Proof that money led to real action" },
-                                { icon: "👁️", text: "Transparency without heavy overhead" },
-                                { icon: "📈", text: "Repeatable, scalable funding models" },
-                                { icon: "🔍", text: "Less trust, more verification" }
+                                {
+                                    icon: (
+                                        <svg className="w-10 h-10 text-[#58B12F]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    ),
+                                    text: "Proof that money led to real action"
+                                },
+                                {
+                                    icon: (
+                                        <svg className="w-10 h-10 text-[#58B12F]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                        </svg>
+                                    ),
+                                    text: "Transparency without heavy overhead"
+                                },
+                                {
+                                    icon: (
+                                        <svg className="w-10 h-10 text-[#58B12F]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                                        </svg>
+                                    ),
+                                    text: "Repeatable, scalable funding models"
+                                },
+                                {
+                                    icon: (
+                                        <svg className="w-10 h-10 text-[#58B12F]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                        </svg>
+                                    ),
+                                    text: "Less trust, more verification"
+                                }
                             ].map((problem, idx) => (
                                 <div
                                     key={idx}
                                     className="group relative p-4 rounded-xl bg-gradient-to-br from-red-500/10 to-red-600/5 border border-red-500/20 hover:border-red-500/40 transition-all duration-300"
                                 >
-                                    <div className="flex items-start gap-3">
-                                        <span className="text-2xl shrink-0">{problem.icon}</span>
-                                        <p className="text-sm text-gray-300 leading-relaxed">{problem.text}</p>
+                                    <div className="flex items-start gap-4">
+                                        <div className="shrink-0">{problem.icon}</div>
+                                        <p className="text-sm text-gray-300 leading-relaxed pt-2">{problem.text}</p>
                                     </div>
                                 </div>
                             ))}
@@ -104,7 +133,7 @@ export default function FundersPage() {
                         </div>
 
                         <p className="text-gray-300 text-sm mb-6">
-                            We don&apos;t promise <span className="line-through text-gray-500">financial returns first</span>. We offer <span className="text-[#58B12F] font-semibold">verifiable impact infrastructure</span>. Funders can:
+                            We offer <span className="text-[#58B12F] font-semibold">verifiable impact infrastructure</span>. Funders can:
                         </p>
 
                         <div className="grid sm:grid-cols-2 gap-3">
@@ -154,21 +183,27 @@ export default function FundersPage() {
                         <div className="mb-6 p-4 rounded-xl bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-cyan-500/20">
                             <div className="flex items-center justify-between gap-2 flex-wrap">
                                 <div className="flex items-center gap-2">
-                                    <span className="text-2xl">💰</span>
+                                    <svg className="w-8 h-8 text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
                                     <span className="text-sm font-medium text-white">Funds flow</span>
                                 </div>
                                 <svg className="w-6 h-6 text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                     <path d="M13 7l5 5m0 0l-5 5m5-5H6" />
                                 </svg>
                                 <div className="flex items-center gap-2">
-                                    <span className="text-2xl">🧹</span>
+                                    <svg className="w-8 h-8 text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
                                     <span className="text-sm font-medium text-white">Cleanups happen</span>
                                 </div>
                                 <svg className="w-6 h-6 text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                     <path d="M13 7l5 5m0 0l-5 5m5-5H6" />
                                 </svg>
                                 <div className="flex items-center gap-2">
-                                    <span className="text-2xl">📋</span>
+                                    <svg className="w-8 h-8 text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
                                     <span className="text-sm font-medium text-white">Proof published</span>
                                 </div>
                             </div>
@@ -178,7 +213,7 @@ export default function FundersPage() {
                         {/* Data Capabilities */}
                         <div className="grid md:grid-cols-3 gap-4 mb-6">
                             <div>
-                                <p className="text-sm text-gray-400 mb-3 font-medium">Data can be:</p>
+                                <p className="text-sm text-gray-200 mb-3 font-medium">Data can be:</p>
                                 <div className="space-y-2">
                                     {["Audited", "Aggregated", "Reused across reports and ecosystems"].map((item, idx) => (
                                         <div key={idx} className="flex items-center gap-2 text-sm text-gray-300">
@@ -192,18 +227,39 @@ export default function FundersPage() {
                             </div>
 
                             <div className="md:col-span-2">
-                                <p className="text-sm text-gray-400 mb-3 font-medium">This reduces:</p>
+                                <p className="text-sm text-gray-200 mb-3 font-medium">This reduces:</p>
                                 <div className="grid sm:grid-cols-3 gap-2">
                                     {[
-                                        { icon: "🚫", text: "Greenwashing risk" },
-                                        { icon: "💸", text: "Reporting costs" },
-                                        { icon: "🤝", text: "Trust-based claims" }
+                                        {
+                                            icon: (
+                                                <svg className="w-8 h-8 text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
+                                                </svg>
+                                            ),
+                                            text: "Greenwashing risk"
+                                        },
+                                        {
+                                            icon: (
+                                                <svg className="w-8 h-8 text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                                                </svg>
+                                            ),
+                                            text: "Reporting costs"
+                                        },
+                                        {
+                                            icon: (
+                                                <svg className="w-8 h-8 text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                                </svg>
+                                            ),
+                                            text: "Trust-based claims"
+                                        }
                                     ].map((item, idx) => (
                                         <div
                                             key={idx}
-                                            className="p-3 rounded-lg bg-gradient-to-br from-green-500/10 to-emerald-500/5 border border-green-500/20 text-center"
+                                            className="p-3 rounded-lg bg-gradient-to-br from-green-500/10 to-emerald-500/5 border border-green-500/20 text-center flex flex-col items-center"
                                         >
-                                            <div className="text-2xl mb-1">{item.icon}</div>
+                                            <div className="mb-2">{item.icon}</div>
                                             <p className="text-xs text-gray-300">{item.text}</p>
                                         </div>
                                     ))}
@@ -255,7 +311,7 @@ export default function FundersPage() {
 
                         {/* Taglines */}
                         <div className="space-y-3 text-center pt-4 border-t border-white/10">
-                            <p className="text-sm text-gray-400 italic">
+                            <p className="text-sm text-gray-200 italic">
                                 A <span className="text-[#FAFF00] font-semibold not-italic">base layer</span> for future impact finance
                             </p>
                             <p className="text-lg font-bold text-[#58B12F]">
@@ -371,7 +427,7 @@ export default function FundersPage() {
                                     </ul>
                                     <button
                                         disabled
-                                        className="inline-block w-full text-center px-6 py-3 bg-gray-700 text-gray-400 font-semibold rounded-lg cursor-not-allowed opacity-50"
+                                        className="inline-block w-full text-center px-6 py-3 bg-gray-700 text-gray-200 font-semibold rounded-lg cursor-not-allowed opacity-50"
                                     >
                                         View Celo dApp (inactive)
                                     </button>

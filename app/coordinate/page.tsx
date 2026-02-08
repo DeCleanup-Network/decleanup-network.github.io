@@ -50,7 +50,7 @@ export default function CoordinatePage() {
                     <p className="text-xl md:text-2xl text-[#58B12F] mb-4 font-medium uppercase">
                         For those who build and coordinate impact
                     </p>
-                    <p className="text-lg text-gray-400">
+                    <p className="text-lg text-gray-200">
                         Open infrastructure for transparent, scalable environmental coordination.
                     </p>
                 </div>
@@ -63,34 +63,63 @@ export default function CoordinatePage() {
                     >
                         The Problem
                     </h2>
-                    <p className="text-gray-400 mb-8 text-lg">
+                    <p className="text-gray-200 mb-8 text-lg">
                         Impact coordinators struggle with:
                     </p>
                     <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
                         {[
-                            { icon: "🧩", title: "Fragmented data" },
-                            { icon: "📝", title: "Manual reporting" },
-                            { icon: "🔒", title: "Trust bottlenecks" },
                             {
-                                icon: "🏗️",
+                                icon: (
+                                    <svg className="w-10 h-10 text-[#58B12F]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                                    </svg>
+                                ),
+                                title: "Fragmented data"
+                            },
+                            {
+                                icon: (
+                                    <svg className="w-10 h-10 text-[#58B12F]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                    </svg>
+                                ),
+                                title: "Manual reporting"
+                            },
+                            {
+                                icon: (
+                                    <svg className="w-10 h-10 text-[#58B12F]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                    </svg>
+                                ),
+                                title: "Trust bottlenecks"
+                            },
+                            {
+                                icon: (
+                                    <svg className="w-10 h-10 text-[#58B12F]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                    </svg>
+                                ),
                                 title: "No shared infrastructure",
                                 subtitle: "for verification",
                             },
                             {
-                                icon: "⚖️",
+                                icon: (
+                                    <svg className="w-10 h-10 text-[#58B12F]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                                    </svg>
+                                ),
                                 title: "Hard-to-govern",
                                 subtitle: "funding decisions",
                             },
                         ].map((item, index) => (
                             <div
                                 key={index}
-                                className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center hover:border-[#58B12F]/50 transition-colors"
+                                className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center hover:border-[#58B12F]/50 transition-colors flex flex-col items-center"
                             >
-                                <div className="text-4xl mb-4">{item.icon}</div>
+                                <div className="mb-4">{item.icon}</div>
                                 <h3 className="text-white font-medium">
                                     {item.title}
                                     {item.subtitle && (
-                                        <span className="block text-gray-500 text-sm mt-1">
+                                        <span className="block text-gray-300 text-sm mt-1">
                                             {item.subtitle}
                                         </span>
                                     )}
@@ -137,17 +166,38 @@ export default function CoordinatePage() {
                         >
                             DMRV as Infrastructure
                         </h2>
-                        <p className="text-gray-400 mb-6">
+                        <p className="text-gray-200 mb-6">
                             We treat DMRV as a public good layer:
                         </p>
                         <div className="space-y-6">
                             {[
-                                { icon: "🔗", title: "Cleanup records are immutable" },
-                                { icon: "🌐", title: "Data structures are open and interoperable" },
-                                { icon: "🆓", title: "No dependency on proprietary standards" },
+                                {
+                                    icon: (
+                                        <svg className="w-6 h-6 text-[#58B12F]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                                        </svg>
+                                    ),
+                                    title: "Cleanup records are immutable"
+                                },
+                                {
+                                    icon: (
+                                        <svg className="w-6 h-6 text-[#58B12F]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                                        </svg>
+                                    ),
+                                    title: "Data structures are open and interoperable"
+                                },
+                                {
+                                    icon: (
+                                        <svg className="w-6 h-6 text-[#58B12F]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z" />
+                                        </svg>
+                                    ),
+                                    title: "No dependency on proprietary standards"
+                                },
                             ].map((item, index) => (
                                 <div key={index} className="flex items-start gap-4">
-                                    <span className="text-2xl mt-1">{item.icon}</span>
+                                    <div className="mt-1 shrink-0">{item.icon}</div>
                                     <span className="text-lg text-gray-200">{item.title}</span>
                                 </div>
                             ))}
@@ -185,26 +235,38 @@ export default function CoordinatePage() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {[
                             {
-                                icon: "💰",
+                                icon: (
+                                    <svg className="w-10 h-10 text-[#58B12F]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                ),
                                 title: "$cDCU Token",
                                 desc: "Used for proposals and voting",
                             },
                             {
-                                icon: "🌱",
+                                icon: (
+                                    <svg className="w-10 h-10 text-[#58B12F]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                    </svg>
+                                ),
                                 title: "Gardens.fund",
                                 desc: "Coordination platform",
                             },
                             {
-                                icon: "🗳️",
+                                icon: (
+                                    <svg className="w-10 h-10 text-[#58B12F]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                ),
                                 title: "Community Decides",
                                 desc: "Verification rules, funding priorities, new pools",
                             },
                         ].map((item, index) => (
                             <div key={index} className="bg-gradient-to-br from-gray-900 to-black border border-gray-800 p-8 rounded-xl relative overflow-hidden group hover:border-[#58B12F]/50 transition-all">
                                 <div className="absolute top-0 right-0 w-24 h-24 bg-[#58B12F]/5 rounded-full blur-2xl -mr-12 -mt-12 group-hover:bg-[#58B12F]/10 transition-colors" />
-                                <div className="text-4xl mb-6">{item.icon}</div>
+                                <div className="mb-6">{item.icon}</div>
                                 <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-                                <p className="text-gray-400">{item.desc}</p>
+                                <p className="text-gray-200">{item.desc}</p>
                             </div>
                         ))}
                     </div>
