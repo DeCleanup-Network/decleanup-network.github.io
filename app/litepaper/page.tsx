@@ -267,7 +267,7 @@ export default function LitepaperPage() {
                   <h3 className="text-3xl text-white font-bebas tracking-wide">Full Platform</h3>
                 </div>
 
-                <p className="text-gray-200 mb-8 text-sm leading-relaxed">Full platform for NGOs and organizers. Governance and coordination.</p>
+                <p className="text-gray-200 mb-8 text-sm leading-relaxed">Full platform for individuals, NGOs and organizers. Governance and coordination.</p>
 
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/5">
@@ -353,11 +353,41 @@ export default function LitepaperPage() {
                   <h3 className="text-3xl text-white font-bebas tracking-wide">Utility Token</h3>
                   <span className="text-[10px] bg-neutral-800 text-gray-200 px-2 py-0.5 rounded border border-neutral-700 tracking-wider">BASE</span>
                 </div>
-                <ul className="space-y-3 mb-4">
+                <ul className="space-y-3 mb-6">
                   <li className="flex items-center gap-2 text-sm text-gray-200"><Star className="text-blue-500 w-4 h-4" /> Earned for verified cleanup</li>
                   <li className="flex items-center gap-2 text-sm text-gray-200"><Star className="text-blue-500 w-4 h-4" /> Liquid & Tradable</li>
                   <li className="flex items-center gap-2 text-sm text-gray-200"><Star className="text-blue-500 w-4 h-4" /> Incentivizes Action</li>
                 </ul>
+
+                <div className="flex flex-col gap-3">
+                  <div className="flex flex-wrap gap-2">
+                    <a
+                      href="https://app.uniswap.org/swap?chain=base&inputCurrency=ETH&outputCurrency=0x30171b7014c02229497CdE6745DD3aD821F12b07"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-lg transition-all text-[10px] uppercase tracking-wider"
+                    >
+                      Swap ETH
+                    </a>
+                    <a
+                      href="https://app.uniswap.org/swap?chain=base&inputCurrency=0xfde4C96c8593536E31F229EA8f37b2ADa2699bb2&outputCurrency=0x30171b7014c02229497CdE6745DD3aD821F12b07"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 border border-blue-500 text-blue-400 hover:bg-blue-500/10 font-bold rounded-lg transition-all text-[10px] uppercase tracking-wider"
+                    >
+                      Swap USDT
+                    </a>
+                  </div>
+                  <a
+                    href="https://basescan.org/token/0x30171b7014c02229497CdE6745DD3aD821F12b07"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[10px] text-gray-400 hover:text-white transition-colors flex items-center gap-1 font-mono"
+                  >
+                    <LinkIcon className="w-3 h-3" />
+                    0x30171b70...b2107
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -459,6 +489,14 @@ export default function LitepaperPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="overflow-x-auto pb-4">
             <TheoryOfChange />
+          </div>
+          <div className="mt-8 flex justify-center">
+            <Link
+              href="/toc"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#58B12F] hover:bg-[#58B12F]/90 text-black font-semibold text-sm uppercase tracking-wide transition-colors"
+            >
+              Full theory of change
+            </Link>
           </div>
 
           <div className="mt-12">

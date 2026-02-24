@@ -378,14 +378,38 @@ export default function FundersPage() {
                                             <span>simple incentives</span>
                                         </li>
                                     </ul>
-                                    <a
-                                        href="https://basescan.org"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="inline-block w-full text-center px-6 py-3 bg-[#58B12F] hover:bg-[#58B12F]/80 text-black font-semibold rounded-lg transition-colors duration-200"
-                                    >
-                                        View on Base
-                                    </a>
+                                    <div className="flex flex-col gap-3">
+                                        <div className="flex flex-wrap gap-2">
+                                            <a
+                                                href="https://app.uniswap.org/swap?chain=base&inputCurrency=ETH&outputCurrency=0x30171b7014c02229497CdE6745DD3aD821F12b07"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="flex-1 text-center px-4 py-3 bg-[#58B12F] hover:bg-[#58B12F]/80 text-black font-bold rounded-lg transition-all text-xs uppercase"
+                                            >
+                                                Swap ETH
+                                            </a>
+                                            <a
+                                                href="https://app.uniswap.org/swap?chain=base&inputCurrency=0xfde4C96c8593536E31F229EA8f37b2ADa2699bb2&outputCurrency=0x30171b7014c02229497CdE6745DD3aD821F12b07"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="flex-1 text-center px-4 py-3 border border-[#58B12F] text-[#58B12F] hover:bg-[#58B12F]/10 font-bold rounded-lg transition-all text-xs uppercase"
+                                            >
+                                                Swap USDT
+                                            </a>
+                                        </div>
+                                        <a
+                                            href="https://basescan.org/token/0x30171b7014c02229497CdE6745DD3aD821F12b07"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-xs text-gray-400 hover:text-white transition-colors flex items-center justify-center gap-1 font-mono"
+                                        >
+                                            <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                                                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                                            </svg>
+                                            0x30171b7014c02229497CdE6745DD3aD821F12b07
+                                        </a>
+                                    </div>
                                 </div>
 
                                 {/* Card 2 - $cDCU - Celo */}
