@@ -232,10 +232,10 @@ const UserGuide = () => {
           </p>
         </div>
 
-      
+
         <section className="mb-12 md:mb-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-     
+
             <div className="bg-[#0A0A0A] border-l-4 border-[#FAFF00] rounded-xl p-6 lg:p-8 flex flex-col h-full hover:scale-105 transition-transform duration-300 hover:shadow-[0_0_30px_rgba(250,255,0,0.2)]">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-[#FAFF00] to-[#58B12F] rounded-lg flex items-center justify-center shrink-0">
@@ -277,7 +277,7 @@ const UserGuide = () => {
               </div>
             </div>
 
-          
+
             <div className="bg-[#0A0A0A] border-l-4 border-[#58B12F] rounded-xl p-6 lg:p-8 flex flex-col h-full hover:scale-105 transition-transform duration-300 hover:shadow-[0_0_30px_rgba(88,177,47,0.2)]">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-[#58B12F] to-[#FAFF00] rounded-lg flex items-center justify-center shrink-0">
@@ -403,10 +403,15 @@ const UserGuide = () => {
               <h3 className="text-xl md:text-2xl font-semibold text-white mb-3">
                 $bDCU Rewards
               </h3>
-              <p className="text-gray-300 text-base leading-relaxed">
+              <p className="text-gray-300 text-base leading-relaxed mb-4">
                 Earn $bDCU for every approved cleanup, streaks, referrals and
                 submitting Impact Reports in the Mini App.
               </p>
+              <div className="mt-auto flex flex-wrap gap-2 pt-2 border-t border-white/10 uppercase text-[10px] font-bold">
+                <span className="text-gray-400 w-full mb-1">Direct Swap:</span>
+                <a href="https://app.uniswap.org/swap?chain=base&inputCurrency=ETH&outputCurrency=0x30171b7014c02229497CdE6745DD3aD821F12b07" target="_blank" className="text-[#58B12F] hover:text-[#FAFF00] transition-colors underline">ETH / $bDCU</a>
+                <a href="https://app.uniswap.org/swap?chain=base&inputCurrency=0xfde4C96c8593536E31F229EA8f37b2ADa2699bb2&outputCurrency=0x30171b7014c02229497CdE6745DD3aD821F12b07" target="_blank" className="text-[#58B12F] hover:text-[#FAFF00] transition-colors underline">USDT / $bDCU</a>
+              </div>
             </div>
           </div>
         </section>
