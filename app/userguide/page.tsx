@@ -110,7 +110,7 @@ export default function UserGuidePage() {
             <div className="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 md:p-8">
               <h3 className="text-2xl font-bebas tracking-wide text-white mb-4">Verification</h3>
               <p className="text-gray-200 text-sm leading-relaxed mb-4">
-                Submissions are reviewed by community verifiers ($bDCU stakers). If the submission has geolocation, clear and authentic photos, it gets approved; otherwise it may be rejected.
+                Submissions are reviewed at the first stage by the team and trusted experts, then upon community growth it becomes verifiers&apos; task (token stakers). If the submission has geolocation, clear and authentic photos, it gets approved; otherwise it may be rejected.
               </p>
               <p className="text-xs text-gray-400 italic">Rewards are subject to change based on token price reflecting multiplier formula at the moment of claim.</p>
             </div>

@@ -73,7 +73,7 @@ const Hero = () => {
             rel="noopener noreferrer"
             className="rounded-xl bg-white px-6 py-3 font-medium text-black transition-all duration-300 hover:bg-white/90 hover:shadow-[0_0_24px_rgba(255,255,255,0.15)]"
           >
-            Start Earning
+            participate now
           </Link>
           <Link
             href="/litepaper"
@@ -82,6 +82,11 @@ const Hero = () => {
             Read Litepaper
           </Link>
         </div>
+
+        {/* Sponsored by info */}
+        <p className="mt-6 text-sm font-medium text-[#58B12F]">
+          First Pool Sponsored by Ethereum for the World
+        </p>
       </div>
     </section>
   );
