@@ -55,7 +55,7 @@ export default function LitepaperPage() {
                 className="h-8 w-auto object-contain"
               />
             </Link>
-            <span className="text-xs text-gray-300 border-l border-gray-700 pl-3 font-mono">LITEPAPER</span>
+            <span className="text-xs text-gray-300 border-l border-gray-700 pl-3 font-medium">LITEPAPER</span>
           </div>
           <div className="hidden md:flex items-center gap-6 text-sm text-gray-200 font-medium">
             <Link href="#overview" className="hover:text-white transition-colors">Overview</Link>
@@ -85,11 +85,11 @@ export default function LitepaperPage() {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded border border-[#FAFF00]/20 bg-[#FAFF00]/5 text-[#FAFF00] text-xs font-mono mb-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded border border-[#FAFF00]/20 bg-[#FAFF00]/5 text-[#FAFF00] text-xs font-medium mb-4">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#FAFF00] animate-pulse"></span>
                 FEBRUARY 2026 EDITION
               </div>
-              <h1 className="text-6xl md:text-8xl lg:text-9xl text-white leading-[0.9] tracking-tighter mb-4 font-bebas">
+              <h1>
                 DECLEANUP <br />
                 <span className="text-[#58B12F]">NETWORK</span>
               </h1>
@@ -100,12 +100,12 @@ export default function LitepaperPage() {
 
             <div className="flex gap-8 border-l border-white/10 pl-6 md:border-l-0 md:pl-0">
               <div className="text-left md:text-right">
-                <div className="text-xs text-gray-300 uppercase tracking-widest mb-1 font-mono">Status</div>
-                <div className="text-white font-mono text-sm font-bold">PHASE 1: LIVE</div>
+                <div className="text-xs text-gray-300 uppercase tracking-widest mb-1 font-medium">Status</div>
+                <div className="text-white text-sm font-bold">PHASE 1: LIVE</div>
               </div>
               <div className="w-px h-10 bg-white/10 hidden md:block"></div>
               <div className="text-left md:text-right">
-                <div className="text-xs text-gray-300 uppercase tracking-widest mb-1 font-mono">Network</div>
+                <div className="text-xs text-gray-300 uppercase tracking-widest mb-1 font-medium">Network</div>
                 <div className="flex gap-2 justify-start md:justify-end mt-1">
                   <span className="w-2.5 h-2.5 rounded-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.5)]"></span>
                   <span className="w-2.5 h-2.5 rounded-full bg-[#FAFF00] shadow-[0_0_10px_rgba(250,255,0,0.5)]"></span>
@@ -119,7 +119,7 @@ export default function LitepaperPage() {
       {/* 1. Overview Cards */}
       <section id="overview" className="py-20 bg-[#0A0A0A]">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl tracking-tight text-white mb-10 flex items-center gap-3 font-bebas">
+          <h2 className="mb-10 flex items-center gap-3">
             <Info className="text-[#58B12F] w-8 h-8" />
             The Mission
           </h2>
@@ -130,7 +130,7 @@ export default function LitepaperPage() {
               <div className="w-12 h-12 rounded-full bg-[#58B12F]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <BadgeCheck className="text-[#58B12F] w-6 h-6" />
               </div>
-              <h3 className="text-2xl text-white mb-2 font-bebas tracking-wide">Verifiable Data</h3>
+              <h3 className="mb-2">Verifiable Data</h3>
               <p className="text-gray-200 text-sm leading-relaxed">
                 Transforming invisible cleanup efforts into standardized, onchain evidence. No more &quot;trust me&quot; - only &quot;verify me.&quot;
               </p>
@@ -141,7 +141,7 @@ export default function LitepaperPage() {
               <div className="w-12 h-12 rounded-full bg-[#FAFF00]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <TrendingUp className="text-[#FAFF00] w-6 h-6" />
               </div>
-              <h3 className="text-2xl text-white mb-2 font-bebas tracking-wide">Auditable Impact</h3>
+              <h3 className="mb-2">Auditable Impact</h3>
               <p className="text-gray-200 text-sm leading-relaxed">
                 Creating specific, traceable records compatible with Hypercerts. Funders can see exactly where capital goes.
               </p>
@@ -152,7 +152,7 @@ export default function LitepaperPage() {
               <div className="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <Users className="text-blue-400 w-6 h-6" />
               </div>
-              <h3 className="text-2xl text-white mb-2 font-bebas tracking-wide">Governable Funding</h3>
+              <h3 className="mb-2">Governable Funding</h3>
               <p className="text-gray-200 text-sm leading-relaxed">
                 DAO-based allocation of resources using stable assets. Outcome-based funding pools for long-term sustainability.
               </p>
@@ -175,35 +175,35 @@ export default function LitepaperPage() {
             <div className="bg-amber-600/20 border border-amber-600/30 p-6 rounded-xl hover:bg-amber-600/30 transition-colors group">
               <div className="text-amber-500 text-xs font-bold mb-2 font-mono">SDG 11</div>
               <Building2 className="text-white w-8 h-8 mb-3 opacity-80 group-hover:opacity-100 transition-opacity" />
-              <div className="text-white text-lg font-bebas leading-none tracking-wide">Sustainable<br />Cities</div>
+              <h3 className="text-white text-lg font-bebas leading-none tracking-wide uppercase">Sustainable<br />Cities</h3>
             </div>
 
             {/* SDG 12 */}
             <div className="bg-orange-600/20 border border-orange-600/30 p-6 rounded-xl hover:bg-orange-600/30 transition-colors group">
               <div className="text-orange-500 text-xs font-bold mb-2 font-mono">SDG 12</div>
               <RefreshCw className="text-white w-8 h-8 mb-3 opacity-80 group-hover:opacity-100 transition-opacity" />
-              <div className="text-white text-lg font-bebas leading-none tracking-wide">Responsible<br />Consumption</div>
+              <h3 className="text-white text-lg font-bebas leading-none tracking-wide uppercase">Responsible<br />Consumption</h3>
             </div>
 
             {/* SDG 13 */}
             <div className="bg-emerald-800/20 border border-emerald-700/30 p-6 rounded-xl hover:bg-emerald-800/30 transition-colors group">
               <div className="text-emerald-500 text-xs font-bold mb-2 font-mono">SDG 13</div>
               <CloudSun className="text-white w-8 h-8 mb-3 opacity-80 group-hover:opacity-100 transition-opacity" />
-              <div className="text-white text-lg font-bebas leading-none tracking-wide">Climate<br />Action</div>
+              <h3 className="text-white text-lg font-bebas leading-none tracking-wide uppercase">Climate<br />Action</h3>
             </div>
 
             {/* SDG 14 */}
             <div className="bg-blue-600/20 border border-blue-600/30 p-6 rounded-xl hover:bg-blue-600/30 transition-colors group">
               <div className="text-blue-500 text-xs font-bold mb-2 font-mono">SDG 14</div>
               <Droplets className="text-white w-8 h-8 mb-3 opacity-80 group-hover:opacity-100 transition-opacity" />
-              <div className="text-white text-lg font-bebas leading-none tracking-wide">Life Below<br />Water</div>
+              <h3 className="text-white text-lg font-bebas leading-none tracking-wide uppercase">Life Below<br />Water</h3>
             </div>
 
             {/* SDG 15 */}
             <div className="bg-green-600/20 border border-green-600/30 p-6 rounded-xl hover:bg-green-600/30 transition-colors group">
               <div className="text-green-500 text-xs font-bold mb-2 font-mono">SDG 15</div>
               <Leaf className="text-white w-8 h-8 mb-3 opacity-80 group-hover:opacity-100 transition-opacity fill-current" />
-              <div className="text-white text-lg font-bebas leading-none tracking-wide">Life On<br />Land</div>
+              <h3 className="text-white text-lg font-bebas leading-none tracking-wide uppercase">Life On<br />Land</h3>
             </div>
           </div>
         </div>

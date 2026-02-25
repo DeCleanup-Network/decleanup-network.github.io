@@ -10,15 +10,26 @@
   --gray-light: #1a1a1a;
   --gray-medium: #2a2a2a;
   --gray-dark: #111111;
-  
+
   /* Font variables */
   --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-mono: var(--font-geist-sans);
+  /* Consolidating to Geist Sans */
   --font-heading: var(--font-bebas-neue);
-  
-  /* Brand colors */
-  --color-brand-green: #58B12F;
-  --color-brand-yellow: #FAFF00;
+
+  /* Standard Sizes */
+  --text-hero: 5rem;
+  /* 80px */
+  --text-section: 3rem;
+  /* 48px */
+  --text-sub: 1.875rem;
+  /* 30px */
+  --text-body: 1rem;
+  /* 16px */
+  --text-small: 0.875rem;
+  /* 14px */
+  --text-xs: 0.75rem;
+  /* 12px */
 }
 
 /* @theme is a valid Tailwind v4 directive */
@@ -28,6 +39,8 @@
   --font-family-bebas: var(--font-bebas-neue), sans-serif;
   --font-family-heading: var(--font-bebas-neue), sans-serif;
   --font-family-geist: var(--font-geist-sans), sans-serif;
+  --font-family-mono: var(--font-geist-sans), sans-serif;
+  /* Standardizing mono calls */
 }
 
 * {
@@ -38,28 +51,61 @@
   html {
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
-}
+  }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
+  body {
+    background: var(--background);
+    color: var(--foreground);
     font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
     overflow-x: hidden;
     overflow-y: auto;
   }
 
   /* Bebas Neue for all headings - ALL CAPS */
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-bebas-neue), sans-serif;
-    font-weight: normal;
+    font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    line-height: 1.1;
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+  }
+
+  h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+
+  h3 {
+    font-size: clamp(1.5rem, 3vw, 1.875rem);
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  label,
+  .text-meta {
+    font-size: 0.875rem;
+    font-weight: 500;
   }
 
   /* Better mobile touch targets */
-  button, a {
+  button,
+  a {
     touch-action: manipulation;
   }
+}
+
+@layer utilities {
 
   /* Brand colors */
   .bg-brand-green {
@@ -101,6 +147,7 @@ body {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -111,6 +158,7 @@ body {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -122,6 +170,7 @@ body {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -133,6 +182,7 @@ body {
     opacity: 0;
     transform: translateX(-20px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -162,6 +212,7 @@ body {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -182,10 +233,13 @@ body {
 
 /* Who is this for - subtle border glow */
 @keyframes border-glow {
-  0%, 100% {
+
+  0%,
+  100% {
     border-color: rgba(88, 177, 47, 0.35);
     box-shadow: 0 0 0 1px rgba(88, 177, 47, 0.2);
   }
+
   50% {
     border-color: rgba(88, 177, 47, 0.6);
     box-shadow: 0 0 20px rgba(88, 177, 47, 0.15);
@@ -224,7 +278,4 @@ body {
   display: none;
 }
 
-@media (max-width: 640px) {
- 
-}
-
+@media (max-width: 640px) {}

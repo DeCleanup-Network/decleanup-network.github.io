@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function CoordinatePage() {
     return (
-        <main className="min-h-screen bg-black text-white overflow-x-hidden selection:bg-[#58B12F] selection:text-black">
+        <main className="min-h-screen bg-black text-white font-sans overflow-x-hidden selection:bg-[#58B12F] selection:text-black">
             <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
                 {/* Navigation */}
                 <div className="mb-10">
@@ -38,13 +38,7 @@ export default function CoordinatePage() {
 
                 {/* Header */}
                 <div className="mb-20 text-center max-w-3xl mx-auto">
-                    <h1
-                        className="text-4xl md:text-5xl lg:text-6xl font-medium text-white mb-6 uppercase leading-tight"
-                        style={{
-                            fontFamily: "var(--font-bebas-neue), sans-serif",
-                            letterSpacing: "0.05em",
-                        }}
-                    >
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bebas text-white mb-6 uppercase leading-tight tracking-wide">
                         Coordinate & Scale Impact
                     </h1>
                     <p className="text-xl md:text-2xl text-[#58B12F] mb-4 font-medium uppercase">
@@ -57,10 +51,7 @@ export default function CoordinatePage() {
 
                 {/* The Problem */}
                 <section className="mb-24">
-                    <h2
-                        className="text-3xl md:text-4xl font-medium text-white mb-10 border-l-4 border-[#58B12F] pl-4 uppercase"
-                        style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
-                    >
+                    <h2 className="text-3xl md:text-4xl font-bebas text-white mb-10 border-l-4 border-[#58B12F] pl-4 uppercase tracking-wide">
                         The Problem
                     </h2>
                     <p className="text-gray-200 mb-8 text-lg">
@@ -131,10 +122,7 @@ export default function CoordinatePage() {
 
                 {/* What DeCleanup Provides */}
                 <section className="mb-24">
-                    <h2
-                        className="text-3xl md:text-4xl font-medium text-white mb-10 border-l-4 border-[#58B12F] pl-4 uppercase"
-                        style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
-                    >
+                    <h2 className="text-3xl md:text-4xl font-bebas text-white mb-10 border-l-4 border-[#58B12F] pl-4 uppercase tracking-wide">
                         What DeCleanup Provides
                     </h2>
                     <div className="bg-gray-900/30 border border-gray-800 rounded-2xl p-8 md:p-10">
@@ -160,10 +148,7 @@ export default function CoordinatePage() {
                 {/* DMRV as Infrastructure */}
                 <section className="mb-24 grid grid-cols-1 lg:grid-cols-2 gap-12">
                     <div>
-                        <h2
-                            className="text-3xl md:text-4xl font-medium text-white mb-8 border-l-4 border-[#58B12F] pl-4 uppercase"
-                            style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
-                        >
+                        <h2 className="text-3xl md:text-4xl font-bebas text-white mb-8 border-l-4 border-[#58B12F] pl-4 uppercase tracking-wide">
                             DMRV as Infrastructure
                         </h2>
                         <p className="text-gray-200 mb-6">
@@ -226,10 +211,7 @@ export default function CoordinatePage() {
 
                 {/* Governance Tools Live on Celo */}
                 <section className="mb-24">
-                    <h2
-                        className="text-3xl md:text-4xl font-medium text-white mb-10 border-l-4 border-[#58B12F] pl-4 uppercase"
-                        style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
-                    >
+                    <h2 className="text-3xl md:text-4xl font-bebas text-white mb-10 border-l-4 border-[#58B12F] pl-4 uppercase tracking-wide">
                         Governance Tools Live on Celo
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -274,10 +256,7 @@ export default function CoordinatePage() {
 
                 {/* Example Funding Pools */}
                 <section className="mb-24">
-                    <h2
-                        className="text-3xl md:text-4xl font-medium text-white mb-10 border-l-4 border-[#58B12F] pl-4 uppercase"
-                        style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
-                    >
+                    <h2 className="text-3xl md:text-4xl font-bebas text-white mb-10 border-l-4 border-[#58B12F] pl-4 uppercase tracking-wide">
                         Example Funding Pools
                     </h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -309,10 +288,7 @@ export default function CoordinatePage() {
 
                 {/* The Outcome */}
                 <section className="mb-12 bg-gradient-to-r from-gray-900 to-gray-900/50 border border-gray-800 rounded-2xl p-8 md:p-12 text-center">
-                    <h2
-                        className="text-3xl md:text-4xl font-medium text-white mb-8 uppercase"
-                        style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
-                    >
+                    <h2 className="text-3xl md:text-4xl font-bebas text-white mb-8 uppercase tracking-wide">
                         The Outcome
                     </h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
