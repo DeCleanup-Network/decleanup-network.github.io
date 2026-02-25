@@ -48,7 +48,7 @@ function CheckMark({ green = true }: { green?: boolean }) {
 /* ─── Section label ─── */
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <p className="text-xs font-mono text-[#58B12F] tracking-widest mb-3 uppercase flex items-center gap-2">
+    <p className="text-xs text-[#58B12F] tracking-widest mb-3 uppercase flex items-center gap-2 font-medium">
       <span className="w-4 h-px bg-[#58B12F]/60" />
       {children}
     </p>
@@ -58,7 +58,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 /* ─── Section heading ─── */
 function SectionHeading({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
-    <h2 className={`text-4xl md:text-5xl font-bebas text-white mb-4 leading-tight tracking-tight ${className}`}>
+    <h2 className={`mb-4 ${className}`}>
       {children}
     </h2>
   );
@@ -91,7 +91,7 @@ function Card({
 
 export default function TocPage() {
   return (
-    <div className="min-h-screen bg-[#0A0A0A] text-white selection:bg-[#58B12F] selection:text-white">
+    <div className="min-h-screen bg-[#0A0A0A] text-white font-sans selection:bg-[#58B12F] selection:text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
 
         {/* ─── Back link ─── */}
@@ -105,11 +105,11 @@ export default function TocPage() {
 
         {/* ─── Hero ─── */}
         <div className="text-center mb-16 md:mb-24">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#FAFF00]/20 bg-[#FAFF00]/5 text-[#FAFF00] text-xs font-mono mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#FAFF00]/20 bg-[#FAFF00]/5 text-[#FAFF00] text-xs mb-6 font-medium">
             <span className="w-1.5 h-1.5 rounded-full bg-[#FAFF00] animate-pulse" />
             THEORY OF CHANGE · v2.2
           </div>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl text-white leading-tight tracking-tighter mb-5 font-bebas">
+          <h1>
             WHY CLEANUP{" "}
             <span className="text-[#58B12F]">STAYS INVISIBLE</span>
           </h1>
@@ -199,7 +199,7 @@ export default function TocPage() {
               <span className="text-[#58B12F] font-semibold">trusted, portable data</span> that connects grassroots action
               to institutional funding, policy decisions, and regenerative ecosystem coordination.
             </p>
-            <p className="text-xs text-gray-500 mt-3 font-mono pl-2">DeCleanup Network - Long-Term Vision (5-10 Years)</p>
+            <p className="text-xs text-gray-500 mt-3 pl-2">DeCleanup Network - Long-Term Vision (5-10 Years)</p>
           </div>
         </section>
 
@@ -225,7 +225,7 @@ export default function TocPage() {
                 { num: "05", Icon: Waves, label: "Capital Flow", desc: "Funders use verified dashboards - fund more cleanups" },
               ].map((step, i) => (
                 <Card key={step.num} accent="green" className="p-5 flex flex-col items-start">
-                  <p className="text-xs font-mono text-[#58B12F] mb-3">{step.num}</p>
+                  <p className="text-xs text-[#58B12F] mb-3 font-medium">{step.num}</p>
                   <div className="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-[#58B12F]/10 mb-3">
                     <step.Icon className="w-4 h-4 text-[#58B12F]" />
                   </div>
@@ -241,7 +241,7 @@ export default function TocPage() {
 
           {/* 30-second test */}
           <Card className="p-6 md:p-8">
-            <p className="text-xs font-mono text-[#58B12F] tracking-widest mb-3 flex items-center gap-2">
+            <p className="text-xs text-[#58B12F] tracking-widest mb-3 flex items-center gap-2 font-medium">
               <Target className="w-3.5 h-3.5" />
               30-Second Strategy Test
             </p>
@@ -547,7 +547,7 @@ export default function TocPage() {
                   </div>
                 </div>
                 <h3 className="text-2xl font-bebas text-white mb-0.5">{ph.title}</h3>
-                <p className="text-xs font-mono text-[#58B12F] mb-2">{ph.subtitle}</p>
+                <p className="text-xs font-medium text-[#58B12F] mb-2">{ph.subtitle}</p>
                 <p className="text-sm text-gray-400 mb-5 leading-relaxed">{ph.desc}</p>
                 <ul className="space-y-2.5">
                   {ph.items.map((it) => (
@@ -620,7 +620,7 @@ export default function TocPage() {
                 ].map((row, i) => (
                   <tr key={i} className="border-b border-neutral-800/50 hover:bg-neutral-900/60 transition-colors">
                     <td className="py-4 px-6">{row[0]}</td>
-                    <td className="py-4 px-6 font-mono text-[#58B12F] whitespace-nowrap">{row[1]}</td>
+                    <td className="py-4 px-6 text-[#58B12F] whitespace-nowrap font-medium">{row[1]}</td>
                     <td className="py-4 px-6 text-gray-400">{row[2]}</td>
                   </tr>
                 ))}
@@ -678,7 +678,7 @@ export default function TocPage() {
               return (
                 <Card key={r.name} accent="none" className="p-5 hover:border-neutral-700/70">
                   <div className="flex items-start justify-between gap-3 mb-3">
-                    <span className={`text-xs font-mono px-2.5 py-1 rounded-full ${levelMap.badge}`}>
+                    <span className={`text-xs font-medium px-2.5 py-1 rounded-full ${levelMap.badge}`}>
                       {r.level} Impact
                     </span>
                     <div className={`w-8 h-8 rounded-xl flex items-center justify-center shrink-0 ${levelMap.iconBg}`}>

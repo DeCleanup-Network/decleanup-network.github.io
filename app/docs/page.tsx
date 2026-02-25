@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function DocsPage() {
   return (
-    <div className="min-h-screen bg-[#0A0A0A] text-white selection:bg-[#58B12F] selection:text-white">
+    <div className="min-h-screen bg-[#0A0A0A] text-white font-sans selection:bg-[#58B12F] selection:text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         {/* Back + Header */}
         <div className="mb-12 md:mb-16">

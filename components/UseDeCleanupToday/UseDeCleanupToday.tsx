@@ -1,47 +1,18 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
-
-interface AppConfig {
-  chain: string;
-  title: string;
-  subtitle: string;
-  bullets: string[];
-  href: string;
-  logo: string;
-  accentColor: string;
-}
+import {
+  Smartphone,
+  Layers,
+  Camera,
+  Wand2,
+  Wallet,
+  MapPin,
+  FileText,
+  MessageCircle,
+  ArrowUpRight
+} from "lucide-react";
 
 const UseDeCleanupToday = () => {
-  const ecosystems: AppConfig[] = [
-    {
-      chain: "BASE",
-      title: "Mini App",
-      subtitle: "Lightweight entry for individuals via Farcaster or Base app.",
-      bullets: [
-        "Photo-based logging",
-        "Quick verification",
-        "$bDCU rewards",
-      ],
-      href: "https://farcaster.xyz/miniapps/SfsGBDcHpuSA/decleanup-rewards",
-      logo: "/base-logo-white.svg",
-      accentColor: "#58B12F",
-    },
-    {
-      chain: "CELO",
-      title: "Full Platform",
-      subtitle: "Full platform for individuals, NGOs and organizers. Governance and coordination.",
-      bullets: [
-        "Geolocation and maps",
-        "Impact reports (Hypercerts)",
-        "Funding governance",
-      ],
-      href: "https://dapp.decleanup.net",
-      logo: "/celo-celo-logo.svg",
-      accentColor: "#FAFF00",
-    },
-  ];
-
   return (
     <section
       id="ecosystem"
@@ -59,73 +30,88 @@ const UseDeCleanupToday = () => {
         </div>
 
         {/* Cards Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {ecosystems.map((app, index) => (
-            <Link
-              key={index}
-              href={app.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative bg-gray-900/50 rounded-2xl border border-gray-800 p-8 lg:p-10 flex flex-col transition-all duration-500 hover:border-[#58B12F]/40 hover:shadow-[0_0_40px_rgba(88,177,47,0.15)] hover:-translate-y-2 overflow-hidden"
-            >
-              {/* Decorative background glow */}
-              <div
-                className="absolute -top-24 -right-24 w-48 h-48 rounded-full blur-[80px] opacity-0 group-hover:opacity-20 transition-opacity duration-500"
-                style={{ backgroundColor: app.accentColor }}
-              />
-
-              {/* Chain Label & Logo */}
-              <div className="mb-8 flex items-center gap-3">
-                <Image
-                  src={app.logo}
-                  alt={app.chain}
-                  width={24}
-                  height={24}
-                  className="h-6 w-auto"
-                />
-                <span className="text-sm font-bold tracking-[0.2em] text-gray-400 uppercase">
-                  {app.chain}
-                </span>
+        <div className="flex flex-col lg:flex-row gap-8 items-stretch">
+          {/* Base Card */}
+          <Link
+            href="https://farcaster.xyz/miniapps/SfsGBDcHpuSA/decleanup-rewards"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 relative group block"
+          >
+            <div className="absolute inset-0 bg-blue-900/10 rounded-3xl blur-xl group-hover:bg-blue-900/20 transition-all duration-500"></div>
+            <div className="relative h-full bg-neutral-900 border border-neutral-800 rounded-3xl p-8 overflow-hidden group-hover:border-blue-500/50 transition-all duration-300">
+              <div className="absolute top-0 right-0 p-4 opacity-50 pointer-events-none">
+                <Smartphone className="text-blue-500 w-32 h-32 -rotate-12 translate-x-4 translate-y-4 opacity-10" />
               </div>
 
-              {/* Title */}
-              <h3
-                className="text-2xl sm:text-3xl lg:text-4xl font-medium mb-3 text-white normal-case"
-                style={{
-                  fontFamily:
-                    "var(--font-geist-sans), system-ui, -apple-system, sans-serif",
-                }}
-              >
-                {app.title}
-              </h3>
-
-              {/* Subtitle */}
-              <p className="text-lg text-gray-300 mb-8 leading-relaxed font-light">
-                {app.subtitle}
-              </p>
-
-              {/* Bullet Points */}
-              <ul className="space-y-4 mb-8 flex-grow">
-                {app.bullets.map((bullet, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
-                    <div
-                      className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0"
-                      style={{ backgroundColor: app.accentColor }}
-                    />
-                    <span className="text-gray-300 text-base sm:text-lg">{bullet}</span>
-                  </li>
-                ))}
-              </ul>
-
-              {/* CTA Indicator */}
-              <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-white group-hover:text-[#FAFF00] transition-colors">
-                Explore on {app.chain}
-                <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
+              <div className="flex items-center gap-3 mb-6">
+                <span className="bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded tracking-wider">BASE</span>
+                <h3 className="text-3xl text-white font-bebas tracking-wide">Mini App</h3>
               </div>
-            </Link>
-          ))}
+
+              <p className="text-gray-200 mb-8 text-sm leading-relaxed">Lightweight entry for individuals via Farcaster or Base app.</p>
+
+              <div className="space-y-4">
+                <div className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/5">
+                  <Camera className="text-blue-400 w-5 h-5" />
+                  <span className="text-sm text-gray-200">Photo-based logging</span>
+                </div>
+                <div className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/5">
+                  <Wand2 className="text-blue-400 w-5 h-5" />
+                  <span className="text-sm text-gray-200">Quick verification</span>
+                </div>
+                <div className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/5">
+                  <Wallet className="text-blue-400 w-5 h-5" />
+                  <span className="text-sm text-gray-200">$bDCU rewards</span>
+                </div>
+              </div>
+
+              <div className="mt-8 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-blue-400 group-hover:text-white transition-colors">
+                Open on Farcaster <ArrowUpRight className="w-4 h-4" />
+              </div>
+            </div>
+          </Link>
+
+          {/* Celo Card */}
+          <Link
+            href="https://dapp.decleanup.net"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 relative group block"
+          >
+            <div className="absolute inset-0 bg-[#FAFF00]/5 rounded-3xl blur-xl group-hover:bg-[#FAFF00]/10 transition-all duration-500"></div>
+            <div className="relative h-full bg-neutral-900 border border-neutral-800 rounded-3xl p-8 overflow-hidden group-hover:border-[#FAFF00]/50 transition-all duration-300">
+              <div className="absolute top-0 right-0 p-4 opacity-50 pointer-events-none">
+                <Layers className="text-[#FAFF00] w-32 h-32 rotate-12 translate-x-4 translate-y-4 opacity-10" />
+              </div>
+
+              <div className="flex items-center gap-3 mb-6">
+                <span className="bg-[#FAFF00] text-black text-[10px] font-bold px-2 py-1 rounded tracking-wider">CELO</span>
+                <h3 className="text-3xl text-white font-bebas tracking-wide">Full Platform</h3>
+              </div>
+
+              <p className="text-gray-200 mb-8 text-sm leading-relaxed">Full platform for individuals, NGOs and organizers. Governance and coordination.</p>
+
+              <div className="space-y-4">
+                <div className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/5">
+                  <MapPin className="text-[#FAFF00] w-5 h-5" />
+                  <span className="text-sm text-gray-200">Geolocation and maps</span>
+                </div>
+                <div className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/5">
+                  <FileText className="text-[#FAFF00] w-5 h-5" />
+                  <span className="text-sm text-gray-200">Impact reports (Hypercerts)</span>
+                </div>
+                <div className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/5">
+                  <MessageCircle className="text-[#FAFF00] w-5 h-5" />
+                  <span className="text-sm text-gray-200">Funding governance</span>
+                </div>
+              </div>
+
+              <div className="mt-8 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#FAFF00] group-hover:text-white transition-colors">
+                Explore Celo dApp <ArrowUpRight className="w-4 h-4" />
+              </div>
+            </div>
+          </Link>
         </div>
       </div>
     </section>

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function FundersPage() {
     return (
-        <main className="min-h-screen bg-black text-white selection:bg-[#58B12F] selection:text-black">
+        <main className="min-h-screen bg-black text-white font-sans selection:bg-[#58B12F] selection:text-black">
             <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
                 {/* Back Button */}
                 <div className="mb-8">
@@ -38,7 +38,7 @@ export default function FundersPage() {
 
                 {/* Page Header */}
                 <div className="text-center mb-12 md:mb-16">
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium uppercase text-white mb-6" style={{ fontFamily: "var(--font-bebas-neue), sans-serif", letterSpacing: "0.05em" }}>
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bebas uppercase text-white mb-6 tracking-wide">
                         For those who fund real-world impact
                     </h1>
                     <p className="text-xl md:text-2xl text-[#58B12F] mb-4 font-medium uppercase">

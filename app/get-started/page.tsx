@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function GetStartedPage() {
   return (
-    <main className="min-h-screen bg-black text-white overflow-x-hidden">
+    <main className="min-h-screen bg-black text-white font-sans overflow-x-hidden selection:bg-[#58B12F] selection:text-white">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="mb-10">
           <Link
@@ -35,13 +35,7 @@ export default function GetStartedPage() {
         </div>
 
         <div className="mb-12 text-center">
-          <h1
-            className="text-4xl md:text-5xl lg:text-6xl font-medium text-white mb-6 uppercase leading-tight"
-            style={{
-              fontFamily: "var(--font-bebas-neue), sans-serif",
-              letterSpacing: "0.05em",
-            }}
-          >
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bebas text-white mb-6 uppercase leading-tight tracking-wide">
             Get started with DeCleanup Rewards
           </h1>
           <p className="text-xl md:text-2xl text-[#58B12F] mb-4 font-medium uppercase">

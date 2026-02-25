@@ -43,11 +43,7 @@ const Hero = () => {
           />
         </div>
 
-        {/* Main title */}
-        <h1
-          className="mb-6 text-5xl font-normal leading-tight text-white sm:text-6xl md:text-7xl lg:text-8xl"
-          style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
-        >
+        <h1 className="mb-6 py-2">
           <span className="bg-gradient-to-r from-[#58B12F] via-[#FAFF00] to-[#58B12F] bg-clip-text text-transparent animate-pulse">
             DECLEANUP
           </span>{" "}
@@ -73,7 +69,7 @@ const Hero = () => {
             rel="noopener noreferrer"
             className="rounded-xl bg-white px-6 py-3 font-medium text-black transition-all duration-300 hover:bg-white/90 hover:shadow-[0_0_24px_rgba(255,255,255,0.15)]"
           >
-            participate now
+            Participate Now
           </Link>
           <Link
             href="/litepaper"
@@ -82,11 +78,6 @@ const Hero = () => {
             Read Litepaper
           </Link>
         </div>
-
-        {/* Sponsored by info */}
-        <p className="mt-6 text-sm font-medium text-[#58B12F]">
-          First Pool Sponsored by Ethereum for the World
-        </p>
       </div>
     </section>
   );
