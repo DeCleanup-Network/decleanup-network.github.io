@@ -135,13 +135,13 @@ export default function TocPage() {
 
         {/* ─── 01 Root Cause ─── */}
         <section id="problem" className="py-16 md:py-24 border-t border-white/5 scroll-mt-24">
-          <SectionLabel>01 — Root Cause</SectionLabel>
+          <SectionLabel>01 - Root Cause</SectionLabel>
           <SectionHeading>
             The problem isn&apos;t a lack of action
           </SectionHeading>
           <p className="text-gray-300 max-w-2xl mb-12 leading-relaxed">
             Volunteers organize. NGOs mobilize. Communities clean every single day. The problem is that this action remains
-            invisible — producing no data that funders, partners, or institutions can trust, verify, or build upon.
+            invisible - producing no data that funders, partners, or institutions can trust, verify, or build upon.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
@@ -199,19 +199,19 @@ export default function TocPage() {
               <span className="text-[#58B12F] font-semibold">trusted, portable data</span> that connects grassroots action
               to institutional funding, policy decisions, and regenerative ecosystem coordination.
             </p>
-            <p className="text-xs text-gray-500 mt-3 font-mono pl-2">DeCleanup Network — Long-Term Vision (5–10 Years)</p>
+            <p className="text-xs text-gray-500 mt-3 font-mono pl-2">DeCleanup Network - Long-Term Vision (5-10 Years)</p>
           </div>
         </section>
 
         {/* ─── 02 Core Logic ─── */}
         <section id="logic" className="py-16 md:py-24 border-t border-white/5 scroll-mt-24">
-          <SectionLabel>02 — Core Logic</SectionLabel>
+          <SectionLabel>02 - Core Logic</SectionLabel>
           <SectionHeading>From photo to funded impact</SectionHeading>
           <p className="text-gray-300 max-w-2xl mb-12 leading-relaxed">
             A single verified submission triggers a chain of value that compounds over time.
           </p>
 
-          {/* Flow steps — connected with connector lines on desktop */}
+          {/* Flow steps - connected with connector lines on desktop */}
           <div className="relative mb-12">
             {/* Connector line on desktop */}
             <div className="hidden lg:block absolute top-[38px] left-[10%] right-[10%] h-px bg-gradient-to-r from-[#58B12F]/0 via-[#58B12F]/30 to-[#58B12F]/0 z-0" />
@@ -219,10 +219,10 @@ export default function TocPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 relative z-10">
               {[
                 { num: "01", Icon: Camera, label: "Documentation", desc: "Geotagged before/after photos in under 60 seconds" },
-                { num: "02", Icon: ScanSearch, label: "Verification", desc: "DMRV — AI + human review validates evidence" },
+                { num: "02", Icon: ScanSearch, label: "Verification", desc: "DMRV - AI + human review validates evidence" },
                 { num: "03", Icon: Link2, label: "Onchain Record", desc: "Immutable anchoring on Base / Celo" },
                 { num: "04", Icon: Trophy, label: "Reward", desc: "$DCU + Impact Product NFT per verified event" },
-                { num: "05", Icon: Waves, label: "Capital Flow", desc: "Funders use verified dashboards → fund more cleanups" },
+                { num: "05", Icon: Waves, label: "Capital Flow", desc: "Funders use verified dashboards - fund more cleanups" },
               ].map((step, i) => (
                 <Card key={step.num} accent="green" className="p-5 flex flex-col items-start">
                   <p className="text-xs font-mono text-[#58B12F] mb-3">{step.num}</p>
@@ -249,10 +249,9 @@ export default function TocPage() {
               We discovered that{" "}
               <strong className="text-white">grassroots cleanup cannot attract institutional capital because it produces no verifiable data.</strong>{" "}
               So we are prioritizing{" "}
-              <em className="text-[#58B12F] not-italic font-medium">verification infrastructure first</em> — a 60-second documentation process that
-              creates immutable onchain records. We are testing this by running a hybrid AI + human validation pipeline and piloting with Giveth,
-              Gitcoin, and Octant. If we can show{" "}
-              <strong className="text-[#FAFF00]">80% DMRV compliance and 5+ funders using dashboard data by month 12</strong>, we will scale
+              <em className="text-[#58B12F] not-italic font-medium">verification infrastructure first</em> - a 60-second documentation process that
+              creates immutable onchain records. We are testing this by running a hybrid AI + human validation pipeline and piloting with few communities around the world. If we can show{" "}
+              <strong className="text-[#FAFF00]">80% DMRV compliance and 3+ funders using dashboard data by month 12</strong>, we will scale
               organizer activation across 10+ countries.
             </p>
           </Card>
@@ -260,8 +259,8 @@ export default function TocPage() {
 
         {/* ─── 03 Inputs / Outputs ─── */}
         <section className="py-16 md:py-24 border-t border-white/5">
-          <SectionLabel>03 — Resources</SectionLabel>
-          <SectionHeading>Inputs → Outputs</SectionHeading>
+          <SectionLabel>03 - Resources</SectionLabel>
+          <SectionHeading>Inputs - Outputs</SectionHeading>
           <p className="text-gray-300 max-w-2xl mb-12 leading-relaxed">
             What we put in and what the network produces. Outputs connect to measurable behavior change.
           </p>
@@ -276,7 +275,7 @@ export default function TocPage() {
               <div className="space-y-3">
                 {[
                   { Icon: Users, text: "Human capital (volunteers, organizers, devs)" },
-                  { Icon: Code2, text: "Technology (Base + Celo, YOLOv8, DMRV)" },
+                  { Icon: Code2, text: "Technology (Base + Celo, AI/ML, DMRV)" },
                   { Icon: Coins, text: "Financial (Giveth, Gitcoin, Octant, $bDCU)" },
                   { Icon: Handshake, text: "Partnerships (disposal, municipal, ReFi)" },
                   { Icon: BookOpen, text: "Knowledge (DMRV, ESG, impact standards)" },
@@ -319,7 +318,7 @@ export default function TocPage() {
 
         {/* ─── 04 Pathways ─── */}
         <section id="pathways" className="py-16 md:py-24 border-t border-white/5 scroll-mt-24">
-          <SectionLabel>04 — Causal Pathways</SectionLabel>
+          <SectionLabel>04 - Causal Pathways</SectionLabel>
           <SectionHeading>Four pathways to systemic change</SectionHeading>
           <p className="text-gray-300 max-w-2xl mb-12 leading-relaxed">
             Each pathway is an independent theory of how one type of intervention produces lasting change.
@@ -330,7 +329,7 @@ export default function TocPage() {
               {
                 pathwayId: "P1",
                 title: "Trust Creation",
-                sub: "Simple docs → capital flows",
+                sub: "Simple docs - capital flows",
                 accent: "green" as const,
                 steps: [
                   "Documentation under 60s",
@@ -343,7 +342,7 @@ export default function TocPage() {
               {
                 pathwayId: "P2",
                 title: "Coordination Scaling",
-                sub: "Shared infrastructure → network effects",
+                sub: "Shared infrastructure - network effects",
                 accent: "yellow" as const,
                 steps: [
                   "Shared DMRV across regions",
@@ -356,12 +355,12 @@ export default function TocPage() {
               {
                 pathwayId: "P3",
                 title: "Incentive Alignment",
-                sub: "Recognition → sustained behavior",
+                sub: "Recognition - sustained behavior",
                 accent: "green" as const,
                 steps: [
                   "$bDCU structured recognition",
                   "Tangible acknowledgment per action",
-                  "Episodic → sustained participation",
+                  "Episodic - sustained participation",
                   "Documentation normalized",
                   "Data quality improves",
                 ],
@@ -369,10 +368,10 @@ export default function TocPage() {
               {
                 pathwayId: "P4",
                 title: "Verification Credibility",
-                sub: "AI + human → institutional trust",
+                sub: "AI + human - institutional trust",
                 accent: "yellow" as const,
                 steps: [
-                  "YOLOv8 (TACO dataset)",
+                  "Open source waste detection model",
                   "AI flags for human review",
                   "Hybrid reduces fraud",
                   "Quality = network reputation",
@@ -407,7 +406,7 @@ export default function TocPage() {
 
         {/* ─── 05 SMART Outcomes ─── */}
         <section id="outcomes" className="py-16 md:py-24 border-t border-white/5 scroll-mt-24">
-          <SectionLabel>05 — SMART Outcomes</SectionLabel>
+          <SectionLabel>05 - SMART Outcomes</SectionLabel>
           <SectionHeading>Measurable targets across three horizons</SectionHeading>
           <p className="text-gray-300 max-w-2xl mb-12 leading-relaxed">
             Outputs are activity. Outcomes are behavior change. Every target passes the &quot;So What?&quot; test.
@@ -417,40 +416,40 @@ export default function TocPage() {
             {[
               {
                 phase: "Short-Term",
-                range: "0–12 Months",
+                range: "0-12 Months",
                 color: "text-[#58B12F]",
                 borderColor: "border-[#58B12F]/30",
                 outcomes: [
-                  "500 verified submissions (DMRV)",
-                  "50 organizers in 10+ countries",
-                  "40% repeat volunteer rate",
+                  "300 verified submissions (DMRV)",
+                  "25 organizers in 10+ countries",
+                  "30% repeat volunteer rate",
                   "80% DMRV compliance",
-                  "85% YOLOv8 accuracy",
-                  "5+ funders using dashboards",
+                  "85% AI waste detection accuracy",
+                  "3+ funders using dashboards",
                 ],
               },
               {
                 phase: "Medium-Term",
-                range: "12–24 Months",
+                range: "12-24 Months",
                 color: "text-[#FAFF00]",
                 borderColor: "border-[#FAFF00]/20",
                 outcomes: [
                   "3+ funding decisions citing DeCleanup",
-                  "100k kg verified waste documented",
-                  "200+ stakers in verification",
-                  "5 multi-country campaigns",
+                  "75k kg verified waste documented",
+                  "100+ stakers in verification",
+                  "3 multi-country campaigns",
                   "10+ governance proposals",
                   "3+ ReFi integrations",
                 ],
               },
               {
                 phase: "Long-Term",
-                range: "24–48 Months",
+                range: "24-48 Months",
                 color: "text-white",
                 borderColor: "border-white/10",
                 outcomes: [
-                  "$500k+ capital to verified cleanups",
-                  "50% partners adopting DMRV",
+                  "$100k+ capital to verified cleanups",
+                  "30% partners adopting DMRV",
                   "70% community-initiated campaigns",
                   "10+ ESG reports referencing data",
                   "80% decisions by community vote",
@@ -479,7 +478,7 @@ export default function TocPage() {
 
         {/* ─── 06 Decentralization Roadmap ─── */}
         <section id="verification" className="py-16 md:py-24 border-t border-white/5 scroll-mt-24">
-          <SectionLabel>06 — Decentralization Roadmap</SectionLabel>
+          <SectionLabel>06 - Decentralization Roadmap</SectionLabel>
           <SectionHeading>Verification: trusted to trustless</SectionHeading>
           <p className="text-gray-300 max-w-2xl mb-12 leading-relaxed">
             Progressive decentralization. Quality standards first, then distributed responsibility.
@@ -512,7 +511,7 @@ export default function TocPage() {
                 desc: "AI-assisted validation; human confirms.",
                 borderActive: false,
                 items: [
-                  "YOLOv8 trash detection",
+                  "Open source trash detection",
                   "Duplicate detection",
                   "Geo inconsistency flagging",
                   "Fraud probability scoring",
@@ -525,7 +524,7 @@ export default function TocPage() {
                 Icon: Lock,
                 title: "Phase 3",
                 subtitle: "Trustless",
-                desc: "Token holders stake $bDCU to verify; fully decentralized.",
+                desc: "Decentralized: token holders become verifiers.",
                 borderActive: false,
                 items: [
                   "Community staking for verification",
@@ -565,7 +564,7 @@ export default function TocPage() {
 
         {/* ─── 07 Stakeholders ─── */}
         <section className="py-16 md:py-24 border-t border-white/5">
-          <SectionLabel>07 — Stakeholders</SectionLabel>
+          <SectionLabel>07 - Stakeholders</SectionLabel>
           <SectionHeading>Who makes the network work</SectionHeading>
           <p className="text-gray-300 max-w-2xl mb-12 leading-relaxed">
             Six participant types. The network functions when all six are active.
@@ -575,8 +574,8 @@ export default function TocPage() {
             {[
               { Icon: Users, name: "Volunteers", label: "Clean. Document. Earn.", accent: "green" as const },
               { Icon: ClipboardList, name: "Organizers", label: "Launch campaigns", accent: "green" as const },
-              { Icon: Wallet, name: "Funders", label: "Giveth · Gitcoin · Octant", accent: "yellow" as const },
-              { Icon: Coins, name: "$bDCU Holders", label: "Govern. Stake. Verify.", accent: "yellow" as const },
+              { Icon: Wallet, name: "Funders", label: "Anyone can fund impact", accent: "yellow" as const },
+              { Icon: Coins, name: "$DCU Holders", label: "Trade. Govern. Stake. Verify.", accent: "yellow" as const },
               { Icon: Building2, name: "Partners", label: "Municipalities & waste", accent: "green" as const },
               { Icon: Code2, name: "Developers", label: "Build & maintain", accent: "green" as const },
             ].map(({ Icon, name, label, accent }) => (
@@ -587,12 +586,6 @@ export default function TocPage() {
                 <div>
                   <h3 className="text-lg font-bebas text-white">{name}</h3>
                   <p className="text-xs text-gray-500">{label}</p>
-                  {name === "$bDCU Holders" && (
-                    <div className="flex justify-center gap-3 text-[10px] uppercase font-bold text-[#FAFF00] mt-2">
-                      <a href="https://app.uniswap.org/swap?chain=base&inputCurrency=ETH&outputCurrency=0x30171b7014c02229497CdE6745DD3aD821F12b07" target="_blank" className="hover:underline">ETH Swap</a>
-                      <a href="https://app.uniswap.org/swap?chain=base&inputCurrency=0xfde4C96c8593536E31F229EA8f37b2ADa2699bb2&outputCurrency=0x30171b7014c02229497CdE6745DD3aD821F12b07" target="_blank" className="hover:underline">USDT Swap</a>
-                    </div>
-                  )}
                 </div>
               </Card>
             ))}
@@ -601,8 +594,8 @@ export default function TocPage() {
 
         {/* ─── 08 Assumptions ─── */}
         <section className="py-16 md:py-24 border-t border-white/5">
-          <SectionLabel>08 — Assumptions</SectionLabel>
-          <SectionHeading>What must be true — and how we test it</SectionHeading>
+          <SectionLabel>08 - Assumptions</SectionLabel>
+          <SectionHeading>What must be true and how we test it</SectionHeading>
           <p className="text-gray-300 max-w-2xl mb-12 leading-relaxed">
             Every pathway rests on assumptions. We state them, test early, and pivot if they fail.
           </p>
@@ -618,12 +611,12 @@ export default function TocPage() {
               </thead>
               <tbody className="text-gray-300">
                 {[
-                  ["Volunteers document if process <60s", "Month 1–3", "70%+ completion rate"],
-                  ["Funders value verified over self-reported", "Month 3–6", "1+ funding decision cites data"],
-                  ["Onchain anchoring adds trust", "Month 3–6", "<10% user confusion"],
-                  ["Community governance attracts participants", "Month 12–18", "10+ proposals, 20%+ participation"],
-                  ["AI verification improves accuracy", "Month 3–6", "85%+ trash detection accuracy"],
-                  ["Fair-launch prevents extractive behavior", "Month 1–6", "No holder >5%; <30% sell pressure"],
+                  ["Volunteers document if process <60s", "Month 1-3", "70%+ completion rate"],
+                  ["Funders value verified over self-reported", "Month 3-6", "1+ funding decision cites data"],
+                  ["Onchain anchoring adds trust", "Month 3-6", "<10% user confusion"],
+                  ["Community governance attracts participants", "Month 12-18", "5+ proposals, 10%+ participation"],
+                  ["AI verification improves accuracy", "Month 3-6", "85%+ trash detection accuracy"],
+                  ["Fair-launch prevents extractive behavior", "Month 1-6", "No holder >5%; <30% sell pressure"],
                 ].map((row, i) => (
                   <tr key={i} className="border-b border-neutral-800/50 hover:bg-neutral-900/60 transition-colors">
                     <td className="py-4 px-6">{row[0]}</td>
@@ -638,23 +631,23 @@ export default function TocPage() {
 
         {/* ─── 09 Risk Register ─── */}
         <section id="risks" className="py-16 md:py-24 border-t border-white/5 scroll-mt-24">
-          <SectionLabel>09 — Risk Register</SectionLabel>
-          <SectionHeading>Known risks &amp; how we respond</SectionHeading>
+          <SectionLabel>09 - Risk Register</SectionLabel>
+          <SectionHeading>Known risks - how we respond</SectionHeading>
           <p className="text-gray-300 max-w-2xl mb-12 leading-relaxed">
             Good strategy names risks, assigns probability and impact, and prepares mitigations.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { level: "High", name: "Low Adoption from Friction", mit: "UX target <60s; feedback on every rejection.", owner: "Product Lead" },
-              { level: "High", name: "Funder Indifference to Verified Data", mit: "Validate with grant partners; reframe to coordination if needed.", owner: "BD Lead" },
-              { level: "High", name: "Regulatory Uncertainty", mit: "Utility-only framing; legal counsel as we scale.", owner: "Legal" },
-              { level: "Medium", name: "Token Speculation Overrides Utility", mit: "Fair-launch; staking for verification.", owner: "Tokenomics" },
-              { level: "Medium", name: "AI Verification Errors", mit: "Hybrid: AI flags, humans confirm; publish metrics.", owner: "Tech Lead" },
-              { level: "Medium", name: "Governance Apathy", mit: "Progressive decentralization; expand as participation proves sustained.", owner: "Community" },
-              { level: "Medium", name: "Local Disposal Gaps", mit: "Partner with municipalities before expanding region.", owner: "Partnerships" },
-              { level: "Medium", name: "Data Quality Inconsistency", mit: "Strict DMRV; reject with actionable feedback.", owner: "Verification" },
-              { level: "Managed", name: "Community Trust Erosion", mit: "Transparent governance; fair-launch; no insider advantages.", owner: "Core Team" },
+              { level: "High", name: "Low Adoption from Friction", mit: "UX target <60s; feedback on every rejection." },
+              { level: "High", name: "Funder Indifference to Verified Data", mit: "Validate with grant partners; reframe to coordination if needed." },
+              { level: "High", name: "Regulatory Uncertainty", mit: "Utility-only framing; legal counsel as we scale." },
+              { level: "Medium", name: "Token Speculation Overrides Utility", mit: "Fair-launch; staking for verification." },
+              { level: "Medium", name: "AI Verification Errors", mit: "Hybrid: AI flags, humans confirm; publish metrics." },
+              { level: "Medium", name: "Governance Apathy", mit: "Progressive decentralization; expand as participation proves sustained." },
+              { level: "Medium", name: "Local Disposal Gaps", mit: "Partner with municipalities before expanding region." },
+              { level: "Medium", name: "Data Quality Inconsistency", mit: "Strict DMRV; reject with actionable feedback." },
+              { level: "Managed", name: "Community Trust Erosion", mit: "Transparent governance; fair-launch; no insider advantages." },
             ].map((r) => {
               const levelMap = {
                 High: {
@@ -693,8 +686,7 @@ export default function TocPage() {
                     </div>
                   </div>
                   <h3 className="text-lg font-bebas text-white mb-1 leading-tight">{r.name}</h3>
-                  <p className="text-sm text-gray-400 leading-relaxed mb-3">{r.mit}</p>
-                  <p className="text-xs text-gray-600 font-mono">Owner: {r.owner}</p>
+                  <p className="text-sm text-gray-400 leading-relaxed">{r.mit}</p>
                 </Card>
               );
             })}

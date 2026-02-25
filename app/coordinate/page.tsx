@@ -287,8 +287,8 @@ export default function CoordinatePage() {
                                 <h3 className="text-2xl font-bold text-white mb-1">First Pool</h3>
                                 <p className="text-[#58B12F]">Sponsored by Ethereum for the World</p>
                             </div>
-                            <div className="px-4 py-2 bg-[#58B12F] text-black font-bold rounded-lg text-sm uppercase tracking-wide">
-                                Active
+                            <div className="px-4 py-2 bg-gray-800 text-gray-400 font-bold rounded-lg text-sm uppercase tracking-wide">
+                                coming soon (not active)
                             </div>
                         </div>
 
