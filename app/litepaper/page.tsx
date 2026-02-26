@@ -222,7 +222,7 @@ export default function LitepaperPage() {
               className="flex-1 relative group block"
             >
               <div className="absolute inset-0 bg-blue-900/10 rounded-3xl blur-xl group-hover:bg-blue-900/20 transition-all duration-500"></div>
-              <div className="relative h-full bg-neutral-900 border border-neutral-800 rounded-3xl p-8 overflow-hidden group-hover:border-blue-500/50 transition-all duration-300">
+              <div className="relative flex h-full flex-col bg-neutral-900 border border-neutral-800 rounded-3xl p-8 overflow-hidden group-hover:border-blue-500/50 transition-all duration-300">
                 <div className="absolute top-0 right-0 p-4 opacity-50 pointer-events-none">
                   <Smartphone className="text-blue-500 w-32 h-32 -rotate-12 translate-x-4 translate-y-4 opacity-10" />
                 </div>
@@ -232,9 +232,9 @@ export default function LitepaperPage() {
                   <h3 className="text-3xl text-white font-bebas tracking-wide">Mini App</h3>
                 </div>
 
-                <p className="text-gray-200 mb-8 text-sm leading-relaxed">Lightweight entry for individuals via Farcaster or Base app.</p>
+                <p className="text-gray-200 mb-8 min-h-[4rem] text-sm leading-relaxed">Lightweight entry for individuals via Farcaster or Base app.</p>
 
-                <div className="space-y-4">
+                <div className="space-y-4 min-h-[10rem]">
                   <div className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/5">
                     <Camera className="text-blue-400 w-5 h-5" />
                     <span className="text-sm text-gray-200">Photo-based logging</span>
@@ -249,7 +249,7 @@ export default function LitepaperPage() {
                   </div>
                 </div>
 
-                <div className="mt-8 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-blue-400 group-hover:text-white transition-colors">
+                <div className="mt-auto pt-8 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-blue-400 group-hover:text-white transition-colors">
                   Open on Farcaster <ArrowUpRight className="w-4 h-4" />
                 </div>
               </div>
@@ -269,7 +269,7 @@ export default function LitepaperPage() {
               className="flex-1 relative group block"
             >
               <div className="absolute inset-0 bg-[#FAFF00]/5 rounded-3xl blur-xl group-hover:bg-[#FAFF00]/10 transition-all duration-500"></div>
-              <div className="relative h-full bg-neutral-900 border border-neutral-800 rounded-3xl p-8 overflow-hidden group-hover:border-[#FAFF00]/50 transition-all duration-300">
+              <div className="relative flex h-full flex-col bg-neutral-900 border border-neutral-800 rounded-3xl p-8 overflow-hidden group-hover:border-[#FAFF00]/50 transition-all duration-300">
                 <div className="absolute top-0 right-0 p-4 opacity-50 pointer-events-none">
                   <Layers className="text-[#FAFF00] w-32 h-32 rotate-12 translate-x-4 translate-y-4 opacity-10" />
                 </div>
@@ -279,9 +279,9 @@ export default function LitepaperPage() {
                   <h3 className="text-3xl text-white font-bebas tracking-wide">Full Platform</h3>
                 </div>
 
-                <p className="text-gray-200 mb-8 text-sm leading-relaxed">Full platform for individuals, NGOs and organizers. Governance and coordination.</p>
+                <p className="text-gray-200 mb-8 min-h-[4rem] text-sm leading-relaxed">Full platform for individuals, NGOs and organizers. Governance and coordination.</p>
 
-                <div className="space-y-4">
+                <div className="space-y-4 min-h-[10rem]">
                   <div className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/5">
                     <MapPin className="text-[#FAFF00] w-5 h-5" />
                     <span className="text-sm text-gray-200">Geolocation and maps</span>
@@ -296,7 +296,7 @@ export default function LitepaperPage() {
                   </div>
                 </div>
 
-                <div className="mt-8 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#FAFF00] group-hover:text-white transition-colors">
+                <div className="mt-auto pt-8 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#FAFF00] group-hover:text-white transition-colors">
                   Explore Celo dApp <ArrowUpRight className="w-4 h-4" />
                 </div>
               </div>
@@ -352,63 +352,83 @@ export default function LitepaperPage() {
         </div>
       </section>
 
-      {/* 5. Tokens */}
+      {/* 5. Tokens (same shape as tokenomics TWO TOKENS) */}
       <section id="tokens" className="py-24 bg-[#0A0A0A]">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-5xl text-center mb-16 font-bebas">NETWORK <span className="text-gray-200">TOKENS</span></h2>
-
+          <h2 className="text-4xl md:text-5xl text-center mb-12 font-bebas text-gray-200">TWO TOKENS</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* $bDCU */}
             <div className="bg-neutral-900 border border-neutral-800 rounded-2xl p-8 flex flex-col md:flex-row items-center gap-8 relative overflow-hidden group hover:border-blue-500/30 transition-colors">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/10 rounded-full blur-2xl group-hover:bg-blue-600/20 transition-all"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/10 rounded-full blur-2xl group-hover:bg-blue-600/20 transition-all" />
               <div className="w-24 h-24 rounded-full border-2 border-blue-500 flex items-center justify-center bg-black z-10 shrink-0 overflow-hidden shadow-[0_0_15px_rgba(59,130,246,0.5)]">
                 <Image src="/images/dcu-token-logo.png" alt="$bDCU" width={96} height={96} className="w-full h-full object-contain" unoptimized />
               </div>
-              <div className="z-10 text-center md:text-left">
+              <div className="z-10 text-center md:text-left flex-1">
                 <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
-                  <h3 className="text-3xl text-white font-bebas tracking-wide">$bDCU</h3>
-                  <span className="text-[10px] bg-neutral-800 text-gray-200 px-2 py-0.5 rounded border border-neutral-700 tracking-wider font-mono">BASE</span>
+                  <h3 className="text-3xl text-white font-bebas tracking-wide">Utility token</h3>
+                  <span className="text-[10px] bg-neutral-800 text-gray-200 px-2 py-0.5 rounded border border-neutral-700 tracking-wider">BASE</span>
                 </div>
-                <div className="text-blue-400 text-xs font-bold mb-4 uppercase tracking-widest font-mono">Utility Token</div>
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-center gap-2 text-sm text-gray-200"><Star className="text-blue-500 w-4 h-4" /> Earned for verified cleanup</li>
-                  <li className="flex items-center gap-2 text-sm text-gray-200"><Star className="text-blue-500 w-4 h-4" /> Liquid & Tradable</li>
-                  <li className="flex items-center gap-2 text-sm text-gray-200"><Star className="text-blue-500 w-4 h-4" /> Incentivizes Action</li>
+                <p className="text-blue-400 text-xs font-bold mb-4 uppercase tracking-widest">$bDCU</p>
+                <p className="text-sm text-gray-400 mb-4">The &quot;action token.&quot; Used on Base for:</p>
+                <ul className="space-y-3 mb-6 text-sm text-gray-200">
+                  <li className="flex items-center gap-2"><Star className="text-blue-500 w-4 h-4 shrink-0" /> Cleanup rewards</li>
+                  <li className="flex items-center gap-2"><Star className="text-blue-500 w-4 h-4 shrink-0" /> Streaks & referrals</li>
+                  <li className="flex items-center gap-2"><Star className="text-blue-500 w-4 h-4 shrink-0" /> Verifier staking</li>
+                  <li className="flex items-center gap-2"><Star className="text-blue-500 w-4 h-4 shrink-0" /> Liquid & tradable</li>
                 </ul>
-
-                <a
-                  href="https://basescan.org/token/0x30171b7014c02229497CdE6745DD3aD821F12b07"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[10px] text-gray-400 hover:text-white transition-colors flex items-center justify-center md:justify-start gap-1 font-mono"
-                >
-                  <LinkIcon className="w-3 h-3" />
-                  0x30171b70...b2107
-                </a>
+                <div className="flex flex-col gap-3">
+                  <div className="flex flex-wrap gap-2 mb-2">
+                    <a
+                      href="https://app.uniswap.org/swap?chain=base&inputCurrency=ETH&outputCurrency=0x30171b7014c02229497CdE6745DD3aD821F12b07"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 text-center px-4 py-2 bg-[#58B12F] hover:bg-[#58B12F]/80 text-black font-bold rounded-lg transition-all text-xs uppercase tracking-wider"
+                    >
+                      Swap ETH / $bDCU
+                    </a>
+                    <a
+                      href="https://app.uniswap.org/swap?chain=base&inputCurrency=0xfde4C96c8593536E31F229EA8f37b2ADa2699bb2&outputCurrency=0x30171b7014c02229497CdE6745DD3aD821F12b07"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 text-center px-4 py-2 border border-[#58B12F] text-[#58B12F] hover:bg-[#58B12F]/10 font-bold rounded-lg transition-all text-xs uppercase tracking-wider"
+                    >
+                      Swap USDT / $bDCU
+                    </a>
+                  </div>
+                  <a
+                    href="https://basescan.org/token/0x30171b7014c02229497CdE6745DD3aD821F12b07"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-gray-400 hover:text-white transition-colors flex items-center gap-1 font-mono break-all"
+                  >
+                    <LinkIcon className="w-3 h-3 shrink-0" />
+                    0x30171b7014c02229497CdE6745DD3aD821F12b07
+                  </a>
+                </div>
               </div>
             </div>
 
             {/* $cDCU */}
             <div className="bg-neutral-900 border border-neutral-800 rounded-2xl p-8 flex flex-col md:flex-row items-center gap-8 relative overflow-hidden group hover:border-[#FAFF00]/30 transition-colors">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#58B12F]/10 rounded-full blur-2xl group-hover:bg-[#58B12F]/20 transition-all"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#58B12F]/10 rounded-full blur-2xl group-hover:bg-[#58B12F]/20 transition-all" />
               <div className="w-24 h-24 rounded-full border-2 border-[#58B12F] flex items-center justify-center bg-black z-10 shrink-0 overflow-hidden shadow-[0_0_15px_rgba(88,177,47,0.5)]">
                 <Image src="/images/dcu-token-logo.png" alt="$cDCU" width={96} height={96} className="w-full h-full object-contain" unoptimized />
               </div>
-              <div className="z-10 text-center md:text-left">
+              <div className="z-10 text-center md:text-left flex-1">
                 <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
-                  <h3 className="text-3xl text-white font-bebas tracking-wide">$cDCU</h3>
-                  <span className="text-[10px] bg-neutral-800 text-gray-200 px-2 py-0.5 rounded border border-neutral-700 tracking-wider font-mono">CELO</span>
+                  <h3 className="text-3xl text-white font-bebas tracking-wide">Governance</h3>
+                  <span className="text-[10px] bg-neutral-800 text-gray-200 px-2 py-0.5 rounded border border-neutral-700 tracking-wider">CELO</span>
                 </div>
-                <div className="text-[#FAFF00] text-xs font-bold mb-4 uppercase tracking-widest font-mono">Governance</div>
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-center gap-2 text-sm text-gray-200"><ShieldCheck className="text-[#58B12F] w-4 h-4" /> Reputation Based</li>
-                  <li className="flex items-center gap-2 text-sm text-gray-200"><ShieldCheck className="text-[#58B12F] w-4 h-4" /> Non-speculative</li>
-                  <li className="flex items-center gap-2 text-sm text-gray-200"><ShieldCheck className="text-[#58B12F] w-4 h-4" /> Proposal Voting</li>
+                <p className="text-sm text-gray-400 mb-4">Reputation, governance & advanced utilities</p>
+                <ul className="space-y-3 mb-6 text-sm text-gray-200">
+                  <li className="flex items-center gap-2"><ShieldCheck className="text-[#58B12F] w-4 h-4 shrink-0" /> Earned through verified cleanups</li>
+                  <li className="flex items-center gap-2"><ShieldCheck className="text-[#58B12F] w-4 h-4 shrink-0" /> Non-tradable (reputation-linked)</li>
+                  <li className="flex items-center gap-2"><ShieldCheck className="text-[#58B12F] w-4 h-4 shrink-0" /> Governance via Gardens.fund</li>
+                  <li className="flex items-center gap-2"><ShieldCheck className="text-[#58B12F] w-4 h-4 shrink-0" /> Verifier roles, streaks, analytics</li>
                 </ul>
-                <div className="text-[10px] text-gray-500 font-mono flex items-center gap-1">
-                  <Clock className="w-3 h-3" />
-                  CONTRACT COMING SOON
-                </div>
+                <button disabled className="inline-block text-center px-6 py-3 bg-neutral-800 text-gray-400 font-semibold rounded-xl cursor-not-allowed opacity-60">
+                  View Celo dApp (inactive)
+                </button>
               </div>
             </div>
           </div>

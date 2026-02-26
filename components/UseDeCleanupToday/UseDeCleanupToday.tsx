@@ -39,7 +39,7 @@ const UseDeCleanupToday = () => {
             className="flex-1 relative group block"
           >
             <div className="absolute inset-0 bg-blue-900/10 rounded-3xl blur-xl group-hover:bg-blue-900/20 transition-all duration-500"></div>
-            <div className="relative h-full bg-neutral-900 border border-neutral-800 rounded-3xl p-8 overflow-hidden group-hover:border-blue-500/50 transition-all duration-300">
+            <div className="relative flex h-full flex-col bg-neutral-900 border border-neutral-800 rounded-3xl p-8 overflow-hidden group-hover:border-blue-500/50 transition-all duration-300">
               <div className="absolute top-0 right-0 p-4 opacity-50 pointer-events-none">
                 <Smartphone className="text-blue-500 w-32 h-32 -rotate-12 translate-x-4 translate-y-4 opacity-10" />
               </div>
@@ -49,9 +49,9 @@ const UseDeCleanupToday = () => {
                 <h3 className="text-3xl text-white font-bebas tracking-wide">Mini App</h3>
               </div>
 
-              <p className="text-gray-200 mb-8 text-sm leading-relaxed">Lightweight entry for individuals via Farcaster or Base app.</p>
+              <p className="text-gray-200 mb-8 min-h-[3.5rem] text-sm leading-relaxed">Lightweight entry for individuals via Farcaster or Base app.</p>
 
-              <div className="space-y-4">
+              <div className="space-y-4 min-h-[10rem]">
                 <div className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/5">
                   <Camera className="text-blue-400 w-5 h-5" />
                   <span className="text-sm text-gray-200">Photo-based logging</span>
@@ -66,7 +66,7 @@ const UseDeCleanupToday = () => {
                 </div>
               </div>
 
-              <div className="mt-8 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-blue-400 group-hover:text-white transition-colors">
+              <div className="mt-auto pt-8 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-blue-400 group-hover:text-white transition-colors">
                 Open on Farcaster <ArrowUpRight className="w-4 h-4" />
               </div>
             </div>
@@ -80,7 +80,7 @@ const UseDeCleanupToday = () => {
             className="flex-1 relative group block"
           >
             <div className="absolute inset-0 bg-[#FAFF00]/5 rounded-3xl blur-xl group-hover:bg-[#FAFF00]/10 transition-all duration-500"></div>
-            <div className="relative h-full bg-neutral-900 border border-neutral-800 rounded-3xl p-8 overflow-hidden group-hover:border-[#FAFF00]/50 transition-all duration-300">
+            <div className="relative flex h-full flex-col bg-neutral-900 border border-neutral-800 rounded-3xl p-8 overflow-hidden group-hover:border-[#FAFF00]/50 transition-all duration-300">
               <div className="absolute top-0 right-0 p-4 opacity-50 pointer-events-none">
                 <Layers className="text-[#FAFF00] w-32 h-32 rotate-12 translate-x-4 translate-y-4 opacity-10" />
               </div>
@@ -90,9 +90,9 @@ const UseDeCleanupToday = () => {
                 <h3 className="text-3xl text-white font-bebas tracking-wide">Full Platform</h3>
               </div>
 
-              <p className="text-gray-200 mb-8 text-sm leading-relaxed">Full platform for individuals, NGOs and organizers. Governance and coordination.</p>
+              <p className="text-gray-200 mb-8 min-h-[3.5rem] text-sm leading-relaxed">Full platform for individuals, NGOs and organizers. Governance and coordination.</p>
 
-              <div className="space-y-4">
+              <div className="space-y-4 min-h-[10rem]">
                 <div className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/5">
                   <MapPin className="text-[#FAFF00] w-5 h-5" />
                   <span className="text-sm text-gray-200">Geolocation and maps</span>
@@ -107,7 +107,7 @@ const UseDeCleanupToday = () => {
                 </div>
               </div>
 
-              <div className="mt-8 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#FAFF00] group-hover:text-white transition-colors">
+              <div className="mt-auto pt-8 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#FAFF00] group-hover:text-white transition-colors">
                 Explore Celo dApp <ArrowUpRight className="w-4 h-4" />
               </div>
             </div>
