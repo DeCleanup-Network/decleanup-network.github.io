@@ -222,7 +222,7 @@ export default function TocPage() {
                 { num: "03", Icon: Link2, label: "Onchain Record", desc: "Immutable anchoring on Base / Celo" },
                 { num: "04", Icon: Trophy, label: "Reward", desc: "$DCU + Impact Product NFT per verified event" },
                 { num: "05", Icon: Waves, label: "Capital Flow", desc: "Funders use verified dashboards - fund more cleanups" },
-              ].map((step, i) => (
+              ].map((step) => (
                 <Card key={step.num} accent="green" className="p-5 flex flex-col items-start">
                   <p className="text-xs text-[#58B12F] mb-3 font-medium">{step.num}</p>
                   <div className="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-[#58B12F]/10 mb-3">
