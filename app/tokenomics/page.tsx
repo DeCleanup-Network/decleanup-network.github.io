@@ -51,9 +51,10 @@ export default function TokenomicsPage() {
                 </div>
                 <div className="z-10 text-center md:text-left flex-1">
                   <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
-                    <h3 className="text-3xl text-white font-bebas tracking-wide">Utility Token</h3>
+                    <h3 className="text-3xl text-white font-bebas tracking-wide">Utility token</h3>
                     <span className="text-[10px] bg-neutral-800 text-gray-200 px-2 py-0.5 rounded border border-neutral-700 tracking-wider">BASE</span>
                   </div>
+                  <p className="text-blue-400 text-xs font-bold mb-4 uppercase tracking-widest">$bDCU</p>
                   <p className="text-sm text-gray-400 mb-4">The &quot;action token.&quot; Used on Base for:</p>
                   <ul className="space-y-3 mb-6 text-sm text-gray-200">
                     <li className="flex items-center gap-2"><Star className="text-blue-500 w-4 h-4 shrink-0" /> Cleanup rewards</li>

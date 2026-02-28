@@ -31,7 +31,6 @@ import {
   BookOpen,
   Clock,
   Target,
-  ChevronRight,
 } from "lucide-react";
 
 /* ─── Tiny inline SVG checkmark for lists ─── */
@@ -231,9 +230,6 @@ export default function TocPage() {
                   </div>
                   <h3 className="text-lg font-bebas tracking-wide text-white mb-1">{step.label}</h3>
                   <p className="text-xs text-gray-400 leading-relaxed">{step.desc}</p>
-                  {i < 4 && (
-                    <ChevronRight className="hidden lg:block absolute -right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[#58B12F]/40 z-20" />
-                  )}
                 </Card>
               ))}
             </div>
@@ -316,91 +312,138 @@ export default function TocPage() {
           </div>
         </section>
 
-        {/* ─── 04 Pathways ─── */}
+        {/* ─── 04 Pathways (vertical tree) ─── */}
         <section id="pathways" className="py-16 md:py-24 border-t border-white/5 scroll-mt-24">
           <SectionLabel>04 - Causal Pathways</SectionLabel>
           <SectionHeading>Four pathways to systemic change</SectionHeading>
           <p className="text-gray-300 max-w-2xl mb-12 leading-relaxed">
-            Each pathway is an independent theory of how one type of intervention produces lasting change.
+            From shared root to canopy: trust creation is the trunk; coordination and incentives branch in parallel; verification credibility is where institutional trust lives.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              {
-                pathwayId: "P1",
-                title: "Trust Creation",
-                sub: "Simple docs - capital flows",
-                accent: "green" as const,
-                steps: [
-                  "Documentation under 60s",
-                  "Geotag + timestamp",
-                  "Verifiable onchain records",
-                  "Funders gain confidence",
-                  "Capital flows to verified cleanups",
-                ],
-              },
-              {
-                pathwayId: "P2",
-                title: "Coordination Scaling",
-                sub: "Shared infrastructure - network effects",
-                accent: "yellow" as const,
-                steps: [
-                  "Shared DMRV across regions",
-                  "Common data standards",
-                  "Organizers discover best practices",
-                  "Knowledge transfer",
-                  "Effectiveness improves network-wide",
-                ],
-              },
-              {
-                pathwayId: "P3",
-                title: "Incentive Alignment",
-                sub: "Recognition - sustained behavior",
-                accent: "green" as const,
-                steps: [
-                  "$bDCU structured recognition",
-                  "Tangible acknowledgment per action",
-                  "Episodic - sustained participation",
-                  "Documentation normalized",
-                  "Data quality improves",
-                ],
-              },
-              {
-                pathwayId: "P4",
-                title: "Verification Credibility",
-                sub: "AI + human - institutional trust",
-                accent: "yellow" as const,
-                steps: [
-                  "Open source waste detection model",
-                  "AI flags for human review",
-                  "Hybrid reduces fraud",
-                  "Quality = network reputation",
-                  "Partners trust for ESG reporting",
-                ],
-              },
-            ].map((pw) => (
-              <Card key={pw.pathwayId} accent={pw.accent} className="p-6">
-                <div className="flex items-center gap-3 mb-5">
-                  <span
-                    className={`w-9 h-9 rounded-xl flex items-center justify-center text-sm font-mono font-bold ${pw.accent === "green" ? "bg-[#58B12F]/15 text-[#58B12F]" : "bg-[#FAFF00]/10 text-[#FAFF00]"}`}
-                  >
-                    {pw.pathwayId}
-                  </span>
-                  <div>
-                    <h3 className="text-xl font-bebas text-white leading-tight">{pw.title}</h3>
-                    <p className="text-xs text-gray-500">{pw.sub}</p>
-                  </div>
+          <div className="flex flex-col items-center max-w-2xl mx-auto">
+            {/* Root: DMRV Infrastructure */}
+            <Card accent="green" className="w-full p-6 text-center">
+              <div className="text-xs text-[#58B12F] uppercase tracking-widest font-mono font-bold mb-2">Shared root</div>
+              <h3 className="text-xl font-bebas text-white leading-tight">DMRV Infrastructure</h3>
+            </Card>
+
+            {/* Connector ↓ */}
+            <div className="flex flex-col items-center py-3">
+              <div className="w-px h-6 bg-gradient-to-b from-[#58B12F]/60 to-transparent" />
+              <span className="text-[#58B12F] text-lg">↓</span>
+            </div>
+
+            {/* P1: Trust Creation (trunk) */}
+            <Card accent="green" className="w-full p-6">
+              <div className="flex items-center gap-3 mb-3">
+                <span className="w-9 h-9 rounded-xl flex items-center justify-center text-sm font-mono font-bold bg-[#58B12F]/15 text-[#58B12F]">P1</span>
+                <div>
+                  <h3 className="text-xl font-bebas text-white leading-tight">Trust Creation</h3>
+                  <p className="text-xs text-gray-500">Trunk — what makes everything else possible</p>
                 </div>
-                <ul className="space-y-2.5">
-                  {pw.steps.map((s) => (
-                    <li key={s} className="flex items-center gap-2.5 text-sm text-gray-200">
-                      <CheckMark green={pw.accent === "green"} />
-                      {s}
-                    </li>
-                  ))}
-                </ul>
-              </Card>
-            ))}
+              </div>
+              <ul className="space-y-2.5">
+                {["Documentation under 60s", "Geotag + timestamp", "Verifiable onchain records", "Funders gain confidence", "Capital flows to verified cleanups"].map((s) => (
+                  <li key={s} className="flex items-center gap-2.5 text-sm text-gray-200">
+                    <CheckMark green />
+                    {s}
+                  </li>
+                ))}
+              </ul>
+            </Card>
+
+            {/* Labeled connector: P1 enables scale */}
+            <div className="w-full py-4 px-4 text-center">
+              <div className="w-full border-t border-b border-white/10 py-3">
+                <p className="text-sm text-gray-400 italic">P1 Trust enables shared infrastructure to scale</p>
+              </div>
+            </div>
+
+            {/* Branches: P2 + P3 side by side */}
+            <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* P2: Coordination */}
+              <div className="flex flex-col">
+                <div className="flex justify-center mb-2 md:mb-0">
+                  <div className="w-px h-6 bg-[#FAFF00]/40 hidden md:block" />
+                </div>
+                <Card accent="yellow" className="p-6 flex-1 flex flex-col">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="w-9 h-9 rounded-xl flex items-center justify-center text-sm font-mono font-bold bg-[#FAFF00]/10 text-[#FAFF00]">P2</span>
+                    <div>
+                      <h3 className="text-xl font-bebas text-white leading-tight">Coordination</h3>
+                      <p className="text-xs text-gray-500">Shared infrastructure — network effects</p>
+                    </div>
+                  </div>
+                  <ul className="space-y-2.5 flex-1">
+                    {["Shared DMRV across regions", "Common data standards", "Organizers discover best practices", "Knowledge transfer", "Effectiveness improves network-wide"].map((s) => (
+                      <li key={s} className="flex items-center gap-2.5 text-sm text-gray-200">
+                        <CheckMark green={false} />
+                        {s}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-4 pt-3 border-t border-white/10 text-xs text-[#FAFF00]/80">
+                    → More organizers generate more submissions
+                  </div>
+                </Card>
+              </div>
+
+              {/* P3: Incentives */}
+              <div className="flex flex-col">
+                <div className="flex justify-center mb-2 md:mb-0">
+                  <div className="w-px h-6 bg-[#58B12F]/40 hidden md:block" />
+                </div>
+                <Card accent="green" className="p-6 flex-1 flex flex-col">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="w-9 h-9 rounded-xl flex items-center justify-center text-sm font-mono font-bold bg-[#58B12F]/15 text-[#58B12F]">P3</span>
+                    <div>
+                      <h3 className="text-xl font-bebas text-white leading-tight">Incentives</h3>
+                      <p className="text-xs text-gray-500">Recognition — sustained behavior</p>
+                    </div>
+                  </div>
+                  <ul className="space-y-2.5 flex-1">
+                    {["$bDCU structured recognition", "Tangible acknowledgment per action", "Episodic → sustained participation", "Documentation normalized", "Data quality improves"].map((s) => (
+                      <li key={s} className="flex items-center gap-2.5 text-sm text-gray-200">
+                        <CheckMark green />
+                        {s}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-4 pt-3 border-t border-white/10 text-xs text-[#58B12F]/90">
+                    → Higher volume feeds verification pipeline
+                  </div>
+                </Card>
+              </div>
+            </div>
+
+            {/* Converge line */}
+            <div className="w-full py-4 px-4 text-center">
+              <div className="w-full border-t border-b border-white/10 py-3">
+                <p className="text-sm text-gray-400 italic">P2 + P3 converge: volume × quality feeds the verification layer</p>
+              </div>
+            </div>
+
+            {/* P4: Verification Credibility (canopy) */}
+            <Card accent="yellow" className="w-full p-6">
+              <div className="flex items-center gap-3 mb-3">
+                <span className="w-9 h-9 rounded-xl flex items-center justify-center text-sm font-mono font-bold bg-[#FAFF00]/10 text-[#FAFF00]">P4</span>
+                <div>
+                  <h3 className="text-xl font-bebas text-white leading-tight">Verification Credibility</h3>
+                  <p className="text-xs text-gray-500">Canopy — where institutional trust lives</p>
+                </div>
+              </div>
+              <ul className="space-y-2.5">
+                {["Open source waste detection model", "AI flags for human review", "Hybrid reduces fraud", "Quality = network reputation", "Partners trust for ESG reporting"].map((s) => (
+                  <li key={s} className="flex items-center gap-2.5 text-sm text-gray-200">
+                    <CheckMark green={false} />
+                    {s}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-4 pt-3 border-t border-white/10 text-xs text-[#FAFF00]/80 flex items-center gap-1.5">
+                <span aria-hidden>↺</span> Loops back to P1
+              </div>
+            </Card>
           </div>
         </section>
 

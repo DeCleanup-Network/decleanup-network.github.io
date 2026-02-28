@@ -6,9 +6,10 @@ import Link from "next/link";
 import Image from "next/image";
 
 const steps = [
-  { number: "1.", title: "Start a Cleanup" },
-  { number: "2.", title: "Capture the Impact" },
-  { number: "3.", title: "Earn Rewards" },
+  { number: "1.", title: "Capture cleanup area" },
+  { number: "2.", title: "Complete cleanup" },
+  { number: "3.", title: "Capture the Impact" },
+  { number: "4.", title: "Claim Rewards" },
 ];
 
 // Placeholder for real cleanup before/after photo

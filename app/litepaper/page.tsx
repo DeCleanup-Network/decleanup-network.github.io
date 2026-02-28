@@ -4,9 +4,6 @@ import Image from "next/image";
 import {
   Leaf,
   Info,
-  BadgeCheck,
-  TrendingUp,
-  Users,
   Building2,
   RefreshCw,
   CloudSun,
@@ -31,6 +28,7 @@ import {
   Menu
 } from "lucide-react";
 import TheoryOfChange from "@/components/TheoryOfChange/TheoryOfChange";
+import LitepaperOverviewCards from "@/components/LitepaperOverviewCards/LitepaperOverviewCards";
 
 
 export const metadata: Metadata = {
@@ -105,10 +103,10 @@ export default function LitepaperPage() {
               </div>
               <div className="w-px h-10 bg-white/10 hidden md:block"></div>
               <div className="text-left md:text-right">
-                <div className="text-xs text-gray-300 uppercase tracking-widest mb-1 font-medium">Network</div>
-                <div className="flex gap-2 justify-start md:justify-end mt-1">
-                  <span className="w-2.5 h-2.5 rounded-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.5)]"></span>
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#FAFF00] shadow-[0_0_10px_rgba(250,255,0,0.5)]"></span>
+                <div className="text-xs text-gray-300 uppercase tracking-widest mb-1 font-medium">Chain</div>
+                <div className="flex items-center gap-2 justify-start md:justify-end mt-1">
+                  <Image src="/base-logo-white.svg" alt="Base" width={20} height={20} className="h-5 w-5 object-contain" />
+                  <Image src="/celo-logo-white.svg" alt="Celo" width={20} height={20} className="h-5 w-5 object-contain" />
                 </div>
               </div>
             </div>
@@ -116,48 +114,14 @@ export default function LitepaperPage() {
         </div>
       </header>
 
-      {/* 1. Overview Cards */}
+      {/* 1. Overview Cards (flip on click) */}
       <section id="overview" className="py-20 bg-[#0A0A0A]">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="mb-10 flex items-center gap-3">
             <Info className="text-[#58B12F] w-8 h-8" />
             The Mission
           </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Card 1 */}
-            <div className="bg-white/5 backdrop-blur-sm border border-white/5 p-8 rounded-2xl group hover:border-[#58B12F]/50 transition-all duration-300">
-              <div className="w-12 h-12 rounded-full bg-[#58B12F]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <BadgeCheck className="text-[#58B12F] w-6 h-6" />
-              </div>
-              <h3 className="mb-2">Verifiable Data</h3>
-              <p className="text-gray-200 text-sm leading-relaxed">
-                Transforming invisible cleanup efforts into standardized, onchain evidence. No more &quot;trust me&quot; - only &quot;verify me.&quot;
-              </p>
-            </div>
-
-            {/* Card 2 */}
-            <div className="bg-white/5 backdrop-blur-sm border border-white/5 p-8 rounded-2xl group hover:border-[#FAFF00]/50 transition-all duration-300">
-              <div className="w-12 h-12 rounded-full bg-[#FAFF00]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <TrendingUp className="text-[#FAFF00] w-6 h-6" />
-              </div>
-              <h3 className="mb-2">Auditable Impact</h3>
-              <p className="text-gray-200 text-sm leading-relaxed">
-                Creating specific, traceable records compatible with Hypercerts. Funders can see exactly where capital goes.
-              </p>
-            </div>
-
-            {/* Card 3 */}
-            <div className="bg-white/5 backdrop-blur-sm border border-white/5 p-8 rounded-2xl group hover:border-blue-400/50 transition-all duration-300">
-              <div className="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Users className="text-blue-400 w-6 h-6" />
-              </div>
-              <h3 className="mb-2">Governable Funding</h3>
-              <p className="text-gray-200 text-sm leading-relaxed">
-                DAO-based allocation of resources using stable assets. Outcome-based funding pools for long-term sustainability.
-              </p>
-            </div>
-          </div>
+          <LitepaperOverviewCards />
         </div>
       </section>
 
@@ -167,44 +131,44 @@ export default function LitepaperPage() {
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="flex justify-between items-end mb-10">
             <h2 className="text-5xl text-white font-bebas">SDG <span className="text-[#FAFF00]">ALIGNMENT</span></h2>
-            <span className="text-sm text-gray-300 font-mono hidden md:block tracking-widest">UN SUSTAINABLE DEVELOPMENT GOALS</span>
+            <span className="text-sm text-gray-300 font-mono hidden md:block tracking-widest">United Nations Sustainable Development Goals</span>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
             {/* SDG 11 */}
-            <div className="bg-amber-600/20 border border-amber-600/30 p-6 rounded-xl hover:bg-amber-600/30 transition-colors group">
+            <a href="https://www.un.org/sustainabledevelopment/cities/" target="_blank" rel="noopener noreferrer nofollow" className="bg-amber-600/20 border border-amber-600/30 p-6 rounded-xl hover:bg-amber-600/30 transition-colors group block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#58B12F]" title="SDG 11: Sustainable Cities and Communities">
               <div className="text-amber-500 text-xs font-bold mb-2 font-mono">SDG 11</div>
               <Building2 className="text-white w-8 h-8 mb-3 opacity-80 group-hover:opacity-100 transition-opacity" />
               <h3 className="text-white text-lg font-bebas leading-none tracking-wide uppercase">Sustainable<br />Cities</h3>
-            </div>
+            </a>
 
             {/* SDG 12 */}
-            <div className="bg-orange-600/20 border border-orange-600/30 p-6 rounded-xl hover:bg-orange-600/30 transition-colors group">
+            <a href="https://www.un.org/sustainabledevelopment/sustainable-consumption-production/" target="_blank" rel="noopener noreferrer nofollow" className="bg-orange-600/20 border border-orange-600/30 p-6 rounded-xl hover:bg-orange-600/30 transition-colors group block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#58B12F]" title="SDG 12: Responsible Consumption and Production">
               <div className="text-orange-500 text-xs font-bold mb-2 font-mono">SDG 12</div>
               <RefreshCw className="text-white w-8 h-8 mb-3 opacity-80 group-hover:opacity-100 transition-opacity" />
               <h3 className="text-white text-lg font-bebas leading-none tracking-wide uppercase">Responsible<br />Consumption</h3>
-            </div>
+            </a>
 
             {/* SDG 13 */}
-            <div className="bg-emerald-800/20 border border-emerald-700/30 p-6 rounded-xl hover:bg-emerald-800/30 transition-colors group">
+            <a href="https://www.un.org/sustainabledevelopment/climate-change/" target="_blank" rel="noopener noreferrer nofollow" className="bg-emerald-800/20 border border-emerald-700/30 p-6 rounded-xl hover:bg-emerald-800/30 transition-colors group block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#58B12F]" title="SDG 13: Climate Action">
               <div className="text-emerald-500 text-xs font-bold mb-2 font-mono">SDG 13</div>
               <CloudSun className="text-white w-8 h-8 mb-3 opacity-80 group-hover:opacity-100 transition-opacity" />
               <h3 className="text-white text-lg font-bebas leading-none tracking-wide uppercase">Climate<br />Action</h3>
-            </div>
+            </a>
 
             {/* SDG 14 */}
-            <div className="bg-blue-600/20 border border-blue-600/30 p-6 rounded-xl hover:bg-blue-600/30 transition-colors group">
+            <a href="https://www.un.org/sustainabledevelopment/oceans/" target="_blank" rel="noopener noreferrer nofollow" className="bg-blue-600/20 border border-blue-600/30 p-6 rounded-xl hover:bg-blue-600/30 transition-colors group block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#58B12F]" title="SDG 14: Life Below Water">
               <div className="text-blue-500 text-xs font-bold mb-2 font-mono">SDG 14</div>
               <Droplets className="text-white w-8 h-8 mb-3 opacity-80 group-hover:opacity-100 transition-opacity" />
               <h3 className="text-white text-lg font-bebas leading-none tracking-wide uppercase">Life Below<br />Water</h3>
-            </div>
+            </a>
 
             {/* SDG 15 */}
-            <div className="bg-green-600/20 border border-green-600/30 p-6 rounded-xl hover:bg-green-600/30 transition-colors group">
+            <a href="https://www.un.org/sustainabledevelopment/biodiversity/" target="_blank" rel="noopener noreferrer nofollow" className="bg-green-600/20 border border-green-600/30 p-6 rounded-xl hover:bg-green-600/30 transition-colors group block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#58B12F]" title="SDG 15: Life on Land">
               <div className="text-green-500 text-xs font-bold mb-2 font-mono">SDG 15</div>
               <Leaf className="text-white w-8 h-8 mb-3 opacity-80 group-hover:opacity-100 transition-opacity fill-current" />
               <h3 className="text-white text-lg font-bebas leading-none tracking-wide uppercase">Life On<br />Land</h3>
-            </div>
+            </a>
           </div>
         </div>
       </section>
@@ -222,7 +186,7 @@ export default function LitepaperPage() {
               className="flex-1 relative group block"
             >
               <div className="absolute inset-0 bg-blue-900/10 rounded-3xl blur-xl group-hover:bg-blue-900/20 transition-all duration-500"></div>
-              <div className="relative h-full bg-neutral-900 border border-neutral-800 rounded-3xl p-8 overflow-hidden group-hover:border-blue-500/50 transition-all duration-300">
+              <div className="relative flex h-full flex-col bg-neutral-900 border border-neutral-800 rounded-3xl p-8 overflow-hidden group-hover:border-blue-500/50 transition-all duration-300">
                 <div className="absolute top-0 right-0 p-4 opacity-50 pointer-events-none">
                   <Smartphone className="text-blue-500 w-32 h-32 -rotate-12 translate-x-4 translate-y-4 opacity-10" />
                 </div>
@@ -232,9 +196,9 @@ export default function LitepaperPage() {
                   <h3 className="text-3xl text-white font-bebas tracking-wide">Mini App</h3>
                 </div>
 
-                <p className="text-gray-200 mb-8 text-sm leading-relaxed">Lightweight entry for individuals via Farcaster or Base app.</p>
+                <p className="text-gray-200 mb-8 min-h-[4rem] text-sm leading-relaxed">Lightweight entry for individuals via Farcaster or Base app.</p>
 
-                <div className="space-y-4">
+                <div className="space-y-4 min-h-[10rem]">
                   <div className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/5">
                     <Camera className="text-blue-400 w-5 h-5" />
                     <span className="text-sm text-gray-200">Photo-based logging</span>
@@ -249,7 +213,7 @@ export default function LitepaperPage() {
                   </div>
                 </div>
 
-                <div className="mt-8 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-blue-400 group-hover:text-white transition-colors">
+                <div className="mt-auto pt-8 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-blue-400 group-hover:text-white transition-colors">
                   Open on Farcaster <ArrowUpRight className="w-4 h-4" />
                 </div>
               </div>
@@ -269,7 +233,7 @@ export default function LitepaperPage() {
               className="flex-1 relative group block"
             >
               <div className="absolute inset-0 bg-[#FAFF00]/5 rounded-3xl blur-xl group-hover:bg-[#FAFF00]/10 transition-all duration-500"></div>
-              <div className="relative h-full bg-neutral-900 border border-neutral-800 rounded-3xl p-8 overflow-hidden group-hover:border-[#FAFF00]/50 transition-all duration-300">
+              <div className="relative flex h-full flex-col bg-neutral-900 border border-neutral-800 rounded-3xl p-8 overflow-hidden group-hover:border-[#FAFF00]/50 transition-all duration-300">
                 <div className="absolute top-0 right-0 p-4 opacity-50 pointer-events-none">
                   <Layers className="text-[#FAFF00] w-32 h-32 rotate-12 translate-x-4 translate-y-4 opacity-10" />
                 </div>
@@ -279,9 +243,9 @@ export default function LitepaperPage() {
                   <h3 className="text-3xl text-white font-bebas tracking-wide">Full Platform</h3>
                 </div>
 
-                <p className="text-gray-200 mb-8 text-sm leading-relaxed">Full platform for individuals, NGOs and organizers. Governance and coordination.</p>
+                <p className="text-gray-200 mb-8 min-h-[4rem] text-sm leading-relaxed">Full platform for individuals, NGOs and organizers. Governance and coordination.</p>
 
-                <div className="space-y-4">
+                <div className="space-y-4 min-h-[10rem]">
                   <div className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/5">
                     <MapPin className="text-[#FAFF00] w-5 h-5" />
                     <span className="text-sm text-gray-200">Geolocation and maps</span>
@@ -296,7 +260,7 @@ export default function LitepaperPage() {
                   </div>
                 </div>
 
-                <div className="mt-8 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#FAFF00] group-hover:text-white transition-colors">
+                <div className="mt-auto pt-8 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#FAFF00] group-hover:text-white transition-colors">
                   Explore Celo dApp <ArrowUpRight className="w-4 h-4" />
                 </div>
               </div>
@@ -352,63 +316,83 @@ export default function LitepaperPage() {
         </div>
       </section>
 
-      {/* 5. Tokens */}
+      {/* 5. Tokens (same shape as tokenomics TWO TOKENS) */}
       <section id="tokens" className="py-24 bg-[#0A0A0A]">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-5xl text-center mb-16 font-bebas">NETWORK <span className="text-gray-200">TOKENS</span></h2>
-
+          <h2 className="text-4xl md:text-5xl text-center mb-12 font-bebas text-gray-200">TWO TOKENS</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* $bDCU */}
             <div className="bg-neutral-900 border border-neutral-800 rounded-2xl p-8 flex flex-col md:flex-row items-center gap-8 relative overflow-hidden group hover:border-blue-500/30 transition-colors">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/10 rounded-full blur-2xl group-hover:bg-blue-600/20 transition-all"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/10 rounded-full blur-2xl group-hover:bg-blue-600/20 transition-all" />
               <div className="w-24 h-24 rounded-full border-2 border-blue-500 flex items-center justify-center bg-black z-10 shrink-0 overflow-hidden shadow-[0_0_15px_rgba(59,130,246,0.5)]">
                 <Image src="/images/dcu-token-logo.png" alt="$bDCU" width={96} height={96} className="w-full h-full object-contain" unoptimized />
               </div>
-              <div className="z-10 text-center md:text-left">
+              <div className="z-10 text-center md:text-left flex-1">
                 <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
-                  <h3 className="text-3xl text-white font-bebas tracking-wide">$bDCU</h3>
-                  <span className="text-[10px] bg-neutral-800 text-gray-200 px-2 py-0.5 rounded border border-neutral-700 tracking-wider font-mono">BASE</span>
+                  <h3 className="text-3xl text-white font-bebas tracking-wide">Utility token</h3>
+                  <span className="text-[10px] bg-neutral-800 text-gray-200 px-2 py-0.5 rounded border border-neutral-700 tracking-wider">BASE</span>
                 </div>
-                <div className="text-blue-400 text-xs font-bold mb-4 uppercase tracking-widest font-mono">Utility Token</div>
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-center gap-2 text-sm text-gray-200"><Star className="text-blue-500 w-4 h-4" /> Earned for verified cleanup</li>
-                  <li className="flex items-center gap-2 text-sm text-gray-200"><Star className="text-blue-500 w-4 h-4" /> Liquid & Tradable</li>
-                  <li className="flex items-center gap-2 text-sm text-gray-200"><Star className="text-blue-500 w-4 h-4" /> Incentivizes Action</li>
+                <p className="text-blue-400 text-xs font-bold mb-4 uppercase tracking-widest">$bDCU</p>
+                <p className="text-sm text-gray-400 mb-4">The &quot;action token.&quot; Used on Base for:</p>
+                <ul className="space-y-3 mb-6 text-sm text-gray-200">
+                  <li className="flex items-center gap-2"><Star className="text-blue-500 w-4 h-4 shrink-0" /> Cleanup rewards</li>
+                  <li className="flex items-center gap-2"><Star className="text-blue-500 w-4 h-4 shrink-0" /> Streaks & referrals</li>
+                  <li className="flex items-center gap-2"><Star className="text-blue-500 w-4 h-4 shrink-0" /> Verifier staking</li>
+                  <li className="flex items-center gap-2"><Star className="text-blue-500 w-4 h-4 shrink-0" /> Liquid & tradable</li>
                 </ul>
-
-                <a
-                  href="https://basescan.org/token/0x30171b7014c02229497CdE6745DD3aD821F12b07"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[10px] text-gray-400 hover:text-white transition-colors flex items-center justify-center md:justify-start gap-1 font-mono"
-                >
-                  <LinkIcon className="w-3 h-3" />
-                  0x30171b70...b2107
-                </a>
+                <div className="flex flex-col gap-3">
+                  <div className="flex flex-wrap gap-2 mb-2">
+                    <a
+                      href="https://app.uniswap.org/swap?chain=base&inputCurrency=ETH&outputCurrency=0x30171b7014c02229497CdE6745DD3aD821F12b07"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 text-center px-4 py-2 bg-[#58B12F] hover:bg-[#58B12F]/80 text-black font-bold rounded-lg transition-all text-xs uppercase tracking-wider"
+                    >
+                      Swap ETH / $bDCU
+                    </a>
+                    <a
+                      href="https://app.uniswap.org/swap?chain=base&inputCurrency=0xfde4C96c8593536E31F229EA8f37b2ADa2699bb2&outputCurrency=0x30171b7014c02229497CdE6745DD3aD821F12b07"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 text-center px-4 py-2 border border-[#58B12F] text-[#58B12F] hover:bg-[#58B12F]/10 font-bold rounded-lg transition-all text-xs uppercase tracking-wider"
+                    >
+                      Swap USDT / $bDCU
+                    </a>
+                  </div>
+                  <a
+                    href="https://basescan.org/token/0x30171b7014c02229497CdE6745DD3aD821F12b07"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-gray-400 hover:text-white transition-colors flex items-center gap-1 font-mono break-all"
+                  >
+                    <LinkIcon className="w-3 h-3 shrink-0" />
+                    0x30171b7014c02229497CdE6745DD3aD821F12b07
+                  </a>
+                </div>
               </div>
             </div>
 
             {/* $cDCU */}
             <div className="bg-neutral-900 border border-neutral-800 rounded-2xl p-8 flex flex-col md:flex-row items-center gap-8 relative overflow-hidden group hover:border-[#FAFF00]/30 transition-colors">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#58B12F]/10 rounded-full blur-2xl group-hover:bg-[#58B12F]/20 transition-all"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#58B12F]/10 rounded-full blur-2xl group-hover:bg-[#58B12F]/20 transition-all" />
               <div className="w-24 h-24 rounded-full border-2 border-[#58B12F] flex items-center justify-center bg-black z-10 shrink-0 overflow-hidden shadow-[0_0_15px_rgba(88,177,47,0.5)]">
                 <Image src="/images/dcu-token-logo.png" alt="$cDCU" width={96} height={96} className="w-full h-full object-contain" unoptimized />
               </div>
-              <div className="z-10 text-center md:text-left">
+              <div className="z-10 text-center md:text-left flex-1">
                 <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
-                  <h3 className="text-3xl text-white font-bebas tracking-wide">$cDCU</h3>
-                  <span className="text-[10px] bg-neutral-800 text-gray-200 px-2 py-0.5 rounded border border-neutral-700 tracking-wider font-mono">CELO</span>
+                  <h3 className="text-3xl text-white font-bebas tracking-wide">Governance</h3>
+                  <span className="text-[10px] bg-neutral-800 text-gray-200 px-2 py-0.5 rounded border border-neutral-700 tracking-wider">CELO</span>
                 </div>
-                <div className="text-[#FAFF00] text-xs font-bold mb-4 uppercase tracking-widest font-mono">Governance</div>
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-center gap-2 text-sm text-gray-200"><ShieldCheck className="text-[#58B12F] w-4 h-4" /> Reputation Based</li>
-                  <li className="flex items-center gap-2 text-sm text-gray-200"><ShieldCheck className="text-[#58B12F] w-4 h-4" /> Non-speculative</li>
-                  <li className="flex items-center gap-2 text-sm text-gray-200"><ShieldCheck className="text-[#58B12F] w-4 h-4" /> Proposal Voting</li>
+                <p className="text-sm text-gray-400 mb-4">Reputation, governance & advanced utilities</p>
+                <ul className="space-y-3 mb-6 text-sm text-gray-200">
+                  <li className="flex items-center gap-2"><ShieldCheck className="text-[#58B12F] w-4 h-4 shrink-0" /> Earned through verified cleanups</li>
+                  <li className="flex items-center gap-2"><ShieldCheck className="text-[#58B12F] w-4 h-4 shrink-0" /> Non-tradable (reputation-linked)</li>
+                  <li className="flex items-center gap-2"><ShieldCheck className="text-[#58B12F] w-4 h-4 shrink-0" /> Governance via Gardens.fund</li>
+                  <li className="flex items-center gap-2"><ShieldCheck className="text-[#58B12F] w-4 h-4 shrink-0" /> Verifier roles, streaks, analytics</li>
                 </ul>
-                <div className="text-[10px] text-gray-500 font-mono flex items-center gap-1">
-                  <Clock className="w-3 h-3" />
-                  CONTRACT COMING SOON
-                </div>
+                <button disabled className="inline-block text-center px-6 py-3 bg-neutral-800 text-gray-400 font-semibold rounded-xl cursor-not-allowed opacity-60">
+                  View Celo dApp (inactive)
+                </button>
               </div>
             </div>
           </div>
@@ -424,27 +408,27 @@ export default function LitepaperPage() {
             {/* Vertical Line for mobile */}
             <div className="absolute left-[31px] top-0 bottom-0 w-px bg-neutral-800 md:hidden"></div>
 
-            {/* Phase 1 */}
+            {/* Phase 1 - Base blue */}
             <div className="flex flex-col md:flex-row gap-6 relative">
               <div className="hidden md:flex w-32 flex-col items-end pt-2">
-                <span className="text-[#58B12F] font-bold text-lg font-bebas tracking-wide">PHASE 1</span>
+                <span className="text-blue-500 font-bold text-lg font-bebas tracking-wide">PHASE 1</span>
                 <span className="text-xs text-gray-300 uppercase tracking-widest">Live</span>
               </div>
               {/* Node */}
-              <div className="absolute left-[-11px] md:static w-6 h-6 rounded-full bg-[#58B12F] border-4 border-black z-10 shrink-0"></div>
+              <div className="absolute left-[-11px] md:static w-6 h-6 rounded-full bg-blue-500 border-4 border-black z-10 shrink-0"></div>
 
-              <div className="flex-1 bg-neutral-900/50 border border-[#58B12F]/30 p-6 rounded-xl hover:bg-neutral-900/80 transition-colors">
-                <h3 className="text-xl text-white mb-2 md:hidden font-bebas tracking-wide text-[#58B12F]">PHASE 1 - LIVE</h3>
+              <div className="flex-1 bg-neutral-900/50 border border-blue-500/30 p-6 rounded-xl hover:bg-neutral-900/80 transition-colors">
+                <h3 className="text-xl text-white mb-2 md:hidden font-bebas tracking-wide text-blue-500">PHASE 1 - LIVE</h3>
                 <h4 className="text-white text-lg font-medium mb-3">Foundation</h4>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm text-gray-200">
-                  <div className="flex items-center gap-2"><CheckCircle className="text-[#58B12F] w-4 h-4" /> Base Mini App</div>
-                  <div className="flex items-center gap-2"><CheckCircle className="text-[#58B12F] w-4 h-4" /> $bDCU Rewards</div>
-                  <div className="flex items-center gap-2"><CheckCircle className="text-[#58B12F] w-4 h-4" /> Basic Verification</div>
+                  <div className="flex items-center gap-2"><CheckCircle className="text-blue-500 w-4 h-4" /> Base Mini App</div>
+                  <div className="flex items-center gap-2"><CheckCircle className="text-blue-500 w-4 h-4" /> $bDCU Rewards</div>
+                  <div className="flex items-center gap-2"><CheckCircle className="text-blue-500 w-4 h-4" /> Basic Verification</div>
                 </div>
               </div>
             </div>
 
-            {/* Phase 2 */}
+            {/* Phase 2 - Celo yellow */}
             <div className="flex flex-col md:flex-row gap-6 relative">
               <div className="hidden md:flex w-32 flex-col items-end pt-2">
                 <span className="text-[#FAFF00] font-bold text-lg font-bebas tracking-wide">PHASE 2</span>
