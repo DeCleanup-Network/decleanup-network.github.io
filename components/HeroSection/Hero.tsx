@@ -52,7 +52,7 @@ const Hero = () => {
 
         {/* Headline */}
         <p className="mx-auto mb-4 max-w-2xl text-xl font-medium leading-tight text-white md:text-2xl lg:text-3xl">
-          Real cleanups. Real proof. Real impact.
+          Cleanups with action. Proof under verified. Fundable impact.
         </p>
 
         {/* Subheadline */}

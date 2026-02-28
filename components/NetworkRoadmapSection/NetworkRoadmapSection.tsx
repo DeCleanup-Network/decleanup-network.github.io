@@ -1,248 +1,9 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React from "react";
 import Image from "next/image";
-import Link from "next/link";
-
-const RoadmapCarousel = ({ roadmap }: { roadmap: Array<{ phase: string; bullets: string[] }> }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const touchStartX = useRef<number | null>(null);
-  const touchEndX = useRef<number | null>(null);
-
-  const goToPrevious = () => {
-    setCurrentIndex((prev) => (prev === 0 ? roadmap.length - 1 : prev - 1));
-  };
-
-  const goToNext = () => {
-    setCurrentIndex((prev) => (prev === roadmap.length - 1 ? 0 : prev + 1));
-  };
-
-  // Touch handlers for mobile swipe
-  const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
-  };
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    touchEndX.current = e.touches[0].clientX;
-  };
-
-  const handleTouchEnd = () => {
-    if (!touchStartX.current || !touchEndX.current) return;
-    
-    const distance = touchStartX.current - touchEndX.current;
-    const minSwipeDistance = 50;
-
-    if (distance > minSwipeDistance) {
-      // Swipe left - go to next
-      goToNext();
-    } else if (distance < -minSwipeDistance) {
-      // Swipe right - go to previous
-      goToPrevious();
-    }
-
-    touchStartX.current = null;
-    touchEndX.current = null;
-  };
-
-  return (
-    <div className="relative w-full">
-      {/* Container with padding to prevent border cutoff */}
-      <div className="px-4 py-4">
-        {/* Cards Container - Centered with stacked effect */}
-        <div 
-          className="relative flex justify-center items-center min-h-[500px] lg:min-h-[600px]"
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-        >
-          {roadmap.map((item, index) => {
-            const isActive = index === currentIndex;
-            const offset = index - currentIndex;
-            const absOffset = Math.abs(offset);
-            
-            // Calculate position and scale for stacked cards
-            let transform = "";
-            let zIndex = roadmap.length - absOffset;
-            let opacity = 1;
-            
-            if (isActive) {
-              transform = "translateX(0) translateY(0)";
-              zIndex = roadmap.length + 1;
-            } else if (offset < 0) {
-              // Cards to the left
-              transform = `translateX(${-100 * absOffset - 50}px) translateY(${20 * absOffset}px) scale(${1 - absOffset * 0.1})`;
-              opacity = Math.max(0.3, 1 - absOffset * 0.2);
-            } else {
-              // Cards to the right
-              transform = `translateX(${100 * absOffset + 50}px) translateY(${20 * absOffset}px) scale(${1 - absOffset * 0.1})`;
-              opacity = Math.max(0.3, 1 - absOffset * 0.2);
-            }
-
-            return (
-              <div
-                key={index}
-                className="absolute w-full max-w-[95%] sm:max-w-xl lg:max-w-2xl"
-                style={{
-                  transform,
-                  zIndex,
-                  opacity,
-                  transition: "all 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
-                }}
-              >
-                <div
-                  className={`bg-gray-900 border-2 rounded-lg p-8 sm:p-10 lg:p-12 text-left transition-all duration-300 ${
-                    isActive 
-                      ? "border-[#58B12F] shadow-[0_0_25px_rgba(88,177,47,0.15)]" 
-                      : "border-gray-800 cursor-pointer"
-                  } hover:border-[#58B12F] hover:shadow-[0_0_25px_rgba(88,177,47,0.15)] hover:-translate-y-2`}
-                  onMouseEnter={() => !isActive && setCurrentIndex(index)}
-                  onClick={() => !isActive && setCurrentIndex(index)}
-                  style={{
-                    transform: isActive ? "scale(1)" : "scale(0.9)",
-                  }}
-                >
-                  <h3
-                    className="text-white text-xl sm:text-2xl lg:text-3xl font-medium mb-6 leading-tight normal-case"
-                    style={{
-                      fontFamily:
-                        "var(--font-geist-sans), system-ui, -apple-system, sans-serif",
-                    }}
-                  >
-                    {item.phase}
-                  </h3>
-                  <ul className="text-gray-200 text-lg sm:text-lg lg:text-xl leading-relaxed space-y-3">
-                    {item.bullets.map((bullet, idx) => {
-                      // Check if bullet contains a link
-                      const linkMatch = bullet.match(/\(https?:\/\/[^)]+\)/);
-                      if (linkMatch) {
-                        const url = linkMatch[0].slice(1, -1);
-                        const textBefore = bullet.substring(0, bullet.indexOf("("));
-                        return (
-                          <li key={idx} className="flex items-start">
-                            <span className="mr-2 text-[#58B12F] font-bold">•</span>
-                            <span>
-                              {textBefore}
-                              <Link 
-                                href={url} 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                className="text-[#58B12F] hover:text-[#FAFF00] underline transition-colors"
-                                onClick={(e) => e.stopPropagation()}
-                              >
-                                {url}
-                              </Link>
-                            </span>
-                          </li>
-                        );
-                      }
-                      return (
-                        <li key={idx} className="flex items-start">
-                          <span className="mr-2 text-[#58B12F] font-bold">•</span>
-                          <span>{bullet}</span>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-
-      {/* Navigation Arrows - Hidden on mobile, visible on desktop */}
-      <div className="hidden lg:flex justify-center items-center gap-4 mt-8">
-        <button
-          onClick={goToPrevious}
-          className="w-12 h-12 rounded-full bg-gray-900 border-2 border-gray-700 hover:border-[#58B12F] flex items-center justify-center transition-all duration-300 opacity-100 cursor-pointer hover:shadow-[0_0_20px_rgba(88,177,47,0.3)]"
-          aria-label="Previous card"
-        >
-          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-        </button>
-        
-        {/* Dots indicator */}
-        <div className="flex gap-2">
-          {roadmap.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                index === currentIndex 
-                  ? "bg-[#58B12F] w-8" 
-                  : "bg-gray-700 hover:bg-gray-600"
-              }`}
-              aria-label={`Go to card ${index + 1}`}
-            />
-          ))}
-        </div>
-
-        <button
-          onClick={goToNext}
-          className="w-12 h-12 rounded-full bg-gray-900 border-2 border-gray-700 hover:border-[#58B12F] flex items-center justify-center transition-all duration-300 opacity-100 cursor-pointer hover:shadow-[0_0_20px_rgba(88,177,47,0.3)]"
-          aria-label="Next card"
-        >
-          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
-      </div>
-
-      {/* Dots indicator for mobile - visible on mobile, hidden on desktop */}
-      <div className="flex lg:hidden justify-center items-center gap-2 mt-8">
-        {roadmap.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentIndex(index)}
-            className={`h-2 rounded-full transition-all duration-300 ${
-              index === currentIndex 
-                ? "bg-[#58B12F] w-8" 
-                : "bg-gray-700 w-2"
-            }`}
-            aria-label={`Go to card ${index + 1}`}
-          />
-        ))}
-      </div>
-    </div>
-  );
-};
+import { CheckCircle, Clock } from "lucide-react";
 
 const NetworkRoadmapSection = () => {
-  const roadmap = [
-    {
-      phase: "Phase 1 - Base Mini App (live)",
-      bullets: [
-        "Farcaster mini app for quick cleanups",
-        "$bDCU rewards on Base",
-        "Simple logging + basic stats",
-      ],
-    },
-    {
-      phase: "Phase 2 - Celo Full dApp (building)",
-      bullets: [
-        "Full dashboard, leaderboard, streaks",
-        "Impact Products, claim & stake",
-        "Hypercert minted after every 10 verified cleanups",
-      ],
-    },
-    {
-      phase: "Phase 3 - Reputation & Governance",
-      bullets: [
-        "$cDCU as reputation + governance token on Celo",
-        "Voting on Gardens.fund",
-        "Cleaner profiles and long-term contribution history",
-      ],
-    },
-    {
-      phase: "Phase 4 - Multichain Ecosystem",
-      bullets: [
-        "Base + Celo live side-by-side",
-        "Integrations with Regen Bazaar and partners",
-        "New Impact Product levels and impact metrics",
-      ],
-    },
-  ];
-
   const galleryImages = [
     {
       src: "/testimonial1.jpg",
@@ -269,22 +30,72 @@ const NetworkRoadmapSection = () => {
 
   return (
     <div className="min-h-screen ">
-      {/* Roadmap Section with responsive margins */}
-      <div>
-        <div className="relative w-full py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-6 lg:mb-8">
-            <h2 
-              className="text-3xl md:text-4xl lg:text-5xl font-normal uppercase text-white mb-0 leading-tight"
-            >
-              Network Roadmap
-            </h2>
-          </div>
+      {/* Roadmap Section - litepaper-style vertical timeline */}
+      <section id="roadmap" className="py-24 border-t border-white/5 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl md:text-5xl font-bebas text-white mb-12 text-center">
+            ROADMAP
+          </h2>
 
-          {/* Roadmap Carousel */}
-          <RoadmapCarousel roadmap={roadmap} />
+          <div className="space-y-8 relative pl-8 md:pl-0 max-w-4xl mx-auto">
+            {/* Vertical Line for mobile */}
+            <div className="absolute left-[31px] top-0 bottom-0 w-px bg-neutral-800 md:hidden" />
+
+            {/* Phase 1 - Base blue */}
+            <div className="flex flex-col md:flex-row gap-6 relative">
+              <div className="hidden md:flex w-32 flex-col items-end pt-2">
+                <span className="text-blue-500 font-bold text-lg font-bebas tracking-wide">PHASE 1</span>
+                <span className="text-xs text-gray-300 uppercase tracking-widest">Live</span>
+              </div>
+              <div className="absolute left-[-11px] md:static w-6 h-6 rounded-full bg-blue-500 border-4 border-black z-10 shrink-0" />
+              <div className="flex-1 bg-neutral-900/50 border border-blue-500/30 p-6 rounded-xl hover:bg-neutral-900/80 transition-colors">
+                <h3 className="text-xl text-white mb-2 md:hidden font-bebas tracking-wide text-blue-500">PHASE 1 - LIVE</h3>
+                <h4 className="text-white text-lg font-medium mb-3">Foundation</h4>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm text-gray-200">
+                  <div className="flex items-center gap-2"><CheckCircle className="text-blue-500 w-4 h-4 shrink-0" /> Base Mini App</div>
+                  <div className="flex items-center gap-2"><CheckCircle className="text-blue-500 w-4 h-4 shrink-0" /> $bDCU Rewards</div>
+                  <div className="flex items-center gap-2"><CheckCircle className="text-blue-500 w-4 h-4 shrink-0" /> Basic Verification</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Phase 2 - Celo yellow */}
+            <div className="flex flex-col md:flex-row gap-6 relative">
+              <div className="hidden md:flex w-32 flex-col items-end pt-2">
+                <span className="text-[#FAFF00] font-bold text-lg font-bebas tracking-wide">PHASE 2</span>
+                <span className="text-xs text-gray-300 uppercase tracking-widest">In Dev</span>
+              </div>
+              <div className="absolute left-[-11px] md:static w-6 h-6 rounded-full bg-[#FAFF00] border-4 border-black z-10 shrink-0 animate-pulse" />
+              <div className="flex-1 bg-neutral-900/30 border border-dashed border-[#FAFF00]/30 p-6 rounded-xl hover:bg-neutral-900/50 transition-colors">
+                <h3 className="text-xl text-white mb-2 md:hidden font-bebas tracking-wide text-[#FAFF00]">PHASE 2 - IN DEV</h3>
+                <h4 className="text-white text-lg font-medium mb-3">Governance & Celo</h4>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm text-gray-200">
+                  <div className="flex items-center gap-2"><Clock className="text-[#FAFF00] w-4 h-4 shrink-0" /> Celo Full dApp</div>
+                  <div className="flex items-center gap-2"><Clock className="text-[#FAFF00] w-4 h-4 shrink-0" /> Impact Products v2</div>
+                  <div className="flex items-center gap-2"><Clock className="text-[#FAFF00] w-4 h-4 shrink-0" /> Hypercert Records</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Phase 3 */}
+            <div className="flex flex-col md:flex-row gap-6 relative">
+              <div className="hidden md:flex w-32 flex-col items-end pt-2">
+                <span className="text-gray-300 font-bold text-lg font-bebas tracking-wide">PHASE 3</span>
+                <span className="text-xs text-gray-200 uppercase tracking-widest">Future</span>
+              </div>
+              <div className="absolute left-[-11px] md:static w-6 h-6 rounded-full bg-gray-700 border-4 border-black z-10 shrink-0" />
+              <div className="flex-1 bg-neutral-900/10 border border-neutral-800 p-6 rounded-xl opacity-60 hover:opacity-100 transition-opacity">
+                <h3 className="text-xl text-white mb-2 md:hidden font-bebas tracking-wide text-gray-300">PHASE 3</h3>
+                <h4 className="text-white text-lg font-medium mb-3">AI verification</h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-gray-200">
+                  <div>• RWI Rank</div>
+                  <div>• Impact Staking</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
       {/* Community Impact Section */}
       <div

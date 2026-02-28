@@ -46,7 +46,7 @@ export default function SDGsFooter() {
           className="text-center text-3xl font-normal uppercase leading-tight text-white mb-6 md:text-4xl lg:text-5xl"
           style={{ fontFamily: "var(--font-bebas-neue), sans-serif" }}
         >
-          Aligned with the UN Sustainable Development Goals
+          Aligned with the United Nations Sustainable Development Goals
         </h2>
         <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
           {sdgs.map((goal) => (
