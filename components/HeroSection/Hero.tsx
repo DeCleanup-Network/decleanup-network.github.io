@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 const Hero = () => {
@@ -30,19 +29,6 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl px-4 sm:px-6 text-center">
-        {/* Logo - centred */}
-        <div className="mb-8 flex justify-center">
-          <Image
-            src="/images/decleanup_logo_full.png"
-            alt="DeCleanup Network Logo"
-            width={180}
-            height={60}
-            className="h-10 w-auto object-contain sm:h-12"
-            priority
-            unoptimized
-          />
-        </div>
-
         <h1 className="mb-6 py-2">
           <span className="bg-gradient-to-r from-[#58B12F] via-[#FAFF00] to-[#58B12F] bg-clip-text text-transparent animate-pulse">
             DECLEANUP
@@ -51,31 +37,28 @@ const Hero = () => {
         </h1>
 
         {/* Headline */}
-        <p className="mx-auto mb-4 max-w-2xl text-xl font-medium leading-tight text-white md:text-2xl lg:text-3xl">
-          Cleanups with action. Proof under verified. Fundable impact.
-        </p>
+        <h1 className="mx-auto mb-4 max-w-3xl text-3xl font-medium leading-tight text-white md:text-4xl lg:text-5xl">
+          Clean Local. Prove Global.
+        </h1>
 
         {/* Subheadline */}
         <p className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-gray-200 md:text-xl">
-          A global platform that verifies environmental cleanups and turns them
-          into measurable, fundable impact.
+          Join volunteers worldwide turning trash pickup into verified, rewarded impact.
         </p>
 
-        {/* CTAs */}
+        {/* CTAs - primary: Get Started, secondary: How It Works */}
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Link
-            href="https://farcaster.xyz/miniapps/SfsGBDcHpuSA/decleanup-rewards"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-xl bg-white px-6 py-3 font-medium text-black transition-all duration-300 hover:bg-white/90 hover:shadow-[0_0_24px_rgba(255,255,255,0.15)]"
+            href="/get-started"
+            className="rounded-xl bg-white px-6 py-3.5 font-semibold text-black transition-all duration-300 hover:bg-white/90 hover:shadow-[0_0_24px_rgba(255,255,255,0.15)] min-h-[44px] flex items-center justify-center"
           >
-            Participate Now
+            Start Cleaning
           </Link>
           <Link
-            href="/litepaper"
-            className="rounded-xl border border-white/20 px-6 py-3 font-medium text-white transition-all duration-300 hover:border-white/40 hover:bg-white/5"
+            href="/userguide"
+            className="rounded-xl border border-white/20 px-6 py-3.5 font-medium text-white transition-all duration-300 hover:border-white/40 hover:bg-white/5 min-h-[44px] flex items-center justify-center"
           >
-            Read Litepaper
+            See How It Works
           </Link>
         </div>
       </div>
