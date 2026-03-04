@@ -1,4 +1,5 @@
-import Link from "next/link"; // kept for back link
+import type { Metadata } from "next";
+import Link from "next/link";
 import {
   ArrowLeft,
   GitBranch,
@@ -87,6 +88,12 @@ function Card({
     </div>
   );
 }
+
+export const metadata: Metadata = {
+  title: "Theory of Change — DeCleanup Network",
+  description:
+    "Why cleanup action stays invisible — and how we fix it. DeCleanup Network Theory of Change v2.2.",
+};
 
 export default function TocPage() {
   return (

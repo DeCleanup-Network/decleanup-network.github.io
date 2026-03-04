@@ -3,6 +3,7 @@ import Script from "next/script";
 import { GeistSans } from "geist/font/sans";
 import { Bebas_Neue } from "next/font/google";
 import "./globals.css";
+import MainNav from "@/components/MainNav/MainNav";
 
 // Configure Geist Sans (Secondary/Body font)
 // GeistSans is already configured with variable: '--font-geist-sans'
@@ -84,7 +85,8 @@ export default function RootLayout({
       <body
         className={`${GeistSans.variable} ${bebas.variable} antialiased`}
       >
-        {children}
+        <MainNav />
+        <div className="pt-16">{children}</div>
       </body>
     </html>
   );

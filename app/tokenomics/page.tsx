@@ -16,7 +16,7 @@ export default function TokenomicsPage() {
         {/* Back + Header */}
         <div className="mb-12 md:mb-16">
           <Link
-            href="/#tokenize"
+            href="/#token"
             className="inline-flex items-center gap-2 text-[#58B12F] hover:text-[#58B12F]/80 font-semibold text-sm md:text-base transition-colors duration-200 group"
           >
             <svg className="w-5 h-5 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
