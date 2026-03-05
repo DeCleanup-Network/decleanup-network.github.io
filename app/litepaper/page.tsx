@@ -114,6 +114,74 @@ export default function LitepaperPage() {
         </div>
       </header>
 
+      {/* Why DeCleanup – pillars (from landing) */}
+      <section id="why-decleanup" className="py-20 border-b border-white/5">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-5xl font-bebas text-white mb-12 text-center">Why DeCleanup Network Exists</h2>
+
+          {/* Problem → Solution (same design as main page) */}
+          <div className="max-w-4xl mx-auto mb-16">
+            <div className="grid md:grid-cols-3 gap-4 items-center">
+              {/* Problem */}
+              <div className="group relative p-6 rounded-2xl bg-white/[0.04] border border-white/10 transition-all duration-300 hover:border-white/20">
+                <div className="text-gray-300 mb-3 flex justify-center">
+                  <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                  </svg>
+                </div>
+                <h3 className="text-gray-300 font-semibold text-lg mb-2">The Problem</h3>
+                <p className="text-gray-300 text-sm">Cleanups happen, but there&apos;s no credible proof or transparent coordination</p>
+              </div>
+
+              {/* Arrow */}
+              <div className="hidden md:flex justify-center">
+                <svg className="w-16 h-8 text-[#58B12F]/70" viewBox="0 0 64 32" fill="none">
+                  <path d="M2 16h56m0 0l-12-12m12 12l-12 12" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+
+              {/* Solution */}
+              <div className="group relative p-6 rounded-2xl bg-[#58B12F]/[0.08] border border-[#58B12F]/20 transition-all duration-300 hover:border-[#58B12F]/30">
+                <div className="text-[#58B12F] mb-3 flex justify-center">
+                  <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-gray-200 font-semibold text-lg mb-2">The Solution</h3>
+                <p className="text-gray-300 text-sm">Verifiable, incentivized, and transparently funded environmental action</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+            <div className="p-6 rounded-2xl bg-white/[0.04] border border-white/10">
+              <FileText className="text-[#58B12F] w-8 h-8 mb-4" />
+              <h3 className="text-white font-bebas text-xl tracking-wide mb-1">DMRV</h3>
+              <p className="text-[#58B12F] text-sm font-medium mb-2">Data, Measurement, Reporting, Verification</p>
+              <p className="text-gray-400 text-sm">Credible proof of environmental impact</p>
+            </div>
+            <div className="p-6 rounded-2xl bg-white/[0.04] border border-white/10">
+              <Layers className="text-[#58B12F] w-8 h-8 mb-4" />
+              <h3 className="text-white font-bebas text-xl tracking-wide mb-1">Onchain Immutability</h3>
+              <p className="text-[#58B12F] text-sm font-medium mb-2">Permanent Records</p>
+              <p className="text-gray-400 text-sm">Blockchain-verified cleanup history</p>
+            </div>
+            <div className="p-6 rounded-2xl bg-white/[0.04] border border-white/10">
+              <Star className="text-[#58B12F] w-8 h-8 mb-4" />
+              <h3 className="text-white font-bebas text-xl tracking-wide mb-1">Incentives & Reputation</h3>
+              <p className="text-[#58B12F] text-sm font-medium mb-2">Reward Real Work</p>
+              <p className="text-gray-400 text-sm">Earn recognition for environmental action</p>
+            </div>
+            <div className="p-6 rounded-2xl bg-white/[0.04] border border-white/10">
+              <UserCheck className="text-[#FAFF00] w-8 h-8 mb-4" />
+              <h3 className="text-white font-bebas text-xl tracking-wide mb-1">Open Coordination</h3>
+              <p className="text-[#FAFF00] text-sm font-medium mb-2">Transparent Funding</p>
+              <p className="text-gray-400 text-sm">Community-driven cleanup initiatives</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 1. Overview Cards (flip on click) */}
       <section id="overview" className="py-20 bg-[#0A0A0A]">
         <div className="max-w-7xl mx-auto px-6">
