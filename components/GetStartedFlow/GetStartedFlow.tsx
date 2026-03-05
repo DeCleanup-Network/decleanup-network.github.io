@@ -90,10 +90,11 @@ function GuideLinks({ variant }: { variant: "base" | "celo" | "wallet" }) {
 
 export default function GetStartedFlow() {
   const [step, setStep] = useState<Step>("intro");
+  const [diveDeeperOpen, setDiveDeeperOpen] = useState(false);
 
   return (
     <div className="space-y-6 max-w-2xl mx-auto">
-      {/* Step: Intro - For those who care about the planet (before flowchart) */}
+      {/* Step: Intro - For those who care about the planet */}
       {step === "intro" && (
         <div className="space-y-6">
           {/* Header */}
@@ -102,10 +103,32 @@ export default function GetStartedFlow() {
               For those who care about the planet
             </h2>
             <p className="text-gray-200 text-sm md:text-base max-w-2xl mx-auto">
-              Environmental action deserves recognition. Here&apos;s how DeCleanup makes it happen.
+              Environmental action deserves recognition. Here&apos;s what to do to get it.
             </p>
           </div>
 
+          <button
+            onClick={() => setStep("start")}
+            className="w-full px-6 py-4 rounded-xl bg-gradient-to-r from-[#FAFF00] to-yellow-400 text-black font-semibold hover:from-[#FAFF00]/90 hover:to-yellow-400/90 transition-all duration-300 shadow-lg shadow-[#FAFF00]/20 hover:shadow-[#FAFF00]/40 hover:scale-[1.02] flex items-center justify-center gap-2 group"
+          >
+            <span>Choose your path</span>
+            <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </button>
+
+          <button
+            onClick={() => setDiveDeeperOpen(!diveDeeperOpen)}
+            className="w-full px-6 py-4 rounded-xl bg-gradient-to-r from-[#FAFF00] to-yellow-400 text-black font-semibold hover:from-[#FAFF00]/90 hover:to-yellow-400/90 transition-all duration-300 shadow-lg shadow-[#FAFF00]/20 hover:shadow-[#FAFF00]/40 hover:scale-[1.02] flex items-center justify-center gap-2 group"
+          >
+            <span>Dive deeper</span>
+            <svg className={`w-5 h-5 transition-transform ${diveDeeperOpen ? "rotate-180" : ""}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+
+          {diveDeeperOpen && (
+          <div className="space-y-6">
           {/* The Problem - Visual Cards */}
           <div className="space-y-4">
             <div className="flex items-center gap-3 mb-4">
@@ -364,16 +387,8 @@ export default function GetStartedFlow() {
             </div>
           </Card>
 
-          {/* CTA Button */}
-          <button
-            onClick={() => setStep("start")}
-            className="w-full px-6 py-4 rounded-xl bg-gradient-to-r from-[#FAFF00] to-yellow-400 text-black font-semibold hover:from-[#FAFF00]/90 hover:to-yellow-400/90 transition-all duration-300 shadow-lg shadow-[#FAFF00]/20 hover:shadow-[#FAFF00]/40 hover:scale-[1.02] flex items-center justify-center gap-2 group"
-          >
-            <span>Choose your path</span>
-            <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </button>
+          </div>
+          )}
 
           <style jsx>{`
             @keyframes fadeInUp {

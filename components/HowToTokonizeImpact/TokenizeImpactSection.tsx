@@ -24,7 +24,7 @@ const TokenizeImpactSection = () => {
             How Your Cleanup Becomes Verified Impact
           </h2>
           <p className="text-gray-400 text-sm md:text-base max-w-xl mx-auto">
-            Four simple steps — from picking up litter to earning recognition.
+            Four simple steps from picking up litter to earning recognition.
           </p>
         </div>
 
