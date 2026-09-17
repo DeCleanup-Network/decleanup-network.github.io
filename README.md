@@ -1,3 +1,6 @@
+> [!WARNING]
+> **Archived — September 2026.** This is a V1 repository superseded by the V2 implementation in [decleanup-landing-standalone]([https://github.com/DeCleanup-Network/decleanup-main-celo)](https://github.com/DeCleanup-Network/decleanup-landing-standalone). Archived to preserve fork history. Nothing has been deleted. See the [org profile](https://github.com/DeCleanup-Network) for the current architecture.
+
 # DeCleanup Network Landing Page
 
 **DeCleanup is an SDG-aligned regenerative impact application.**
